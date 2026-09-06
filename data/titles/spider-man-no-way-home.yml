@@ -1,0 +1,32 @@
+id: spider-man-no-way-home
+type: film
+universe: earth-616
+franchise: spider-man
+saga: multiverse
+phase: 4
+tier: essential
+
+release:
+  date: 2021-12-17
+  approximate: null
+  runtime: 148
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 1100
+  setting: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home
+    title: "Spider-Man: No Way Home, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

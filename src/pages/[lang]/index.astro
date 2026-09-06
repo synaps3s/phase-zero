@@ -2,9 +2,10 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Spine from '../../components/Spine.astro';
+import SagaBlock from '../../components/SagaBlock.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
 import { resolveProse } from '../../lib/content';
-import { liveryStyle } from '../../lib/livery';
+import { liveryStyle, sagas } from '../../lib/livery';
 import site from '../../../config/site.json';
 
 export function getStaticPaths() {
@@ -27,7 +28,34 @@ for (const [index, entry] of run.entries()) {
   if (prose) shelf.push({ facts: entry, prose, setNumber: index + 1 });
 }
 
+/* The shelf is the beginning of the run, not a fixed count, so it stays
+   correct as the catalogue fills in. */
+const run_start = shelf.slice(0, 8);
 const first = shelf[0];
+
+/* Every title, grouped by era. This is where the colour system becomes
+   visible as a system rather than as one accent: each era owns a hue, and a
+   franchise steps a shade within it. */
+const everything = await getCollection('titles');
+const bySaga = [];
+for (const saga of [...sagas].sort((a, b) => a.order - b.order)) {
+  const inSaga = everything
+    .filter((entry) => entry.data.saga === saga.id)
+    .sort((a, b) => Number(a.data.release.date) - Number(b.data.release.date));
+  if (inSaga.length === 0) continue;
+
+  const entries = [];
+  for (const entry of inSaga) {
+    const prose = await resolveProse('titleProse', language.code, entry.data.id);
+    entries.push({
+      id: entry.data.id,
+      title: prose?.entry.data.title ?? entry.data.id,
+      franchise: entry.data.franchise,
+      year: entry.data.release.date ? String(entry.data.release.date.getUTCFullYear()) : '',
+    });
+  }
+  bySaga.push({ saga: saga.id, entries });
+}
 const guide = await resolveProse('guides', language.code, 'where-to-start');
 
 const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
@@ -81,8 +109,8 @@ const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site
 
   <section class="section page">
     <div class="section-head">
-      <h2>{t('home.firstRun')}</h2>
-      <p>{t('home.firstRunLede')}</p>
+      <h2>{t('home.runStart')}</h2>
+      <p>{t('home.runStartLede')}</p>
     </div>
 
     <ol
@@ -91,7 +119,7 @@ const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site
       data-label-mark={t('watched.mark')}
       data-label-unmark={t('watched.unmark')}
     >
-      {shelf.map((item, index) => (
+      {run_start.map((item, index) => (
         <Spine
           language={language.code}
           id={item.facts.data.id}
@@ -108,5 +136,18 @@ const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site
     </ol>
 
     <p class="storage-note">{t('watched.storageNotice')}</p>
+  </section>
+
+  <section class="section page">
+    <div class="section-head">
+      <h2>{t('home.allOf')}</h2>
+      <p>{t('home.allOfLede')}</p>
+    </div>
+
+    <div class="saga-grid">
+      {bySaga.map((block) => (
+        <SagaBlock language={language.code} saga={block.saga} entries={block.entries} />
+      ))}
+    </div>
   </section>
 </Base>

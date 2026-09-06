@@ -1,0 +1,32 @@
+id: venom
+type: film
+universe: earth-688
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2018-10-05
+  approximate: null
+  runtime: 112
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 100
+  setting: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Venom_(2018_film)
+    title: Venom (2018 film), Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

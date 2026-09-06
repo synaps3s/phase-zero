@@ -1,0 +1,32 @@
+id: spider-man-2002
+type: film
+universe: earth-96283
+franchise: raimi-spider-man
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2002-05-03
+  approximate: null
+  runtime: 121
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 100
+  setting: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Spider-Man_(2002_film)
+    title: Spider-Man (2002 film), Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07
