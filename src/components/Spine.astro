@@ -15,9 +15,33 @@ interface Props {
   /* Rendered by the server so the call-out is right with no JavaScript.
      The script re-derives it as titles are marked. */
   isNext?: boolean;
+  /* Present only on the timeline, where rows are reordered and filtered in
+     the browser. Sorting sets the flex order rather than moving nodes, so
+     the document order stays the one the server sent. */
+  releaseOrder?: number;
+  chronoOrder?: number;
+  tierRank?: number;
+  searchText?: string;
+  setting?: string | null;
 }
 
-const { language, id, title, saga, franchise, setNumber, year, runtime, href, isNext = false } = Astro.props;
+const {
+  language,
+  id,
+  title,
+  saga,
+  franchise,
+  setNumber,
+  year,
+  runtime,
+  href,
+  isNext = false,
+  releaseOrder,
+  chronoOrder,
+  tierRank,
+  searchText,
+  setting,
+} = Astro.props;
 const t = useTranslations(language);
 ---
 
@@ -27,6 +51,11 @@ const t = useTranslations(language);
   data-title-id={id}
   data-watched="false"
   data-next={String(isNext)}
+  data-release={releaseOrder}
+  data-chrono={chronoOrder}
+  data-tier={tierRank}
+  data-runtime={runtime ?? 0}
+  data-search={searchText}
   style={liveryStyle(saga, franchise)}
 >
   <span class="spine-set figure" aria-hidden="true">{setNumber}</span>
@@ -40,6 +69,7 @@ const t = useTranslations(language);
       <span class="figure">{year}</span>
       {runtime && <span class="figure">{t('title.runtime', { minutes: runtime })}</span>}
       <span class="spine-franchise">{franchiseName(franchise)}</span>
+      {setting && <span class="spine-setting figure">{setting}</span>}
     </p>
   </div>
 

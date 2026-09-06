@@ -55,7 +55,8 @@ function markNext(spines: HTMLElement[], watched: Set<string>): void {
 
 function wireWatched(): void {
   const shelf = document.querySelector<HTMLElement>('[data-shelf]');
-  if (!shelf) return;
+  // The timeline ships its own richer handling, so this one steps aside.
+  if (!shelf || shelf.hasAttribute('data-timeline')) return;
 
   const label = {
     mark: shelf.dataset.labelMark ?? 'Mark as watched',

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Phase Zero">
+  <rect width="32" height="32" fill="#05080f"/>
+  <circle cx="16" cy="16" r="10.5" fill="none" stroke="#2a3448" stroke-width="1"/>
+  <circle cx="16" cy="5.5" r="1" fill="#8395b3"/>
+  <circle cx="26.5" cy="16" r="1" fill="#8395b3"/>
+  <rect x="10.7" y="10.7" width="10.6" height="10.6" transform="rotate(45 16 16)" fill="#ffc47a"/>
+</svg>

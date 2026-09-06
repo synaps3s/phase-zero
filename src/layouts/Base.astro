@@ -35,6 +35,7 @@ const t = useTranslations(language.code);
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={new URL(localePath(language.code, path), site.url).href} />
     {languages.map((other) => (
       <link

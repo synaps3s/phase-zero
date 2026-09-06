@@ -15,15 +15,22 @@ const VERSION = 1;
 const KEY = 'phasezero.v1';
 
 export type Theme = 'light' | 'dark' | 'system';
+export type Order = 'release' | 'chrono';
+/** 1 films only, 2 films and series, 3 everything. */
+export type Depth = 1 | 2 | 3;
 
 interface Prefs {
   version: number;
   theme: Theme;
   /** Title ids the reader has marked as watched. */
   watched: string[];
+  /** How the catalogue is ordered, remembered so it is never set twice. */
+  order: Order;
+  /** How much of the catalogue the reader wants to see. */
+  depth: Depth;
 }
 
-const EMPTY: Prefs = { version: VERSION, theme: 'system', watched: [] };
+const EMPTY: Prefs = { version: VERSION, theme: 'system', watched: [], order: 'release', depth: 2 };
 
 function read(): Prefs {
   try {
@@ -36,6 +43,8 @@ function read(): Prefs {
       version: VERSION,
       theme: parsed.theme === 'light' || parsed.theme === 'dark' ? parsed.theme : 'system',
       watched: Array.isArray(parsed.watched) ? parsed.watched.filter((id) => typeof id === 'string') : [],
+      order: parsed.order === 'chrono' ? 'chrono' : 'release',
+      depth: parsed.depth === 1 || parsed.depth === 3 ? parsed.depth : 2,
     };
   } catch {
     return { ...EMPTY };
@@ -81,6 +90,26 @@ export function toggleWatched(id: string): boolean {
   prefs.watched = [...watched];
   write(prefs);
   return nowWatched;
+}
+
+export function getOrder(): Order {
+  return read().order;
+}
+
+export function setOrder(order: Order): void {
+  const prefs = read();
+  prefs.order = order;
+  write(prefs);
+}
+
+export function getDepth(): Depth {
+  return read().depth;
+}
+
+export function setDepth(depth: Depth): void {
+  const prefs = read();
+  prefs.depth = depth;
+  write(prefs);
 }
 
 /** True when this browser will actually keep what we write. */
