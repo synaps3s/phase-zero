@@ -1,0 +1,47 @@
+name: CI
+
+# Runs on every pull request, including pull requests from forks.
+# This workflow deliberately has no access to any secret, so it is safe to run
+# on code submitted by anyone.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check house style
+        run: npm run lint:text
+
+      - name: Check translations
+        run: npm run check:i18n
+
+      - name: Check facts and references
+        run: npm run check:sources
+
+      - name: Type check
+        run: npm run check
+
+      - name: Build the site
+        run: npm run build

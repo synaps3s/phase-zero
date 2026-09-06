@@ -1,0 +1,9 @@
+[
+  { "number": 1, "saga": "infinity", "from": 2008, "to": 2012 },
+  { "number": 2, "saga": "infinity", "from": 2013, "to": 2015 },
+  { "number": 3, "saga": "infinity", "from": 2016, "to": 2019 },
+  { "number": 4, "saga": "multiverse", "from": 2021, "to": 2022 },
+  { "number": 5, "saga": "multiverse", "from": 2023, "to": 2025 },
+  { "number": 6, "saga": "multiverse", "from": 2025, "to": 2027 },
+  { "number": 7, "saga": "next", "from": 2028, "to": null }
+]

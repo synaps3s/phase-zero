@@ -1,0 +1,25 @@
+---
+/*
+ * The root path has no language of its own. Every language lives under its own
+ * prefix so that none is treated as more canonical than another, so this page
+ * exists only to send a visitor to one of them.
+ */
+import { defaultLanguage, languages } from '../lib/i18n';
+---
+
+<html lang={defaultLanguage.code}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=/${defaultLanguage.code}`} />
+    <link rel="canonical" href={`/${defaultLanguage.code}`} />
+    <title>Phase Zero</title>
+  </head>
+  <body>
+    <p>Phase Zero is available in:</p>
+    <ul>
+      {languages.map((language) => (
+        <li><a href={`/${language.code}`} hreflang={language.code}>{language.endonym}</a></li>
+      ))}
+    </ul>
+  </body>
+</html>

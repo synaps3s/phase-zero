@@ -1,0 +1,84 @@
+import languageConfig from '../../config/languages.json';
+
+/*
+ * Interface strings and language resolution.
+ *
+ * Adding a language means adding an entry to config/languages.json and a
+ * content/<code>/ directory. Nothing in this file needs to change, because the
+ * strings are discovered by pattern rather than listed by hand. If a change
+ * here is ever required to add a language, that is the bug to fix.
+ */
+
+export interface Language {
+  code: string;
+  name: string;
+  endonym: string;
+  dir: 'ltr' | 'rtl';
+  default?: boolean;
+}
+
+export const languages = languageConfig as Language[];
+
+export const defaultLanguage: Language =
+  languages.find((language) => language.default) ?? languages[0]!;
+
+export const languageCodes = languages.map((language) => language.code);
+
+export function getLanguage(code: string): Language {
+  return languages.find((language) => language.code === code) ?? defaultLanguage;
+}
+
+/* --- Interface strings --- */
+
+type Strings = Record<string, string>;
+
+const stringModules = import.meta.glob<Strings>('../../content/*/ui.json', {
+  eager: true,
+  import: 'default',
+});
+
+const stringsByLanguage: Record<string, Strings> = {};
+for (const [path, strings] of Object.entries(stringModules)) {
+  const code = path.split('/').at(-2);
+  if (code) stringsByLanguage[code] = strings;
+}
+
+const fallbackStrings = stringsByLanguage[defaultLanguage.code] ?? {};
+
+/**
+ * Look up an interface string, falling back to the source language when a
+ * translation is missing. Placeholders are written as {name} and replaced with
+ * the matching value.
+ */
+export function useTranslations(code: string) {
+  const strings = stringsByLanguage[code] ?? {};
+
+  return function t(key: string, values: Record<string, string | number> = {}): string {
+    const template = strings[key] ?? fallbackStrings[key];
+
+    if (template === undefined) {
+      // Better to show the key than to show nothing, so the gap is obvious in
+      // review instead of silently rendering an empty element.
+      if (import.meta.env.DEV) console.warn(`Missing interface string: ${key}`);
+      return key;
+    }
+
+    return template.replace(/\{(\w+)\}/g, (whole, name: string) =>
+      name in values ? String(values[name]) : whole,
+    );
+  };
+}
+
+/* --- Routing --- */
+
+/** Build a path inside a language, for example localePath('it', 'timeline'). */
+export function localePath(code: string, ...segments: string[]): string {
+  const path = segments.filter(Boolean).join('/').replace(/^\/+|\/+$/g, '');
+  return path ? `/${code}/${path}` : `/${code}`;
+}
+
+/** The language segment of a path, or the default language when there is none. */
+export function languageFromPath(pathname: string): Language {
+  const segment = pathname.split('/').filter(Boolean)[0];
+  return segment ? getLanguage(segment) : defaultLanguage;
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "earth-616",
+    "designation": "Earth-616",
+    "studio": "Marvel Studios",
+    "primary": true,
+    "accent": "#eaa23c"
+  },
+  {
+    "id": "earth-10005",
+    "designation": "Earth-10005",
+    "studio": "20th Century Fox",
+    "primary": false,
+    "accent": "#6ea8e6"
+  },
+  {
+    "id": "earth-96283",
+    "designation": "Earth-96283",
+    "studio": "Sony Pictures",
+    "primary": false,
+    "accent": "#ec5f93"
+  },
+  {
+    "id": "earth-120703",
+    "designation": "Earth-120703",
+    "studio": "Sony Pictures",
+    "primary": false,
+    "accent": "#e8734f"
+  },
+  {
+    "id": "earth-688",
+    "designation": "Earth-688",
+    "studio": "Sony Pictures",
+    "primary": false,
+    "accent": "#8c6bd8"
+  }
+]

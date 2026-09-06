@@ -1,0 +1,15 @@
+[
+  {
+    "code": "en",
+    "name": "English",
+    "endonym": "English",
+    "dir": "ltr",
+    "default": true
+  },
+  {
+    "code": "it",
+    "name": "Italian",
+    "endonym": "Italiano",
+    "dir": "ltr"
+  }
+]

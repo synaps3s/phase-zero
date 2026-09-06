@@ -1,0 +1,7 @@
+[
+  { "id": "infinity", "order": 1, "phases": [1, 2, 3], "accent": "#eaa23c" },
+  { "id": "multiverse", "order": 2, "phases": [4, 5, 6], "accent": "#b07be8" },
+  { "id": "next", "order": 3, "phases": [7], "accent": "#45c6c0" },
+  { "id": "fox", "order": 4, "phases": [], "accent": "#6ea8e6" },
+  { "id": "sony", "order": 5, "phases": [], "accent": "#ec5f93" }
+]

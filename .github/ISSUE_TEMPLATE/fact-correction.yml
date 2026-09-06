@@ -1,0 +1,42 @@
+name: Something is factually wrong
+description: A date, a runtime, an order, a name or a connection that does not match reality.
+labels: ["fact"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for catching this. Reporting a mistake is a real contribution
+        even if you never touch a file. You do not need to know how to fix it.
+
+  - type: input
+    id: page
+    attributes:
+      label: Where did you see it
+      description: A link to the page, or the name of the film, series or character.
+      placeholder: The Eternals page, or /en/titles/eternals
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What it currently says
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should say
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Where can we check
+      description: |
+        A link is ideal. The film itself is also a valid source, in which case
+        say the scene or episode. If you are not sure, say so and we will look.
+    validations:
+      required: false

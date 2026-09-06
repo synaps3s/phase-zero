@@ -1,0 +1,40 @@
+name: A title is missing
+description: A film, series, special or short that should be in the guide and is not.
+labels: ["content", "title"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: Avengers Doomsday
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: What is it
+      options:
+        - Film
+        - Series
+        - Special
+        - Short
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links where the release date, runtime and other facts can be checked.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: helping
+    attributes:
+      label: Would you like to add it yourself
+      options:
+        - label: Yes, and I would like a hand getting started
+        - label: Yes, I have read CONTRIBUTING.md and I am fine
+        - label: No, I am just reporting that it is missing

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How to contribute
+    url: https://github.com/synaps3s/phase-zero/blob/main/CONTRIBUTING.md
+    about: Read this first if you want to fix a fact, translate a page, or add a title.
+  - name: Code of Conduct
+    url: https://github.com/synaps3s/phase-zero/blob/main/CODE_OF_CONDUCT.md
+    about: How we treat each other here.

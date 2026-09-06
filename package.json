@@ -1,0 +1,33 @@
+{
+  "name": "phase-zero",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "An open, multilingual guide to the Marvel cinematic universes.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synaps3s/phase-zero.git"
+  },
+  "engines": {
+    "node": ">=20.3.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint:text": "node scripts/lint-text.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "check:sources": "node scripts/check-sources.mjs",
+    "validate": "npm run lint:text && npm run check:i18n && npm run check:sources && npm run check"
+  },
+  "dependencies": {
+    "astro": "^7.3.1",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^5.9.3",
+    "yaml": "^2.6.0"
+  }
+}

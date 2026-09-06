@@ -1,0 +1,18 @@
+id: tony-stark
+universe: earth-616
+franchise: iron-man
+realName: Anthony Edward Stark
+
+actors:
+  - name: Robert Downey Jr.
+
+firstAppearance: iron-man
+
+appearsIn:
+  - iron-man
+
+sources:
+  - url: https://www.marvel.com/characters/iron-man-tony-stark
+    title: Iron Man (Tony Stark), Marvel.com
+    accessed: 2026-09-07
+verified: 2026-09-07

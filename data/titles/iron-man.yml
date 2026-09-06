@@ -1,0 +1,38 @@
+id: iron-man
+type: film
+universe: earth-616
+franchise: iron-man
+saga: infinity
+phase: 1
+tier: essential
+
+release:
+  date: 2008-05-02
+  approximate: null
+  runtime: 126
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  # Sparse numbering leaves room to insert titles without renumbering the rest.
+  order: 500
+  setting: "2010"
+
+requires: []
+leadsTo: []
+
+cast:
+  - character: tony-stark
+    actor: Robert Downey Jr.
+
+alternateUniverse: false
+
+sources:
+  - url: https://www.marvel.com/movies/iron-man
+    title: Iron Man, Marvel.com
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Iron_Man_(2008_film)
+    title: Iron Man (2008 film), Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

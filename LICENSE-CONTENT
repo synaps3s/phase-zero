@@ -1,0 +1,39 @@
+Phase Zero content license
+==========================
+
+The MIT license in LICENSE covers the source code of this project: everything
+under src/ and scripts/, the configuration files, and the build tooling.
+
+The content of this project is licensed separately, under the Creative Commons
+Attribution-ShareAlike 4.0 International license (CC BY-SA 4.0).
+
+This covers everything under:
+
+  content/    all prose, in every language
+  data/       all structured entries
+
+Full license text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+Human readable summary: https://creativecommons.org/licenses/by-sa/4.0/
+
+In short, you are free to share and adapt this content, including commercially,
+as long as you give appropriate credit to Phase Zero, link to the license, and
+license your adaptations under the same terms.
+
+Attribution notice
+------------------
+
+By contributing to this repository you agree to license your contributions
+under these terms: MIT for code, CC BY-SA 4.0 for content. You keep the
+copyright on what you write.
+
+What this license does NOT cover
+--------------------------------
+
+Phase Zero describes films, television series and characters that are the
+intellectual property of Marvel Studios, The Walt Disney Company, 20th Century
+Studios, Sony Pictures and their respective rights holders. Names, titles and
+trademarks belong to their owners and are used here for identification and
+commentary only.
+
+This project is unofficial and is not affiliated with, endorsed by, or
+sponsored by any of those companies.

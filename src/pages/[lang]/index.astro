@@ -1,0 +1,97 @@
+---
+/*
+ * Pipeline check.
+ *
+ * This page has no design on purpose. It exists to prove that the architecture
+ * holds together end to end: languages generate, facts join to prose, interface
+ * strings resolve, and a missing translation falls back instead of breaking.
+ *
+ * The design phase replaces it. Do not build on this file.
+ */
+import { getCollection } from 'astro:content';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse, sourceSlugs } from '../../lib/content';
+import site from '../../../config/site.json';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+
+const titleSlugs = await sourceSlugs('titleProse');
+const entries = [];
+for (const slug of titleSlugs) {
+  const facts = titles.find((title) => title.data.id === slug);
+  const prose = await resolveProse('titleProse', language.code, slug);
+  if (facts && prose) entries.push({ facts, prose });
+}
+
+const guideSlugs = await sourceSlugs('guides');
+const guides = [];
+for (const slug of guideSlugs) {
+  const guide = await resolveProse('guides', language.code, slug);
+  if (guide) guides.push({ slug, guide });
+}
+
+const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site.tagline.en;
+---
+
+<html lang={language.code} dir={language.dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.name}</title>
+    {languages.map((other) => (
+      <link rel="alternate" hreflang={other.code} href={localePath(other.code)} />
+    ))}
+  </head>
+  <body>
+    <h1>{site.name}</h1>
+    <p>{tagline}</p>
+
+    <nav aria-label={t('nav.language')}>
+      {languages.map((other) => (
+        <a
+          href={localePath(other.code)}
+          hreflang={other.code}
+          aria-current={other.code === language.code ? 'true' : undefined}
+        >
+          {other.endonym}
+        </a>
+      ))}
+    </nav>
+
+    <h2>{t('nav.guides')}</h2>
+    <ul>
+      {guides.map(({ guide }) => (
+        <li>
+          <strong>{guide.entry.data.title}</strong>
+          {guide.isFallback && <em>{t('i18n.fallbackNotice', { language: language.endonym })}</em>}
+          <p>{guide.entry.data.oneLine}</p>
+        </li>
+      ))}
+    </ul>
+
+    <h2>{t('nav.timeline')}</h2>
+    <ul>
+      {entries.map(({ facts, prose }) => (
+        <li>
+          <strong>{prose.entry.data.title}</strong>
+          {' '}
+          <span>{t('title.phase', { number: facts.data.phase ?? 0 })}</span>
+          {' '}
+          <span>{t('title.runtime', { minutes: facts.data.release.runtime ?? 0 })}</span>
+          {' '}
+          <span>{t('title.setIn', { year: facts.data.chronology.setting })}</span>
+          {prose.isFallback && <em>{t('i18n.fallbackNotice', { language: language.endonym })}</em>}
+          <p>{prose.entry.data.oneLine}</p>
+        </li>
+      ))}
+    </ul>
+  </body>
+</html>
