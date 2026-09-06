@@ -1,0 +1,160 @@
+/* ============================================================
+   PHASE ZERO TOKENS
+
+   The world is a publisher's series livery. Colour is the
+   classification: every universe owns a livery, always in the same
+   position, so a reader knows what a thing is before reading a word.
+
+   Two grounds, never mixed in one region:
+     paper  carries prose and data
+     livery carries identity, drenched, edge to edge
+
+   Flat colour and hard edges throughout. No gradient, no glass, no
+   soft shadow: depth comes from planes meeting, the way ink meets
+   paper on a printed jacket.
+   ============================================================ */
+
+:root {
+  color-scheme: light dark;
+
+  /* --- Grounds and ink (light) --- */
+  --paper: #f4f2ed;
+  --paper-raised: #fbfaf7;
+  --paper-sunk: #e8e5dd;
+  --ink: #1a1a17;
+  --ink-soft: #4d4c46;
+  --ink-faint: #6f6d64;
+  --rule: #cdc9be;
+  --rule-strong: #1a1a17;
+
+  /* --- Liveries. One per universe, plus the unbound set for the
+         adaptations that sit outside the shared continuity.
+
+         Each has two roles and they are not interchangeable:
+
+           -plane  the printed colour of a drenched surface. Identical in
+                   both themes, because a jacket does not change colour when
+                   the room does, and because it always has to carry
+                   paper-white text at 4.5:1.
+           (ink)   the same colour adapted to be read as text on the current
+                   stock, which is the one that has to change with the theme.
+
+         On a dark ground a deep plane separates by its edge rather than by
+         luminance, so bands carry a hairline instead of being brightened
+         into a glare at night. --- */
+  --livery-616-plane: #1b4f9c;
+  --livery-10005-plane: #0e6e4e;
+  --livery-96283-plane: #a8243e;
+  --livery-120703-plane: #9c5410;
+  --livery-688-plane: #5b3a8e;
+  --livery-unbound-plane: #6b5a2e;
+
+  --livery-616: #1b4f9c;
+  --livery-10005: #0e6e4e;
+  --livery-96283: #a8243e;
+  --livery-120703: #9c5410;
+  --livery-688: #5b3a8e;
+  --livery-unbound: #6b5a2e;
+
+  /* Text sitting on a livery plane. The same in both themes, because the
+     plane is the same in both themes. */
+  --on-livery: #fbfaf7;
+
+  /* --- Reading state. Green reads as cleared, and it is the only
+         colour in the system that does not belong to a universe. --- */
+  --watched: #1f7a4d;
+  --watched-on-livery: #b6e8cd;
+
+  /* --- Type --- */
+  --face-label: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --face-text: 'Literata Variable', ui-serif, Georgia, serif;
+
+  --wdth-plate: 108;
+  --wdth-label: 88;
+
+  /* Fluid, and deliberately few steps. */
+  --size-plate: clamp(2.75rem, 1.6rem + 5.2vw, 5.5rem);
+  --size-title: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem);
+  --size-head: clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
+  --size-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  --size-body: 1.0625rem;
+  --size-data: 0.9375rem;
+  --size-label: 0.75rem;
+
+  --leading-plate: 0.94;
+  --leading-title: 1.1;
+  --leading-body: 1.65;
+
+  --track-plate: -0.028em;
+  --track-label: 0.13em;
+
+  --measure: 68ch;
+  --measure-tight: 54ch;
+
+  /* --- Rhythm. One scale, used everywhere. --- */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4.5rem;
+  --s9: 7rem;
+
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3.5rem);
+  --page: 78rem;
+
+  /* --- Motion. One curve, one duration family. --- */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --fast: 140ms;
+  --slow: 460ms;
+}
+
+/* Dark is a darker stock, not an inversion: the liveries lighten so
+   they stay legible as ink, and the paper becomes a night board. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #16171b;
+    --paper-raised: #1e1f25;
+    --paper-sunk: #101116;
+    --ink: #e9e6df;
+    --ink-soft: #b4b0a6;
+    --ink-faint: #8b877d;
+    --rule: #34353d;
+    --rule-strong: #e9e6df;
+
+    /* Planes keep their printed colour; only the ink role lightens. */
+    --livery-616: #7faee8;
+    --livery-10005: #5fc79b;
+    --livery-96283: #f08098;
+    --livery-120703: #e3a44e;
+    --livery-688: #b69ae8;
+    --livery-unbound: #cbb472;
+
+    --watched: #5fc79b;
+    --watched-on-livery: #b6e8cd;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #16171b;
+  --paper-raised: #1e1f25;
+  --paper-sunk: #101116;
+  --ink: #e9e6df;
+  --ink-soft: #b4b0a6;
+  --ink-faint: #8b877d;
+  --rule: #34353d;
+  --rule-strong: #e9e6df;
+
+  /* Planes keep their printed colour; only the ink role lightens. */
+  --livery-616: #7faee8;
+  --livery-10005: #5fc79b;
+  --livery-96283: #f08098;
+  --livery-120703: #e3a44e;
+  --livery-688: #b69ae8;
+  --livery-unbound: #cbb472;
+
+  --watched: #5fc79b;
+  --watched-on-livery: #b6e8cd;
+}

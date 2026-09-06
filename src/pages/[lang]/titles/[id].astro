@@ -1,0 +1,90 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import FallbackNotice from '../../../components/FallbackNotice.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
+import { resolveProse } from '../../../lib/content';
+import { liveryStyle, universeOf } from '../../../lib/livery';
+
+export async function getStaticPaths() {
+  const titles = await getCollection('titles');
+  return languages.flatMap((language) =>
+    titles.map((entry) => ({
+      params: { lang: language.code, id: entry.data.id },
+      props: { titleId: entry.data.id },
+    })),
+  );
+}
+
+const { lang } = Astro.params;
+const { titleId } = Astro.props;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const facts = (await getCollection('titles')).find((entry) => entry.data.id === titleId)!;
+const prose = await resolveProse('titleProse', language.code, titleId);
+if (!prose) return Astro.rewrite('/404');
+
+const { Content } = await render(prose.entry);
+
+const universe = universeOf(facts.data.universe);
+const release = facts.data.release;
+const year = release.date ? String(release.date.getUTCFullYear()) : '';
+const dateFormatter = new Intl.DateTimeFormat(language.code, { dateStyle: 'long', timeZone: 'UTC' });
+const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
+  facts.data.verified,
+);
+---
+
+<Base
+  language={language.code}
+  title={`${prose.entry.data.title}. Phase Zero`}
+  description={prose.entry.data.oneLine}
+  path={`titles/${titleId}`}
+  editPath={`content/${language.code}/titles/${titleId}.md`}
+>
+  <section class="bleed band" data-livery style={liveryStyle(facts.data.universe, facts.data.franchise)}>
+    <div class="page">
+      <div class="plate">
+        <a class="crumb" href={localePath(language.code)}>{t('nav.home')}</a>
+        <h1 class="plate-title">{prose.entry.data.title}</h1>
+        <p class="plate-meta">
+          <span class="figure">{year}</span>
+          {release.runtime && <span class="figure">{t('title.runtime', { minutes: release.runtime })}</span>}
+          <span>{t('title.phase', { number: facts.data.phase ?? 0 })}</span>
+          <span>{universe.designation}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    {prose.isFallback && (
+      <FallbackNotice
+        language={language.code}
+        shownLanguage={prose.language}
+        editPath={`content/${language.code}/titles/${titleId}.md`}
+      />
+    )}
+
+    <article class="entry-body prose">
+      <p class="entry-lede">{prose.entry.data.oneLine}</p>
+      <Content />
+
+      <section class="sources">
+        <h2 class="label">{t('common.sources')}</h2>
+        <ul>
+          {facts.data.sources.map((source) => (
+            <li><a href={source.url}>{source.title ?? source.url}</a></li>
+          ))}
+        </ul>
+        <p style="margin-top: var(--s3)">{t('common.verifiedOn', { date: verified })}</p>
+        {release.date && (
+          <p style="margin-top: var(--s2)">
+            {t('title.released')}: <span class="figure">{dateFormatter.format(release.date)}</span>
+          </p>
+        )}
+      </section>
+    </article>
+  </div>
+</Base>

@@ -1,0 +1,40 @@
+---
+import { languages, localePath, useTranslations } from '../lib/i18n';
+
+interface Props {
+  language: string;
+  /** Path within the language, so the switcher stays on the same page. */
+  path?: string;
+}
+
+const { language, path = '' } = Astro.props;
+const t = useTranslations(language);
+---
+
+<header class="masthead">
+  <a class="wordmark" href={localePath(language)}>
+    <span class="wordmark-mark" aria-hidden="true"></span>
+    <span>Phase Zero</span>
+  </a>
+
+  <div class="masthead-tools">
+    <nav class="switch" aria-label={t('nav.language')}>
+      {languages.map((other) => (
+        <a
+          href={localePath(other.code, path)}
+          hreflang={other.code}
+          lang={other.code}
+          aria-current={other.code === language ? 'true' : undefined}
+        >
+          {other.code}
+        </a>
+      ))}
+    </nav>
+
+    <div class="switch" role="group" aria-label={t('theme.label')}>
+      <button type="button" data-theme-set="light" aria-pressed="false">{t('theme.light')}</button>
+      <button type="button" data-theme-set="dark" aria-pressed="false">{t('theme.dark')}</button>
+      <button type="button" data-theme-set="system" aria-pressed="true">{t('theme.system')}</button>
+    </div>
+  </div>
+</header>

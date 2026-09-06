@@ -21,7 +21,6 @@ node_modules/
 *.log
 npm-debug.log*
 
-# Impeccable working directories
-.impeccable/build/
-.impeccable/review/
-.impeccable/mocks/
+# Design tooling working state. The durable design system lives in
+# DESIGN.md at the root, which is tool neutral and is committed.
+.impeccable/

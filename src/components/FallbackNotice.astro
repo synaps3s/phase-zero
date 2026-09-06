@@ -1,0 +1,24 @@
+---
+import { getLanguage, useTranslations } from '../lib/i18n';
+import site from '../../config/site.json';
+
+interface Props {
+  /** The language the reader asked for. */
+  language: string;
+  /** The language actually being shown. */
+  shownLanguage: string;
+  /** Repository path of the file that is missing, so the link lands on it. */
+  editPath: string;
+}
+
+const { language, shownLanguage, editPath } = Astro.props;
+const t = useTranslations(language);
+const asked = getLanguage(language);
+---
+
+<aside class="fallback" lang={shownLanguage === language ? undefined : language}>
+  <p>{t('i18n.fallbackNotice', { language: asked.endonym })}</p>
+  <a href={`${site.repository}/new/main?filename=${encodeURIComponent(editPath)}`}>
+    {t('i18n.translateThis')}
+  </a>
+</aside>

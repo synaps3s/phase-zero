@@ -1,16 +1,10 @@
 ---
-/*
- * Pipeline check.
- *
- * This page has no design on purpose. It exists to prove that the architecture
- * holds together end to end: languages generate, facts join to prose, interface
- * strings resolve, and a missing translation falls back instead of breaking.
- *
- * The design phase replaces it. Do not build on this file.
- */
 import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Spine from '../../components/Spine.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
-import { resolveProse, sourceSlugs } from '../../lib/content';
+import { resolveProse } from '../../lib/content';
+import { liveryStyle } from '../../lib/livery';
 import site from '../../../config/site.json';
 
 export function getStaticPaths() {
@@ -21,77 +15,98 @@ const { lang } = Astro.params;
 const language = getLanguage(lang!);
 const t = useTranslations(language.code);
 
-const titles = await getCollection('titles');
+/* The watch order is release order, which is what the guide recommends for a
+   first run. The entrance is simply the first thing on it. */
+const run = (await getCollection('titles'))
+  .filter((entry) => entry.data.tier === 'essential' && entry.data.release.status === 'released')
+  .sort((a, b) => Number(a.data.release.date) - Number(b.data.release.date));
 
-const titleSlugs = await sourceSlugs('titleProse');
-const entries = [];
-for (const slug of titleSlugs) {
-  const facts = titles.find((title) => title.data.id === slug);
-  const prose = await resolveProse('titleProse', language.code, slug);
-  if (facts && prose) entries.push({ facts, prose });
+const shelf = [];
+for (const [index, entry] of run.entries()) {
+  const prose = await resolveProse('titleProse', language.code, entry.data.id);
+  if (prose) shelf.push({ facts: entry, prose, setNumber: index + 1 });
 }
 
-const guideSlugs = await sourceSlugs('guides');
-const guides = [];
-for (const slug of guideSlugs) {
-  const guide = await resolveProse('guides', language.code, slug);
-  if (guide) guides.push({ slug, guide });
-}
+const first = shelf[0];
+const guide = await resolveProse('guides', language.code, 'where-to-start');
+
+const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
+
+/* The heading is one sentence and word order differs between languages, so
+   the title is placed by splitting the translated string at a placeholder
+   rather than by concatenating fragments in English order. */
+const SLOT = '@@';
+const [beforeTitle, afterTitle] = t('home.startWith', { title: SLOT }).split(SLOT);
 
 const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site.tagline.en;
 ---
 
-<html lang={language.code} dir={language.dir}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.name}</title>
-    {languages.map((other) => (
-      <link rel="alternate" hreflang={other.code} href={localePath(other.code)} />
-    ))}
-  </head>
-  <body>
-    <h1>{site.name}</h1>
-    <p>{tagline}</p>
-
-    <nav aria-label={t('nav.language')}>
-      {languages.map((other) => (
-        <a
-          href={localePath(other.code)}
-          hreflang={other.code}
-          aria-current={other.code === language.code ? 'true' : undefined}
-        >
-          {other.endonym}
+<Base
+  language={language.code}
+  title={`${site.name}. ${tagline}`}
+  description={t('home.firstRunLede')}
+  editPath={`content/${language.code}/guides/where-to-start.md`}
+>
+  {first && (
+    <section
+      class="bleed band"
+      data-livery
+      style={liveryStyle(first.facts.data.universe, first.facts.data.franchise)}
+    >
+      <div class="page">
+        <a class="plate" href={localePath(language.code, 'titles', first.facts.data.id)}>
+          <h1 class="plate-title">
+            {beforeTitle}<span class="plate-subject">{first.prose.entry.data.title}</span>{afterTitle}
+          </h1>
+          <p class="plate-meta">
+            <span class="plate-set figure">{t('home.setNumber', { number: first.setNumber })}</span>
+            <span class="figure">{year(first.facts.data.release.date)}</span>
+            {first.facts.data.release.runtime && (
+              <span class="figure">{t('title.runtime', { minutes: first.facts.data.release.runtime })}</span>
+            )}
+          </p>
         </a>
-      ))}
-    </nav>
+      </div>
+    </section>
+  )}
 
-    <h2>{t('nav.guides')}</h2>
-    <ul>
-      {guides.map(({ guide }) => (
-        <li>
-          <strong>{guide.entry.data.title}</strong>
-          {guide.isFallback && <em>{t('i18n.fallbackNotice', { language: language.endonym })}</em>}
-          <p>{guide.entry.data.oneLine}</p>
-        </li>
-      ))}
-    </ul>
+  {guide && (
+    <div class="page reason">
+      <p class="reason-text">{guide.entry.data.oneLine}</p>
+      <a class="reason-link" href={localePath(language.code, 'guides', 'where-to-start')}>
+        {t('home.readTheGuide')}
+      </a>
+    </div>
+  )}
 
-    <h2>{t('nav.timeline')}</h2>
-    <ul>
-      {entries.map(({ facts, prose }) => (
-        <li>
-          <strong>{prose.entry.data.title}</strong>
-          {' '}
-          <span>{t('title.phase', { number: facts.data.phase ?? 0 })}</span>
-          {' '}
-          <span>{t('title.runtime', { minutes: facts.data.release.runtime ?? 0 })}</span>
-          {' '}
-          <span>{t('title.setIn', { year: facts.data.chronology.setting })}</span>
-          {prose.isFallback && <em>{t('i18n.fallbackNotice', { language: language.endonym })}</em>}
-          <p>{prose.entry.data.oneLine}</p>
-        </li>
+  <section class="section page">
+    <div class="section-head">
+      <h2>{t('home.firstRun')}</h2>
+      <p>{t('home.firstRunLede')}</p>
+    </div>
+
+    <ol
+      class="shelf"
+      data-shelf
+      data-label-mark={t('watched.mark')}
+      data-label-unmark={t('watched.unmark')}
+    >
+      {shelf.map((item, index) => (
+        <Spine
+          language={language.code}
+          id={item.facts.data.id}
+          title={item.prose.entry.data.title}
+          universe={item.facts.data.universe}
+          franchise={item.facts.data.franchise}
+          setNumber={item.setNumber}
+          year={year(item.facts.data.release.date)}
+          runtime={item.facts.data.release.runtime}
+          href={localePath(language.code, 'titles', item.facts.data.id)}
+          isNext={index === 0}
+        />
       ))}
-    </ul>
-  </body>
-</html>
+    </ol>
+
+    <p class="storage-note">{t('watched.storageNotice')}</p>
+  </section>
+</Base>

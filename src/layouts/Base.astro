@@ -1,0 +1,77 @@
+---
+import '@fontsource-variable/archivo/wdth.css';
+import '@fontsource-variable/literata/opsz.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/world.css';
+
+import Masthead from '../components/Masthead.astro';
+import Colophon from '../components/Colophon.astro';
+import { getLanguage, languages, localePath, useTranslations } from '../lib/i18n';
+import site from '../../config/site.json';
+
+interface Props {
+  language: string;
+  title: string;
+  description: string;
+  /** Path within the language, used by the language switcher and canonical. */
+  path?: string;
+  /** Repository path of the content file behind this page. */
+  editPath?: string;
+}
+
+const { language: code, title, description, path = '', editPath } = Astro.props;
+const language = getLanguage(code);
+const t = useTranslations(language.code);
+---
+
+<!doctype html>
+<html lang={language.code} dir={language.dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={new URL(localePath(language.code, path), site.url).href} />
+    {languages.map((other) => (
+      <link
+        rel="alternate"
+        hreflang={other.code}
+        href={new URL(localePath(other.code, path), site.url).href}
+      />
+    ))}
+
+    <script is:inline>
+      /* The stored theme is applied before the first paint, so a reader who
+         chose dark never sees a flash of the light stock. Inline and
+         uncompiled on purpose: a module would arrive too late. */
+      try {
+        var stored = JSON.parse(window.localStorage.getItem('phasezero.v1') || '{}');
+        if (stored.theme === 'light' || stored.theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', stored.theme);
+        }
+      } catch (error) {
+        /* Storage is unavailable, so the system preference stands. */
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content">{t('site.skipToContent')}</a>
+
+    <div class="page">
+      <Masthead language={language.code} path={path} />
+    </div>
+
+    <main id="content">
+      <slot />
+    </main>
+
+    <Colophon language={language.code} editPath={editPath} />
+
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>
