@@ -103,6 +103,13 @@ svg {
   max-width: 100%;
 }
 
+/* The browser hides [hidden] with a display rule of the lowest possible
+   specificity, so any component that sets its own display silently defeats
+   it. Anything hiding a grid or flex element needs this to be true. */
+[hidden] {
+  display: none !important;
+}
+
 button {
   font: inherit;
   color: inherit;

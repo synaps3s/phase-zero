@@ -1,0 +1,153 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Spine from '../../components/Spine.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+import { franchiseName } from '../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const TIER_RANK: Record<string, number> = { essential: 1, extended: 2, complete: 3 };
+
+/* Every title is rendered, in release order, and the browser reorders and
+   filters what is already here. With no JavaScript the page is still the
+   complete catalogue in a sensible order, which is the point. */
+const titles = (await getCollection('titles')).sort(
+  (a, b) => Number(a.data.release.date) - Number(b.data.release.date),
+);
+
+const rows = [];
+for (const [index, entry] of titles.entries()) {
+  const prose = await resolveProse('titleProse', language.code, entry.data.id);
+  if (!prose) continue;
+
+  const title = prose.entry.data.title;
+  rows.push({
+    facts: entry,
+    title,
+    releaseOrder: index + 1,
+    search: [title, t(`saga.${entry.data.saga}`), franchiseName(entry.data.franchise)]
+      .join(' ')
+      .toLowerCase(),
+  });
+}
+
+const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
+---
+
+<Base
+  language={language.code}
+  title={`${t('timeline.title')}. Phase Zero`}
+  description={t('timeline.lede')}
+  path="timeline"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-infinity); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('timeline.title')}</h1>
+        <p class="plate-meta">{t('timeline.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    <div class="controls" data-controls>
+      <fieldset class="control">
+        <legend class="label">{t('timeline.order')}</legend>
+        <div class="switch">
+          <button type="button" data-order="release" aria-pressed="true">{t('watchOrder.byRelease')}</button>
+          <button type="button" data-order="chrono" aria-pressed="false">{t('watchOrder.byChronology')}</button>
+        </div>
+        <p
+          class="control-help"
+          data-order-help
+          data-release={t('watchOrder.byReleaseHelp')}
+          data-chrono={t('watchOrder.byChronologyHelp')}
+        >{t('watchOrder.byReleaseHelp')}</p>
+      </fieldset>
+
+      <fieldset class="control">
+        <legend class="label">{t('timeline.depth')}</legend>
+        <div class="switch">
+          <button type="button" data-tier="1" aria-pressed="false">{t('watchOrder.tier.essential')}</button>
+          <button type="button" data-tier="2" aria-pressed="true">{t('watchOrder.tier.extended')}</button>
+          <button type="button" data-tier="3" aria-pressed="false">{t('watchOrder.tier.complete')}</button>
+        </div>
+        <p
+          class="control-help"
+          data-tier-help
+          data-d1={t('watchOrder.tier.essentialHelp')}
+          data-d2={t('watchOrder.tier.extendedHelp')}
+          data-d3={t('watchOrder.tier.completeHelp')}
+        >{t('watchOrder.tier.extendedHelp')}</p>
+      </fieldset>
+
+      <fieldset class="control control-search">
+        <legend class="label">{t('common.search')}</legend>
+        <input
+          type="search"
+          data-filter
+          placeholder={t('timeline.searchPlaceholder')}
+          aria-label={t('timeline.searchPlaceholder')}
+          autocomplete="off"
+        />
+      </fieldset>
+    </div>
+
+    <p
+      class="tally"
+      data-tally
+      aria-live="polite"
+      data-showing={t("timeline.showing", { count: "{count}", total: "{total}" })}
+      data-progress-one={t("timeline.progress", { count: 1, done: "{done}", total: "{total}" })}
+      data-progress-other={t("timeline.progress", { count: 2, done: "{done}", total: "{total}" })}
+      data-remaining={t("timeline.remaining", { hours: "{hours}" })}
+      data-remaining-done={t('timeline.remainingDone')}
+    >{t('timeline.showing', { count: rows.length, total: rows.length })}</p>
+
+    <ol
+      class="shelf"
+      data-shelf
+      data-timeline
+      data-label-mark={t('watched.mark')}
+      data-label-unmark={t('watched.unmark')}
+    >
+      {rows.map((row) => (
+        <Spine
+          language={language.code}
+          id={row.facts.data.id}
+          title={row.title}
+          saga={row.facts.data.saga}
+          franchise={row.facts.data.franchise}
+          setNumber={row.releaseOrder}
+          year={year(row.facts.data.release.date)}
+          runtime={row.facts.data.release.runtime}
+          href={localePath(language.code, 'titles', row.facts.data.id)}
+          releaseOrder={row.releaseOrder}
+          chronoOrder={row.facts.data.chronology.order}
+          tierRank={TIER_RANK[row.facts.data.tier] ?? 3}
+          searchText={row.search}
+          setting={row.facts.data.chronology.setting}
+        />
+      ))}
+    </ol>
+
+    <p class="empty-state" data-empty hidden>
+      {t('timeline.empty')}
+      <button type="button" data-clear-filter class="link-button">{t('timeline.clearFilters')}</button>
+    </p>
+
+    <p class="storage-note">{t('watched.storageNotice')}</p>
+  </div>
+
+  <script>
+    import '../../scripts/timeline';
+  </script>
+</Base>

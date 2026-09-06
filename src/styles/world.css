@@ -680,3 +680,140 @@ a.plate:focus-visible {
     grid-column: 1 / -1;
   }
 }
+
+/* --- Section navigation ------------------------------------------- */
+
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4);
+  order: 3;
+  width: 100%;
+  padding-top: var(--s3);
+  border-top: 1px solid var(--hairline);
+}
+
+.sections a {
+  font-family: var(--face-display);
+  font-size: var(--size-data);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color var(--fast) var(--ease);
+}
+
+.sections a:hover {
+  color: var(--core);
+}
+
+.sections a[aria-current='page'] {
+  color: var(--watched);
+}
+
+@media (min-width: 56rem) {
+  .sections {
+    order: 0;
+    width: auto;
+    margin-inline-end: auto;
+    margin-inline-start: var(--s7);
+    padding-top: 0;
+    border-top: 0;
+  }
+}
+
+/* --- Timeline controls -------------------------------------------- */
+
+.controls {
+  display: grid;
+  gap: var(--s5);
+  padding-block: var(--s6) var(--s5);
+}
+
+.control {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.control legend {
+  padding: 0;
+  margin-bottom: var(--s3);
+  color: var(--ink-faint);
+}
+
+.control-help {
+  margin: var(--s3) 0 0;
+  max-width: 34ch;
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+  line-height: 1.4;
+}
+
+.control-search input {
+  width: 100%;
+  max-width: 26rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  color: var(--core);
+  font: inherit;
+  font-size: var(--size-data);
+  transition: border-color var(--fast) var(--ease);
+}
+
+.control-search input::placeholder {
+  color: var(--ink-faint);
+}
+
+.control-search input:hover,
+.control-search input:focus-visible {
+  border-color: var(--hairline-strong);
+}
+
+.tally {
+  margin: 0 0 var(--s4);
+  color: var(--ink-soft);
+  font-family: var(--face-data);
+  font-size: var(--size-data);
+  white-space: pre-wrap;
+}
+
+.empty-state {
+  padding-block: var(--s7);
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.link-button {
+  margin-inline-start: var(--s2);
+  color: var(--watched);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* The in-story year, shown only where a source establishes one. */
+.spine-setting {
+  font-size: var(--size-label);
+  color: var(--ink-faint);
+}
+
+.spine-setting::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin-inline-end: 0.55em;
+  background: currentColor;
+  vertical-align: 0.32em;
+}
+
+@media (min-width: 56rem) {
+  .controls {
+    grid-template-columns: auto auto 1fr;
+    gap: var(--s7);
+    align-items: start;
+  }
+}

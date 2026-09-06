@@ -9,6 +9,13 @@ interface Props {
 
 const { language, path = '' } = Astro.props;
 const t = useTranslations(language);
+
+/* Only routes that exist are listed. A menu that links to pages nobody has
+   built yet is worse than a short menu. */
+const sections = [
+  { key: 'nav.timeline', path: 'timeline' },
+  { key: 'nav.guides', path: 'guides/where-to-start' },
+];
 ---
 
 <header class="masthead">
@@ -16,6 +23,17 @@ const t = useTranslations(language);
     <span class="wordmark-mark" aria-hidden="true"></span>
     <span>Phase Zero</span>
   </a>
+
+  <nav class="sections" aria-label={t('nav.sections')}>
+    {sections.map((section) => (
+      <a
+        href={localePath(language, section.path)}
+        aria-current={path === section.path || path.startsWith(`${section.path}/`) ? 'page' : undefined}
+      >
+        {t(section.key)}
+      </a>
+    ))}
+  </nav>
 
   <div class="masthead-tools">
     <nav class="switch" aria-label={t('nav.language')}>

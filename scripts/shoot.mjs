@@ -16,7 +16,9 @@ const shots = [
   { name: 'desktop', path: '/en', width: 1440, height: 900, theme: 'dark' },
   { name: 'desktop-day', path: '/en', width: 1440, height: 900, theme: 'light' },
   { name: 'mobile', path: '/en', width: 390, height: 844, theme: 'dark' },
-    { name: 'desktop-entry', path: '/en/titles/iron-man', width: 1440, height: 900, theme: 'dark' },
+    { name: 'timeline', path: '/en/timeline', width: 1440, height: 900, theme: 'dark' },
+  { name: 'timeline-mobile', path: '/en/timeline', width: 390, height: 844, theme: 'dark' },
+  { name: 'desktop-entry', path: '/en/titles/iron-man', width: 1440, height: 900, theme: 'dark' },
   { name: 'mobile-entry', path: '/en/titles/iron-man', width: 390, height: 844, theme: 'dark' },
   { name: 'desktop-it', path: '/it', width: 1440, height: 900, theme: 'dark' },
 ];
@@ -40,6 +42,17 @@ for (const shot of shots) {
 
   await page.goto(BASE + shot.path, { waitUntil: 'networkidle0' });
   await page.evaluate(() => document.fonts.ready);
+
+  // Wait for the page to say it has finished applying state, rather than
+  // guessing at a delay. A capture taken early shows unfiltered rows and
+  // unmarked toggles, and a reviewer would report those as real defects.
+  await page.waitForFunction(
+    () => {
+      const gated = document.querySelector('[data-timeline]');
+      return !gated || gated.dataset.ready === 'true';
+    },
+    { timeout: 10000 },
+  );
 
   // Settle any entrance motion so a capture never reads an animating
   // element as a missing one.
