@@ -58,8 +58,15 @@ for (const file of listYaml('data/characters')) {
 
 /* --- Shared checks --- */
 
-const today = new Date();
-today.setHours(23, 59, 59, 999);
+/*
+ * A plain date carries no time zone, and a contributor writes the date it is
+ * where they are. Local time runs from UTC-12 to UTC+14, so a date up to one
+ * day ahead of UTC is somebody's legitimate today. Past that it is a real
+ * mistake, usually a typo in the year.
+ */
+const latestPlausibleDate = new Date();
+latestPlausibleDate.setUTCDate(latestPlausibleDate.getUTCDate() + 1);
+latestPlausibleDate.setUTCHours(23, 59, 59, 999);
 
 /** A source is only useful if you can go and look at it. */
 function checkAttribution(path, entry) {
@@ -78,8 +85,10 @@ function checkAttribution(path, entry) {
     }
     if (!source?.accessed) {
       errors.push(`${label} needs an "accessed" date saying when you looked at it.`);
-    } else if (new Date(source.accessed) > today) {
-      errors.push(`${label} has an "accessed" date in the future.`);
+    } else if (new Date(source.accessed) > latestPlausibleDate) {
+      errors.push(
+        `${label} has an "accessed" date in the future. Check the year.`,
+      );
     }
   });
 
@@ -88,8 +97,8 @@ function checkAttribution(path, entry) {
       `${path}: needs a "verified" date, meaning the day a human last checked ` +
         `this entry against its sources.`,
     );
-  } else if (new Date(entry.verified) > today) {
-    errors.push(`${path}: "verified" is a date in the future.`);
+  } else if (new Date(entry.verified) > latestPlausibleDate) {
+    errors.push(`${path}: "verified" is a date in the future. Check the year.`);
   }
 }
 
@@ -133,7 +142,7 @@ for (const [id, { path, entry }] of titles) {
   if (release.status === 'released' && !release.date) {
     errors.push(`${path}: is marked released but has no release date.`);
   }
-  if (release.date && new Date(release.date) > today && release.status === 'released') {
+  if (release.date && new Date(release.date) > latestPlausibleDate && release.status === 'released') {
     warnings.push(`${path}: is marked released but the date is in the future.`);
   }
 

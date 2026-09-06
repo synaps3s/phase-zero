@@ -21,9 +21,12 @@ jobs:
   deploy:
     name: Build and deploy
     runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: ${{ steps.deploy.outputs.deployment-url }}
+    env:
+      # The secrets context cannot be read in a job-level "if", so it is lifted
+      # into an env var here and checked per step. Until someone configures the
+      # Cloudflare credentials the workflow still builds and validates, and
+      # skips only the publish itself, rather than failing on every push.
+      HAS_CLOUDFLARE_CREDENTIALS: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -43,8 +46,16 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         id: deploy
+        if: env.HAS_CLOUDFLARE_CREDENTIALS == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=phase-zero
+
+      - name: Explain why nothing was published
+        if: env.HAS_CLOUDFLARE_CREDENTIALS != 'true'
+        run: |
+          echo "The site built and validated, but it was not published."
+          echo "Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID to the"
+          echo "repository secrets and this workflow will publish on the next push."
