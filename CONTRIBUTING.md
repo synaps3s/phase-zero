@@ -85,11 +85,19 @@ sources:
 verified: 2026-09-07
 ```
 
-`sources` lists where the facts came from. `verified` is the date a human last
-checked that the entry still matches those sources.
+`sources` lists where the facts came from. `accessed` is the day someone
+actually opened that URL. `verified` is the day someone last checked that the
+entry still matches those sources.
+
+**Open the source before you write the fact.** Every time. Not from memory,
+however sure you are. This is the rule the whole project rests on, and it was
+broken here before it was written down: the first six entries were drafted from
+recall with correct-looking links attached, and two of the six runtimes turned
+out to be wrong by a minute. Famous facts, total confidence, still wrong.
 
 If you change a fact, update the source and the `verified` date in the same
-commit. CI will tell you if you forgot.
+commit. CI will tell you if you forgot, and `npm run check:links` will tell you
+if a source URL has gone dead.
 
 **What counts as a source**, roughly in order of preference:
 

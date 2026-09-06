@@ -1,0 +1,57 @@
+---
+import { liveryStyle, franchiseName } from '../lib/livery';
+import { useTranslations } from '../lib/i18n';
+
+interface Props {
+  language: string;
+  id: string;
+  title: string;
+  universe: string;
+  franchise: string;
+  setNumber: number;
+  year: string;
+  runtime: number | null;
+  href: string;
+  /* Rendered by the server so the call-out is right with no JavaScript.
+     The script re-derives it as titles are marked. */
+  isNext?: boolean;
+}
+
+const { language, id, title, universe, franchise, setNumber, year, runtime, href, isNext = false } = Astro.props;
+const t = useTranslations(language);
+---
+
+<li
+  class="spine"
+  data-livery
+  data-title-id={id}
+  data-watched="false"
+  data-next={String(isNext)}
+  style={liveryStyle(universe, franchise)}
+>
+  <span class="spine-set figure" aria-hidden="true">{setNumber}</span>
+
+  <div class="spine-body">
+    <h3 class="spine-title">
+      <a href={href}>{title}</a>
+      <span class="spine-next-label">{t('title.next')}</span>
+    </h3>
+    <p class="spine-meta">
+      <span class="figure">{year}</span>
+      {runtime && <span class="figure">{t('title.runtime', { minutes: runtime })}</span>}
+      <span class="spine-franchise">{franchiseName(franchise)}</span>
+    </p>
+  </div>
+
+  <button
+    type="button"
+    class="spine-mark"
+    data-watch-toggle
+    aria-pressed="false"
+    aria-label={t('watched.mark')}
+  >
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path d="M4 10.5 8 14.5 16 5.5" stroke-linecap="square" />
+    </svg>
+  </button>
+</li>

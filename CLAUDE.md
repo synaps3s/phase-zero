@@ -28,13 +28,39 @@ These are enforced by CI. A pull request that breaks them cannot be merged.
 3. **English everywhere in code.** File names, variable names, function names,
    comments, commit messages, branch names, documentation. The only place Italian
    or any other language appears is inside `content/<code>/`.
-4. **Never invent a fact.** Every entry in `data/` carries its sources. If you
-   cannot find a source, do not write the claim. Writing something plausible and
-   unverified is worse than leaving a gap, because a gap is visible and a
-   confident error is not.
+4. **Open the source before you write the fact. Every time, without
+   exception.** Not "recall it and attach a plausible link". Fetch the page,
+   read the value off it, then write it down. Recall is not evidence, and
+   confidence is not evidence.
+
+   This rule exists because it was already broken once here. The first six
+   title entries in this repository were written from memory by a model that
+   was sure of all of them, with real source URLs attached that were never
+   opened. Checking them found two wrong runtimes. The facts were famous, the
+   model was confident, and it was still wrong twice out of six.
+
+   The `accessed` field is a statement that someone actually opened that URL on
+   that day. Writing it without opening the page puts a false claim inside the
+   one field the project's credibility rests on. If you cannot open a source,
+   do not write the claim.
 5. **No third-party images.** No posters, no logos, no promotional art, no
    screenshots. The visual identity is built from vector artwork generated in
    this repository. This is a legal boundary, not a stylistic preference.
+
+## Verifying a fact
+
+The workflow is the same whether you are a person or an agent:
+
+1. Fetch the source. Actually retrieve the page.
+2. Read the specific value off it. Not the summary, the value.
+3. Write the value, the URL, and today's date as `accessed`.
+4. If two sources disagree, record both and explain the disagreement in a
+   `:::detail` block. Do not silently pick a winner.
+5. If no source can be retrieved, leave the field out and say so in the pull
+   request. A visible gap is worth more than a confident guess.
+
+`npm run check:links` confirms every source URL still resolves. It cannot
+confirm the page says what your entry claims, which is the part that is on you.
 
 ## Where things go
 

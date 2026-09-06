@@ -1,4 +1,4 @@
-id: iron-man
+id: iron-man-2
 type: film
 universe: earth-616
 franchise: iron-man
@@ -7,31 +7,27 @@ phase: 1
 tier: essential
 
 release:
-  date: 2008-05-02
+  date: 2010-05-07
   approximate: null
-  runtime: 126
+  runtime: 125
   episodes: null
   finale: null
   status: released
 
 chronology:
-  # Sparse numbering leaves room to insert titles without renumbering the rest.
-  order: 500
-  setting: "2010"
+  order: 600
+  setting: "2011"
 
-requires: []
-leadsTo:
-  - the-avengers
+requires: [iron-man]
+leadsTo: [the-avengers]
 
-cast:
-  - character: tony-stark
-    actor: Robert Downey Jr.
+cast: []
 
 alternateUniverse: false
 
 sources:
-  - url: https://en.wikipedia.org/wiki/Iron_Man_(2008_film)
-    title: Iron Man (2008 film), Wikipedia
+  - url: https://en.wikipedia.org/wiki/Iron_Man_2
+    title: Iron Man 2, Wikipedia
     accessed: 2026-09-07
   - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
     title: Marvel Cinematic Universe timeline, Wikipedia

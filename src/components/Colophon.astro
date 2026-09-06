@@ -1,0 +1,25 @@
+---
+import { useTranslations } from '../lib/i18n';
+import site from '../../config/site.json';
+
+interface Props {
+  language: string;
+  /** Repository path of the file behind this page, for the edit link. */
+  editPath?: string;
+}
+
+const { language, editPath } = Astro.props;
+const t = useTranslations(language);
+const editUrl = editPath ? `${site.repository}/edit/main/${editPath}` : null;
+---
+
+<footer class="colophon">
+  <div class="page">
+    <p>{t('footer.disclaimer')}</p>
+    <p>{t('footer.license')}</p>
+    <div class="colophon-row">
+      <a href={site.repository}>{t('footer.sourceCode')}</a>
+      {editUrl && <a href={editUrl}>{t('footer.editThisPage')}</a>}
+    </div>
+  </div>
+</footer>

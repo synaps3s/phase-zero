@@ -1,37 +1,33 @@
-id: iron-man
+id: the-incredible-hulk
 type: film
 universe: earth-616
-franchise: iron-man
+franchise: hulk
 saga: infinity
 phase: 1
 tier: essential
 
 release:
-  date: 2008-05-02
+  date: 2008-06-13
   approximate: null
-  runtime: 126
+  runtime: 112
   episodes: null
   finale: null
   status: released
 
 chronology:
-  # Sparse numbering leaves room to insert titles without renumbering the rest.
-  order: 500
-  setting: "2010"
+  order: 620
+  setting: "2011"
 
 requires: []
-leadsTo:
-  - the-avengers
+leadsTo: [the-avengers]
 
-cast:
-  - character: tony-stark
-    actor: Robert Downey Jr.
+cast: []
 
 alternateUniverse: false
 
 sources:
-  - url: https://en.wikipedia.org/wiki/Iron_Man_(2008_film)
-    title: Iron Man (2008 film), Wikipedia
+  - url: https://en.wikipedia.org/wiki/The_Incredible_Hulk_(film)
+    title: The Incredible Hulk (film), Wikipedia
     accessed: 2026-09-07
   - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
     title: Marvel Cinematic Universe timeline, Wikipedia

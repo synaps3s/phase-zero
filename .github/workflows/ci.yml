@@ -40,6 +40,9 @@ jobs:
       - name: Check facts and references
         run: npm run check:sources
 
+      - name: Check that sources still resolve
+        run: npm run check:links
+
       - name: Type check
         run: npm run check
 

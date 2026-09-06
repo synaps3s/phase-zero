@@ -102,6 +102,14 @@ later expansion, so nothing in the model may assume live action.
 **Facts are researched, never assumed.** The wider the catalogue gets, the more
 this matters. An entry without a source does not ship.
 
+**Named sets.** Catalogues of the named variants of a thing, each entry
+explained rather than merely listed: the Iron Man armours by mark, Spider-Man's
+suits, the forms Hulk takes, the Infinity Stones, Thor's weapons, Doctor
+Strange's relics. This is material readers actively search for and rarely find
+explained well in one place, and it is where the expert audience is best served.
+Each set belongs to a character or a franchise, and each entry carries its own
+first appearance and sources like any other fact in the project.
+
 **Watch paths.** Curated, permanent, composable routes through the catalogue,
 such as everything needed before a specific upcoming film, or one character's
 story on its own. They are defined as data so that new ones can be added later

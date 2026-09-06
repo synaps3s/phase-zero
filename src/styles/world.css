@@ -1,0 +1,544 @@
+/* ============================================================
+   THE WORLD
+
+   A publisher's series livery, built from four parts:
+
+     band    a livery plane running past both edges of the page
+     plate   a paper rectangle inset in a band, carrying the title
+     spine   one title on a shelf, seen edge on
+     shelf   a run of spines, read as a field of colour
+
+   Nothing here is a card and nothing here is rounded. Regions group
+   by plane and by livery, never by a border drawn around them.
+   ============================================================ */
+
+/* Every livery region reads --livery and never a fixed colour, so one
+   component serves any universe in either theme. The shade steps a
+   franchise away from its universe's base by a bounded amount; the mix
+   runs toward the current ink, which raises contrast in both themes
+   rather than lowering it in one. */
+[data-livery] {
+  /* The plane deepens with the shade, which keeps paper-white text on it
+     above 4.5:1 at every step in both themes. */
+  --livery-plane: color-mix(
+    in oklab,
+    var(--livery-plane-base) calc(100% - var(--shade, 0) * 7%),
+    #000 calc(var(--shade, 0) * 7%)
+  );
+  /* The ink moves toward the current ink instead, which raises its contrast
+     against whichever ground it is sitting on. */
+  --livery: color-mix(
+    in oklab,
+    var(--livery-base) calc(100% - var(--shade, 0) * 7%),
+    var(--ink) calc(var(--shade, 0) * 7%)
+  );
+}
+
+/* --- Band ------------------------------------------------------- */
+
+.band {
+  background: var(--livery-plane, var(--livery-616-plane));
+  color: var(--on-livery);
+  padding-block: var(--s6) var(--s7);
+  /* On a dark ground a deep plane separates by its edge rather than by
+     luminance, so the boundary is drawn rather than brightened. */
+  border-block-end: 1px solid color-mix(in oklab, var(--on-livery) 22%, transparent);
+}
+
+.band a:not(.plate) {
+  color: inherit;
+}
+
+.band .label {
+  color: color-mix(in oklab, var(--on-livery) 78%, var(--livery-plane));
+}
+
+/* --- Plate ------------------------------------------------------ */
+
+.plate {
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  padding: var(--s5) var(--s5) var(--s6);
+  max-width: 46rem;
+  text-decoration: none;
+  transition: transform var(--slow) var(--ease);
+}
+
+a.plate:hover,
+a.plate:focus-visible {
+  transform: translateY(-4px);
+}
+
+.plate-lead {
+  display: block;
+  color: var(--ink-faint);
+  margin-bottom: var(--s3);
+}
+
+.plate-title {
+  font-size: var(--size-plate);
+  font-variation-settings: 'wdth' var(--wdth-plate);
+  font-weight: 800;
+  letter-spacing: var(--track-plate);
+  line-height: var(--leading-plate);
+  margin: 0;
+}
+
+.plate-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s2) var(--s4);
+  margin-top: var(--s4);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: var(--size-data);
+}
+
+.plate-set {
+  font-size: var(--size-head);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* --- Shelf and spines ------------------------------------------- */
+
+.shelf {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule);
+}
+
+.spine {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--s6) 1fr auto;
+  align-items: center;
+  gap: 0 var(--s4);
+  padding: var(--s4) var(--s4) var(--s4) 0;
+  border-bottom: 1px solid var(--rule);
+  isolation: isolate;
+  transition: color var(--slow) var(--ease);
+}
+
+/* The spine edge. On an unread title only this narrow plane shows; the
+   fill below grows out of it when the title is marked watched. */
+.spine::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: var(--s6);
+  background: var(--livery-plane, var(--livery-616-plane));
+  z-index: -1;
+}
+
+/* The signature moment: a watched title stops being a spine seen edge
+   on and becomes a solid plane of its own livery. */
+.spine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--livery-plane, var(--livery-616-plane));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--slow) var(--ease);
+  z-index: -1;
+}
+
+.spine[data-watched='true']::after {
+  transform: scaleX(1);
+}
+
+.spine[data-watched='true'] {
+  color: var(--on-livery);
+}
+
+.spine[data-watched='true'] .spine-meta {
+  color: color-mix(in oklab, var(--on-livery) 76%, var(--livery-plane));
+}
+
+.spine-set {
+  grid-column: 1;
+  justify-self: center;
+  font-size: var(--size-label);
+  font-weight: 700;
+  color: var(--on-livery);
+}
+
+.spine-body {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.spine-title {
+  font-family: var(--face-label);
+  font-size: var(--size-head);
+  font-weight: 650;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.spine-title a {
+  text-decoration: none;
+}
+
+.spine-title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.spine-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+  margin-top: var(--s1);
+  font-size: var(--size-data);
+  color: var(--ink-faint);
+  transition: color var(--slow) var(--ease);
+}
+
+.spine-mark {
+  grid-column: 3;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid currentColor;
+  color: var(--ink-faint);
+  transition:
+    color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease);
+}
+
+.spine-mark:hover,
+.spine-mark:focus-visible {
+  color: var(--ink);
+}
+
+.spine[data-watched='true'] .spine-mark {
+  color: var(--on-livery);
+  background: color-mix(in oklab, var(--on-livery) 14%, transparent);
+}
+
+.spine-mark svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  opacity: 0;
+  transition: opacity var(--fast) var(--ease);
+}
+
+.spine[data-watched='true'] .spine-mark svg {
+  opacity: 1;
+}
+
+/* The next title to watch is the one thing on the shelf that is called
+   out, because answering "what now" is the page's whole job. */
+.spine[data-next='true'] .spine-title {
+  font-weight: 800;
+}
+
+.spine[data-next='true'] .spine-next-label {
+  display: inline-block;
+}
+
+.spine-next-label {
+  display: none;
+  margin-inline-start: var(--s2);
+  padding: 0.1em 0.5em;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--face-label);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  vertical-align: 0.15em;
+}
+
+/* --- Full bleed ------------------------------------------------- */
+
+/* Bands run past both edges of the page rather than sitting inside it. */
+.bleed {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+/* --- Site frame ------------------------------------------------- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  padding-block: var(--s4);
+  border-bottom: 1px solid var(--rule);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4ch;
+  font-family: var(--face-label);
+  font-size: var(--size-head);
+  font-weight: 800;
+  font-variation-settings: 'wdth' 96;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.wordmark-mark {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  background: var(--livery-616);
+  transform: translateY(-0.02em);
+}
+
+.masthead-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+}
+
+.switch {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+}
+
+.switch button,
+.switch a {
+  padding: 0.45rem 0.7rem;
+  font-family: var(--face-label);
+  font-size: var(--size-label);
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition:
+    color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease);
+}
+
+.switch button + button,
+.switch a + a {
+  border-inline-start: 1px solid var(--rule);
+}
+
+.switch button:hover,
+.switch a:hover {
+  color: var(--ink);
+}
+
+.switch [aria-pressed='true'],
+.switch [aria-current='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.colophon {
+  border-top: 1px solid var(--rule);
+  padding-block: var(--s5) var(--s6);
+  margin-top: var(--s7);
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.colophon p {
+  max-width: var(--measure-tight);
+}
+
+.colophon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s5);
+  margin-top: var(--s4);
+}
+
+/* --- Sections --------------------------------------------------- */
+
+.section {
+  padding-block: var(--s7);
+}
+
+.section-head {
+  margin-bottom: var(--s5);
+}
+
+.section-head h2 {
+  font-size: var(--size-title);
+  font-variation-settings: 'wdth' 100;
+  letter-spacing: -0.02em;
+}
+
+.section-head p {
+  margin-top: var(--s3);
+  color: var(--ink-soft);
+  font-size: var(--size-lede);
+}
+
+@media (max-width: 40rem) {
+  .spine {
+    grid-template-columns: var(--s5) 1fr auto;
+  }
+  .spine::before {
+    width: var(--s5);
+  }
+  .spine-set {
+    font-size: 0.6875rem;
+  }
+}
+
+/* --- Home --------------------------------------------------------- */
+
+/* The film's name inside the heading takes its universe's livery, so the
+   classification is legible in the first thing on the page. */
+.plate-subject {
+  color: var(--livery, var(--livery-616));
+}
+
+.reason {
+  padding-block: var(--s6) 0;
+}
+
+.reason-text {
+  max-width: var(--measure-tight);
+  font-size: var(--size-lede);
+  line-height: 1.5;
+  margin-bottom: var(--s3);
+}
+
+.reason-link {
+  font-family: var(--face-label);
+  font-size: var(--size-data);
+  font-weight: 650;
+}
+
+.storage-note {
+  margin-top: var(--s5);
+  max-width: var(--measure-tight);
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+/* --- Layered prose ------------------------------------------------ */
+
+/* The two collapsible layers of every entry. They are the product's core
+   idea, so they are set as part of the page rather than as widgets bolted
+   onto it: a full-measure rule, a label that names what is behind it, and
+   nothing that looks like a card. */
+.layer {
+  margin-block: var(--s5);
+  border-top: 1px solid var(--rule);
+}
+
+.layer > summary {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  padding-block: var(--s3);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--face-label);
+  font-size: var(--size-data);
+  font-weight: 700;
+  color: var(--ink-soft);
+  transition: color var(--fast) var(--ease);
+}
+
+.layer > summary::-webkit-details-marker {
+  display: none;
+}
+
+.layer > summary:hover {
+  color: var(--ink);
+}
+
+.layer-kind {
+  font-size: var(--size-label);
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.layer[data-layer='spoiler'] > summary .layer-kind {
+  color: var(--livery-96283);
+}
+
+.layer-arrow {
+  margin-inline-start: auto;
+  width: 0.85em;
+  height: 0.85em;
+  transition: transform var(--slow) var(--ease);
+}
+
+.layer[open] > summary .layer-arrow {
+  transform: rotate(180deg);
+}
+
+.layer-body {
+  padding-block: var(--s2) var(--s5);
+}
+
+.layer-body > * + * {
+  margin-top: var(--s4);
+}
+
+/* --- Entry pages -------------------------------------------------- */
+
+.entry-lede {
+  max-width: var(--measure-tight);
+  font-size: var(--size-lede);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.entry-body {
+  padding-block: var(--s7);
+}
+
+.sources {
+  margin-top: var(--s7);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--rule);
+  font-size: var(--size-data);
+  color: var(--ink-faint);
+}
+
+.sources ul {
+  margin-top: var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.crumb {
+  display: inline-block;
+  margin-bottom: var(--s4);
+  font-family: var(--face-label);
+  font-size: var(--size-data);
+  font-weight: 650;
+}
+
+/* The franchise name is what makes the spine's shade mean something: the hue
+   says which universe, the shade narrows it, and the name settles it. */
+.spine-franchise {
+  font-family: var(--face-label);
+  font-size: var(--size-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--livery);
+}
+
+.spine[data-watched='true'] .spine-franchise {
+  color: color-mix(in oklab, var(--on-livery) 82%, var(--livery-plane));
+}
