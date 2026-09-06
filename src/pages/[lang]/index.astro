@@ -51,7 +51,7 @@ const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site
     <section
       class="bleed band"
       data-livery
-      style={liveryStyle(first.facts.data.universe, first.facts.data.franchise)}
+      style={liveryStyle(first.facts.data.saga, first.facts.data.franchise)}
     >
       <div class="page">
         <a class="plate" href={localePath(language.code, 'titles', first.facts.data.id)}>
@@ -96,7 +96,7 @@ const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site
           language={language.code}
           id={item.facts.data.id}
           title={item.prose.entry.data.title}
-          universe={item.facts.data.universe}
+          saga={item.facts.data.saga}
           franchise={item.facts.data.franchise}
           setNumber={item.setNumber}
           year={year(item.facts.data.release.date)}

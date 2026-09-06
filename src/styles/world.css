@@ -1,147 +1,166 @@
 /* ============================================================
    THE WORLD
 
-   A publisher's series livery, built from four parts:
+   Content floats in the void. The same four parts as before, so every
+   position in the layout is unchanged; only the material is different.
 
-     band    a livery plane running past both edges of the page
-     plate   a paper rectangle inset in a band, carrying the title
-     spine   one title on a shelf, seen edge on
+     band    a region lit by its saga's livery
+     plate   a raised panel of dark glass carrying the title
+     spine   one title, seen edge on, lit along its own edge
      shelf   a run of spines, read as a field of colour
 
-   Nothing here is a card and nothing here is rounded. Regions group
-   by plane and by livery, never by a border drawn around them.
+   Colour classifies: a saga owns a livery, a franchise owns a shade
+   within it. Amber does not classify anything. It is the one universal
+   state in the system, a title you have watched, and it glows.
    ============================================================ */
 
 /* Every livery region reads --livery and never a fixed colour, so one
-   component serves any universe in either theme. The shade steps a
-   franchise away from its universe's base by a bounded amount; the mix
-   runs toward the current ink, which raises contrast in both themes
-   rather than lowering it in one. */
+   component serves any saga in either theme. The shade steps a franchise
+   away from its saga's base by a bounded amount, mixing toward the current
+   ink, which raises contrast in both themes rather than lowering it. */
 [data-livery] {
-  /* The plane deepens with the shade, which keeps paper-white text on it
-     above 4.5:1 at every step in both themes. */
-  --livery-plane: color-mix(
-    in oklab,
-    var(--livery-plane-base) calc(100% - var(--shade, 0) * 7%),
-    #000 calc(var(--shade, 0) * 7%)
-  );
-  /* The ink moves toward the current ink instead, which raises its contrast
-     against whichever ground it is sitting on. */
   --livery: color-mix(
     in oklab,
     var(--livery-base) calc(100% - var(--shade, 0) * 7%),
     var(--ink) calc(var(--shade, 0) * 7%)
   );
+  --livery-veil: color-mix(in oklab, var(--livery) 15%, transparent);
+  --livery-glow: color-mix(in oklab, var(--livery) 34%, transparent);
 }
 
-/* --- Band ------------------------------------------------------- */
+/* --- Band --------------------------------------------------------- */
 
+/* Not a filled plane: a stretch of the void lit from behind by the saga's
+   colour, closed by a lit hairline. */
 .band {
-  background: var(--livery-plane, var(--livery-616-plane));
-  color: var(--on-livery);
-  padding-block: var(--s6) var(--s7);
-  /* On a dark ground a deep plane separates by its edge rather than by
-     luminance, so the boundary is drawn rather than brightened. */
-  border-block-end: 1px solid color-mix(in oklab, var(--on-livery) 22%, transparent);
+  position: relative;
+  padding-block: var(--s8) var(--s8);
+  isolation: isolate;
 }
 
-.band a:not(.plate) {
-  color: inherit;
+.band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 150% at 24% 0%, var(--livery-veil), transparent 68%),
+    linear-gradient(to bottom, color-mix(in oklab, var(--livery) 7%, transparent), transparent 76%);
 }
 
-.band .label {
-  color: color-mix(in oklab, var(--on-livery) 78%, var(--livery-plane));
+.band::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--livery-glow) 18%,
+    var(--livery-glow) 62%,
+    transparent
+  );
 }
 
-/* --- Plate ------------------------------------------------------ */
+/* --- Plate -------------------------------------------------------- */
 
 .plate {
   display: block;
-  background: var(--paper);
-  color: var(--ink);
-  padding: var(--s5) var(--s5) var(--s6);
+  position: relative;
   max-width: 46rem;
+  padding: var(--s6) var(--s6) var(--s6);
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--hairline);
+  border-top-color: var(--livery-glow);
+  box-shadow: var(--shadow-2), var(--inset-lit);
   text-decoration: none;
-  transition: transform var(--slow) var(--ease);
+  transition:
+    transform var(--slow) var(--ease),
+    border-color var(--slow) var(--ease);
 }
 
 a.plate:hover,
 a.plate:focus-visible {
   transform: translateY(-4px);
-}
-
-.plate-lead {
-  display: block;
-  color: var(--ink-faint);
-  margin-bottom: var(--s3);
+  border-color: color-mix(in oklab, var(--livery) 46%, transparent);
 }
 
 .plate-title {
   font-size: var(--size-plate);
-  font-variation-settings: 'wdth' var(--wdth-plate);
-  font-weight: 800;
+  font-weight: var(--weight-plate);
   letter-spacing: var(--track-plate);
   line-height: var(--leading-plate);
   margin: 0;
+}
+
+/* The subject of the sentence takes its saga's light. */
+.plate-subject {
+  color: var(--livery);
 }
 
 .plate-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: var(--s2) var(--s4);
-  margin-top: var(--s4);
-  padding-top: var(--s3);
-  border-top: 1px solid var(--rule);
+  gap: var(--s2) var(--s5);
+  margin-top: var(--s5);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--hairline);
   color: var(--ink-soft);
   font-size: var(--size-data);
 }
 
 .plate-set {
   font-size: var(--size-head);
-  font-weight: 700;
-  color: var(--ink);
+  color: var(--core);
 }
 
-/* --- Shelf and spines ------------------------------------------- */
+/* --- Shelf and spines --------------------------------------------- */
 
 .shelf {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--hairline);
 }
 
 .spine {
   position: relative;
   display: grid;
-  grid-template-columns: var(--s6) 1fr auto;
+  grid-template-columns: var(--s7) 1fr auto;
   align-items: center;
   gap: 0 var(--s4);
   padding: var(--s4) var(--s4) var(--s4) 0;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--hairline);
   isolation: isolate;
-  transition: color var(--slow) var(--ease);
+  transition: background-color var(--slow) var(--ease);
 }
 
-/* The spine edge. On an unread title only this narrow plane shows; the
-   fill below grows out of it when the title is marked watched. */
+.spine:hover {
+  background: color-mix(in oklab, var(--livery) 6%, transparent);
+}
+
+/* The lit edge. On an unread title this is all the colour there is. */
 .spine::before {
   content: '';
   position: absolute;
   inset-block: 0;
   inset-inline-start: 0;
-  width: var(--s6);
-  background: var(--livery-plane, var(--livery-616-plane));
+  width: 3px;
+  background: var(--livery);
+  box-shadow: 0 0 14px -2px var(--livery-glow);
   z-index: -1;
 }
 
-/* The signature moment: a watched title stops being a spine seen edge
-   on and becomes a solid plane of its own livery. */
+/* The signature moment: marking a title watched floods it with the one
+   universal state colour in the system, growing out of its own edge. */
 .spine::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--livery-plane, var(--livery-616-plane));
+  background: linear-gradient(to right, var(--watched-soft), transparent 72%);
+  border-inline-start: 3px solid var(--watched);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform var(--slow) var(--ease);
@@ -152,20 +171,19 @@ a.plate:focus-visible {
   transform: scaleX(1);
 }
 
-.spine[data-watched='true'] {
-  color: var(--on-livery);
-}
-
-.spine[data-watched='true'] .spine-meta {
-  color: color-mix(in oklab, var(--on-livery) 76%, var(--livery-plane));
+.spine[data-watched='true'] .spine-title {
+  color: var(--watched);
 }
 
 .spine-set {
   grid-column: 1;
   justify-self: center;
   font-size: var(--size-label);
-  font-weight: 700;
-  color: var(--on-livery);
+  color: var(--ink-faint);
+}
+
+.spine[data-watched='true'] .spine-set {
+  color: var(--watched);
 }
 
 .spine-body {
@@ -174,11 +192,14 @@ a.plate:focus-visible {
 }
 
 .spine-title {
-  font-family: var(--face-label);
+  font-family: var(--face-display);
   font-size: var(--size-head);
-  font-weight: 650;
-  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
   margin: 0;
+  color: var(--core);
+  transition: color var(--slow) var(--ease);
 }
 
 .spine-title a {
@@ -194,11 +215,21 @@ a.plate:focus-visible {
 .spine-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s1) var(--s3);
-  margin-top: var(--s1);
+  align-items: baseline;
+  gap: var(--s1) var(--s4);
+  margin-top: var(--s2);
   font-size: var(--size-data);
   color: var(--ink-faint);
-  transition: color var(--slow) var(--ease);
+}
+
+/* The franchise name is what makes the shade mean something: the hue says
+   which saga, the shade narrows it, and the name settles it. */
+.spine-franchise {
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--livery);
 }
 
 .spine-mark {
@@ -209,67 +240,68 @@ a.plate:focus-visible {
   place-items: center;
   width: 2.25rem;
   height: 2.25rem;
-  border: 2px solid currentColor;
+  border: 1px solid var(--hairline-strong);
   color: var(--ink-faint);
   transition:
     color var(--fast) var(--ease),
-    background-color var(--fast) var(--ease);
+    border-color var(--fast) var(--ease),
+    box-shadow var(--fast) var(--ease);
 }
 
 .spine-mark:hover,
 .spine-mark:focus-visible {
-  color: var(--ink);
+  color: var(--core);
+  border-color: var(--ink-faint);
 }
 
 .spine[data-watched='true'] .spine-mark {
-  color: var(--on-livery);
-  background: color-mix(in oklab, var(--on-livery) 14%, transparent);
+  color: var(--watched);
+  border-color: var(--watched);
+  box-shadow: 0 0 18px -4px var(--watched-glow);
 }
 
 .spine-mark svg {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1.05rem;
+  height: 1.05rem;
   opacity: 0;
-  transition: opacity var(--fast) var(--ease);
+  transform: scale(0.7);
+  transition:
+    opacity var(--fast) var(--ease),
+    transform var(--slow) var(--ease);
 }
 
 .spine[data-watched='true'] .spine-mark svg {
   opacity: 1;
+  transform: scale(1);
 }
 
-/* The next title to watch is the one thing on the shelf that is called
-   out, because answering "what now" is the page's whole job. */
-.spine[data-next='true'] .spine-title {
-  font-weight: 800;
+/* The next title is the answer to "what now", so it is the one thing on
+   the shelf that is called out. */
+.spine-next-label {
+  display: none;
+  margin-inline-start: var(--s3);
+  padding: 0.2em 0.6em;
+  border: 1px solid color-mix(in oklab, var(--livery) 52%, transparent);
+  color: var(--livery);
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  vertical-align: 0.18em;
 }
 
 .spine[data-next='true'] .spine-next-label {
   display: inline-block;
 }
 
-.spine-next-label {
-  display: none;
-  margin-inline-start: var(--s2);
-  padding: 0.1em 0.5em;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--face-label);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  vertical-align: 0.15em;
-}
+/* --- Full bleed --------------------------------------------------- */
 
-/* --- Full bleed ------------------------------------------------- */
-
-/* Bands run past both edges of the page rather than sitting inside it. */
 .bleed {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
 }
 
-/* --- Site frame ------------------------------------------------- */
+/* --- Site frame --------------------------------------------------- */
 
 .masthead {
   display: flex;
@@ -278,27 +310,29 @@ a.plate:focus-visible {
   justify-content: space-between;
   gap: var(--s4);
   padding-block: var(--s4);
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .wordmark {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.4ch;
-  font-family: var(--face-label);
+  align-items: center;
+  gap: 0.6ch;
+  font-family: var(--face-display);
   font-size: var(--size-head);
-  font-weight: 800;
-  font-variation-settings: 'wdth' 96;
-  letter-spacing: -0.015em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--core);
   text-decoration: none;
 }
 
 .wordmark-mark {
   display: inline-block;
-  width: 0.72em;
-  height: 0.72em;
-  background: var(--livery-616);
-  transform: translateY(-0.02em);
+  width: 0.6em;
+  height: 0.6em;
+  background: var(--watched);
+  box-shadow: 0 0 16px -2px var(--watched-glow);
+  transform: rotate(45deg);
 }
 
 .masthead-tools {
@@ -309,15 +343,14 @@ a.plate:focus-visible {
 
 .switch {
   display: inline-flex;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--hairline);
 }
 
 .switch button,
 .switch a {
-  padding: 0.45rem 0.7rem;
-  font-family: var(--face-label);
+  padding: 0.45rem 0.72rem;
+  font-family: var(--face-data);
   font-size: var(--size-label);
-  font-weight: 700;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -329,24 +362,24 @@ a.plate:focus-visible {
 
 .switch button + button,
 .switch a + a {
-  border-inline-start: 1px solid var(--rule);
+  border-inline-start: 1px solid var(--hairline);
 }
 
 .switch button:hover,
 .switch a:hover {
-  color: var(--ink);
+  color: var(--core);
 }
 
 .switch [aria-pressed='true'],
 .switch [aria-current='true'] {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--watched-soft);
+  color: var(--watched);
 }
 
 .colophon {
-  border-top: 1px solid var(--rule);
-  padding-block: var(--s5) var(--s6);
-  margin-top: var(--s7);
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--s6) var(--s7);
+  margin-top: var(--s8);
   color: var(--ink-faint);
   font-size: var(--size-data);
 }
@@ -362,10 +395,10 @@ a.plate:focus-visible {
   margin-top: var(--s4);
 }
 
-/* --- Sections --------------------------------------------------- */
+/* --- Sections ----------------------------------------------------- */
 
 .section {
-  padding-block: var(--s7);
+  padding-block: var(--s8);
 }
 
 .section-head {
@@ -374,8 +407,6 @@ a.plate:focus-visible {
 
 .section-head h2 {
   font-size: var(--size-title);
-  font-variation-settings: 'wdth' 100;
-  letter-spacing: -0.02em;
 }
 
 .section-head p {
@@ -384,25 +415,7 @@ a.plate:focus-visible {
   font-size: var(--size-lede);
 }
 
-@media (max-width: 40rem) {
-  .spine {
-    grid-template-columns: var(--s5) 1fr auto;
-  }
-  .spine::before {
-    width: var(--s5);
-  }
-  .spine-set {
-    font-size: 0.6875rem;
-  }
-}
-
 /* --- Home --------------------------------------------------------- */
-
-/* The film's name inside the heading takes its universe's livery, so the
-   classification is legible in the first thing on the page. */
-.plate-subject {
-  color: var(--livery, var(--livery-616));
-}
 
 .reason {
   padding-block: var(--s6) 0;
@@ -412,13 +425,14 @@ a.plate:focus-visible {
   max-width: var(--measure-tight);
   font-size: var(--size-lede);
   line-height: 1.5;
+  color: var(--ink);
   margin-bottom: var(--s3);
 }
 
 .reason-link {
-  font-family: var(--face-label);
+  font-family: var(--face-data);
   font-size: var(--size-data);
-  font-weight: 650;
+  color: var(--watched);
 }
 
 .storage-note {
@@ -432,11 +446,10 @@ a.plate:focus-visible {
 
 /* The two collapsible layers of every entry. They are the product's core
    idea, so they are set as part of the page rather than as widgets bolted
-   onto it: a full-measure rule, a label that names what is behind it, and
-   nothing that looks like a card. */
+   onto it. */
 .layer {
   margin-block: var(--s5);
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--hairline);
 }
 
 .layer > summary {
@@ -446,9 +459,8 @@ a.plate:focus-visible {
   padding-block: var(--s3);
   cursor: pointer;
   list-style: none;
-  font-family: var(--face-label);
+  font-family: var(--face-data);
   font-size: var(--size-data);
-  font-weight: 700;
   color: var(--ink-soft);
   transition: color var(--fast) var(--ease);
 }
@@ -458,25 +470,30 @@ a.plate:focus-visible {
 }
 
 .layer > summary:hover {
-  color: var(--ink);
+  color: var(--core);
 }
 
 .layer-kind {
+  font-family: var(--face-data);
   font-size: var(--size-label);
-  font-weight: 700;
+  font-style: normal;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--ink-faint);
 }
 
-.layer[data-layer='spoiler'] > summary .layer-kind {
-  color: var(--livery-96283);
+.layer[data-layer='spoiler'] .layer-kind {
+  color: var(--livery-sony);
+}
+
+.layer-name {
+  font-style: normal;
 }
 
 .layer-arrow {
   margin-inline-start: auto;
-  width: 0.85em;
-  height: 0.85em;
+  width: 0.9em;
+  height: 0.9em;
   transition: transform var(--slow) var(--ease);
 }
 
@@ -497,8 +514,8 @@ a.plate:focus-visible {
 .entry-lede {
   max-width: var(--measure-tight);
   font-size: var(--size-lede);
-  line-height: 1.45;
-  color: var(--ink);
+  line-height: 1.5;
+  color: var(--core);
 }
 
 .entry-body {
@@ -508,7 +525,7 @@ a.plate:focus-visible {
 .sources {
   margin-top: var(--s7);
   padding-top: var(--s4);
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--hairline);
   font-size: var(--size-data);
   color: var(--ink-faint);
 }
@@ -522,23 +539,44 @@ a.plate:focus-visible {
 
 .crumb {
   display: inline-block;
-  margin-bottom: var(--s4);
-  font-family: var(--face-label);
-  font-size: var(--size-data);
-  font-weight: 650;
-}
-
-/* The franchise name is what makes the spine's shade mean something: the hue
-   says which universe, the shade narrows it, and the name settles it. */
-.spine-franchise {
-  font-family: var(--face-label);
+  margin-bottom: var(--s5);
+  font-family: var(--face-data);
   font-size: var(--size-label);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--track-label);
   text-transform: uppercase;
-  color: var(--livery);
+  color: var(--ink-faint);
 }
 
-.spine[data-watched='true'] .spine-franchise {
-  color: color-mix(in oklab, var(--on-livery) 82%, var(--livery-plane));
+/* A missing translation is a working state, so it is announced calmly and
+   given the one thing that resolves it: a way to fix it. */
+.fallback {
+  margin-top: var(--s6);
+  padding: var(--s4) var(--s5);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-inline-start: 2px solid var(--livery-next);
+  font-size: var(--size-data);
+  color: var(--ink-soft);
+}
+
+.fallback p {
+  margin-bottom: var(--s2);
+  max-width: var(--measure-tight);
+}
+
+.fallback a {
+  color: var(--livery-next);
+  font-family: var(--face-data);
+}
+
+@media (max-width: 40rem) {
+  .spine {
+    grid-template-columns: var(--s6) 1fr auto;
+  }
+  .band {
+    padding-block: var(--s7);
+  }
+  .plate {
+    padding: var(--s5);
+  }
 }

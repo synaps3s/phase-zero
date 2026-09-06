@@ -43,7 +43,7 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
   path={`titles/${titleId}`}
   editPath={`content/${language.code}/titles/${titleId}.md`}
 >
-  <section class="bleed band" data-livery style={liveryStyle(facts.data.universe, facts.data.franchise)}>
+  <section class="bleed band" data-livery style={liveryStyle(facts.data.saga, facts.data.franchise)}>
     <div class="page">
       <div class="plate">
         <a class="crumb" href={localePath(language.code)}>{t('nav.home')}</a>

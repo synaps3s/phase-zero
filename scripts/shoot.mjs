@@ -13,13 +13,12 @@ const BASE = process.env.BASE ?? 'http://localhost:4321';
 const OUT = '.impeccable/review';
 
 const shots = [
-  { name: 'desktop', path: '/en', width: 1440, height: 900, theme: 'light' },
-  { name: 'desktop-dark-full', path: '/en', width: 1440, height: 900, theme: 'dark' },
-  { name: 'mobile', path: '/en', width: 390, height: 844, theme: 'light' },
-  { name: 'desktop-it', path: '/it', width: 1440, height: 900 },
-  { name: 'desktop-entry', path: '/en/titles/iron-man', width: 1440, height: 900, theme: 'light' },
-  { name: 'mobile-entry', path: '/en/titles/iron-man', width: 390, height: 844 },
-  { name: 'desktop-dark', path: '/en', width: 1440, height: 900, theme: 'dark' },
+  { name: 'desktop', path: '/en', width: 1440, height: 900, theme: 'dark' },
+  { name: 'desktop-day', path: '/en', width: 1440, height: 900, theme: 'light' },
+  { name: 'mobile', path: '/en', width: 390, height: 844, theme: 'dark' },
+    { name: 'desktop-entry', path: '/en/titles/iron-man', width: 1440, height: 900, theme: 'dark' },
+  { name: 'mobile-entry', path: '/en/titles/iron-man', width: 390, height: 844, theme: 'dark' },
+  { name: 'desktop-it', path: '/it', width: 1440, height: 900, theme: 'dark' },
 ];
 
 mkdirSync(OUT, { recursive: true });

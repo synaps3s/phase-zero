@@ -6,7 +6,7 @@ interface Props {
   language: string;
   id: string;
   title: string;
-  universe: string;
+  saga: string;
   franchise: string;
   setNumber: number;
   year: string;
@@ -17,7 +17,7 @@ interface Props {
   isNext?: boolean;
 }
 
-const { language, id, title, universe, franchise, setNumber, year, runtime, href, isNext = false } = Astro.props;
+const { language, id, title, saga, franchise, setNumber, year, runtime, href, isNext = false } = Astro.props;
 const t = useTranslations(language);
 ---
 
@@ -27,7 +27,7 @@ const t = useTranslations(language);
   data-title-id={id}
   data-watched="false"
   data-next={String(isNext)}
-  style={liveryStyle(universe, franchise)}
+  style={liveryStyle(saga, franchise)}
 >
   <span class="spine-set figure" aria-hidden="true">{setNumber}</span>
 
