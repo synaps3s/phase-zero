@@ -1,0 +1,32 @@
+id: loki-s1
+type: series
+universe: earth-616
+franchise: loki
+saga: multiverse
+phase: 4
+tier: extended
+
+release:
+  date: 2021-06-09
+  approximate: null
+  runtime: 56
+  episodes: 6
+  finale: 2021-07-14
+  status: released
+
+chronology:
+  order: 1050
+  setting: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Loki_(TV_series)
+    title: Loki (TV series), Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

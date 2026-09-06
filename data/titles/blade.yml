@@ -1,0 +1,32 @@
+id: blade
+type: film
+universe: unbound
+franchise: blade
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1998-08-21
+  approximate: null
+  runtime: 120
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 100
+  setting: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Blade_(1998_film)
+    title: Blade (1998 film), Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

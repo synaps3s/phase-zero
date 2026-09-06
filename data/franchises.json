@@ -180,5 +180,12 @@
     "universe": "earth-688",
     "shade": 0,
     "order": 33
+  },
+  {
+    "id": "blade",
+    "name": "Blade",
+    "universe": "unbound",
+    "shade": 0,
+    "order": 40
   }
 ]

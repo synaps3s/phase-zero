@@ -1,0 +1,39 @@
+---
+import { liveryStyle } from '../lib/livery';
+import { useTranslations, localePath } from '../lib/i18n';
+
+interface Entry {
+  id: string;
+  title: string;
+  franchise: string;
+  year: string;
+}
+
+interface Props {
+  language: string;
+  saga: string;
+  entries: Entry[];
+}
+
+const { language, saga, entries } = Astro.props;
+const t = useTranslations(language);
+---
+
+<section class="saga" data-livery style={liveryStyle(saga)}>
+  <header class="saga-head">
+    <h3 class="saga-name">{t(`saga.${saga}`)}</h3>
+    <p class="saga-note">{t(`saga.${saga}Note`)}</p>
+    <p class="saga-count figure label">{t('home.titleCount', { count: entries.length })}</p>
+  </header>
+
+  <ol class="saga-run">
+    {entries.map((entry) => (
+      <li class="chip" data-livery style={liveryStyle(saga, entry.franchise)}>
+        <a href={localePath(language, 'titles', entry.id)}>
+          <span class="chip-title">{entry.title}</span>
+          <span class="chip-year figure">{entry.year}</span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>

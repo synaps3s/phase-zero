@@ -141,7 +141,8 @@ a.plate:focus-visible {
   background: color-mix(in oklab, var(--livery) 6%, transparent);
 }
 
-/* The lit edge. On an unread title this is all the colour there is. */
+/* The lit edge. On an unread title this is all the colour there is, and it
+   is the thing the spine metaphor rests on: a shelf seen from the side. */
 .spine::before {
   content: '';
   position: absolute;
@@ -151,16 +152,24 @@ a.plate:focus-visible {
   background: var(--livery);
   box-shadow: 0 0 14px -2px var(--livery-glow);
   z-index: -1;
+  transition:
+    background-color var(--slow) var(--ease),
+    box-shadow var(--slow) var(--ease);
 }
 
-/* The signature moment: marking a title watched floods it with the one
-   universal state colour in the system, growing out of its own edge. */
+/* The signature moment. Marking a title watched does not add anything to the
+   row: the edge it already had changes colour to the one universal state in
+   the system, and the light it was already casting floods across the row. */
+.spine[data-watched='true']::before {
+  background: var(--watched);
+  box-shadow: 0 0 22px -1px var(--watched-glow);
+}
+
 .spine::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, var(--watched-soft), transparent 72%);
-  border-inline-start: 3px solid var(--watched);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform var(--slow) var(--ease);
@@ -578,5 +587,96 @@ a.plate:focus-visible {
   }
   .plate {
     padding: var(--s5);
+  }
+}
+
+/* --- The catalogue by era ----------------------------------------- */
+
+/* Where the colour system becomes visible as a system. Each era is a lit
+   region in its own hue, and a title inside it takes its franchise's shade.
+   It reads as a field of colour at any size, from twelve titles to all of
+   them. */
+.saga-grid {
+  display: grid;
+  gap: var(--s6);
+}
+
+.saga {
+  position: relative;
+  padding: var(--s5) 0 var(--s5) var(--s5);
+  border-inline-start: 2px solid var(--livery);
+}
+
+.saga::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to right, var(--livery-veil), transparent 46%);
+}
+
+.saga-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s2) var(--s4);
+  margin-bottom: var(--s4);
+}
+
+.saga-name {
+  font-size: var(--size-head);
+  color: var(--livery);
+}
+
+.saga-note {
+  margin: 0;
+  flex: 1 1 18rem;
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.saga-count {
+  margin: 0;
+  color: var(--ink-faint);
+}
+
+.saga-run {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.chip a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--s2);
+  padding: var(--s2) var(--s3);
+  border: 1px solid color-mix(in oklab, var(--livery) 34%, transparent);
+  background: color-mix(in oklab, var(--livery) 8%, transparent);
+  color: var(--core);
+  font-size: var(--size-data);
+  text-decoration: none;
+  transition:
+    background-color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease);
+}
+
+.chip a:hover,
+.chip a:focus-visible {
+  background: color-mix(in oklab, var(--livery) 20%, transparent);
+  border-color: var(--livery);
+}
+
+.chip-year {
+  font-size: var(--size-label);
+  color: var(--ink-faint);
+}
+
+@media (min-width: 60rem) {
+  .saga-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .saga:first-child {
+    grid-column: 1 / -1;
   }
 }

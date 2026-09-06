@@ -45,16 +45,44 @@ for (const [path, strings] of Object.entries(stringModules)) {
 
 const fallbackStrings = stringsByLanguage[defaultLanguage.code] ?? {};
 
+const pluralRules = new Map<string, Intl.PluralRules>();
+
+function pluralCategory(code: string, count: number): string {
+  let rules = pluralRules.get(code);
+  if (!rules) {
+    rules = new Intl.PluralRules(code);
+    pluralRules.set(code, rules);
+  }
+  return rules.select(count);
+}
+
 /**
  * Look up an interface string, falling back to the source language when a
- * translation is missing. Placeholders are written as {name} and replaced with
- * the matching value.
+ * translation is missing. Placeholders are written as {name}.
+ *
+ * When a `count` is passed, the key is resolved through the language's own
+ * plural rules: `key.one`, `key.other`, and whatever else that language
+ * needs. English has two forms and Italian has two, but Polish has four and
+ * Arabic six, so the categories come from Intl rather than from an `if`. A
+ * translator adds the forms their language requires and nothing in the code
+ * has to know about them.
  */
 export function useTranslations(code: string) {
   const strings = stringsByLanguage[code] ?? {};
 
   return function t(key: string, values: Record<string, string | number> = {}): string {
-    const template = strings[key] ?? fallbackStrings[key];
+    let template: string | undefined;
+
+    if (typeof values.count === 'number') {
+      const category = pluralCategory(code, values.count);
+      template =
+        strings[`${key}.${category}`] ??
+        strings[`${key}.other`] ??
+        fallbackStrings[`${key}.${pluralCategory(defaultLanguage.code, values.count)}`] ??
+        fallbackStrings[`${key}.other`];
+    }
+
+    template ??= strings[key] ?? fallbackStrings[key];
 
     if (template === undefined) {
       // Better to show the key than to show nothing, so the gap is obvious in

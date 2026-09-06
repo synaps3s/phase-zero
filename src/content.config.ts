@@ -63,7 +63,9 @@ const titles = defineCollection({
       // placed title does not force every later entry to be renumbered.
       order: z.number(),
       // When the story is set, as a plain label such as "1943" or "2024".
-      setting: z.string(),
+      // Null when no source establishes one, which is common outside the
+      // MCU. A visible gap is worth more than a plausible guess.
+      setting: z.string().nullable(),
     }),
 
     // Titles that are best watched before this one to understand it.
