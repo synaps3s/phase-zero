@@ -4,7 +4,7 @@ An open, multilingual guide to the Marvel cinematic universes.
 
 Start from nothing. Understand everything.
 
-**English** · [Italiano](content/it/README.md)
+**English** · [Italiano](README.it.md)
 
 ---
 

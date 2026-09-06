@@ -20,3 +20,8 @@ node_modules/
 # Logs
 *.log
 npm-debug.log*
+
+# Impeccable working directories
+.impeccable/build/
+.impeccable/review/
+.impeccable/mocks/
