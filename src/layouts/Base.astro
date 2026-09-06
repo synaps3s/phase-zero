@@ -1,10 +1,12 @@
 ---
-import '@fontsource-variable/archivo/wdth.css';
-import '@fontsource-variable/literata/opsz.css';
+import '@fontsource-variable/jost';
+import '@fontsource-variable/hanken-grotesk';
+import '@fontsource-variable/jetbrains-mono';
 import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/world.css';
 
+import Starfield from '../components/Starfield.astro';
 import Masthead from '../components/Masthead.astro';
 import Colophon from '../components/Colophon.astro';
 import { getLanguage, languages, localePath, useTranslations } from '../lib/i18n';
@@ -58,6 +60,8 @@ const t = useTranslations(language.code);
   </head>
 
   <body>
+    <Starfield />
+
     <a class="skip" href="#content">{t('site.skipToContent')}</a>
 
     <div class="page">

@@ -25,6 +25,9 @@ function wireTheme(): void {
       const next = button.dataset.themeSet as Theme;
       setTheme(next);
       markActiveTheme(next);
+      // The particle field takes its colours from the theme, so it is told
+      // to rebuild rather than left painted in the previous palette.
+      document.dispatchEvent(new CustomEvent('themechange'));
     });
   }
 }

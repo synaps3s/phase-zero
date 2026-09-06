@@ -1,7 +1,8 @@
 [
-  { "id": "infinity", "order": 1, "phases": [1, 2, 3], "accent": "#eaa23c" },
-  { "id": "multiverse", "order": 2, "phases": [4, 5, 6], "accent": "#b07be8" },
-  { "id": "next", "order": 3, "phases": [7], "accent": "#45c6c0" },
-  { "id": "fox", "order": 4, "phases": [], "accent": "#6ea8e6" },
-  { "id": "sony", "order": 5, "phases": [], "accent": "#ec5f93" }
+  { "id": "infinity", "livery": "infinity", "order": 1, "phases": [1, 2, 3] },
+  { "id": "multiverse", "livery": "multiverse", "order": 2, "phases": [4, 5, 6] },
+  { "id": "next", "livery": "next", "order": 3, "phases": [7] },
+  { "id": "fox", "livery": "fox", "order": 4, "phases": [] },
+  { "id": "sony", "livery": "sony", "order": 5, "phases": [] },
+  { "id": "unbound", "livery": "unbound", "order": 9, "phases": [] }
 ]

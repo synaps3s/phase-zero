@@ -1,97 +1,82 @@
 /* ============================================================
    PHASE ZERO TOKENS
 
-   The world is a publisher's series livery. Colour is the
-   classification: every universe owns a livery, always in the same
-   position, so a reader knows what a thing is before reading a word.
+   The world is a navigable void. Content sits on deep space with a
+   drifting particle field behind it, and colour is the classification:
+   every saga owns a luminous livery, every franchise a shade within it,
+   so a reader knows what a thing is before reading a word.
 
-   Two grounds, never mixed in one region:
-     paper  carries prose and data
-     livery carries identity, drenched, edge to edge
+   Amber is not a livery. It is the one universal state in the system:
+   a title you have watched.
 
-   Flat colour and hard edges throughout. No gradient, no glass, no
-   soft shadow: depth comes from planes meeting, the way ink meets
-   paper on a printed jacket.
+   Night is the world's true form. Day is a genuine second variant for
+   reading in daylight, built from the same roles rather than inverted
+   by accident, and every colour in it was checked against its own ground.
    ============================================================ */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark light;
 
-  /* --- Grounds and ink (light) --- */
-  --paper: #f4f2ed;
-  --paper-raised: #fbfaf7;
-  --paper-sunk: #e8e5dd;
-  --ink: #1a1a17;
-  --ink-soft: #4d4c46;
-  --ink-faint: #6f6d64;
-  --rule: #cdc9be;
-  --rule-strong: #1a1a17;
+  /* --- The void --- */
+  --void: #05080f;
+  --void-2: #070b14;
+  --fog: #0d1420;
+  --fog-2: #111a29;
+  --panel: rgba(15, 22, 37, 0.66);
+  --panel-solid: #0e1626;
 
-  /* --- Liveries. One per universe, plus the unbound set for the
-         adaptations that sit outside the shared continuity.
+  /* --- Edges. Tinted blue, never flat grey. --- */
+  --hairline: rgba(176, 199, 236, 0.14);
+  --hairline-strong: rgba(176, 199, 236, 0.28);
 
-         Each has two roles and they are not interchangeable:
+  /* --- Inks --- */
+  --core: #eef3fb;
+  --ink: #dbe4f2;
+  --ink-soft: #a3b4cf;
+  --ink-faint: #8395b3;
 
-           -plane  the printed colour of a drenched surface. Identical in
-                   both themes, because a jacket does not change colour when
-                   the room does, and because it always has to carry
-                   paper-white text at 4.5:1.
-           (ink)   the same colour adapted to be read as text on the current
-                   stock, which is the one that has to change with the theme.
+  /* --- Liveries. One per saga. The luminous colour a thing is
+         recognised by, used as ink on the void and as the light a
+         surface is edged with. A franchise steps a shade within its
+         saga; the ladder is bounded so every step clears 4.5:1. --- */
+  --livery-infinity: #e0a13c;
+  --livery-multiverse: #b07be8;
+  --livery-next: #45c6c0;
+  --livery-fox: #6ea8e6;
+  --livery-sony: #ec5f93;
+  --livery-unbound: #8fa3b8;
 
-         On a dark ground a deep plane separates by its edge rather than by
-         luminance, so bands carry a hairline instead of being brightened
-         into a glare at night. --- */
-  --livery-616-plane: #1b4f9c;
-  --livery-10005-plane: #0e6e4e;
-  --livery-96283-plane: #a8243e;
-  --livery-120703-plane: #9c5410;
-  --livery-688-plane: #5b3a8e;
-  --livery-unbound-plane: #6b5a2e;
-
-  --livery-616: #1b4f9c;
-  --livery-10005: #0e6e4e;
-  --livery-96283: #a8243e;
-  --livery-120703: #9c5410;
-  --livery-688: #5b3a8e;
-  --livery-unbound: #6b5a2e;
-
-  /* Text sitting on a livery plane. The same in both themes, because the
-     plane is the same in both themes. */
-  --on-livery: #fbfaf7;
-
-  /* --- Reading state. Green reads as cleared, and it is the only
-         colour in the system that does not belong to a universe. --- */
-  --watched: #1f7a4d;
-  --watched-on-livery: #b6e8cd;
+  /* --- The one universal state: a title you have watched. --- */
+  --watched: #ffc47a;
+  --watched-glow: rgba(255, 196, 122, 0.42);
+  --watched-soft: rgba(255, 196, 122, 0.13);
 
   /* --- Type --- */
-  --face-label: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
-  --face-text: 'Literata Variable', ui-serif, Georgia, serif;
+  --face-display: 'Jost Variable', 'Century Gothic', system-ui, sans-serif;
+  --face-body: 'Hanken Grotesk Variable', system-ui, -apple-system, sans-serif;
+  --face-data: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
-  --wdth-plate: 108;
-  --wdth-label: 88;
+  --size-plate: clamp(2.6rem, 1.4rem + 5.4vw, 5.2rem);
+  --size-title: clamp(1.7rem, 1.15rem + 2.4vw, 2.7rem);
+  --size-head: clamp(1.2rem, 1.05rem + 0.7vw, 1.5rem);
+  --size-lede: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
+  --size-body: 1rem;
+  --size-data: 0.875rem;
+  --size-label: 0.6875rem;
 
-  /* Fluid, and deliberately few steps. */
-  --size-plate: clamp(2.75rem, 1.6rem + 5.2vw, 5.5rem);
-  --size-title: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem);
-  --size-head: clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
-  --size-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
-  --size-body: 1.0625rem;
-  --size-data: 0.9375rem;
-  --size-label: 0.75rem;
-
-  --leading-plate: 0.94;
-  --leading-title: 1.1;
+  --leading-plate: 1.02;
+  --leading-title: 1.12;
   --leading-body: 1.65;
 
-  --track-plate: -0.028em;
-  --track-label: 0.13em;
+  /* The display voice is light and open, not heavy and tight. */
+  --weight-plate: 300;
+  --track-plate: 0.015em;
+  --track-label: 0.16em;
 
-  --measure: 68ch;
-  --measure-tight: 54ch;
+  --measure: 66ch;
+  --measure-tight: 52ch;
 
-  /* --- Rhythm. One scale, used everywhere. --- */
+  /* --- Rhythm --- */
   --s1: 0.25rem;
   --s2: 0.5rem;
   --s3: 0.75rem;
@@ -105,56 +90,90 @@
   --gutter: clamp(1.25rem, 0.5rem + 3vw, 3.5rem);
   --page: 78rem;
 
-  /* --- Motion. One curve, one duration family. --- */
+  /* --- Depth. Real offset and blur, plus the light a lit thing casts. --- */
+  --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.55);
+  --shadow-2: 0 26px 80px rgba(0, 0, 0, 0.62), 0 4px 14px rgba(0, 0, 0, 0.4);
+  --inset-lit: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  /* --- Motion --- */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --fast: 140ms;
-  --slow: 460ms;
+  --fast: 160ms;
+  --slow: 520ms;
 }
 
-/* Dark is a darker stock, not an inversion: the liveries lighten so
-   they stay legible as ink, and the paper becomes a night board. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --paper: #16171b;
-    --paper-raised: #1e1f25;
-    --paper-sunk: #101116;
-    --ink: #e9e6df;
-    --ink-soft: #b4b0a6;
-    --ink-faint: #8b877d;
-    --rule: #34353d;
-    --rule-strong: #e9e6df;
+/* Day. Not an inversion: the void becomes paper, the liveries become the
+   same hues rendered dark enough to be read on it, and the particle field
+   steps back to a whisper rather than pretending to be stars at noon. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    color-scheme: light;
 
-    /* Planes keep their printed colour; only the ink role lightens. */
-    --livery-616: #7faee8;
-    --livery-10005: #5fc79b;
-    --livery-96283: #f08098;
-    --livery-120703: #e3a44e;
-    --livery-688: #b69ae8;
-    --livery-unbound: #cbb472;
+    --void: #f5f6f8;
+    --void-2: #eef0f4;
+    --fog: #ffffff;
+    --fog-2: #f7f8fa;
+    --panel: rgba(255, 255, 255, 0.78);
+    --panel-solid: #ffffff;
 
-    --watched: #5fc79b;
-    --watched-on-livery: #b6e8cd;
+    --hairline: rgba(24, 34, 56, 0.14);
+    --hairline-strong: rgba(24, 34, 56, 0.3);
+
+    --core: #0c0f16;
+    --ink: #12151c;
+    --ink-soft: #3f4855;
+    --ink-faint: #5b6474;
+
+    --livery-infinity: #8a5a12;
+    --livery-multiverse: #6b3fa8;
+    --livery-next: #146b66;
+    --livery-fox: #26578f;
+    --livery-sony: #a82b57;
+    --livery-unbound: #4a5866;
+
+    --watched: #8a5a12;
+    --watched-glow: rgba(138, 90, 18, 0.24);
+    --watched-soft: rgba(138, 90, 18, 0.1);
+
+    --weight-plate: 350;
+
+    --shadow-1: 0 10px 26px rgba(16, 24, 40, 0.1);
+    --shadow-2: 0 22px 60px rgba(16, 24, 40, 0.14), 0 3px 10px rgba(16, 24, 40, 0.08);
+    --inset-lit: inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 }
 
-:root[data-theme='dark'] {
-  --paper: #16171b;
-  --paper-raised: #1e1f25;
-  --paper-sunk: #101116;
-  --ink: #e9e6df;
-  --ink-soft: #b4b0a6;
-  --ink-faint: #8b877d;
-  --rule: #34353d;
-  --rule-strong: #e9e6df;
+:root[data-theme='light'] {
+  color-scheme: light;
 
-  /* Planes keep their printed colour; only the ink role lightens. */
-  --livery-616: #7faee8;
-  --livery-10005: #5fc79b;
-  --livery-96283: #f08098;
-  --livery-120703: #e3a44e;
-  --livery-688: #b69ae8;
-  --livery-unbound: #cbb472;
+  --void: #f5f6f8;
+  --void-2: #eef0f4;
+  --fog: #ffffff;
+  --fog-2: #f7f8fa;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-solid: #ffffff;
 
-  --watched: #5fc79b;
-  --watched-on-livery: #b6e8cd;
+  --hairline: rgba(24, 34, 56, 0.14);
+  --hairline-strong: rgba(24, 34, 56, 0.3);
+
+  --core: #0c0f16;
+  --ink: #12151c;
+  --ink-soft: #3f4855;
+  --ink-faint: #5b6474;
+
+  --livery-infinity: #8a5a12;
+  --livery-multiverse: #6b3fa8;
+  --livery-next: #146b66;
+  --livery-fox: #26578f;
+  --livery-sony: #a82b57;
+  --livery-unbound: #4a5866;
+
+  --watched: #8a5a12;
+  --watched-glow: rgba(138, 90, 18, 0.24);
+  --watched-soft: rgba(138, 90, 18, 0.1);
+
+  --weight-plate: 350;
+
+  --shadow-1: 0 10px 26px rgba(16, 24, 40, 0.1);
+  --shadow-2: 0 22px 60px rgba(16, 24, 40, 0.14), 0 3px 10px rgba(16, 24, 40, 0.08);
+  --inset-lit: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }

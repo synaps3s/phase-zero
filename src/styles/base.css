@@ -1,9 +1,10 @@
 /* ============================================================
    BASE
 
-   Reset, reading defaults, and the browser surfaces that ship
-   with no design of their own: selection, caret, scrollbars,
-   focus rings, underline offset, and the figures in tabular data.
+   Reset, reading defaults, the atmosphere behind everything, and the
+   browser surfaces that ship with no design of their own: selection,
+   caret, scrollbars, focus rings, underline offset, and the figures
+   in tabular data.
    ============================================================ */
 
 *,
@@ -32,25 +33,47 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  min-height: 100vh;
+  background: var(--void);
   color: var(--ink);
-  font-family: var(--face-text);
+  font-family: var(--face-body);
   font-size: var(--size-body);
   line-height: var(--leading-body);
-  font-variation-settings: 'opsz' 16;
   font-synthesis-weight: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+
+/* The nebula. Three slow fields of colour behind the particle canvas, so
+   the void has depth and a direction of light rather than being flat black.
+   It sits at the very back and is purely atmospheric. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 820px at 78% -8%, var(--nebula-1, rgba(224, 161, 60, 0.13)), transparent 60%),
+    radial-gradient(940px 720px at 6% 14%, var(--nebula-2, rgba(80, 110, 190, 0.12)), transparent 62%),
+    radial-gradient(1120px 900px at 52% 116%, var(--nebula-3, rgba(176, 123, 232, 0.1)), transparent 60%),
+    var(--void);
+  transition: background 600ms var(--ease);
+}
+
+/* --- Type --------------------------------------------------------- */
 
 h1,
 h2,
 h3,
 h4 {
   margin: 0;
-  font-family: var(--face-label);
-  font-weight: 700;
+  font-family: var(--face-display);
+  font-weight: var(--weight-plate);
   line-height: var(--leading-title);
+  letter-spacing: 0.012em;
+  color: var(--core);
   text-wrap: balance;
 }
 
@@ -89,13 +112,11 @@ button {
   cursor: pointer;
 }
 
-/* --- Links. The underline is part of the reading texture, so it is
-       set rather than left to the browser. --- */
 a {
   color: inherit;
-  text-decoration-color: color-mix(in oklab, currentColor 40%, transparent);
+  text-decoration-color: color-mix(in oklab, currentColor 38%, transparent);
   text-decoration-thickness: 0.06em;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
   transition: text-decoration-color var(--fast) var(--ease);
 }
 
@@ -103,17 +124,17 @@ a:hover {
   text-decoration-color: currentColor;
 }
 
-/* --- Browser surfaces --- */
+/* --- Browser surfaces --------------------------------------------- */
 
 ::selection {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--watched-soft);
+  color: var(--core);
 }
 
 :root {
-  caret-color: var(--ink);
-  accent-color: var(--livery-616);
-  scrollbar-color: var(--rule) transparent;
+  caret-color: var(--watched);
+  accent-color: var(--watched);
+  scrollbar-color: var(--hairline-strong) transparent;
   scrollbar-width: thin;
 }
 
@@ -123,46 +144,42 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--paper-sunk);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--rule);
-  border: 3px solid var(--paper-sunk);
+  background: var(--hairline-strong);
+  border: 3px solid transparent;
+  background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--ink-faint);
+  background-clip: padding-box;
 }
 
-/* A square focus ring, because nothing in this world is rounded. */
 :focus-visible {
-  outline: 3px solid var(--ink);
-  outline-offset: 2px;
+  outline: 2px solid var(--watched);
+  outline-offset: 3px;
 }
 
-.livery-plane :focus-visible {
-  outline-color: var(--on-livery);
-}
-
-/* --- Type utilities the whole site leans on --- */
+/* --- Utilities the whole site leans on ---------------------------- */
 
 .label {
-  font-family: var(--face-label);
+  font-family: var(--face-data);
   font-size: var(--size-label);
-  font-weight: 700;
-  font-variation-settings: 'wdth' var(--wdth-label);
+  font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   line-height: 1.2;
 }
 
-/* Set numbers, runtimes, years and counts. Figures line up in a
-   column or they are not data. */
+/* Years, runtimes, set numbers and counts. Figures line up in a column
+   or they are not data. */
 .figure {
-  font-family: var(--face-label);
+  font-family: var(--face-data);
   font-variant-numeric: tabular-nums lining-nums;
-  font-feature-settings: 'tnum' 1, 'lnum' 1;
+  font-feature-settings: 'tnum' 1;
   letter-spacing: 0;
 }
 
@@ -173,8 +190,6 @@ a:hover {
 .prose > * + * {
   margin-top: var(--s4);
 }
-
-/* --- Page frame --- */
 
 .page {
   width: 100%;
@@ -194,23 +209,22 @@ a:hover {
   white-space: nowrap;
 }
 
-/* Skip link: visible the moment it is focused, never before. */
 .skip {
   position: absolute;
   left: var(--gutter);
   top: 0;
   z-index: 100;
   transform: translateY(-120%);
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--watched);
+  color: var(--void);
   padding: var(--s3) var(--s4);
-  font-family: var(--face-label);
-  font-weight: 700;
+  font-family: var(--face-data);
+  font-weight: 600;
   text-decoration: none;
   transition: transform var(--fast) var(--ease);
 }
 
 .skip:focus-visible {
   transform: translateY(0);
-  outline-offset: -3px;
+  outline-offset: -4px;
 }
