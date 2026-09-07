@@ -132,6 +132,65 @@ export function setSeparate(separate: boolean): void {
   write(prefs);
 }
 
+/*
+ * Moving progress between devices.
+ *
+ * There is no account and no server, so the only honest way to carry what a
+ * reader has marked to another browser is to hand them the file and let them
+ * take it. Export writes what they marked; import merges it into what is
+ * already here rather than replacing it, because someone importing an old
+ * export should not lose what they have watched since.
+ */
+
+export interface ProgressFile {
+  format: 'phasezero.progress';
+  version: number;
+  exported: string;
+  watched: string[];
+}
+
+export function exportProgress(): ProgressFile {
+  return {
+    format: 'phasezero.progress',
+    version: VERSION,
+    exported: new Date().toISOString().slice(0, 10),
+    watched: read().watched,
+  };
+}
+
+export type ImportResult =
+  | { ok: true; added: number; total: number }
+  | { ok: false; reason: 'unreadable' | 'wrong-format' };
+
+export function importProgress(raw: string): ImportResult {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return { ok: false, reason: 'unreadable' };
+  }
+
+  const file = parsed as Partial<ProgressFile>;
+  if (file?.format !== 'phasezero.progress' || !Array.isArray(file.watched)) {
+    return { ok: false, reason: 'wrong-format' };
+  }
+
+  const prefs = read();
+  const merged = new Set(prefs.watched);
+  const before = merged.size;
+  for (const id of file.watched) if (typeof id === 'string') merged.add(id);
+
+  prefs.watched = [...merged];
+  write(prefs);
+  return { ok: true, added: merged.size - before, total: merged.size };
+}
+
+export function clearWatched(): void {
+  const prefs = read();
+  prefs.watched = [];
+  write(prefs);
+}
+
 /** True when this browser will actually keep what we write. */
 export function storageWorks(): boolean {
   try {

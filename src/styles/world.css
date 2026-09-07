@@ -1664,3 +1664,74 @@ a:focus-visible .emblem-halo {
   text-decoration-style: solid;
   text-decoration-color: var(--livery-next);
 }
+
+/* --- Carrying progress between browsers ------------------------------ */
+
+.progress {
+  margin-top: var(--s7);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--hairline);
+}
+
+.progress h2 {
+  color: var(--ink-faint);
+  margin-bottom: var(--s3);
+}
+
+.progress .storage-note {
+  margin-top: 0;
+  margin-bottom: var(--s3);
+}
+
+.progress-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s4);
+  margin-top: var(--s5);
+}
+
+/* The file input itself is never shown: its own chrome belongs to no design
+   system, so the label carries the control's appearance and the input stays
+   reachable underneath it. */
+.progress-import {
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-import input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.progress-import:focus-within {
+  border-color: var(--watched);
+  background: var(--watched-soft);
+}
+
+.progress-clear {
+  color: var(--ink-faint);
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  transition: color var(--fast) var(--ease);
+}
+
+.progress-clear:hover {
+  color: var(--livery-sony);
+}
+
+.progress-status:empty {
+  display: none;
+}
+
+.progress-status {
+  margin-top: var(--s4);
+  color: var(--watched);
+  font-size: var(--size-data);
+}

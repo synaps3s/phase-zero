@@ -178,10 +178,36 @@ const mapTitles = rows
       <button type="button" data-clear-filter class="link-button">{t('timeline.clearFilters')}</button>
     </p>
 
-    <p class="storage-note">{t('watched.storageNotice')}</p>
+    <section
+      class="progress"
+      data-progress
+      data-imported={t('watched.imported', { count: '{count}', total: '{total}' })}
+      data-imported-none={t('watched.importedNone')}
+      data-import-failed={t('watched.importFailed')}
+      data-cleared={t('watched.cleared')}
+      data-reset-confirm={t('watched.resetConfirm')}
+    >
+      <h2 class="label">{t('watched.progressTitle')}</h2>
+      <p class="storage-note">{t('watched.storageNotice')}</p>
+      <p class="storage-note">{t('watched.exportHelp')}</p>
+
+      <div class="progress-actions">
+        <button type="button" class="onward-link" data-progress-export>{t('watched.export')}</button>
+
+        <label class="onward-link progress-import">
+          <span>{t('watched.import')}</span>
+          <input type="file" accept="application/json,.json" data-progress-import />
+        </label>
+
+        <button type="button" class="progress-clear" data-progress-clear>{t('watched.reset')}</button>
+      </div>
+
+      <p class="progress-status" data-progress-status aria-live="polite"></p>
+    </section>
   </div>
 
   <script>
     import '../../scripts/timeline';
+    import '../../scripts/progress';
   </script>
 </Base>
