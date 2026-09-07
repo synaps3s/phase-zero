@@ -65,6 +65,21 @@ for (const setId of sets.keys()) {
   }
 }
 
+/* The glyph ids, read out of the source so a typo in a data file is caught
+   here rather than rendering an empty emblem. */
+const sigils = new Set(
+  [...readFileSync('src/lib/sigils.ts', 'utf8').matchAll(/^ {2}'?([a-z0-9-]+)'?:/gm)].map(
+    (match) => match[1],
+  ),
+);
+
+const organisations = new Map();
+for (const file of listYaml('data/organisations')) {
+  const path = join('data/organisations', file);
+  const entry = readYaml(path);
+  if (entry) organisations.set(basename(file, '.yml'), { path, entry });
+}
+
 const glossary = new Map();
 for (const file of listYaml('data/glossary')) {
   const path = join('data/glossary', file);
@@ -314,11 +329,36 @@ for (const [id, { path, entry }] of glossary) {
   }
 }
 
+/* --- Organisations --- */
+
+for (const [id, { path, entry }] of organisations) {
+  if (entry.id !== id) {
+    errors.push(`${path}: the id field is "${entry.id}" but the file is named "${id}.yml". They have to match.`);
+  }
+  checkAttribution(path, entry);
+  checkReference(path, 'universe', entry.universe, universes, 'data/universes.json');
+  checkReference(path, 'franchise', entry.franchise, franchises, 'data/franchises.json');
+  checkReference(path, 'sigil', entry.sigil, sigils, 'src/lib/sigils.ts');
+  if (entry.firstAppearance) {
+    checkReference(path, 'firstAppearance', entry.firstAppearance, new Set(titles.keys()), 'data/titles');
+  }
+  // A roster that names somebody who is not in the catalogue is a dead link
+  // on the page, so it is an error rather than a warning.
+  for (const member of entry.members ?? []) {
+    checkReference(path, 'members', member, new Set(characters.keys()), 'data/characters');
+  }
+  const prose = `content/${sourceLanguage.code}/organisations/${id}.md`;
+  if (!existsSync(prose)) {
+    errors.push(`${path}: has no ${sourceLanguage.code} prose at ${prose}.`);
+  }
+}
+
 /* --- Report --- */
 
 console.log(
   `Checked ${titles.size} title(s), ${characters.size} character(s), and ` +
-    `${pieces.size} piece(s) across ${sets.size} set(s), and ${glossary.size} glossary term(s), ` +
+    `${pieces.size} piece(s) across ${sets.size} set(s), ${organisations.size} organisation(s) ` +
+    `and ${glossary.size} glossary term(s), ` +
     `against ${universes.size} universes, ` +
     `${franchises.size} franchises and ${sagas.size} sagas.`,
 );

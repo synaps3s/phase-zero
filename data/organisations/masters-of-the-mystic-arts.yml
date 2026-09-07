@@ -1,0 +1,18 @@
+id: masters-of-the-mystic-arts
+kind: order
+sigil: wong
+universe: earth-616
+franchise: doctor-strange
+order: 9
+
+members:
+  - stephen-strange
+  - wong
+
+firstAppearance: doctor-strange
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)"
+    title: "Doctor Strange (2016 film), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

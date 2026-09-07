@@ -57,6 +57,30 @@ async function linksFor(ids: string[]) {
 const requires = await linksFor(facts.data.requires);
 const leadsTo = await linksFor(facts.data.leadsTo);
 
+/* Who is in this, derived rather than stored. A character already lists the
+   titles it appears in, so asking the question the other way round needs no
+   second copy of the answer and cannot drift out of step with the first. */
+const people = [];
+for (const person of await getCollection('characters')) {
+  if (!person.data.appearsIn.includes(titleId)) continue;
+  const personProse = await resolveProse('characterProse', language.code, person.data.id);
+  if (!personProse) continue;
+  const firstTitle = byId.get(person.data.firstAppearance);
+  people.push({
+    id: person.data.id,
+    name: personProse.entry.data.title,
+    alias: personProse.entry.data.tagline ?? null,
+    actors: person.data.actors.map((actor) => actor.name).join(', '),
+    saga: firstTitle?.data.saga ?? 'unbound',
+    franchise: person.data.franchise,
+    /* The order a reader expects is the one the catalogue already sorts
+       people by, which is by name in their own language. */
+    sort: personProse.entry.data.title,
+  });
+}
+const collator = new Intl.Collator(language.code);
+people.sort((first, second) => collator.compare(first.sort, second.sort));
+
 const universe = universeOf(facts.data.universe);
 const release = facts.data.release;
 /* The year when there is one, and the announced window when there is not. */
@@ -116,6 +140,23 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
     <article class="entry-body prose">
       <p class="entry-lede">{prose.entry.data.oneLine}</p>
       <Content />
+
+      {people.length > 0 && (
+        <section class="connections">
+          <h2 class="label">{t('title.whoIsIn')}</h2>
+          <ul class="title-cast">
+            {people.map((person) => (
+              <li class="chip" data-livery style={liveryStyle(person.saga, person.franchise)}>
+                <a href={localePath(language.code, 'characters', person.id)}>
+                  <span class="chip-title">{person.name}</span>
+                  {person.alias && <span class="chip-alias">{person.alias}</span>}
+                  {person.actors && <span class="chip-year">{person.actors}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {(requires.length > 0 || leadsTo.length > 0) && (
         <section class="connections">

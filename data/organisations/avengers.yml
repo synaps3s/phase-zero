@@ -1,0 +1,35 @@
+id: avengers
+kind: team
+sigil: captain-america
+universe: earth-616
+franchise: avengers
+order: 1
+
+members:
+  - steve-rogers
+  - tony-stark
+  - thor-odinson
+  - bruce-banner
+  - natasha-romanoff
+  - clint-barton
+  - james-rhodes
+  - sam-wilson
+  - bucky-barnes
+  - vision
+  - wanda-maximoff
+  - scott-lang
+  - peter-parker
+  - stephen-strange
+  - tchalla
+  - carol-danvers
+  - shang-chi
+  - rocket
+  - nebula
+
+firstAppearance: the-avengers
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Avengers_(Marvel_Cinematic_Universe)"
+    title: "Avengers (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

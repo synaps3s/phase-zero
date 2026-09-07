@@ -304,6 +304,33 @@ const pathProse = defineCollection({
   schema: proseFrontmatter,
 });
 
+/* Groups people belong to. The glossary explains what a thing is; this
+   records who is in it, which is the question the glossary cannot answer and
+   the reason this is its own collection rather than more glossary terms. */
+const organisations = defineCollection({
+  loader: glob({ pattern: '*.yml', base: './data/organisations' }),
+  schema: z.object({
+    id: z.string(),
+    kind: z.enum(['team', 'agency', 'military', 'criminal', 'order', 'company']),
+    /* An existing character glyph, because the emblems are drawn per person
+       and a group borrows the one that stands for it best. */
+    sigil: z.string(),
+    universe: z.string(),
+    franchise: z.string(),
+    order: z.number().int(),
+    /** Characters in this catalogue who belong or belonged to it. */
+    members: z.array(z.string()).default([]),
+    /** The title where it is first established, when a source gives one. */
+    firstAppearance: z.string().nullable().default(null),
+    ...attribution,
+  }),
+});
+
+const organisationProse = defineCollection({
+  loader: glob({ pattern: '*/organisations/*.md', base: './content' }),
+  schema: proseFrontmatter,
+});
+
 /* Questions a newcomer actually asks, answered in full. Prose only: a
    question has no language-neutral facts of its own, so there is nothing for
    it in data/. */
@@ -342,6 +369,8 @@ export const collections = {
   pieceProse,
   glossary,
   glossaryProse,
+  organisations,
+  organisationProse,
   questions,
   universeProse,
   phaseProse,

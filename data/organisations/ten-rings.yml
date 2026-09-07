@@ -1,0 +1,17 @@
+id: ten-rings
+kind: criminal
+sigil: xu-wenwu
+universe: earth-616
+franchise: shang-chi
+order: 5
+
+members:
+  - shang-chi
+
+firstAppearance: iron-man
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Ten_Rings_(organization)"
+    title: "Ten Rings (organization), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08
