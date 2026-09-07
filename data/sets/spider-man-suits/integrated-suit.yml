@@ -1,0 +1,12 @@
+id: integrated-suit
+set: spider-man-suits
+designation: "Integrated Suit"
+order: 6
+tint: orange
+firstAppearance: spider-man-no-way-home
+lastAppearance: spider-man-no-way-home
+sources:
+  - url: https://en.wikipedia.org/wiki/Peter_Parker_(Marvel_Cinematic_Universe)
+    title: "Peter Parker (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
