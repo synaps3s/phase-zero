@@ -30,6 +30,8 @@ interface Prefs {
   depth: Depth;
   /** Whether the separate continuities are shown alongside the main one. */
   separate: boolean;
+  /** Whether the panel explaining the controls is open. */
+  primer: boolean;
 }
 
 const EMPTY: Prefs = {
@@ -39,6 +41,7 @@ const EMPTY: Prefs = {
   order: 'release',
   depth: 2,
   separate: false,
+  primer: true,
 };
 
 function read(): Prefs {
@@ -55,6 +58,9 @@ function read(): Prefs {
       order: parsed.order === 'chrono' ? 'chrono' : 'release',
       depth: parsed.depth === 1 || parsed.depth === 3 ? parsed.depth : 2,
       separate: parsed.separate === true,
+      // Open until the reader closes it: somebody arriving for the first time
+      // is exactly who it is for, and they have not stored anything yet.
+      primer: parsed.primer !== false,
     };
   } catch {
     return { ...EMPTY };
@@ -201,4 +207,12 @@ export function storageWorks(): boolean {
   } catch {
     return false;
   }
+}
+
+export function getPrimer(): boolean {
+  return read().primer;
+}
+
+export function setPrimer(primer: boolean): void {
+  write({ ...read(), primer });
 }

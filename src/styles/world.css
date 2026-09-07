@@ -971,6 +971,162 @@ a.plate:focus-visible {
   padding: 0;
 }
 
+/* --- Back to the top ------------------------------------------------ */
+
+/* Appears once there is a screenful behind you, and never covers the last
+   line of anything: it sits in the gutter on a wide screen and tucks into
+   the corner on a narrow one. */
+.to-top {
+  position: fixed;
+  inset-block-end: var(--s5);
+  inset-inline-end: var(--s5);
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  color: var(--ink);
+  background: var(--panel-solid);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  box-shadow: var(--shadow-2);
+  cursor: pointer;
+  transition:
+    color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease),
+    transform var(--fast) var(--ease);
+}
+
+.to-top svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.to-top:hover,
+.to-top:focus-visible {
+  color: var(--livery-infinity);
+  border-color: color-mix(in oklab, var(--livery-infinity) 55%, transparent);
+  transform: translateY(-2px);
+}
+
+/* --- The primer ----------------------------------------------------- */
+
+/* Three controls sit above the catalogue and none of them explains itself
+   in a word. This does, once, and then gets out of the way: it is a details
+   element, so it works with no JavaScript, and the state is remembered. */
+.primer {
+  margin-block: var(--s6) var(--s5);
+  padding: var(--s5);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-top: 1px solid color-mix(in oklab, var(--livery-base, var(--livery)) 40%, transparent);
+}
+
+.primer > summary {
+  font-family: var(--face-mono);
+  font-size: var(--size-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  cursor: pointer;
+  list-style: none;
+}
+
+.primer > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* A caret drawn rather than a character, so it turns with the panel. */
+.primer > summary::after {
+  content: '';
+  float: inline-end;
+  width: 0.5em;
+  height: 0.5em;
+  margin-top: 0.15em;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--fast) var(--ease);
+}
+
+.primer[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+.primer > summary:hover,
+.primer > summary:focus-visible {
+  color: var(--ink);
+}
+
+.primer-grid {
+  display: grid;
+  gap: var(--s6);
+  margin-top: var(--s5);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--hairline);
+}
+
+/* Each column takes a livery so the three controls read as three different
+   things at a glance, which is the whole job of the panel. */
+.primer-grid > section {
+  padding-inline-start: var(--s4);
+  border-inline-start: 2px solid var(--livery);
+}
+
+.primer-grid h2 {
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--livery);
+  margin: 0 0 var(--s3);
+}
+
+.primer-grid p {
+  color: var(--ink);
+}
+
+.primer-grid ul {
+  margin: var(--s4) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--s3);
+  color: var(--ink-soft);
+}
+
+.primer-grid li {
+  padding-inline-start: var(--s4);
+  position: relative;
+}
+
+.primer-grid li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.62em;
+  width: 4px;
+  height: 4px;
+  background: var(--livery);
+}
+
+.primer-tip {
+  margin-top: var(--s4);
+  color: var(--livery);
+}
+
+.primer-grid .primer-tip {
+  color: var(--livery);
+}
+
+@media (min-width: 56rem) {
+  .primer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s7);
+  }
+}
+
 /* What kind of thing this is. A row that says "54 min" is lying if the entry
    is thirteen episodes long, so the format is stated before the numbers. */
 .spine-kind,

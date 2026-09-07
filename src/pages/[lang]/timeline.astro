@@ -83,6 +83,40 @@ const mapTitles = rows
   </section>
 
   <div class="page">
+    <details class="primer" data-primer open>
+      <summary>{t('primer.title')}</summary>
+      <div class="primer-grid">
+        <section data-livery style="--livery-base: var(--livery-infinity); --shade: 0">
+          <h2>{t('primer.order.q')}</h2>
+          <p>{t('primer.order.a')}</p>
+          <ul>
+            <li>{t('primer.order.release')}</li>
+            <li>{t('primer.order.chrono')}</li>
+          </ul>
+          <p class="primer-tip">{t('primer.order.tip')}</p>
+        </section>
+        <section data-livery style="--livery-base: var(--livery-multiverse); --shade: 0">
+          <h2>{t('primer.depth.q')}</h2>
+          <p>{t('primer.depth.a')}</p>
+          <ul>
+            <li>{t('primer.depth.1')}</li>
+            <li>{t('primer.depth.2')}</li>
+            <li>{t('primer.depth.3')}</li>
+          </ul>
+          <p class="primer-tip">{t('primer.depth.tip')}</p>
+        </section>
+        <section data-livery style="--livery-base: var(--livery-fox); --shade: 0">
+          <h2>{t('primer.separate.q')}</h2>
+          <p>{t('primer.separate.a')}</p>
+          <ul>
+            <li>{t('primer.separate.1')}</li>
+            <li>{t('primer.separate.2')}</li>
+          </ul>
+          <p class="primer-tip">{t('primer.separate.tip')}</p>
+        </section>
+      </div>
+    </details>
+
     <div class="controls" data-controls>
       <fieldset class="control">
         <legend class="label">{t('timeline.order')}</legend>
