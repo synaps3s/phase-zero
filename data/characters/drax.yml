@@ -1,0 +1,25 @@
+id: drax
+universe: earth-616
+franchise: guardians
+realName: null
+alignment: hero
+
+actors:
+  - name: Dave Bautista
+
+firstAppearance: guardians-of-the-galaxy
+
+appearsIn:
+  - guardians-of-the-galaxy
+  - guardians-of-the-galaxy-vol-2
+  - avengers-infinity-war
+  - avengers-endgame
+  - guardians-of-the-galaxy-holiday-special
+  - thor-love-and-thunder
+  - guardians-of-the-galaxy-vol-3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Drax_(Marvel_Cinematic_Universe)"
+    title: "Drax (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

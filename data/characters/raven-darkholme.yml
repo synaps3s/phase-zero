@@ -1,0 +1,30 @@
+id: raven-darkholme
+universe: earth-10005
+franchise: x-men
+realName: Raven Darkholme
+alignment: antihero
+sigil: mystique
+
+actors:
+  - name: Rebecca Romijn
+  - name: Jennifer Lawrence
+  - name: Morgan Lily
+    note: as a child
+
+firstAppearance: x-men
+
+appearsIn:
+  - x-men
+  - x2
+  - x-men-the-last-stand
+  - x-men-first-class
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+  - deadpool-2
+  - dark-phoenix
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Raven_Darkholme_/_Mystique"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

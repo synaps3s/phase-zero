@@ -1,0 +1,28 @@
+id: piotr-rasputin
+universe: earth-10005
+franchise: x-men
+realName: Piotr Rasputin
+alignment: hero
+sigil: colossus
+
+actors:
+  - name: Donald MacKinnon
+  - name: Daniel Cudmore
+  - name: Stefan Kapičić
+
+firstAppearance: x-men
+
+appearsIn:
+  - x-men
+  - x2
+  - x-men-the-last-stand
+  - x-men-days-of-future-past
+  - deadpool
+  - deadpool-2
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Piotr_%22Peter%22_Rasputin_/_Colossus"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

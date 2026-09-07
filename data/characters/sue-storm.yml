@@ -1,0 +1,19 @@
+id: sue-storm
+universe: earth-828
+franchise: fantastic-four
+realName: Susan Storm
+alignment: hero
+
+actors:
+  - name: Vanessa Kirby
+
+firstAppearance: the-fantastic-four-first-steps
+
+appearsIn:
+  - the-fantastic-four-first-steps
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Sue_Storm_/_Invisible_Woman"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

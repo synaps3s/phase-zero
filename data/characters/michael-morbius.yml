@@ -1,0 +1,19 @@
+id: michael-morbius
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Michael Morbius
+alignment: antihero
+
+actors:
+  - name: Jared Leto
+
+firstAppearance: morbius
+
+appearsIn:
+  - morbius
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Sony%27s_Spider-Man_Universe#Cast_and_characters"
+    title: "Sony's Spider-Man Universe, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

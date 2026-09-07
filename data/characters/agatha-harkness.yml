@@ -1,0 +1,20 @@
+id: agatha-harkness
+universe: earth-616
+franchise: scarlet-witch
+realName: null
+alignment: antihero
+
+actors:
+  - name: Kathryn Hahn
+
+firstAppearance: wandavision
+
+appearsIn:
+  - wandavision
+  - agatha-all-along
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Agatha_Harkness_(Marvel_Cinematic_Universe)"
+    title: "Agatha Harkness (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

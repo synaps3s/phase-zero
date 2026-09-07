@@ -1,0 +1,23 @@
+id: frank-castle
+universe: earth-616
+franchise: punisher
+realName: Frank Castle
+alignment: antihero
+
+actors:
+  - name: Jon Bernthal
+
+firstAppearance: daredevil-s2
+
+appearsIn:
+  - daredevil-s2
+  - the-punisher-s1
+  - the-punisher-s2
+  - daredevil-born-again-s1
+  - the-punisher-one-last-kill
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Frank_Castle_/_Punisher"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

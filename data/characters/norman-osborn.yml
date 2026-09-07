@@ -1,0 +1,20 @@
+id: norman-osborn
+universe: earth-96283
+franchise: raimi-spider-man
+realName: Norman Osborn
+alignment: villain
+
+actors:
+  - name: Willem Dafoe
+
+firstAppearance: spider-man-2002
+
+appearsIn:
+  - spider-man-2002
+  - spider-man-no-way-home
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Norman_Osborn_/_Green_Goblin"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

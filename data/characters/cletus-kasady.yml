@@ -1,0 +1,20 @@
+id: cletus-kasady
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Cletus Kasady
+alignment: villain
+
+actors:
+  - name: Woody Harrelson
+
+firstAppearance: venom
+
+appearsIn:
+  - venom
+  - venom-let-there-be-carnage
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Sony%27s_Spider-Man_Universe#Cast_and_characters"
+    title: "Sony's Spider-Man Universe, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

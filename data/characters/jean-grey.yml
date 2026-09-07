@@ -1,0 +1,27 @@
+id: jean-grey
+universe: earth-10005
+franchise: x-men
+realName: Jean Grey
+alignment: hero
+
+actors:
+  - name: Famke Janssen
+  - name: Sophie Turner
+
+firstAppearance: x-men
+
+appearsIn:
+  - x-men
+  - x2
+  - x-men-the-last-stand
+  - the-wolverine
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+  - deadpool-2
+  - dark-phoenix
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Jean_Grey"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

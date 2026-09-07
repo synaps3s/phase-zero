@@ -1,0 +1,23 @@
+id: en-sabah-nur
+universe: earth-10005
+franchise: x-men
+realName: En Sabah Nur
+alignment: villain
+sigil: apocalypse
+
+actors:
+  - name: Oscar Isaac
+  - name: Brendan Pedder
+  - name: Berj Garabedian
+
+firstAppearance: x-men-days-of-future-past
+
+appearsIn:
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#En_Sabhah_Nur_/_Apocalypse"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

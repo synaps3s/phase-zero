@@ -1,0 +1,20 @@
+id: victor-von-doom
+universe: earth-828
+franchise: fantastic-four
+realName: Victor von Doom
+alignment: villain
+sigil: doctor-doom
+
+actors:
+  - name: Robert Downey Jr.
+
+firstAppearance: the-fantastic-four-first-steps
+
+appearsIn:
+  - the-fantastic-four-first-steps
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Victor_von_Doom_/_Doctor_Doom"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

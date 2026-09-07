@@ -1,0 +1,25 @@
+id: valentina-allegra-de-fontaine
+universe: earth-616
+franchise: captain-america
+realName: Valentina Allegra de Fontaine
+alignment: villain
+sigil: valentina
+
+actors:
+  - name: Julia Louis-Dreyfus
+  - name: Chiara Stella
+    note: as a child
+
+firstAppearance: black-widow
+
+appearsIn:
+  - black-widow
+  - the-falcon-and-the-winter-soldier
+  - black-panther-wakanda-forever
+  - thunderbolts
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Valentina_Allegra_de_Fontaine"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

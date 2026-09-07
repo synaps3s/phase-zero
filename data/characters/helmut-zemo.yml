@@ -1,0 +1,21 @@
+id: helmut-zemo
+universe: earth-616
+franchise: captain-america
+realName: Helmut Zemo
+alignment: villain
+sigil: zemo
+
+actors:
+  - name: Daniel Brühl
+
+firstAppearance: captain-america-civil-war
+
+appearsIn:
+  - captain-america-civil-war
+  - the-falcon-and-the-winter-soldier
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Helmut_Zemo"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

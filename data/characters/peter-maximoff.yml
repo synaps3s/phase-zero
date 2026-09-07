@@ -1,0 +1,23 @@
+id: peter-maximoff
+universe: earth-10005
+franchise: x-men
+realName: Peter Maximoff
+alignment: hero
+sigil: quicksilver-fox
+
+actors:
+  - name: Evan Peters
+
+firstAppearance: x-men-days-of-future-past
+
+appearsIn:
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+  - deadpool-2
+  - dark-phoenix
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Peter_Maximoff_/_Quicksilver"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

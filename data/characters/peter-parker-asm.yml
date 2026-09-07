@@ -1,0 +1,21 @@
+id: peter-parker-asm
+universe: earth-120703
+franchise: amazing-spider-man
+realName: Peter Parker
+alignment: hero
+
+actors:
+  - name: Andrew Garfield
+
+firstAppearance: the-amazing-spider-man
+
+appearsIn:
+  - the-amazing-spider-man
+  - the-amazing-spider-man-2
+  - spider-man-no-way-home
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man_in_film#Cast"
+    title: "Spider-Man in film, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08
