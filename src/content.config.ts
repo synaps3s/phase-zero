@@ -205,6 +205,11 @@ const glossaryProse = defineCollection({
   schema: proseFrontmatter,
 });
 
+const universeProse = defineCollection({
+  loader: glob({ pattern: '*/universes/*.md', base: './content' }),
+  schema: proseFrontmatter,
+});
+
 const guides = defineCollection({
   loader: glob({ pattern: '*/guides/**/*.md', base: './content' }),
   schema: z.object({
@@ -229,5 +234,6 @@ export const collections = {
   pieceProse,
   glossary,
   glossaryProse,
+  universeProse,
   guides,
 };
