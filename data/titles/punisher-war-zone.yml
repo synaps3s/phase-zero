@@ -1,0 +1,33 @@
+id: punisher-war-zone
+type: film
+universe: unbound
+franchise: punisher
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2008-12-05
+  approximate: null
+  runtime: 103
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Punisher:_War_Zone
+    title: "Punisher: War Zone, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,33 @@
+id: the-punisher-2004
+type: film
+universe: unbound
+franchise: punisher
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2004-04-16
+  approximate: null
+  runtime: 123
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/The_Punisher_(2004_film)
+    title: "The Punisher (2004 film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

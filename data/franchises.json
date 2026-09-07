@@ -187,5 +187,40 @@
     "universe": "unbound",
     "shade": 0,
     "order": 40
+  },
+  {
+    "id": "punisher",
+    "name": "The Punisher",
+    "universe": "unbound",
+    "shade": 0,
+    "order": 41
+  },
+  {
+    "id": "daredevil",
+    "name": "Daredevil",
+    "universe": "unbound",
+    "shade": 0,
+    "order": 42
+  },
+  {
+    "id": "ghost-rider",
+    "name": "Ghost Rider",
+    "universe": "unbound",
+    "shade": 0,
+    "order": 43
+  },
+  {
+    "id": "howard-the-duck",
+    "name": "Howard the Duck",
+    "universe": "unbound",
+    "shade": 0,
+    "order": 44
+  },
+  {
+    "id": "man-thing",
+    "name": "Man-Thing",
+    "universe": "unbound",
+    "shade": 0,
+    "order": 45
   }
 ]
