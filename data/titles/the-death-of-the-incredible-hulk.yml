@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [the-trial-of-the-incredible-hulk]
 leadsTo: []
 
 cast: []
@@ -29,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: "https://en.wikipedia.org/wiki/The_Death_of_the_Incredible_Hulk"
     title: "The Death of the Incredible Hulk, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/The_Incredible_Hulk_Returns"
+    title: "The Incredible Hulk Returns, Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

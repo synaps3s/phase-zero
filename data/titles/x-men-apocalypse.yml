@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [x-men-days-of-future-past]
 leadsTo: []
 
 cast: []
@@ -29,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: "https://en.wikipedia.org/wiki/X-Men:_Apocalypse"
     title: "X-Men: Apocalypse, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/X-Men:_Days_of_Future_Past"
+    title: "X-Men: Days of Future Past, Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

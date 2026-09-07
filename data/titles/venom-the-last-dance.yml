@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [venom, venom-let-there-be-carnage]
 leadsTo: []
 
 cast: []

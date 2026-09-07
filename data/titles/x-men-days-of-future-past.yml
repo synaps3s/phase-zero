@@ -19,7 +19,10 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires:
+  - x-men-the-last-stand
+  - x-men-first-class
+  - the-wolverine
 leadsTo: []
 
 cast: []

@@ -327,7 +327,7 @@ a.plate:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--s4);
+  gap: var(--s3) var(--s4);
   padding-block: var(--s4);
   border-bottom: 1px solid var(--hairline);
 }
@@ -836,13 +836,17 @@ a.plate:focus-visible {
 
 /* --- Section navigation ------------------------------------------- */
 
+/* Two rows at every width. The wordmark and the two controls share the
+   first, pushed to opposite ends; the sections take the second on their own.
+   They used to sit inline on a wide screen, which worked with seven links
+   and broke into three ragged rows at eleven. */
 .sections {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s4);
+  gap: var(--s4) var(--s5);
   order: 3;
   width: 100%;
-  padding-top: var(--s3);
+  padding-top: var(--s4);
   border-top: 1px solid var(--hairline);
 }
 
@@ -862,17 +866,6 @@ a.plate:focus-visible {
 
 .sections a[aria-current='page'] {
   color: var(--watched);
-}
-
-@media (min-width: 56rem) {
-  .sections {
-    order: 0;
-    width: auto;
-    margin-inline-end: auto;
-    margin-inline-start: var(--s7);
-    padding-top: 0;
-    border-top: 0;
-  }
 }
 
 /* --- Timeline controls -------------------------------------------- */
