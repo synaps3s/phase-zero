@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
 import { resolveProse } from '../../lib/content';
-import { liveryStyle, sagas } from '../../lib/livery';
+import { liveryStyle, sagaStyle, sagas } from '../../lib/livery';
 import phaseData from '../../../data/phases.json';
 
 export function getStaticPaths() {
@@ -73,7 +73,7 @@ blocks.sort(
 
   <div class="page">
     {blocks.map(({ phase, prose, Body, entries }) => (
-      <section class="phase section" id={`phase-${phase.number}`} data-livery style={liveryStyle(phase.saga)}>
+      <section class="phase section" id={`phase-${phase.number}`} data-livery style={sagaStyle(phase.saga)}>
         <div class="section-head">
           <p class="phase-meta">
             <span class="label">{t(`saga.${phase.saga}`)}</span>

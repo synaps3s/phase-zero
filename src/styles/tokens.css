@@ -61,6 +61,38 @@
   --tint-orange: #f79e52;
   --tint-silver: #b6c2d4;
 
+
+  /* --- Franchise colours. Twenty-four narrative lines, each with the hue
+         it has carried since the earlier project, retuned only where the
+         change of ground demanded it: Avengers was a near-black axis on
+         paper and is a light ink here. A saga still owns the era; a
+         franchise owns itself. Every value clears 4.5:1 on its own
+         ground. --- */
+  --franchise-agent-carter: #aa7243;
+  --franchise-amazing-spider-man: #e8a45a;
+  --franchise-ant-man: #308a93;
+  --franchise-avengers: #e0cfa8;
+  --franchise-black-panther: #468c64;
+  --franchise-black-widow: #bd6374;
+  --franchise-blade: #d183a8;
+  --franchise-captain-america: #4582c2;
+  --franchise-captain-marvel: #2389a9;
+  --franchise-defenders: #ba694e;
+  --franchise-doctor-strange: #7d73c8;
+  --franchise-eternals: #8e73ab;
+  --franchise-fantastic-four: #4c83ac;
+  --franchise-guardians: #b8862f;
+  --franchise-hulk: #498c5a;
+  --franchise-iron-man: #c16631;
+  --franchise-loki: #9f7934;
+  --franchise-marvel-television: #8a97b5;
+  --franchise-midnight-sons: #a46d8c;
+  --franchise-nick-fury: #818159;
+  --franchise-scarlet-witch: #cd5484;
+  --franchise-shang-chi: #b66b32;
+  --franchise-spider-man: #cf5766;
+  --franchise-thor: #8b73ba;
+
   /* --- The one universal state: a title you have watched. --- */
   --watched: #ffc47a;
   --watched-glow: rgba(255, 196, 122, 0.42);
@@ -130,10 +162,64 @@
 
     --void: #f5f6f8;
 
+
+  /* Franchise colours, day. */
+--franchise-agent-carter: #7a5230;
+  --franchise-amazing-spider-man: #8a4a12;
+  --franchise-ant-man: #24686f;
+  --franchise-avengers: #5c4a2e;
+  --franchise-black-panther: #2e5c42;
+  --franchise-black-widow: #8c3b4a;
+  --franchise-blade: #6b2f4a;
+  --franchise-captain-america: #2e5c8c;
+  --franchise-captain-marvel: #1a657d;
+  --franchise-defenders: #6b3a2a;
+  --franchise-doctor-strange: #4a3fa0;
+  --franchise-eternals: #6d5289;
+  --franchise-fantastic-four: #396381;
+  --franchise-guardians: #79581f;
+  --franchise-hulk: #366943;
+  --franchise-iron-man: #904d25;
+  --franchise-loki: #775a27;
+  --franchise-marvel-television: #4a5568;
+  --franchise-midnight-sons: #4a2e3e;
+  --franchise-nick-fury: #5a5a3e;
+  --franchise-scarlet-witch: #9c2e5a;
+  --franchise-shang-chi: #885025;
+  --franchise-spider-man: #a32f3d;
+  --franchise-thor: #6b4fa0;
+
   /* Far weaker on paper: a wash, not a glow. */
   --nebula-1: rgba(224, 161, 60, 0.09);
   --nebula-2: rgba(80, 110, 190, 0.08);
   --nebula-3: rgba(176, 123, 232, 0.07);
+
+
+    /* Franchise colours, day. */
+  --franchise-agent-carter: #7a5230;
+    --franchise-amazing-spider-man: #8a4a12;
+    --franchise-ant-man: #24686f;
+    --franchise-avengers: #5c4a2e;
+    --franchise-black-panther: #2e5c42;
+    --franchise-black-widow: #8c3b4a;
+    --franchise-blade: #6b2f4a;
+    --franchise-captain-america: #2e5c8c;
+    --franchise-captain-marvel: #1a657d;
+    --franchise-defenders: #6b3a2a;
+    --franchise-doctor-strange: #4a3fa0;
+    --franchise-eternals: #6d5289;
+    --franchise-fantastic-four: #396381;
+    --franchise-guardians: #79581f;
+    --franchise-hulk: #366943;
+    --franchise-iron-man: #904d25;
+    --franchise-loki: #775a27;
+    --franchise-marvel-television: #4a5568;
+    --franchise-midnight-sons: #4a2e3e;
+    --franchise-nick-fury: #5a5a3e;
+    --franchise-scarlet-witch: #9c2e5a;
+    --franchise-shang-chi: #885025;
+    --franchise-spider-man: #a32f3d;
+    --franchise-thor: #6b4fa0;
 
     /* Far weaker on paper: a wash, not a glow. */
     --nebula-1: rgba(224, 161, 60, 0.09);

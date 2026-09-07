@@ -1,5 +1,5 @@
 ---
-import { liveryStyle } from '../lib/livery';
+import { liveryStyle, sagaStyle } from '../lib/livery';
 import { useTranslations, localePath } from '../lib/i18n';
 
 interface Entry {
@@ -19,7 +19,7 @@ const { language, saga, entries } = Astro.props;
 const t = useTranslations(language);
 ---
 
-<section class="saga" data-livery style={liveryStyle(saga)}>
+<section class="saga" data-livery style={sagaStyle(saga)}>
   <header class="saga-head">
     <h3 class="saga-name">{t(`saga.${saga}`)}</h3>
     <p class="saga-note">{t(`saga.${saga}Note`)}</p>

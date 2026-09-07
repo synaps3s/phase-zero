@@ -35,7 +35,10 @@ const t = useTranslations(language);
 const YEAR_WIDTH = 62;
 const LANE_HEIGHT = 38;
 const NODE_RADIUS = 6;
-const LABEL_WIDTH = 168;
+/* Wide enough for the longest franchise name at the lane label's size, with
+   room to spare: these names get longer in other languages, and a clipped
+   label reads as a broken lane rather than as a long word. */
+const LABEL_WIDTH = 216;
 const PAD_TOP = 26;
 const DIVIDER_GAP = 26;
 

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import FallbackNotice from '../../../components/FallbackNotice.astro';
+import Emblem from '../../../components/Emblem.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse } from '../../../lib/content';
 import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
@@ -62,7 +63,17 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
     <div class="page">
       <div class="plate">
         <a class="crumb" href={localePath(language.code, 'characters')}>{t('characters.title')}</a>
-        <h1 class="plate-title">{prose.entry.data.title}</h1>
+        <div class="entry-emblem">
+          <Emblem
+            id={personId}
+            sigil={person.data.sigil}
+            saga={saga}
+            franchise={person.data.franchise}
+            size={112}
+            label={prose.entry.data.title}
+          />
+          <h1 class="plate-title">{prose.entry.data.title}</h1>
+        </div>
         <p class="plate-meta">
           {person.data.realName && <span>{person.data.realName}</span>}
           <span>{franchiseName(person.data.franchise)}</span>

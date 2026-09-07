@@ -136,6 +136,10 @@ const characters = defineCollection({
     franchise: z.string(),
     // Real name where the character has one, for search and disambiguation.
     realName: z.string().nullable().default(null),
+    /* Which authored glyph in sigils.ts stands for this person. Defaults to
+       the character id; named explicitly when the glyph was drawn under a
+       different name, as with Iron Man for Tony Stark. */
+    sigil: z.string().nullable().default(null),
     actors: z
       .array(
         z.object({

@@ -1,0 +1,106 @@
+---
+import { SIGILS } from '../lib/sigils';
+import { liveryStyle } from '../lib/livery';
+
+/*
+ * A character's emblem.
+ *
+ * The sigil is authored artwork (see sigils.ts). Everything around it is
+ * generated: the disc, the ring, and a scatter of particles whose positions
+ * are derived from the character's own id, so two people never get the same
+ * arrangement and nobody has to place them by hand.
+ *
+ * This is the project's whole answer to having no photographs. It has to
+ * carry recognition on its own, so it is drawn at a real size and given
+ * light rather than being treated as an icon.
+ */
+
+interface Props {
+  /** The character, used to seed the generated field. */
+  id: string;
+  /** Which authored glyph to draw. Falls back to the id. */
+  sigil?: string | null;
+  saga: string;
+  franchise?: string;
+  /** Rendered size in pixels. The glyph scales with it. */
+  size?: number;
+  /** A character with no authored sigil still gets a mark, never initials. */
+  label?: string;
+}
+
+const { id, sigil: sigilKey, saga, franchise, size = 96, label } = Astro.props;
+
+const sigil = SIGILS[sigilKey ?? id];
+
+/* A small deterministic hash of the id. The same character always produces
+   the same field, across languages, builds and machines. */
+function seedOf(value: string): number {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+const seed = seedOf(id);
+let cursor = seed;
+const next = () => {
+  cursor = (cursor * 1664525 + 1013904223) >>> 0;
+  return cursor / 4294967296;
+};
+
+const particles = Array.from({ length: 7 }, () => {
+  const angle = next() * Math.PI * 2;
+  const radius = 17 + next() * 6;
+  return {
+    x: 24 + Math.cos(angle) * radius,
+    y: 24 + Math.sin(angle) * radius,
+    r: 0.5 + next() * 0.9,
+    o: 0.3 + next() * 0.5,
+  };
+});
+
+/* With no authored sigil, the fallback is a figure built from the same seed:
+   a ring of struck marks. It is deliberately not a monogram, because a letter
+   in a box says the entry is unfinished and a mark does not. */
+const fallbackSpokes = Array.from({ length: 6 }, (unused, index) => {
+  const angle = (index / 6) * Math.PI * 2 + (seed % 360) * (Math.PI / 180);
+  const inner = 7 + ((seed >> (index * 3)) % 4);
+  const outer = 14 + ((seed >> (index * 2)) % 5);
+  return {
+    x1: 24 + Math.cos(angle) * inner,
+    y1: 24 + Math.sin(angle) * inner,
+    x2: 24 + Math.cos(angle) * outer,
+    y2: 24 + Math.sin(angle) * outer,
+  };
+});
+---
+
+<span
+  class="emblem"
+  data-livery
+  style={`${liveryStyle(saga, franchise)}; --emblem-size: ${size}px`}
+>
+  <svg viewBox="0 0 48 48" role={label ? 'img' : 'presentation'} aria-label={label} aria-hidden={label ? undefined : 'true'}>
+    <circle class="emblem-disc" cx="24" cy="24" r="21" />
+    <circle class="emblem-ring" cx="24" cy="24" r="21" />
+
+    <g class="emblem-field">
+      {particles.map((particle) => (
+        <circle cx={particle.x} cy={particle.y} r={particle.r} opacity={particle.o} />
+      ))}
+    </g>
+
+    <g class="emblem-glyph" set:html={sigil} />
+
+    {!sigil && (
+      <g class="emblem-fallback">
+        <circle cx="24" cy="24" r="4.2" />
+        {fallbackSpokes.map((spoke) => (
+          <line x1={spoke.x1} y1={spoke.y1} x2={spoke.x2} y2={spoke.y2} />
+        ))}
+      </g>
+    )}
+  </svg>
+</span>
