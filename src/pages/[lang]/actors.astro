@@ -1,0 +1,169 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+import { liveryStyle, universeOf } from '../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+const sagaOf = new Map(titles.map((title) => [title.data.id, title.data.saga]));
+
+type Role = {
+  id: string;
+  name: string;
+  alias: string | null;
+  note: string | null;
+  franchise: string;
+  saga: string;
+  universe: string;
+};
+
+type Actor = { name: string; roles: Role[]; universes: string[] };
+
+/* Actors are not stored anywhere. They are a property of the character files,
+   and this page is the read of them from the other direction: one row per
+   performer rather than one row per part. Nothing here needs its own data
+   file, and nothing here can drift from the entries it is derived from. */
+const byActor = new Map<string, Role[]>();
+const cast = new Map<string, string[]>();
+
+for (const person of await getCollection('characters')) {
+  const prose = await resolveProse('characterProse', language.code, person.data.id);
+  if (!prose) continue;
+  const role = {
+    id: person.data.id,
+    name: prose.entry.data.title,
+    alias: prose.entry.data.tagline ?? null,
+    franchise: person.data.franchise,
+    saga: sagaOf.get(person.data.firstAppearance) ?? 'unbound',
+    universe: person.data.universe,
+  };
+  cast.set(
+    person.data.id,
+    person.data.actors.map((actor) => actor.name),
+  );
+  for (const actor of person.data.actors) {
+    const list = byActor.get(actor.name) ?? [];
+    list.push({ ...role, note: actor.note ?? null });
+    byActor.set(actor.name, list);
+  }
+}
+
+const collator = new Intl.Collator(language.code);
+
+/* Sort on the family name, which is the last word that is not a generational
+   suffix. "Robert Downey Jr." files under Downey, not under Jr. */
+const SUFFIXES = new Set(['jr.', 'jr', 'sr.', 'sr', 'ii', 'iii', 'iv']);
+function fileUnder(name: string): string {
+  const words = name.split(' ').filter((word) => !SUFFIXES.has(word.toLowerCase()));
+  return words[words.length - 1] ?? name;
+}
+
+const actors: Actor[] = [...byActor.entries()]
+  .map(([name, roles]) => ({
+    name,
+    roles: roles.sort((a, b) => collator.compare(a.name, b.name)),
+    universes: [...new Set(roles.map((role) => role.universe))],
+  }))
+  .sort((a, b) => collator.compare(fileUnder(a.name), fileUnder(b.name)));
+
+/* The two things worth pulling out of an alphabetical list of 116 names. */
+const crossing = actors.filter((actor) => actor.roles.length > 1);
+const recast = [];
+for (const [id, names] of cast) {
+  if (names.length < 2) continue;
+  const person = actors.flatMap((actor) => actor.roles).find((role) => role.id === id);
+  if (person) recast.push({ role: person, names });
+}
+recast.sort((a, b) => collator.compare(a.role.name, b.role.name));
+---
+
+<Base
+  language={language.code}
+  title={`${t('actors.title')}. Phase Zero`}
+  description={t('actors.lede')}
+  path="actors"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-infinity); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('actors.title')}</h1>
+        <p class="plate-meta">{t('actors.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    {crossing.length > 0 && (
+      <section class="actor-feature" data-livery style="--livery-base: var(--livery-multiverse)">
+        <h2 class="label">{t('actors.crossing')}</h2>
+        <p class="control-help">{t('actors.crossingLede')}</p>
+        <ul class="actor-list">
+          {crossing.map((actor) => (
+            <li class="actor">
+              <h3 class="actor-name">{actor.name}</h3>
+              <ul class="title-cast">
+                {actor.roles.map((role) => (
+                  <li class="chip" data-livery style={liveryStyle(role.saga, role.franchise)}>
+                    <a href={localePath(language.code, 'characters', role.id)}>
+                      <span class="chip-title">{role.name}</span>
+                      <span class="chip-alias">{universeOf(role.universe).designation}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {recast.length > 0 && (
+      <section class="actor-feature" data-livery style="--livery-base: var(--livery-fox)">
+        <h2 class="label">{t('actors.recast')}</h2>
+        <p class="control-help">{t('actors.recastLede')}</p>
+        <ul class="actor-list">
+          {recast.map((entry) => (
+            <li class="actor">
+              <h3 class="actor-name">
+                <a href={localePath(language.code, 'characters', entry.role.id)}>{entry.role.name}</a>
+              </h3>
+              <p class="actor-faces">{entry.names.join(', ')}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section>
+      <h2 class="label">{t('actors.all')}</h2>
+      <p class="control-help">
+        {t('actors.count', { count: actors.length })}
+      </p>
+      <ul class="actor-index">
+        {actors.map((actor) => (
+          <li class="actor-row">
+            <span class="actor-row-name">{actor.name}</span>
+            <span class="actor-row-roles">
+              {actor.roles.map((role, index) => (
+                <>
+                  {index > 0 && <span aria-hidden="true">, </span>}
+                  <a href={localePath(language.code, 'characters', role.id)}>{role.name}</a>
+                  {role.note && <span class="actor-note"> ({role.note})</span>}
+                </>
+              ))}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</Base>
