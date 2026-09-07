@@ -1,0 +1,172 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+import { liveryStyle, franchiseName } from '../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+/*
+ * The whole index is rendered into the page and the browser hides what does
+ * not match. That means the site is searchable with JavaScript blocked, every
+ * result is a real link a search engine can follow, and there is no index to
+ * fetch before the first keystroke does anything.
+ */
+interface Row {
+  kind: string;
+  label: string;
+  detail: string;
+  href: string;
+  haystack: string;
+  saga: string;
+  franchise?: string;
+}
+
+const rows: Row[] = [];
+
+for (const entry of await getCollection('titles')) {
+  const prose = await resolveProse('titleProse', language.code, entry.data.id);
+  if (!prose) continue;
+  const year = entry.data.release.date ? String(entry.data.release.date.getUTCFullYear()) : '';
+  const franchise = franchiseName(entry.data.franchise);
+  rows.push({
+    kind: 'title',
+    label: prose.entry.data.title,
+    detail: [year, franchise, t(`saga.${entry.data.saga}`)].filter(Boolean).join('   '),
+    href: localePath(language.code, 'titles', entry.data.id),
+    haystack: `${prose.entry.data.title} ${franchise} ${t(`saga.${entry.data.saga}`)} ${year} ${prose.entry.data.oneLine}`.toLowerCase(),
+    saga: entry.data.saga,
+    franchise: entry.data.franchise,
+  });
+}
+
+const sets = await getCollection('sets');
+for (const entry of sets) {
+  const prose = await resolveProse('setProse', language.code, entry.data.id);
+  if (!prose) continue;
+  rows.push({
+    kind: 'set',
+    label: prose.entry.data.title,
+    detail: t(`collections.kind.${entry.data.kind}`),
+    href: localePath(language.code, 'collections', entry.data.id),
+    haystack: `${prose.entry.data.title} ${prose.entry.data.oneLine}`.toLowerCase(),
+    saga: entry.data.saga,
+    franchise: entry.data.franchise,
+  });
+}
+
+const setById = new Map(sets.map((entry) => [entry.data.id, entry]));
+for (const entry of await getCollection('setPieces')) {
+  const prose = await resolveProse('pieceProse', language.code, `${entry.data.set}/${entry.data.id}`);
+  const parent = setById.get(entry.data.set);
+  if (!prose || !parent) continue;
+  const parentProse = await resolveProse('setProse', language.code, entry.data.set);
+  rows.push({
+    kind: 'piece',
+    label: prose.entry.data.title,
+    detail: parentProse?.entry.data.title ?? entry.data.set,
+    href: `${localePath(language.code, 'collections', entry.data.set)}#${entry.data.id}`,
+    haystack: `${prose.entry.data.title} ${entry.data.designation} ${prose.entry.data.oneLine}`.toLowerCase(),
+    saga: parent.data.saga,
+  });
+}
+
+for (const entry of await getCollection('glossary')) {
+  const prose = await resolveProse('glossaryProse', language.code, entry.data.id);
+  if (!prose) continue;
+  rows.push({
+    kind: 'glossary',
+    label: prose.entry.data.title,
+    detail: prose.entry.data.oneLine,
+    href: `${localePath(language.code, 'glossary')}#${entry.data.id}`,
+    haystack: `${prose.entry.data.title} ${prose.entry.data.oneLine}`.toLowerCase(),
+    saga: 'next',
+  });
+}
+
+for (const entry of await getCollection('guides')) {
+  if (!entry.id.startsWith(`${language.code}/`) && !entry.id.startsWith('en/')) continue;
+  const slug = entry.id.split('/').at(-1)!;
+  const prose = await resolveProse('guides', language.code, slug);
+  if (!prose || rows.some((row) => row.kind === 'guide' && row.href.endsWith(slug))) continue;
+  rows.push({
+    kind: 'guide',
+    label: prose.entry.data.title,
+    detail: prose.entry.data.oneLine,
+    href: localePath(language.code, 'guides', slug),
+    haystack: `${prose.entry.data.title} ${prose.entry.data.oneLine}`.toLowerCase(),
+    saga: 'multiverse',
+  });
+}
+
+const collator = new Intl.Collator(language.code);
+rows.sort((a, b) => collator.compare(a.label, b.label));
+---
+
+<Base
+  language={language.code}
+  title={`${t('search.title')}. Phase Zero`}
+  description={t('search.lede')}
+  path="search"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-fox); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('search.title')}</h1>
+        <p class="plate-meta">{t('search.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    <div class="search-field">
+      <input
+        type="search"
+        data-search-input
+        placeholder={t('search.placeholder')}
+        aria-label={t('search.placeholder')}
+        aria-controls="results"
+        autocomplete="off"
+        autofocus
+      />
+      <button type="button" data-search-clear hidden>{t('search.clear')}</button>
+    </div>
+
+    <p
+      class="tally"
+      data-search-tally
+      aria-live="polite"
+      data-showing={t('search.showing', { count: '{count}', total: '{total}' })}
+    >{t('search.showing', { count: rows.length, total: rows.length })}</p>
+
+    <ul class="results" id="results" data-results>
+      {rows.map((row) => (
+        <li
+          class="result"
+          data-haystack={row.haystack}
+          data-livery
+          style={liveryStyle(row.saga, row.franchise)}
+        >
+          <a href={row.href}>
+            <span class="result-kind label">{t(`search.kind.${row.kind}`)}</span>
+            <span class="result-label">{row.label}</span>
+            <span class="result-detail">{row.detail}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <p class="empty-state" data-search-empty hidden>{t('search.empty')}</p>
+  </div>
+
+  <script>
+    import '../../scripts/search';
+  </script>
+</Base>
