@@ -1,0 +1,33 @@
+id: blade-the-series
+type: series
+universe: unbound
+franchise: blade
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2006-06-28
+  approximate: null
+  runtime: 46
+  episodes: 13
+  finale: 2006-09-13
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Blade:_The_Series"
+    title: "Blade: The Series, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

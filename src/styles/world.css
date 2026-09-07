@@ -971,6 +971,16 @@ a.plate:focus-visible {
   padding: 0;
 }
 
+/* What kind of thing this is. A row that says "54 min" is lying if the entry
+   is thirteen episodes long, so the format is stated before the numbers. */
+.spine-kind,
+.plate-kind {
+  font-size: var(--size-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 /* Announced, not out. Reads as a state rather than as a warning: it is the
    one row on the page you are not expected to have seen. */
 .spine-upcoming,

@@ -1,0 +1,39 @@
+id: one-shot-all-hail-the-king
+type: short
+universe: earth-616
+franchise: iron-man
+saga: infinity
+phase: 2
+tier: complete
+
+release:
+  date: 2014-02-04
+  approximate: null
+  runtime: 14
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Marvel_One-Shots"
+    title: "Marvel One-Shots, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/All_Hail_the_King"
+    title: "All Hail the King, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe:_Phase_Two"
+    title: "Marvel Cinematic Universe: Phase Two, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

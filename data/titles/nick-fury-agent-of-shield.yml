@@ -1,0 +1,33 @@
+id: nick-fury-agent-of-shield
+type: film
+universe: unbound
+franchise: nick-fury
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1998-05-26
+  approximate: null
+  runtime: 90
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Nick_Fury:_Agent_of_S.H.I.E.L.D._(film)"
+    title: "Nick Fury: Agent of S.H.I.E.L.D. (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

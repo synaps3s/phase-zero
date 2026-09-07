@@ -1,0 +1,35 @@
+id: spider-man-into-the-spider-verse
+type: film
+universe: unbound
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  # The article gives a premiere on December 1, 2018 and a United States
+  # release on December 14, 2018. The general release is the one recorded.
+  date: 2018-12-14
+  approximate: null
+  runtime: 117
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse"
+    title: "Spider-Man: Into the Spider-Verse, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

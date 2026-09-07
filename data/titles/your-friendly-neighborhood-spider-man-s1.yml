@@ -1,0 +1,41 @@
+id: your-friendly-neighborhood-spider-man-s1
+type: series
+universe: earth-616
+franchise: spider-man
+saga: multiverse
+phase: 5
+tier: complete
+
+release:
+  date: 2025-01-29
+  approximate: null
+  # The season article carries no runtime. The series article gives 29 to 33
+  # minutes, so this is the median rounded up.
+  runtime: 31
+  episodes: 10
+  finale: 2025-02-19
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+# The article states the series is set in an alternate timeline from the main
+# films and television series, one where Norman Osborn mentors Peter Parker
+# instead of Tony Stark.
+alternateUniverse: true
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Your_Friendly_Neighborhood_Spider-Man_season_1"
+    title: "Your Friendly Neighborhood Spider-Man season 1, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Your_Friendly_Neighborhood_Spider-Man"
+    title: "Your Friendly Neighborhood Spider-Man, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

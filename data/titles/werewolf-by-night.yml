@@ -1,0 +1,33 @@
+id: werewolf-by-night
+type: special
+universe: earth-616
+franchise: marvel-television
+saga: multiverse
+phase: 4
+tier: complete
+
+release:
+  date: 2022-10-07
+  approximate: null
+  runtime: 53
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Werewolf_by_Night_(TV_special)"
+    title: "Werewolf by Night (TV special), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

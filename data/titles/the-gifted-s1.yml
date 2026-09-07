@@ -1,0 +1,36 @@
+id: the-gifted-s1
+type: series
+universe: earth-10005
+franchise: x-men
+saga: fox
+phase: null
+tier: complete
+
+release:
+  date: 2017-10-02
+  approximate: null
+  runtime: 46
+  episodes: 13
+  finale: 2018-01-15
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Gifted_season_1"
+    title: "The Gifted season 1, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/The_Gifted_(American_TV_series)"
+    title: "The Gifted (American TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

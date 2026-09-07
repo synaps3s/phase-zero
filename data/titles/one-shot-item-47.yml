@@ -1,0 +1,39 @@
+id: one-shot-item-47
+type: short
+universe: earth-616
+franchise: nick-fury
+saga: infinity
+phase: 1
+tier: complete
+
+release:
+  date: 2012-09-25
+  approximate: null
+  runtime: 12
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Marvel_One-Shots"
+    title: "Marvel One-Shots, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Item_47"
+    title: "Item 47, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe:_Phase_One"
+    title: "Marvel Cinematic Universe: Phase One, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

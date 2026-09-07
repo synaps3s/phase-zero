@@ -1,0 +1,33 @@
+id: spider-man-1977
+type: series
+universe: unbound
+franchise: spider-man
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1977-09-14
+  approximate: null
+  runtime: 43
+  episodes: 13
+  finale: 1979-07-06
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_(TV_series)"
+    title: "The Amazing Spider-Man (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

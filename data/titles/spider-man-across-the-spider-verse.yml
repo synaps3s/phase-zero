@@ -1,0 +1,35 @@
+id: spider-man-across-the-spider-verse
+type: film
+universe: unbound
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  # The article gives a premiere on May 30, 2023 and a United States release
+  # on June 2, 2023. The general release is the one recorded.
+  date: 2023-06-02
+  approximate: null
+  runtime: 140
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Across_the_Spider-Verse"
+    title: "Spider-Man: Across the Spider-Verse, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,33 @@
+id: the-trial-of-the-incredible-hulk
+type: film
+universe: unbound
+franchise: hulk
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1989-05-07
+  approximate: null
+  runtime: 95
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Trial_of_the_Incredible_Hulk"
+    title: "The Trial of the Incredible Hulk, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

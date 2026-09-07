@@ -1,0 +1,38 @@
+id: x-men-97-s2
+type: series
+universe: unbound
+franchise: x-men
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2026-07-01
+  approximate: null
+  # The season article carries no runtime. The series article gives 30 to 43
+  # minutes across both seasons, so this is the median rounded up.
+  runtime: 37
+  episodes: 9
+  finale: 2026-08-12
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/X-Men_%2797_season_2"
+    title: "X-Men '97 season 2, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/X-Men_%2797"
+    title: "X-Men '97, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
