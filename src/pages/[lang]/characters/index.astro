@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
+import { resolveProse } from '../../../lib/content';
+import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+const sagaOf = new Map(titles.map((title) => [title.data.id, title.data.saga]));
+
+const people = [];
+for (const person of await getCollection('characters')) {
+  const prose = await resolveProse('characterProse', language.code, person.data.id);
+  if (!prose) continue;
+  const actors = person.data.actors.map((actor) => actor.name).join(', ');
+  people.push({
+    id: person.data.id,
+    name: prose.entry.data.title,
+    line: prose.entry.data.oneLine,
+    actors,
+    franchise: person.data.franchise,
+    saga: sagaOf.get(person.data.firstAppearance) ?? 'unbound',
+    universe: universeOf(person.data.universe),
+    appearances: person.data.appearsIn.length,
+    haystack: `${prose.entry.data.title} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)}`.toLowerCase(),
+  });
+}
+
+const collator = new Intl.Collator(language.code);
+people.sort((a, b) => collator.compare(a.name, b.name));
+---
+
+<Base
+  language={language.code}
+  title={`${t('characters.title')}. Phase Zero`}
+  description={t('characters.lede')}
+  path="characters"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-sony); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('characters.title')}</h1>
+        <p class="plate-meta">{t('characters.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    <div class="search-field">
+      <input
+        type="search"
+        data-search-input
+        placeholder={t('characters.searchPlaceholder')}
+        aria-label={t('characters.searchPlaceholder')}
+        aria-controls="results"
+        autocomplete="off"
+      />
+      <button type="button" data-search-clear hidden>{t('search.clear')}</button>
+    </div>
+
+    <p
+      class="tally"
+      data-search-tally
+      aria-live="polite"
+      data-showing={t('characters.showing', { count: '{count}', total: '{total}' })}
+    >{t('characters.showing', { count: people.length, total: people.length })}</p>
+
+    <ul class="people" id="results" data-results>
+      {people.map((person) => (
+        <li
+          class="person"
+          data-haystack={person.haystack}
+          data-livery
+          style={liveryStyle(person.saga, person.franchise)}
+        >
+          <a href={localePath(language.code, 'characters', person.id)}>
+            <h2 class="person-name">{person.name}</h2>
+            <p class="person-line">{person.line}</p>
+            <p class="person-meta">
+              {person.actors && <span>{t('characters.playedBy')} {person.actors}</span>}
+              <span class="figure">{t('characters.appearsInCount', { count: person.appearances })}</span>
+            </p>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <p class="empty-state" data-search-empty hidden>{t('search.empty')}</p>
+  </div>
+
+  <script>
+    import '../../../scripts/search';
+  </script>
+</Base>
