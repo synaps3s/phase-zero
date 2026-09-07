@@ -953,6 +953,18 @@ a.plate:focus-visible {
   vertical-align: 0.32em;
 }
 
+/* An entry of this run whose story is set on another Earth. It stays in the
+   list because it is one of the films you are following; the badge is how it
+   admits that it is not where the rest of them are. */
+.spine-elsewhere {
+  font-size: var(--size-label);
+  letter-spacing: 0.06em;
+  color: var(--livery-base);
+  border: 1px solid color-mix(in oklab, var(--livery-base) 40%, transparent);
+  border-radius: 999px;
+  padding: 0.1em 0.5em;
+}
+
 @media (min-width: 56rem) {
   .controls {
     grid-template-columns: auto auto 1fr;

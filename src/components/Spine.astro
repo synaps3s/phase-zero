@@ -23,6 +23,9 @@ interface Props {
   tierRank?: number;
   kind?: string;
   continuity?: string;
+  /* Shown only for an entry of this run whose story is set somewhere other
+     than the universe the run otherwise takes place in. */
+  universeLabel?: string | null;
   searchText?: string;
   setting?: string | null;
 }
@@ -43,6 +46,7 @@ const {
   tierRank,
   kind,
   continuity,
+  universeLabel = null,
   searchText,
   setting,
 } = Astro.props;
@@ -75,6 +79,7 @@ const t = useTranslations(language);
       <span class="figure">{year}</span>
       {runtime && <span class="figure">{t('title.runtime', { minutes: runtime })}</span>}
       <span class="spine-franchise">{franchiseName(franchise)}</span>
+      {universeLabel && <span class="spine-elsewhere figure">{universeLabel}</span>}
       {setting && <span class="spine-setting figure">{setting}</span>}
     </p>
   </div>

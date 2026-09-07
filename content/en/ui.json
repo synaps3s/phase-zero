@@ -152,7 +152,7 @@
   "timeline.searchPlaceholder": "Filter by title, era or franchise",
   "timeline.separate": "Separate universes",
   "timeline.separateGroup": "Separate universes",
-  "timeline.separateHelp": "The films made by other studios, and anything set outside the main continuity. They are kept apart because they are a different story, not a later part of this one.",
+  "timeline.separateHelp": "The films made by other studios. They are kept apart because they are a different story, not a later part of this one. A film of this run set on another Earth is not in here: it stays in the list and says so on its own row.",
   "timeline.separateOff": "Hidden",
   "timeline.separateOn": "Included",
   "timeline.showing": "Showing {count} of {total}",
