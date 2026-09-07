@@ -1,5 +1,5 @@
 /*
- * Search behaviour.
+ * Search and filter behaviour.
  *
  * The whole index is already in the page, so this only hides what does not
  * match. Nothing is fetched, nothing is indexed at runtime, and with this
@@ -14,6 +14,12 @@ if (input && list) {
   const tally = document.querySelector<HTMLElement>('[data-search-tally]');
   const empty = document.querySelector<HTMLElement>('[data-search-empty]');
   const clear = document.querySelector<HTMLButtonElement>('[data-search-clear]');
+  const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-alignment]')];
+
+  /* What somebody is cannot be typed into a search box, because the
+     classification is not a word on the page. It is a second axis, and the
+     two combine rather than replace each other. */
+  let alignment = 'all';
 
   function apply(): void {
     /* Every word has to match, in any order, so "iron 2010" finds what
@@ -23,7 +29,9 @@ if (input && list) {
 
     for (const row of rows) {
       const haystack = row.dataset.haystack ?? '';
-      const hit = words.every((word) => haystack.includes(word));
+      const hit =
+        words.every((word) => haystack.includes(word)) &&
+        (alignment === 'all' || row.dataset.alignment === alignment);
       row.hidden = !hit;
       if (hit) shown += 1;
     }
@@ -44,6 +52,16 @@ if (input && list) {
     apply();
     input.focus();
   });
+
+  for (const button of filters) {
+    button.addEventListener('click', () => {
+      alignment = button.dataset.alignment ?? 'all';
+      for (const other of filters) {
+        other.setAttribute('aria-pressed', String(other === button));
+      }
+      apply();
+    });
+  }
 
   apply();
 }

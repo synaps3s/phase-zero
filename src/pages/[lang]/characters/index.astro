@@ -17,7 +17,22 @@ const t = useTranslations(language.code);
 const titles = await getCollection('titles');
 const sagaOf = new Map(titles.map((title) => [title.data.id, title.data.saga]));
 
-const people = [];
+type Listed = {
+  id: string;
+  sigil: string | null;
+  name: string;
+  alias: string | null;
+  line: string;
+  actors: string;
+  franchise: string;
+  saga: string;
+  universe: { designation: string };
+  appearances: number;
+  alignment: string;
+  haystack: string;
+};
+
+const people: Listed[] = [];
 for (const person of await getCollection('characters')) {
   const prose = await resolveProse('characterProse', language.code, person.data.id);
   if (!prose) continue;
@@ -35,9 +50,15 @@ for (const person of await getCollection('characters')) {
     saga: sagaOf.get(person.data.firstAppearance) ?? 'unbound',
     universe: universeOf(person.data.universe),
     appearances: person.data.appearsIn.length,
+    alignment: person.data.alignment,
     haystack: `${prose.entry.data.title} ${prose.entry.data.tagline ?? ''} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)}`.toLowerCase(),
   });
 }
+
+/* Only the groups that actually have somebody in them get a button. */
+const ALIGNMENTS = ['hero', 'antihero', 'villain', 'mentor', 'supporting'].filter((value) =>
+  people.some((person) => person.alignment === value),
+);
 
 const collator = new Intl.Collator(language.code);
 people.sort((a, b) => collator.compare(a.name, b.name));
@@ -72,6 +93,23 @@ people.sort((a, b) => collator.compare(a.name, b.name));
       <button type="button" data-search-clear hidden>{t('search.clear')}</button>
     </div>
 
+    {/* Filtering by what somebody is, which the search box cannot do because
+        the classification is not a word on the page. Rendered as links so it
+        works with no JavaScript: each one is the same list, pre-filtered. */}
+    <fieldset class="control">
+      <legend class="label">{t('characters.alignment')}</legend>
+      <div class="switch">
+        <button type="button" data-alignment="all" aria-pressed="true">
+          {t('characters.alignment.all')}
+        </button>
+        {ALIGNMENTS.map((value) => (
+          <button type="button" data-alignment={value} aria-pressed="false">
+            {t(`characters.alignment.${value}`)}
+          </button>
+        ))}
+      </div>
+    </fieldset>
+
     <p
       class="tally"
       data-search-tally
@@ -84,6 +122,7 @@ people.sort((a, b) => collator.compare(a.name, b.name));
         <li
           class="person"
           data-haystack={person.haystack}
+          data-alignment={person.alignment}
           data-livery
           style={liveryStyle(person.saga, person.franchise)}
         >

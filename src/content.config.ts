@@ -160,6 +160,16 @@ const setPieces = defineCollection({
   }),
 });
 
+/* How a person functions in the story. This is the catalogue's own reading
+   rather than a sourced fact, in the same way a title's completeness tier is,
+   and it exists so the index can be grouped by it: "show me the villains" is a
+   question a reader has and free prose cannot answer.
+
+   The categories are deliberately few. Somebody who is a hero in one film and
+   an antagonist in the next takes the one they are remembered for, and the
+   page says the rest in sentences. */
+const alignment = z.enum(['hero', 'antihero', 'villain', 'mentor', 'supporting']);
+
 const characters = defineCollection({
   loader: glob({ pattern: '**/*.yml', base: './data/characters' }),
   schema: z.object({
@@ -168,6 +178,7 @@ const characters = defineCollection({
     franchise: z.string(),
     // Real name where the character has one, for search and disambiguation.
     realName: z.string().nullable().default(null),
+    alignment: alignment.default('supporting'),
     /* Which authored glyph in sigils.ts stands for this person. Defaults to
        the character id; named explicitly when the glyph was drawn under a
        different name, as with Iron Man for Tony Stark. */
