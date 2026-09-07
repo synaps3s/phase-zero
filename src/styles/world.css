@@ -971,6 +971,78 @@ a.plate:focus-visible {
   padding: 0;
 }
 
+/* The people in a title, derived from the character entries rather than
+   stored twice. Wider chips than a title link, because a name, an alias and
+   an actor is three lines of information. */
+.title-cast {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  margin: var(--s4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title-cast .chip-alias {
+  display: block;
+  font-size: var(--size-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--livery);
+}
+
+.title-cast .chip-year {
+  display: block;
+  font-size: var(--size-label);
+  color: var(--ink-faint);
+}
+
+/* --- Organisations -------------------------------------------------- */
+
+.org {
+  padding-block: var(--s6);
+  border-top: 1px solid var(--hairline);
+}
+
+.org:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.org-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s5);
+  margin-bottom: var(--s5);
+}
+
+.org-name {
+  font-family: var(--face-display);
+  font-size: var(--size-plate);
+  font-weight: var(--weight-plate);
+  line-height: 1.1;
+  color: var(--livery);
+  margin: 0;
+}
+
+.org-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s5);
+  margin-top: var(--s2);
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.org-body {
+  max-width: var(--measure);
+  margin-bottom: var(--s5);
+}
+
+.org > .label {
+  margin-bottom: var(--s3);
+}
+
 /* --- Questions ------------------------------------------------------ */
 
 .question-group {

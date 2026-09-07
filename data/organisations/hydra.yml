@@ -1,0 +1,18 @@
+id: hydra
+kind: criminal
+sigil: bucky-barnes
+universe: earth-616
+franchise: captain-america
+order: 3
+
+members:
+  - bucky-barnes
+  - wanda-maximoff
+
+firstAppearance: captain-america-the-first-avenger
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Hydra_(comics)"
+    title: "Hydra (comics), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

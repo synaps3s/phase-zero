@@ -1,0 +1,22 @@
+id: guardians-of-the-galaxy
+kind: team
+sigil: star-lord
+universe: earth-616
+franchise: guardians
+order: 4
+
+members:
+  - peter-quill
+  - gamora
+  - rocket
+  - groot
+  - nebula
+  - thor-odinson
+
+firstAppearance: guardians-of-the-galaxy
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
+    title: "Guardians of the Galaxy (film), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

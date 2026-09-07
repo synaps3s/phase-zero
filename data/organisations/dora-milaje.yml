@@ -1,0 +1,17 @@
+id: dora-milaje
+kind: military
+sigil: black-panther
+universe: earth-616
+franchise: black-panther
+order: 7
+
+members:
+  - okoye
+
+firstAppearance: captain-america-civil-war
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Dora_Milaje
+    title: "Dora Milaje, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

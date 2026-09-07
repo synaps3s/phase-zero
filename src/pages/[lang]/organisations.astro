@@ -1,0 +1,132 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Emblem from '../../components/Emblem.astro';
+import FallbackNotice from '../../components/FallbackNotice.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+import { liveryStyle, franchiseName, universeOf } from '../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+const sagaOf = new Map(titles.map((title) => [title.data.id, title.data.saga]));
+const people = await getCollection('characters');
+const collator = new Intl.Collator(language.code);
+
+const blocks = [];
+for (const organisation of (await getCollection('organisations')).sort(
+  (a, b) => a.data.order - b.data.order,
+)) {
+  const prose = await resolveProse('organisationProse', language.code, organisation.data.id);
+  if (!prose) continue;
+  const { Content } = await render(prose.entry);
+
+  /* The roster is stored on the organisation, but the names and aliases come
+     from the character entries, so a rename happens in one place. */
+  const members = [];
+  for (const id of organisation.data.members) {
+    const person = people.find((entry) => entry.data.id === id);
+    if (!person) continue;
+    const personProse = await resolveProse('characterProse', language.code, id);
+    if (!personProse) continue;
+    members.push({
+      id,
+      name: personProse.entry.data.title,
+      alias: personProse.entry.data.tagline ?? null,
+      franchise: person.data.franchise,
+      saga: sagaOf.get(person.data.firstAppearance) ?? 'unbound',
+    });
+  }
+  members.sort((first, second) => collator.compare(first.name, second.name));
+
+  const first = organisation.data.firstAppearance
+    ? await resolveProse('titleProse', language.code, organisation.data.firstAppearance)
+    : null;
+
+  blocks.push({
+    organisation,
+    prose,
+    Body: Content,
+    members,
+    firstLabel: first?.entry.data.title ?? null,
+    saga: sagaOf.get(organisation.data.firstAppearance ?? '') ?? 'unbound',
+  });
+}
+---
+
+<Base
+  language={language.code}
+  title={`${t('organisations.title')}. Phase Zero`}
+  description={t('organisations.lede')}
+  path="organisations"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-multiverse); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('organisations.title')}</h1>
+        <p class="plate-meta">{t('organisations.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    {blocks.map((block) => (
+      <section class="org" data-livery style={liveryStyle(block.saga, block.organisation.data.franchise)}>
+        <div class="org-head">
+          <Emblem
+            id={block.organisation.data.id}
+            sigil={block.organisation.data.sigil}
+            saga={block.saga}
+            franchise={block.organisation.data.franchise}
+            size={72}
+          />
+          <div>
+            <h2 class="org-name">{block.prose.entry.data.title}</h2>
+            <p class="org-meta">
+              <span>{t(`organisations.kind.${block.organisation.data.kind}`)}</span>
+              <span>{franchiseName(block.organisation.data.franchise)}</span>
+              <span>{universeOf(block.organisation.data.universe).designation}</span>
+              {block.firstLabel && <span>{block.firstLabel}</span>}
+            </p>
+          </div>
+        </div>
+
+        {block.prose.isFallback && (
+          <FallbackNotice
+            language={language.code}
+            shownLanguage={block.prose.language}
+            editPath={`content/${language.code}/organisations/${block.organisation.data.id}.md`}
+          />
+        )}
+
+        <div class="org-body prose">
+          <p class="entry-lede">{block.prose.entry.data.oneLine}</p>
+          <block.Body />
+        </div>
+
+        <h3 class="label">{t('organisations.members')}</h3>
+        {block.members.length === 0 ? (
+          <p class="control-help">{t('organisations.noMembers')}</p>
+        ) : (
+          <ul class="title-cast">
+            {block.members.map((member) => (
+              <li class="chip" data-livery style={liveryStyle(member.saga, member.franchise)}>
+                <a href={localePath(language.code, 'characters', member.id)}>
+                  <span class="chip-title">{member.name}</span>
+                  {member.alias && <span class="chip-alias">{member.alias}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    ))}
+  </div>
+</Base>

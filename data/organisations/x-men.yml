@@ -1,0 +1,19 @@
+id: x-men
+kind: team
+sigil: professor-x
+universe: earth-10005
+franchise: x-men
+order: 12
+
+members:
+  - logan
+  - charles-xavier
+  - erik-lehnsherr
+
+firstAppearance: x-men
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/X-Men_(film_series)"
+    title: "X-Men (film series), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

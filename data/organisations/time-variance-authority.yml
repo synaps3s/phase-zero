@@ -1,0 +1,18 @@
+id: time-variance-authority
+kind: agency
+sigil: mobius
+universe: earth-616
+franchise: loki
+order: 6
+
+members:
+  - loki-laufeyson
+  - sylvie
+
+firstAppearance: loki-s1
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Time_Variance_Authority
+    title: "Time Variance Authority, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

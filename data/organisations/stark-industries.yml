@@ -1,0 +1,19 @@
+id: stark-industries
+kind: company
+sigil: iron-man
+universe: earth-616
+franchise: iron-man
+order: 10
+
+members:
+  - tony-stark
+  - pepper-potts
+  - james-rhodes
+
+firstAppearance: iron-man
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Stark_Industries
+    title: "Stark Industries, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

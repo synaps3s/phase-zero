@@ -1,0 +1,17 @@
+id: defenders
+kind: team
+sigil: matt-murdock
+universe: earth-616
+franchise: defenders
+order: 11
+
+members:
+  - matt-murdock
+
+firstAppearance: the-defenders
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
+    title: "The Defenders (miniseries), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

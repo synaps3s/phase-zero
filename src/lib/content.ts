@@ -20,6 +20,7 @@ export type ProseCollection =
   | 'universeProse'
   | 'phaseProse'
   | 'pathProse'
+  | 'organisationProse'
   | 'questions'
   | 'guides';
 
@@ -34,6 +35,7 @@ const AREA: Record<ProseCollection, string> = {
   universeProse: 'universes',
   phaseProse: 'phases',
   pathProse: 'paths',
+  organisationProse: 'organisations',
   questions: 'questions',
   guides: 'guides',
 };
