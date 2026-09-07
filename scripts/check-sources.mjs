@@ -49,6 +49,22 @@ for (const file of listYaml('data/titles')) {
   if (entry) titles.set(basename(file, '.yml'), { path, entry });
 }
 
+const sets = new Map();
+for (const file of listYaml('data/sets')) {
+  const path = join('data/sets', file);
+  const entry = readYaml(path);
+  if (entry) sets.set(basename(file, '.yml'), { path, entry });
+}
+
+const pieces = new Map();
+for (const setId of sets.keys()) {
+  for (const file of listYaml(join('data/sets', setId))) {
+    const path = join('data/sets', setId, file);
+    const entry = readYaml(path);
+    if (entry) pieces.set(`${setId}/${basename(file, '.yml')}`, { path, entry, setId });
+  }
+}
+
 const characters = new Map();
 for (const file of listYaml('data/characters')) {
   const path = join('data/characters', file);
@@ -182,11 +198,59 @@ for (const [id, { path, entry }] of characters) {
   }
 }
 
+/* --- Named sets --- */
+
+for (const [id, { path, entry }] of sets) {
+  if (entry.id !== id) {
+    errors.push(`${path}: the id field is "${entry.id}" but the file is named "${id}.yml". They have to match.`);
+  }
+  checkAttribution(path, entry);
+  checkReference(path, 'universe', entry.universe, universes, 'data/universes.json');
+  checkReference(path, 'franchise', entry.franchise, franchises, 'data/franchises.json');
+  checkReference(path, 'saga', entry.saga, sagas, 'data/sagas.json');
+
+  const prose = `content/${sourceLanguage.code}/sets/${id}.md`;
+  if (!existsSync(prose)) {
+    errors.push(`${path}: has no ${sourceLanguage.code} prose at ${prose}.`);
+  }
+
+  const own = [...pieces.values()].filter((piece) => piece.entry.set === id);
+  if (own.length === 0) {
+    warnings.push(`${path}: has no pieces yet, so its page will be empty.`);
+  }
+  const seen = new Set();
+  for (const piece of own) {
+    if (seen.has(piece.entry.order)) {
+      errors.push(`${piece.path}: order ${piece.entry.order} is used twice in this set, so the running order is undefined.`);
+    }
+    seen.add(piece.entry.order);
+  }
+}
+
+for (const [key, { path, entry, setId }] of pieces) {
+  const leaf = key.split('/')[1];
+  if (entry.id !== leaf) {
+    errors.push(`${path}: the id field is "${entry.id}" but the file is named "${leaf}.yml". They have to match.`);
+  }
+  if (entry.set !== setId) {
+    errors.push(`${path}: says it belongs to set "${entry.set}" but lives under "${setId}".`);
+  }
+  checkAttribution(path, entry);
+  checkReference(path, 'set', entry.set, new Set(sets.keys()), 'data/sets');
+  checkReference(path, 'firstAppearance', entry.firstAppearance, new Set(titles.keys()), 'data/titles');
+
+  const prose = `content/${sourceLanguage.code}/sets/${setId}/${leaf}.md`;
+  if (!existsSync(prose)) {
+    errors.push(`${path}: has no ${sourceLanguage.code} prose at ${prose}.`);
+  }
+}
+
 /* --- Report --- */
 
 console.log(
-  `Checked ${titles.size} title(s) and ${characters.size} character(s) ` +
-    `against ${universes.size} universes, ${franchises.size} franchises and ${sagas.size} sagas.`,
+  `Checked ${titles.size} title(s), ${characters.size} character(s), and ` +
+    `${pieces.size} piece(s) across ${sets.size} set(s), against ${universes.size} universes, ` +
+    `${franchises.size} franchises and ${sagas.size} sagas.`,
 );
 
 for (const warning of warnings) console.warn(`  warning: ${warning}`);

@@ -1,0 +1,11 @@
+id: mind-stone
+set: infinity-stones
+designation: Mind Stone
+order: 2
+tint: yellow
+firstAppearance: the-avengers
+sources:
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

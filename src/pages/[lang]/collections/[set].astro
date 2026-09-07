@@ -1,0 +1,116 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import FallbackNotice from '../../../components/FallbackNotice.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
+import { resolveProse } from '../../../lib/content';
+import { liveryStyle } from '../../../lib/livery';
+
+export async function getStaticPaths() {
+  const sets = await getCollection('sets');
+  return languages.flatMap((language) =>
+    sets.map((entry) => ({
+      params: { lang: language.code, set: entry.data.id },
+      props: { setId: entry.data.id },
+    })),
+  );
+}
+
+const { lang } = Astro.params;
+const { setId } = Astro.props;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const set = (await getCollection('sets')).find((entry) => entry.data.id === setId)!;
+const prose = await resolveProse('setProse', language.code, setId);
+if (!prose) return Astro.rewrite('/404');
+
+const { Content } = await render(prose.entry);
+
+const titles = await getCollection('titles');
+const titleName = new Map<string, string>();
+for (const title of titles) {
+  const titleProse = await resolveProse('titleProse', language.code, title.data.id);
+  if (titleProse) titleName.set(title.data.id, titleProse.entry.data.title);
+}
+
+const pieces = [];
+for (const piece of (await getCollection('setPieces'))
+  .filter((entry) => entry.data.set === setId)
+  .sort((a, b) => a.data.order - b.data.order)) {
+  const piecePose = await resolveProse('pieceProse', language.code, `${setId}/${piece.data.id}`);
+  if (!piecePose) continue;
+  const rendered = await render(piecePose.entry);
+  pieces.push({ piece, prose: piecePose, Body: rendered.Content });
+}
+
+const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
+  set.data.verified,
+);
+---
+
+<Base
+  language={language.code}
+  title={`${prose.entry.data.title}. Phase Zero`}
+  description={prose.entry.data.oneLine}
+  path={`collections/${setId}`}
+  editPath={`content/${language.code}/sets/${setId}.md`}
+>
+  <section class="bleed band" data-livery style={liveryStyle(set.data.saga, set.data.franchise)}>
+    <div class="page">
+      <div class="plate">
+        <a class="crumb" href={localePath(language.code, 'collections')}>{t('collections.title')}</a>
+        <h1 class="plate-title">{prose.entry.data.title}</h1>
+        <p class="plate-meta">
+          <span>{t(`collections.kind.${set.data.kind}`)}</span>
+          <span class="figure">{t('collections.pieceCount', { count: pieces.length })}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    {prose.isFallback && (
+      <FallbackNotice
+        language={language.code}
+        shownLanguage={prose.language}
+        editPath={`content/${language.code}/sets/${setId}.md`}
+      />
+    )}
+
+    <article class="entry-body prose">
+      <p class="entry-lede">{prose.entry.data.oneLine}</p>
+      <Content />
+    </article>
+
+    <ol class="piece-list">
+      {pieces.map(({ piece, prose: piecePose, Body }) => (
+        <li class="piece" data-tint={piece.data.tint ?? undefined}>
+          <div class="piece-mark" aria-hidden="true"><span></span></div>
+          <div class="piece-body">
+            <h2 class="piece-name">{piecePose.entry.data.title}</h2>
+            <p class="piece-designation label">{piece.data.designation}</p>
+            <p class="piece-lede">{piecePose.entry.data.oneLine}</p>
+            <div class="prose"><Body /></div>
+            <p class="piece-first">
+              <span class="label">{t('piece.firstSeen')}</span>
+              <a href={localePath(language.code, 'titles', piece.data.firstAppearance)}>
+                {titleName.get(piece.data.firstAppearance) ?? piece.data.firstAppearance}
+              </a>
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <section class="sources">
+      <h2 class="label">{t('common.sources')}</h2>
+      <ul>
+        {set.data.sources.map((source) => (
+          <li><a href={source.url}>{source.title ?? source.url}</a></li>
+        ))}
+      </ul>
+      <p style="margin-top: var(--s3)">{t('common.verifiedOn', { date: verified })}</p>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,35 @@
+id: doctor-strange
+type: film
+universe: earth-616
+franchise: doctor-strange
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2016-11-04
+  approximate: null
+  runtime: 115
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 1000
+  setting: null
+
+requires: []
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)
+    title: Doctor Strange (2016 film), Wikipedia
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

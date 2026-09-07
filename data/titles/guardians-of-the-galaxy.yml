@@ -1,0 +1,35 @@
+id: guardians-of-the-galaxy
+type: film
+universe: earth-616
+franchise: guardians
+saga: infinity
+phase: 2
+tier: essential
+
+release:
+  date: 2014-08-01
+  approximate: null
+  runtime: 122
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 850
+  setting: null
+
+requires: []
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)
+    title: Guardians of the Galaxy (film), Wikipedia
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

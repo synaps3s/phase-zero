@@ -1,0 +1,11 @@
+id: time-stone
+set: infinity-stones
+designation: Time Stone
+order: 5
+tint: green
+firstAppearance: doctor-strange
+sources:
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

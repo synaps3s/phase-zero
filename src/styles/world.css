@@ -993,3 +993,162 @@ a.plate:focus-visible {
 .map-node:focus-visible {
   isolation: isolate;
 }
+
+/* --- Collections --------------------------------------------------- */
+
+.set-list {
+  display: grid;
+  gap: var(--s5);
+}
+
+.set-card a {
+  display: block;
+  padding: var(--s5);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-top-color: color-mix(in oklab, var(--livery) 46%, transparent);
+  text-decoration: none;
+  transition:
+    border-color var(--fast) var(--ease),
+    transform var(--slow) var(--ease);
+}
+
+.set-card a:hover,
+.set-card a:focus-visible {
+  border-color: color-mix(in oklab, var(--livery) 60%, transparent);
+  transform: translateY(-3px);
+}
+
+.set-card-name {
+  font-size: var(--size-head);
+  color: var(--livery);
+}
+
+.set-card-line {
+  margin-top: var(--s3);
+  max-width: var(--measure-tight);
+  color: var(--ink-soft);
+}
+
+.set-card-count {
+  margin-top: var(--s4);
+  color: var(--ink-faint);
+}
+
+/* One piece of a set. The mark takes the thing's own documented colour
+   where it has one, and the saga's livery where it does not. */
+.piece-list {
+  display: grid;
+  gap: var(--s7);
+  padding-block: var(--s5) var(--s6);
+  border-top: 1px solid var(--hairline);
+}
+
+.piece {
+  --piece-colour: var(--livery, var(--ink-soft));
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--s5);
+}
+
+.piece[data-tint='blue'] { --piece-colour: var(--tint-blue); }
+.piece[data-tint='yellow'] { --piece-colour: var(--tint-yellow); }
+.piece[data-tint='red'] { --piece-colour: var(--tint-red); }
+.piece[data-tint='purple'] { --piece-colour: var(--tint-purple); }
+.piece[data-tint='green'] { --piece-colour: var(--tint-green); }
+.piece[data-tint='orange'] { --piece-colour: var(--tint-orange); }
+.piece[data-tint='silver'] { --piece-colour: var(--tint-silver); }
+
+.piece-mark {
+  display: grid;
+  place-items: start center;
+  padding-top: 0.45rem;
+}
+
+.piece-mark span {
+  display: block;
+  width: 0.85rem;
+  height: 0.85rem;
+  background: var(--piece-colour);
+  box-shadow: 0 0 20px -2px var(--piece-colour);
+  transform: rotate(45deg);
+}
+
+.piece-name {
+  font-size: var(--size-head);
+  color: var(--piece-colour);
+}
+
+.piece-designation {
+  margin-top: var(--s2);
+  color: var(--ink-faint);
+}
+
+.piece-lede {
+  margin-top: var(--s3);
+  max-width: var(--measure-tight);
+  color: var(--core);
+  font-size: var(--size-lede);
+  line-height: 1.5;
+}
+
+.piece-body > .prose {
+  margin-top: var(--s4);
+}
+
+.piece-first {
+  margin-top: var(--s4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s3);
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.piece-first a {
+  color: var(--piece-colour);
+}
+
+@media (min-width: 56rem) {
+  .set-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* The way onward from the opening shelf. It is a sentence with an arrow
+   rather than a filled button, because the page is a guide and not a form. */
+.onward {
+  margin-top: var(--s5);
+}
+
+.onward-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+  padding: var(--s3) var(--s4);
+  border: 1px solid color-mix(in oklab, var(--watched) 46%, transparent);
+  color: var(--watched);
+  font-family: var(--face-display);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition:
+    border-color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease);
+}
+
+.onward-link:hover,
+.onward-link:focus-visible {
+  border-color: var(--watched);
+  background: var(--watched-soft);
+}
+
+.onward-link svg {
+  width: 1.05em;
+  height: 1.05em;
+  transition: transform var(--slow) var(--ease);
+}
+
+.onward-link:hover svg {
+  transform: translateX(3px);
+}

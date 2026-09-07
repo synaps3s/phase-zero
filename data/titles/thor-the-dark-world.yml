@@ -1,0 +1,35 @@
+id: thor-the-dark-world
+type: film
+universe: earth-616
+franchise: thor
+saga: infinity
+phase: 2
+tier: essential
+
+release:
+  date: 2013-11-08
+  approximate: null
+  runtime: 112
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 800
+  setting: null
+
+requires: [thor]
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Thor:_The_Dark_World
+    title: "Thor: The Dark World, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

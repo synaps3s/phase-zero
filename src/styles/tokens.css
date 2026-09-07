@@ -46,6 +46,18 @@
   --livery-sony: #ec5f93;
   --livery-unbound: #8fa3b8;
 
+  /* --- Tints. Some things in the fiction have a documented colour of
+         their own, like the Infinity Stones. The data names the tint and
+         this owns what it is, so a colour is never written into a data
+         file. Every one clears 4.5:1 on its own ground. --- */
+  --tint-blue: #6fc3f5;
+  --tint-yellow: #f2d14a;
+  --tint-red: #f2727e;
+  --tint-purple: #b98cf0;
+  --tint-green: #57d6a0;
+  --tint-orange: #f79e52;
+  --tint-silver: #b6c2d4;
+
   /* --- The one universal state: a title you have watched. --- */
   --watched: #ffc47a;
   --watched-glow: rgba(255, 196, 122, 0.42);
@@ -130,6 +142,14 @@
     --livery-sony: #a82b57;
     --livery-unbound: #4a5866;
 
+    --tint-blue: #125e8a;
+    --tint-yellow: #7a5a0b;
+    --tint-red: #a32330;
+    --tint-purple: #5b3399;
+    --tint-green: #0e6b4c;
+    --tint-orange: #8a4b10;
+    --tint-silver: #4a5666;
+
     --watched: #8a5a12;
     --watched-glow: rgba(138, 90, 18, 0.24);
     --watched-soft: rgba(138, 90, 18, 0.1);
@@ -166,6 +186,14 @@
   --livery-fox: #26578f;
   --livery-sony: #a82b57;
   --livery-unbound: #4a5866;
+
+  --tint-blue: #125e8a;
+  --tint-yellow: #7a5a0b;
+  --tint-red: #a32330;
+  --tint-purple: #5b3399;
+  --tint-green: #0e6b4c;
+  --tint-orange: #8a4b10;
+  --tint-silver: #4a5666;
 
   --watched: #8a5a12;
   --watched-glow: rgba(138, 90, 18, 0.24);
