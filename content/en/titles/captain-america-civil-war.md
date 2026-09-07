@@ -1,5 +1,5 @@
 ---
-title: Captain America: Civil War
+title: "Captain America: Civil War"
 oneLine: After too many cities are damaged, governments demand oversight of the Avengers, and the team splits over whether to accept it.
 tagline: No villain, just two people who are both right
 ---

@@ -1,5 +1,5 @@
 ---
-title: Captain America: The Winter Soldier
+title: "Captain America: The Winter Soldier"
 oneLine: L'organizzazione per cui lavora Captain America si scopre essere stata guidata dall'interno dalle persone che aveva combattuto in guerra.
 tagline: Un thriller politico che per caso ha uno scudo dentro
 ---

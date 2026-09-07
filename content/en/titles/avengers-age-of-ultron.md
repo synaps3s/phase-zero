@@ -1,5 +1,5 @@
 ---
-title: Avengers: Age of Ultron
+title: "Avengers: Age of Ultron"
 oneLine: Trying to build a shield around the world, Tony Stark builds something that decides the world would be safer without them.
 tagline: The team's own idea turns on them
 ---

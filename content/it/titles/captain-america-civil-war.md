@@ -1,5 +1,5 @@
 ---
-title: Captain America: Civil War
+title: "Captain America: Civil War"
 oneLine: Dopo troppe città danneggiate, i governi chiedono un controllo sugli Avengers, e la squadra si spacca sull'accettarlo o no.
 tagline: Nessun cattivo, solo due persone che hanno ragione entrambe
 ---

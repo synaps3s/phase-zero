@@ -1,5 +1,5 @@
 ---
-title: Thor: Ragnarok
+title: "Thor: Ragnarok"
 oneLine: Thor loses his hammer, his home and his hair, and finds out his family history is worse than he was told.
 tagline: The one that decided to be funny
 ---

@@ -1,5 +1,5 @@
 ---
-title: Thor: Ragnarok
+title: "Thor: Ragnarok"
 oneLine: Thor perde il martello, la casa e i capelli, e scopre che la storia della sua famiglia è peggiore di come gliel'avevano raccontata.
 tagline: Quello che ha deciso di far ridere
 ---
