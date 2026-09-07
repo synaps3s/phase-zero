@@ -65,6 +65,13 @@ for (const setId of sets.keys()) {
   }
 }
 
+const glossary = new Map();
+for (const file of listYaml('data/glossary')) {
+  const path = join('data/glossary', file);
+  const entry = readYaml(path);
+  if (entry) glossary.set(basename(file, '.yml'), { path, entry });
+}
+
 const characters = new Map();
 for (const file of listYaml('data/characters')) {
   const path = join('data/characters', file);
@@ -245,11 +252,28 @@ for (const [key, { path, entry, setId }] of pieces) {
   }
 }
 
+/* --- Glossary --- */
+
+for (const [id, { path, entry }] of glossary) {
+  if (entry.id !== id) {
+    errors.push(`${path}: the id field is "${entry.id}" but the file is named "${id}.yml". They have to match.`);
+  }
+  checkAttribution(path, entry);
+  if (entry.firstAppearance) {
+    checkReference(path, 'firstAppearance', entry.firstAppearance, new Set(titles.keys()), 'data/titles');
+  }
+  const prose = `content/${sourceLanguage.code}/glossary/${id}.md`;
+  if (!existsSync(prose)) {
+    errors.push(`${path}: has no ${sourceLanguage.code} prose at ${prose}.`);
+  }
+}
+
 /* --- Report --- */
 
 console.log(
   `Checked ${titles.size} title(s), ${characters.size} character(s), and ` +
-    `${pieces.size} piece(s) across ${sets.size} set(s), against ${universes.size} universes, ` +
+    `${pieces.size} piece(s) across ${sets.size} set(s), and ${glossary.size} glossary term(s), ` +
+    `against ${universes.size} universes, ` +
     `${franchises.size} franchises and ${sagas.size} sagas.`,
 );
 
