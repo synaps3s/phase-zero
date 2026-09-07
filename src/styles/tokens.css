@@ -76,6 +76,12 @@
   --size-data: 0.875rem;
   --size-label: 0.6875rem;
 
+  /* SVG text is measured in user units, not rem, so the map carries its own
+     two steps rather than literal pixel values scattered through the rules. */
+  --size-map-year: 11px;
+  --size-map-lane: 10px;
+  --size-map-node: 11px;
+
   --leading-plate: 1.02;
   --leading-title: 1.12;
   --leading-body: 1.65;
