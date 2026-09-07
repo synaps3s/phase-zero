@@ -1,0 +1,10 @@
+id: one-evening
+order: 9
+titles:
+  - iron-man
+  - the-avengers
+sources:
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe"
+    title: "Marvel Cinematic Universe, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

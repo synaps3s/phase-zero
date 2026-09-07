@@ -1,8 +1,24 @@
 ---
 title: "Spider-Man, attraverso tre studi"
-oneLine: "Lo stesso personaggio, prodotto da aziende diverse in vent'anni, nell'ordine che li rende una storia sola."
+oneLine: "Tutti gli Spider-Man dal vero in fila, dal 2002 a oggi, nell'ordine che fa funzionare il crossover."
 ---
 
-Per quasi tutta la loro vita questi film non avevano niente a che vedere l'uno con l'altro. Studi diversi, attori diversi, continuità diverse, nessun piano condiviso. Poi un film ha deciso che erano successi tutti, e leggerli in quest'ordine trasforma tre tentativi separati in un arco unico su una persona che incontra se stessa.
+Ci sono tre Peter Parker e sono stati fatti da due studi dentro tre continuità
+separate che non avevano niente a che fare tra loro. Poi un film li ha messi
+tutti e tre nella stessa stanza, e diciotto anni di roba precedente hanno
+improvvisamente cominciato a contare.
 
-Guardateli in quest'ordine e non per data di uscita. Due dei film più vecchi stanno qui perché l'ultimo ha bisogno che li abbiate incontrati, e quelli lasciati fuori sono fuori perché quel film non li usa.
+Questo percorso li guarda nell'ordine che rende quella cosa. Prima la trilogia di
+Raimi, perché è la più vecchia e la più compiuta. Poi i due film di Webb, che
+sono quelli che quasi tutti hanno saltato e che il crossover successivo tratta
+come questione in sospeso. Poi il percorso collegato, dove il terzo Peter arriva
+dentro il film di qualcun altro e si deve guadagnare il proprio.
+
+:::detail{title="Perché ci sono dentro dei film degli Avengers"}
+Ce ne sono due, e solo due. *Captain America: Civil War* è dove questo Peter
+viene reclutato, e *Avengers: Infinity War* e *Avengers: Endgame* sono dove gli
+succede la cosa che dà forma ai suoi ultimi tre film.
+
+Tutto il resto del percorso collegato è escluso apposta. Questo è un percorso
+dentro un personaggio, non dentro una saga.
+:::

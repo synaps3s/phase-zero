@@ -1,8 +1,24 @@
 ---
 title: "Spider-Man, across three studios"
-oneLine: "The same character, made by different companies over twenty years, in the order that makes them one story."
+oneLine: "Every live-action Spider-Man in one line, from 2002 to now, in the order that makes the crossover land."
 ---
 
-For most of their lives these films had nothing to do with each other. Different studios, different actors, different continuities, no shared plan. Then one film decided they all happened, and reading them in this order turns three separate attempts into a single arc about the same person meeting himself.
+There are three Peter Parkers and they were made by two studios across three
+separate continuities that had nothing to do with each other. Then one film put
+all three in a room, and everything the previous eighteen years had built
+suddenly counted.
 
-Watch them in this order rather than by release date. Two of the earlier films are here because the last one needs you to have met them, and the ones left out are left out because that film does not use them.
+This route watches them in the order that pays that off. The Raimi trilogy
+first, because it is the oldest and the most complete. Then the two Webb films,
+which are the ones most people skipped and which the later crossover treats as
+unfinished business. Then the connected run, where the third Peter arrives
+inside somebody else's film and has to earn his own.
+
+:::detail{title="Why the Avengers films are in here"}
+Two are, and only two. *Captain America: Civil War* is where this Peter is
+recruited, and *Avengers: Infinity War* and *Avengers: Endgame* are where the
+thing that shapes his last three films happens to him.
+
+Everything else from the connected run is left out on purpose. This is a route
+through one character, not through a saga.
+:::

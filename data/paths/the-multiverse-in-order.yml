@@ -1,12 +1,16 @@
 id: the-multiverse-in-order
 order: 3
 titles:
+  - avengers-endgame
+  - wandavision
   - loki-s1
   - spider-man-no-way-home
   - doctor-strange-in-the-multiverse-of-madness
+  - loki-s2
   - deadpool-and-wolverine
+  - the-fantastic-four-first-steps
 sources:
-  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe
-    title: Marvel Cinematic Universe, Wikipedia
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe"
+    title: "Marvel Cinematic Universe, Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

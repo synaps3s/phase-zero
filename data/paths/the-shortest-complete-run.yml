@@ -10,7 +10,7 @@ titles:
   - avengers-infinity-war
   - avengers-endgame
 sources:
-  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe
-    title: Marvel Cinematic Universe, Wikipedia
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe"
+    title: "Marvel Cinematic Universe, Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

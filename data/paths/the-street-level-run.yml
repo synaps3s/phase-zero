@@ -1,0 +1,26 @@
+id: the-street-level-run
+order: 5
+titles:
+  - daredevil-s1
+  - jessica-jones-s1
+  - daredevil-s2
+  - luke-cage-s1
+  - iron-fist-s1
+  - the-defenders
+  - the-punisher-s1
+  - jessica-jones-s2
+  - luke-cage-s2
+  - iron-fist-s2
+  - daredevil-s3
+  - the-punisher-s2
+  - jessica-jones-s3
+  - hawkeye
+  - echo
+  - daredevil-born-again-s1
+  - daredevil-born-again-s2
+  - the-punisher-one-last-kill
+sources:
+  - url: "https://en.wikipedia.org/wiki/Daredevil_(TV_series)"
+    title: "Daredevil (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -20,6 +20,7 @@ export type ProseCollection =
   | 'universeProse'
   | 'phaseProse'
   | 'pathProse'
+  | 'questions'
   | 'guides';
 
 /* Where each prose collection lives under content/<code>/. A piece's slug
@@ -33,6 +34,7 @@ const AREA: Record<ProseCollection, string> = {
   universeProse: 'universes',
   phaseProse: 'phases',
   pathProse: 'paths',
+  questions: 'questions',
   guides: 'guides',
 };
 

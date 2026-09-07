@@ -1,0 +1,20 @@
+id: the-fox-x-men-run
+order: 8
+titles:
+  - x-men-first-class
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+  - dark-phoenix
+  - x-men
+  - x2
+  - x-men-the-last-stand
+  - the-wolverine
+  - logan
+  - deadpool
+  - deadpool-2
+  - the-new-mutants
+sources:
+  - url: "https://en.wikipedia.org/wiki/X-Men_(film_series)"
+    title: "X-Men (film series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -3,11 +3,18 @@ order: 2
 titles:
   - spider-man-2002
   - spider-man-2
+  - spider-man-3
+  - the-amazing-spider-man
+  - the-amazing-spider-man-2
+  - captain-america-civil-war
   - spider-man-homecoming
+  - avengers-infinity-war
+  - avengers-endgame
   - spider-man-far-from-home
   - spider-man-no-way-home
+  - spider-man-brand-new-day
 sources:
-  - url: https://en.wikipedia.org/wiki/Spider-Man_in_film
-    title: Spider-Man in film, Wikipedia
+  - url: "https://en.wikipedia.org/wiki/Spider-Man_in_film"
+    title: "Spider-Man in film, Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07
