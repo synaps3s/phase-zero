@@ -4,8 +4,8 @@ import Base from '../../layouts/Base.astro';
 import Spine from '../../components/Spine.astro';
 import SagaBlock from '../../components/SagaBlock.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
-import { resolveProse } from '../../lib/content';
-import { liveryStyle, sagas } from '../../lib/livery';
+import { resolveProse, sourceSlugs } from '../../lib/content';
+import { liveryStyle, sagaStyle, sagas } from '../../lib/livery';
 import site from '../../../config/site.json';
 
 export function getStaticPaths() {
@@ -65,6 +65,25 @@ const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
    rather than by concatenating fragments in English order. */
 const SLOT = '@@';
 const [beforeTitle, afterTitle] = t('home.startWith', { title: SLOT }).split(SLOT);
+
+/* The portal. Counts come from the catalogue rather than from a number typed
+   into a string, so a section that has grown says so and one that is still
+   thin cannot pretend otherwise. */
+const characters = await getCollection('characters');
+const sets = await getCollection('sets');
+const glossaryTerms = await getCollection('glossary');
+const guideSlugs = await sourceSlugs('guides');
+
+const portal = [
+  { key: 'timeline', path: 'timeline', saga: 'infinity', count: everything.length },
+  { key: 'characters', path: 'characters', saga: 'sony', count: characters.length },
+  { key: 'universes', path: 'universes', saga: 'fox', count: 6 },
+  { key: 'phases', path: 'phases', saga: 'infinity', count: 7 },
+  { key: 'collections', path: 'collections', saga: 'multiverse', count: sets.length },
+  { key: 'glossary', path: 'glossary', saga: 'next', count: glossaryTerms.length },
+  { key: 'guides', path: 'guides/where-to-start', saga: 'multiverse', count: guideSlugs.length },
+  { key: 'search', path: 'search', saga: 'fox', count: null },
+];
 
 const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site.tagline.en;
 ---
@@ -145,6 +164,25 @@ const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site
     </p>
 
     <p class="storage-note">{t('watched.storageNotice')}</p>
+  </section>
+
+  <section class="section page">
+    <div class="section-head">
+      <h2>{t('home.portal')}</h2>
+      <p>{t('home.portalLede')}</p>
+    </div>
+
+    <ul class="portal">
+      {portal.map((door) => (
+        <li class="door" data-livery style={sagaStyle(door.saga)}>
+          <a href={localePath(language.code, door.path)}>
+            <h3 class="door-name">{t(`nav.${door.key}`)}</h3>
+            <p class="door-line">{t(`portal.${door.key}`)}</p>
+            {door.count !== null && <p class="door-count figure label">{door.count}</p>}
+          </a>
+        </li>
+      ))}
+    </ul>
   </section>
 
   <section class="section page">
