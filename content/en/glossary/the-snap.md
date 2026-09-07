@@ -1,5 +1,6 @@
 ---
 title: The Snap
+aliases: ["the Snap", "Snap"]
 oneLine: The moment half of all life in the universe was erased, and the five
   years the survivors spent living with it before it was undone.
 ---

@@ -1,5 +1,6 @@
 ---
 title: Multiverso
+aliases: ["multiversi"]
 oneLine: L'idea che questa non sia l'unica versione della realtà, e che altre
   versioni delle stesse persone stiano vivendo vite leggermente diverse
   altrove.

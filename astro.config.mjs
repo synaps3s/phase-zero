@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import remarkDirective from 'remark-directive';
 import remarkLayers from './src/lib/remark-layers.mjs';
+import remarkGlossary from './src/lib/remark-glossary.mjs';
 import languages from './config/languages.json' with { type: 'json' };
 import site from './config/site.json' with { type: 'json' };
 
@@ -26,7 +27,7 @@ export default defineConfig({
   markdown: {
     // The two content layers, :::detail and :::spoiler, are parsed as
     // directives and rendered as real disclosure elements.
-    remarkPlugins: [remarkDirective, remarkLayers],
+    remarkPlugins: [remarkDirective, remarkLayers, remarkGlossary],
   },
   build: {
     format: 'directory',

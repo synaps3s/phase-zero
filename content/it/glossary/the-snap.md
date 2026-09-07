@@ -1,5 +1,6 @@
 ---
 title: Lo Schiocco
+aliases: ["Schiocco"]
 oneLine: Il momento in cui metà della vita nell'universo è stata cancellata, e i
   cinque anni che i sopravvissuti hanno passato conviverci prima che venisse
   annullato.

@@ -1,5 +1,6 @@
 ---
 title: Sacred Timeline
+aliases: ["Sacred Timeline"]
 oneLine: The single approved version of history that an organisation outside
   time was keeping, by deleting every version that tried to branch off it.
 ---

@@ -1,5 +1,6 @@
 ---
 title: Variante
+aliases: ["Varianti"]
 oneLine: Un'altra versione di una persona proveniente da un'altra linea
   temporale, che è davvero lei e davvero non è quella che state seguendo.
 ---

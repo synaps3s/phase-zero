@@ -1,5 +1,6 @@
 ---
 title: Variant
+aliases: ["variants"]
 oneLine: Another version of a person from another timeline, who is genuinely
   them and genuinely not the one you have been following.
 ---

@@ -230,7 +230,11 @@ const glossary = defineCollection({
 
 const glossaryProse = defineCollection({
   loader: glob({ pattern: '*/glossary/*.md', base: './content' }),
-  schema: proseFrontmatter,
+  schema: proseFrontmatter.extend({
+    /* Other forms the term is written in, so prose is caught however the
+       writer phrased it. "TVA" and "Time Variance Authority" are one entry. */
+    aliases: z.array(z.string()).default([]),
+  }),
 });
 
 const universeProse = defineCollection({

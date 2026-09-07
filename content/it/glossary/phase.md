@@ -1,5 +1,6 @@
 ---
 title: Fase
+aliases: ["Fasi", "Fase"]
 oneLine: Un blocco numerato di uscite, come una serie lunga viene divisa in
   stagioni.
 ---

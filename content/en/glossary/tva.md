@@ -1,5 +1,6 @@
 ---
 title: Time Variance Authority
+aliases: ["TVA", "Time Variance Authority"]
 oneLine: A bureaucracy that exists outside of time and monitors the timeline,
   deleting anything that departs from the version it protects.
 ---
