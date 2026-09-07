@@ -5,6 +5,7 @@ import FallbackNotice from '../../../components/FallbackNotice.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse, sourceSlugs } from '../../../lib/content';
 import { liveryStyle, universeOf, franchiseName } from '../../../lib/livery';
+import { leadsToMap } from '../../../lib/connections';
 
 export async function getStaticPaths() {
   /* A page exists when there is prose in the source language to put on it.
@@ -55,7 +56,9 @@ async function linksFor(ids: string[]) {
 }
 
 const requires = await linksFor(facts.data.requires);
-const leadsTo = await linksFor(facts.data.leadsTo);
+/* Read backwards out of every other entry's prerequisites, so this list and
+   those can never disagree. */
+const leadsTo = await linksFor(leadsToMap(allTitles).get(titleId) ?? []);
 
 /* Who is in this, derived rather than stored. A character already lists the
    titles it appears in, so asking the question the other way round needs no
