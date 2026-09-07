@@ -1,0 +1,109 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+import { liveryStyle, sagas } from '../../lib/livery';
+import phaseData from '../../../data/phases.json';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+interface PhaseFacts {
+  number: number;
+  saga: string;
+  from: number;
+  to: number | null;
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+const sagaOrder = new Map(sagas.map((saga) => [saga.id, saga.order]));
+
+const blocks = [];
+for (const phase of (phaseData as PhaseFacts[]).sort((a, b) => a.number - b.number)) {
+  const prose = await resolveProse('phaseProse', language.code, String(phase.number));
+  if (!prose) continue;
+  const { Content } = await render(prose.entry);
+
+  const own = titles
+    .filter((title) => title.data.phase === phase.number)
+    .sort((a, b) => Number(a.data.release.date) - Number(b.data.release.date));
+
+  const entries = [];
+  for (const title of own) {
+    const titleProse = await resolveProse('titleProse', language.code, title.data.id);
+    entries.push({
+      id: title.data.id,
+      label: titleProse?.entry.data.title ?? title.data.id,
+      year: title.data.release.date ? String(title.data.release.date.getUTCFullYear()) : '',
+      saga: title.data.saga,
+      franchise: title.data.franchise,
+    });
+  }
+
+  blocks.push({ phase, prose, Body: Content, entries });
+}
+
+blocks.sort(
+  (a, b) =>
+    (sagaOrder.get(a.phase.saga) ?? 99) - (sagaOrder.get(b.phase.saga) ?? 99) ||
+    a.phase.number - b.phase.number,
+);
+---
+
+<Base
+  language={language.code}
+  title={`${t('phases.title')}. Phase Zero`}
+  description={t('phases.lede')}
+  path="phases"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-infinity); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('phases.title')}</h1>
+        <p class="plate-meta">{t('phases.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    {blocks.map(({ phase, prose, Body, entries }) => (
+      <section class="phase section" id={`phase-${phase.number}`} data-livery style={liveryStyle(phase.saga)}>
+        <div class="section-head">
+          <p class="phase-meta">
+            <span class="label">{t(`saga.${phase.saga}`)}</span>
+            <span class="figure">
+              {phase.to
+                ? t('phases.years', { from: phase.from, to: phase.to })
+                : t('phases.yearsOpen', { from: phase.from })}
+            </span>
+          </p>
+          <h2>{prose.entry.data.title}</h2>
+          <p>{prose.entry.data.oneLine}</p>
+        </div>
+
+        <div class="prose phase-body"><Body /></div>
+
+        {entries.length > 0 ? (
+          <ol class="saga-run">
+            {entries.map((entry) => (
+              <li class="chip" data-livery style={liveryStyle(entry.saga, entry.franchise)}>
+                <a href={localePath(language.code, 'titles', entry.id)}>
+                  <span class="chip-title">{entry.label}</span>
+                  <span class="chip-year figure">{entry.year}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p class="phase-empty">{t('phases.empty')}</p>
+        )}
+      </section>
+    ))}
+  </div>
+</Base>

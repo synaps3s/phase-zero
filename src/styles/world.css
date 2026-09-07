@@ -1350,3 +1350,34 @@ a.plate:focus-visible {
 .universe-run {
   margin-top: var(--s4);
 }
+
+/* --- Phases --------------------------------------------------------- */
+
+.phase {
+  border-top: 1px solid var(--hairline);
+}
+
+.phase-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s2) var(--s4);
+  margin: 0 0 var(--s3);
+  color: var(--livery);
+}
+
+.phase-meta .figure {
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.phase-body {
+  margin-bottom: var(--s5);
+}
+
+/* A phase with nothing in the catalogue yet says so, rather than rendering
+   as an empty block the reader has to interpret. */
+.phase-empty {
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
