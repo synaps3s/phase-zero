@@ -1,0 +1,33 @@
+id: wandavision
+type: series
+universe: earth-616
+franchise: scarlet-witch
+saga: multiverse
+phase: 4
+tier: extended
+
+release:
+  date: 2021-01-15
+  approximate: null
+  runtime: 40
+  episodes: 9
+  finale: 2021-03-05
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/WandaVision"
+    title: "WandaVision, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

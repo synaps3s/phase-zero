@@ -1,0 +1,33 @@
+id: wonder-man
+type: series
+universe: earth-616
+franchise: marvel-television
+saga: multiverse
+phase: 6
+tier: extended
+
+release:
+  date: 2026-01-27
+  approximate: null
+  runtime: 31
+  episodes: 8
+  finale: 2026-01-27
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Wonder_Man_(TV_series)"
+    title: "Wonder Man (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

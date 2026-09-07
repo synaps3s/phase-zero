@@ -1,0 +1,19 @@
+id: shang-chi
+universe: earth-616
+franchise: shang-chi
+realName: Xu Shang-Chi
+sigil: shang-chi
+
+actors:
+  - name: Simu Liu
+
+firstAppearance: shang-chi-and-the-legend-of-the-ten-rings
+
+appearsIn:
+  - shang-chi-and-the-legend-of-the-ten-rings
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Shang-Chi_(Marvel_Cinematic_Universe)"
+    title: "Shang-Chi (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,27 @@
+id: matt-murdock
+universe: earth-616
+franchise: defenders
+realName: Matthew Michael Murdock
+sigil: matt-murdock
+
+actors:
+  - name: Charlie Cox
+
+firstAppearance: daredevil-s1
+
+appearsIn:
+  - daredevil-s1
+  - daredevil-s2
+  - the-defenders
+  - daredevil-s3
+  - spider-man-no-way-home
+  - she-hulk-attorney-at-law
+  - echo
+  - daredevil-born-again-s1
+  - daredevil-born-again-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Matt_Murdock_(Marvel_Cinematic_Universe)"
+    title: "Matt Murdock (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,33 @@
+id: helstrom
+type: series
+universe: earth-616
+franchise: marvel-television
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2020-10-16
+  approximate: null
+  runtime: 50
+  episodes: 10
+  finale: 2020-10-16
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Helstrom_(TV_series)"
+    title: "Helstrom (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

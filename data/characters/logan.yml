@@ -1,0 +1,31 @@
+id: logan
+universe: earth-10005
+franchise: x-men
+realName: James Howlett
+sigil: wolverine
+
+actors:
+  - name: Hugh Jackman
+
+firstAppearance: x-men
+
+appearsIn:
+  - x-men
+  - x2
+  - x-men-the-last-stand
+  - x-men-origins-wolverine
+  - x-men-first-class
+  - the-wolverine
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+  - logan
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Logan_(film_character)"
+    title: "Logan (film character), Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Wolverine_(character)"
+    title: "Wolverine (character), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

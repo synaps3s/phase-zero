@@ -1,0 +1,25 @@
+id: wong
+universe: earth-616
+franchise: doctor-strange
+realName: null
+sigil: wong
+
+actors:
+  - name: Benedict Wong
+
+firstAppearance: doctor-strange
+
+appearsIn:
+  - doctor-strange
+  - avengers-infinity-war
+  - avengers-endgame
+  - shang-chi-and-the-legend-of-the-ten-rings
+  - spider-man-no-way-home
+  - doctor-strange-in-the-multiverse-of-madness
+  - she-hulk-attorney-at-law
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Wong_(Marvel_Cinematic_Universe)"
+    title: "Wong (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

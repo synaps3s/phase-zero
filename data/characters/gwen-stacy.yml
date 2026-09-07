@@ -1,0 +1,20 @@
+id: gwen-stacy
+universe: earth-120703
+franchise: amazing-spider-man
+realName: Gwendolyne Maxine Stacy
+sigil: gwen-stacy
+
+actors:
+  - name: Emma Stone
+
+firstAppearance: the-amazing-spider-man
+
+appearsIn:
+  - the-amazing-spider-man
+  - the-amazing-spider-man-2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Gwen_Stacy_(The_Amazing_Spider-Man_film_series)"
+    title: "Gwen Stacy (The Amazing Spider-Man film series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

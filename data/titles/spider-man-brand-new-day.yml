@@ -1,0 +1,33 @@
+id: spider-man-brand-new-day
+type: film
+universe: earth-616
+franchise: spider-man
+saga: multiverse
+phase: 6
+tier: essential
+
+release:
+  date: 2026-07-31
+  approximate: null
+  runtime: 145
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day"
+    title: "Spider-Man: Brand New Day, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

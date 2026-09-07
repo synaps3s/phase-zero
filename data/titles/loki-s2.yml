@@ -1,17 +1,17 @@
-id: loki-s1
+id: loki-s2
 type: series
 universe: earth-616
 franchise: loki
 saga: multiverse
-phase: 4
+phase: 5
 tier: extended
 
 release:
-  date: 2021-06-09
+  date: 2023-10-05
   approximate: null
   runtime: 49
   episodes: 6
-  finale: 2021-07-14
+  finale: 2023-11-09
   status: released
 
 chronology:
@@ -27,10 +27,7 @@ cast: []
 alternateUniverse: false
 
 sources:
-  - url: https://en.wikipedia.org/wiki/Loki_(TV_series)
-    title: Loki (TV series), Wikipedia
-    accessed: 2026-09-07
-  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
-    title: Marvel Cinematic Universe timeline, Wikipedia
+  - url: "https://en.wikipedia.org/wiki/Loki_season_2"
+    title: "Loki season 2, Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

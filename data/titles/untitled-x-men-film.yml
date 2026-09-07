@@ -1,0 +1,36 @@
+id: untitled-x-men-film
+type: film
+universe: earth-616
+franchise: x-men
+saga: next
+phase: 7
+tier: essential
+
+release:
+  date: 2028-05-05
+  approximate: null
+  runtime: null
+  episodes: null
+  finale: null
+  status: announced
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films"
+    title: "List of Marvel Cinematic Universe films, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe"
+    title: "Marvel Cinematic Universe, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

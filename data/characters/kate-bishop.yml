@@ -1,0 +1,20 @@
+id: kate-bishop
+universe: earth-616
+franchise: avengers
+realName: Katherine Elizabeth Bishop
+sigil: kate-bishop
+
+actors:
+  - name: Hailee Steinfeld
+
+firstAppearance: hawkeye
+
+appearsIn:
+  - hawkeye
+  - the-marvels
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Kate_Bishop_(Marvel_Cinematic_Universe)"
+    title: "Kate Bishop (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
