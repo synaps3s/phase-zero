@@ -4,11 +4,13 @@ import Base from '../../../layouts/Base.astro';
 import FallbackNotice from '../../../components/FallbackNotice.astro';
 import Emblem from '../../../components/Emblem.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
-import { resolveProse } from '../../../lib/content';
+import { resolveProse, sourceSlugs } from '../../../lib/content';
 import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
 
 export async function getStaticPaths() {
-  const people = await getCollection('characters');
+  // See the note on the title route: no prose, no page, and no broken build.
+  const written = new Set(await sourceSlugs('characterProse'));
+  const people = (await getCollection('characters')).filter((entry) => written.has(entry.data.id));
   return languages.flatMap((language) =>
     people.map((person) => ({
       params: { lang: language.code, id: person.data.id },

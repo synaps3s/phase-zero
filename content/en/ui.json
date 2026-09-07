@@ -83,6 +83,8 @@
   "nav.sections": "Sections",
   "nav.timeline": "Timeline",
   "nav.universes": "Universes",
+  "notFound.lede": "That address is not one of ours. Pick a language and start again.",
+  "notFound.title": "Not found",
   "paths.lede": "Curated routes through the catalogue. Not lists of everything, but orders that answer a specific question, and that stay true rather than expiring.",
   "paths.runtime": "About {hours} hours",
   "paths.step": "Step {number}",

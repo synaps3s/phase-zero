@@ -122,7 +122,7 @@ if (timeline) {
       const set = row.querySelector<HTMLElement>('.spine-set');
       if (set) set.textContent = String(index + 1);
 
-      if (!found && !watched.has(row.dataset.titleId!)) {
+      if (!found && row.dataset.unreleased !== 'true' && !watched.has(row.dataset.titleId!)) {
         row.dataset.next = 'true';
         found = true;
       }

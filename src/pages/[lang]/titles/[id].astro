@@ -3,11 +3,15 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import FallbackNotice from '../../../components/FallbackNotice.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
-import { resolveProse } from '../../../lib/content';
+import { resolveProse, sourceSlugs } from '../../../lib/content';
 import { liveryStyle, universeOf, franchiseName } from '../../../lib/livery';
 
 export async function getStaticPaths() {
-  const titles = await getCollection('titles');
+  /* A page exists when there is prose in the source language to put on it.
+     Facts without prose are an error the fact check reports by name; they
+     must not also take the build down with an unroutable path. */
+  const written = new Set(await sourceSlugs('titleProse'));
+  const titles = (await getCollection('titles')).filter((entry) => written.has(entry.data.id));
   return languages.flatMap((language) =>
     titles.map((entry) => ({
       params: { lang: language.code, id: entry.data.id },
@@ -55,7 +59,9 @@ const leadsTo = await linksFor(facts.data.leadsTo);
 
 const universe = universeOf(facts.data.universe);
 const release = facts.data.release;
-const year = release.date ? String(release.date.getUTCFullYear()) : '';
+/* The year when there is one, and the announced window when there is not. */
+const year = release.date ? String(release.date.getUTCFullYear()) : (release.approximate ?? '');
+const unreleased = release.status !== 'released';
 const dateFormatter = new Intl.DateTimeFormat(language.code, { dateStyle: 'long', timeZone: 'UTC' });
 const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
   facts.data.verified,
@@ -76,8 +82,13 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
         <h1 class="plate-title">{prose.entry.data.title}</h1>
         <p class="plate-meta">
           <span class="figure">{year}</span>
+          {unreleased && (
+            <span class="plate-upcoming">
+              {t(release.status === 'announced' ? 'title.status.announced' : 'title.status.inProduction')}
+            </span>
+          )}
           {release.runtime && <span class="figure">{t('title.runtime', { minutes: release.runtime })}</span>}
-          <span>{t('title.phase', { number: facts.data.phase ?? 0 })}</span>
+          {facts.data.phase !== null && <span>{t('title.phase', { number: facts.data.phase })}</span>}
           <span>{franchiseName(facts.data.franchise)}</span>
           <span>{universe.designation}</span>
         </p>
@@ -147,6 +158,11 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
         {release.date && (
           <p style="margin-top: var(--s2)">
             {t('title.released')}: <span class="figure">{dateFormatter.format(release.date)}</span>
+          </p>
+        )}
+        {!release.date && release.approximate && (
+          <p style="margin-top: var(--s2)">
+            {t('title.released')}: <span class="figure">{release.approximate}</span>
           </p>
         )}
       </section>

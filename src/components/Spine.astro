@@ -26,6 +26,10 @@ interface Props {
   /* Shown only for an entry of this run whose story is set somewhere other
      than the universe the run otherwise takes place in. */
   universeLabel?: string | null;
+  /* Announced but not out. The row still appears, because knowing what is
+     coming is part of what a catalogue is for, but it carries no runtime,
+     no watch control and no weight in the hours left to watch. */
+  unreleased?: boolean;
   searchText?: string;
   setting?: string | null;
 }
@@ -47,6 +51,7 @@ const {
   kind,
   continuity,
   universeLabel = null,
+  unreleased = false,
   searchText,
   setting,
 } = Astro.props;
@@ -64,7 +69,8 @@ const t = useTranslations(language);
   data-tier={tierRank}
   data-kind={kind}
   data-continuity={continuity}
-  data-runtime={runtime ?? 0}
+  data-unreleased={String(unreleased)}
+  data-runtime={unreleased ? 0 : (runtime ?? 0)}
   data-search={searchText}
   style={liveryStyle(saga, franchise)}
 >
@@ -77,6 +83,7 @@ const t = useTranslations(language);
     </h3>
     <p class="spine-meta">
       <span class="figure">{year}</span>
+      {unreleased && <span class="spine-upcoming">{t('title.upcoming')}</span>}
       {runtime && <span class="figure">{t('title.runtime', { minutes: runtime })}</span>}
       <span class="spine-franchise">{franchiseName(franchise)}</span>
       {universeLabel && <span class="spine-elsewhere figure">{universeLabel}</span>}
@@ -84,15 +91,17 @@ const t = useTranslations(language);
     </p>
   </div>
 
-  <button
-    type="button"
-    class="spine-mark"
-    data-watch-toggle
-    aria-pressed="false"
-    aria-label={t('watched.mark')}
-  >
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-      <path d="M4 10.5 8 14.5 16 5.5" stroke-linecap="square" />
-    </svg>
-  </button>
+  {!unreleased && (
+    <button
+      type="button"
+      class="spine-mark"
+      data-watch-toggle
+      aria-pressed="false"
+      aria-label={t('watched.mark')}
+    >
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M4 10.5 8 14.5 16 5.5" stroke-linecap="square" />
+      </svg>
+    </button>
+  )}
 </li>

@@ -1,0 +1,32 @@
+---
+/*
+ * The page a static host serves when nothing matches. It is deliberately
+ * language-neutral: at this point we do not know who is reading, only that
+ * the address they used is not one of ours.
+ */
+import Base from '../layouts/Base.astro';
+import { languages, defaultLanguage, useTranslations, localePath } from '../lib/i18n';
+
+const t = useTranslations(defaultLanguage.code);
+---
+
+<Base language={defaultLanguage.code} title="Not found. Phase Zero" description="" path="404">
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-unbound); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('notFound.title')}</h1>
+        <p class="plate-meta">{t('notFound.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    <ul class="not-found-links">
+      {languages.map((language) => (
+        <li>
+          <a href={localePath(language.code)}>{language.endonym}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>

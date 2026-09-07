@@ -83,6 +83,8 @@
   "nav.sections": "Sezioni",
   "nav.timeline": "Timeline",
   "nav.universes": "Universi",
+  "notFound.lede": "Questo indirizzo non è nostro. Scegliete una lingua e ricominciate.",
+  "notFound.title": "Non trovata",
   "paths.lede": "Rotte curate dentro il catalogo. Non elenchi di tutto, ma ordini che rispondono a una domanda precisa, e che restano validi invece di scadere.",
   "paths.runtime": "Circa {hours} ore",
   "paths.step": "Passo {number}",
