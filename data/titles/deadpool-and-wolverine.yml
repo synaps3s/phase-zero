@@ -1,6 +1,6 @@
 id: deadpool-and-wolverine
 type: film
-universe: earth-616
+universe: earth-10005
 franchise: x-men
 saga: multiverse
 phase: 5
@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 1400
+  setting: "2024"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: []
 leadsTo: []
@@ -29,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine"
     title: "Deadpool & Wolverine, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07

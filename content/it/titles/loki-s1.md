@@ -28,3 +28,15 @@ per scontato che sappiate cosa e successo qui, e non si fermano a spiegarlo.
 Se state guardando al livello "solo film", è il punto in cui quel livello inizia
 a costarvi qualcosa.
 :::
+
+:::detail{title="Perché questa scheda non ha un posto nell'ordine narrativo"}
+La cronologia del Marvel Cinematic Universe su Wikipedia costruisce un unico
+diagramma di quando accade ogni progetto, e ne lascia fuori due: *Loki* e
+*What If...?*. La ragione dichiarata è che si svolgono fuori dalla linea
+temporale principale, senza una collocazione stabilita.
+
+La posizione cronologica di questa pagina è quindi vuota apposta. Non è un buco
+che qualcuno si è dimenticato di riempire, e riempirlo con una supposizione
+sarebbe peggio che lasciarlo aperto. Se una fonte la colloca, la scheda si
+aggiorna in una riga.
+:::
