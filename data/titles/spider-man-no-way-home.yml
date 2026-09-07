@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1700
-  setting: null
+  order: 1410
+  setting: "2024"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: []
 leadsTo: []
@@ -28,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home
     title: "Spider-Man: No Way Home, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07

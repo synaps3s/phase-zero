@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 850
-  setting: null
+  order: 710
+  setting: "2014"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: []
 leadsTo: [avengers-infinity-war]
@@ -31,5 +32,8 @@ sources:
     accessed: 2026-09-07
   - url: https://en.wikipedia.org/wiki/Infinity_Stones
     title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07

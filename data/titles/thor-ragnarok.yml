@@ -16,7 +16,8 @@ release:
 
 chronology:
   order: 1100
-  setting: null
+  setting: "2017"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: [thor-the-dark-world]
 leadsTo: [avengers-infinity-war]
@@ -28,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: https://en.wikipedia.org/wiki/Thor:_Ragnarok
     title: "Thor: Ragnarok, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07

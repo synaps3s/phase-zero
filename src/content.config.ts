@@ -59,18 +59,25 @@ const titles = defineCollection({
     }),
 
     chronology: z.object({
-      /* Position in the in-story timeline. Sparse on purpose, so placing a
-         new title does not renumber every later one, and unique, because the
-         timeline sorts on it and a shared value leaves two titles in
-         whatever order the browser picks.
+      /* Position in the in-story timeline, taken from a source like every
+         other fact here and never from judgement. Sparse on purpose, so
+         placing a new title does not renumber every later one, and unique,
+         because the timeline sorts on it.
 
-         A separate continuity has no story order relative to the shared one,
-         so those titles sit above 10000 where they can never interleave. */
-      order: z.number(),
+         Null when no source places the title. That is a real state, not a
+         gap to fill: the official timeline excludes some entries outright,
+         and the separate continuities have no story order relative to the
+         shared one at all. A title with no order sorts by release date and
+         the page says its placement is not established. */
+      order: z.number().nullable(),
       // When the story is set, as a plain label such as "1943" or "2024".
       // Null when no source establishes one, which is common outside the
       // MCU. A visible gap is worth more than a plausible guess.
       setting: z.string().nullable(),
+      /* Which of this entry's sources backs the placement. Required whenever
+         an order or a setting is given, so a chronological claim can be
+         checked the same way a release date can. */
+      source: z.url().nullable().default(null),
     }),
 
     // Titles that are best watched before this one to understand it.
@@ -129,6 +136,8 @@ const setPieces = defineCollection({
       .nullable()
       .default(null),
     firstAppearance: z.string(),
+    /* The title where it is last seen, when the material establishes one. */
+    lastAppearance: z.string().nullable().default(null),
     ...attribution,
   }),
 });

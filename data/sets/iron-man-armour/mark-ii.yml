@@ -1,0 +1,12 @@
+id: mark-ii
+set: iron-man-armour
+designation: "Mark II"
+order: 2
+tint: silver
+firstAppearance: iron-man
+lastAppearance: iron-man
+sources:
+  - url: https://en.wikipedia.org/wiki/Iron_Man's_armor_(Marvel_Cinematic_Universe)
+    title: "Iron Man's armor (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

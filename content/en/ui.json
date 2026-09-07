@@ -89,6 +89,7 @@
   "phases.yearsOpen": "from {from}",
   "piece.designation": "Known as",
   "piece.firstSeen": "First seen in",
+  "piece.lastSeen": "Last seen in",
   "portal.characters": "Who these people are and their thread through the catalogue.",
   "portal.collections": "The armours, the stones, the forms. Named things, explained.",
   "portal.glossary": "The words this material never stops to define.",

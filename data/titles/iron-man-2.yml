@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 600
+  order: 400
   setting: "2011"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: [iron-man]
 leadsTo: [the-avengers]

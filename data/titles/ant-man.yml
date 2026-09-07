@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 910
-  setting: null
+  order: 810
+  setting: "2015"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: []
 leadsTo: [captain-america-civil-war]
@@ -28,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: https://en.wikipedia.org/wiki/Ant-Man_(film)
     title: "Ant-Man (film), Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07
