@@ -19,7 +19,10 @@ chronology:
   setting: "2017"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: [thor-the-dark-world]
+requires:
+  - thor
+  - thor-the-dark-world
+  - avengers-age-of-ultron
 leadsTo: [avengers-infinity-war]
 
 cast: []

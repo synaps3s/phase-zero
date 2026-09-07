@@ -19,7 +19,11 @@ chronology:
   setting: "2027"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: []
+requires:
+  - ant-man-and-the-wasp
+  - avengers-endgame
+  - the-falcon-and-the-winter-soldier
+  - black-widow
 leadsTo: []
 
 cast: []

@@ -19,7 +19,7 @@ chronology:
   setting: "2023"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: [avengers-infinity-war]
+requires: [thor-ragnarok, avengers-infinity-war]
 leadsTo: []
 
 cast: []

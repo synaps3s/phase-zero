@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [iron-man-3]
 leadsTo: []
 
 cast: []

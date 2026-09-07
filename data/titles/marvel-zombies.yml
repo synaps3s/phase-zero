@@ -20,7 +20,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [what-if-s1]
 leadsTo: []
 
 cast: []
