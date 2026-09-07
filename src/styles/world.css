@@ -1735,3 +1735,64 @@ a:focus-visible .emblem-halo {
   color: var(--watched);
   font-size: var(--size-data);
 }
+
+/* --- The portal ------------------------------------------------------ */
+
+.portal {
+  display: grid;
+  gap: var(--s4);
+}
+
+.door a {
+  position: relative;
+  display: block;
+  height: 100%;
+  padding: var(--s5);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-top-color: color-mix(in oklab, var(--livery) 48%, transparent);
+  text-decoration: none;
+  transition:
+    border-color var(--fast) var(--ease),
+    transform var(--slow) var(--ease);
+}
+
+.door a:hover,
+.door a:focus-visible {
+  border-color: color-mix(in oklab, var(--livery) 62%, transparent);
+  transform: translateY(-3px);
+}
+
+.door-name {
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  font-weight: 400;
+  color: var(--livery);
+}
+
+.door-line {
+  margin-top: var(--s3);
+  color: var(--ink-soft);
+  font-size: var(--size-data);
+}
+
+/* The count is the honest part: a section that is still thin says so. */
+.door-count {
+  position: absolute;
+  top: var(--s5);
+  right: var(--s5);
+  margin: 0;
+  color: var(--ink-faint);
+}
+
+@media (min-width: 46rem) {
+  .portal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72rem) {
+  .portal {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
