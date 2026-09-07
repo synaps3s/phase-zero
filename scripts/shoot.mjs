@@ -22,7 +22,9 @@ const shots = [
   { name: 'mobile-entry', path: '/en/titles/iron-man', width: 390, height: 844, theme: 'dark' },
   { name: 'desktop-it', path: '/it', width: 1440, height: 900, theme: 'dark' },
   { name: 'characters', path: '/en/characters', width: 1440, height: 900, theme: 'dark' },
-  { name: 'character-entry', path: '/en/characters/steve-rogers', width: 1440, height: 1400, theme: 'dark' },
+  { name: 'character-entry', path: '/en/characters/steve-rogers', width: 1440, height: 620, theme: 'dark' },
+  { name: 'character-mobile', path: '/en/characters', width: 390, height: 900, theme: 'dark' },
+  { name: 'collections', path: '/en/collections', width: 1440, height: 1100, theme: 'dark' },
   { name: 'timeline-day', path: '/en/timeline', width: 1440, height: 900, theme: 'light' },
   { name: 'unconnected-entry', path: '/en/titles/the-punisher-1989', width: 1440, height: 1000, theme: 'dark' },
 ];

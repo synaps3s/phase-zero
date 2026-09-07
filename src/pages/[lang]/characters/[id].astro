@@ -65,6 +65,12 @@ for (const step of prose.entry.data.journey) {
 }
 journey.sort((a, b) => a.order - b.order);
 
+/* Both names in one string: the person and the name they are known by. A
+   reader searching for either should land on the same page. */
+const fullName = prose.entry.data.tagline
+  ? `${prose.entry.data.title}, ${prose.entry.data.tagline}`
+  : prose.entry.data.title;
+
 const universe = universeOf(person.data.universe);
 const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
   person.data.verified,
@@ -73,7 +79,7 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
 
 <Base
   language={language.code}
-  title={`${prose.entry.data.title}. Phase Zero`}
+  title={`${fullName}. Phase Zero`}
   description={prose.entry.data.oneLine}
   path={`characters/${personId}`}
   editPath={`content/${language.code}/characters/${personId}.md`}
@@ -91,11 +97,21 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
             size={112}
             label={prose.entry.data.title}
           />
-          <h1 class="plate-title">{prose.entry.data.title}</h1>
+          <div>
+            <h1 class="plate-title">{prose.entry.data.title}</h1>
+            {prose.entry.data.tagline && (
+              <p class="plate-alias">{prose.entry.data.tagline}</p>
+            )}
+          </div>
         </div>
         <p class="plate-meta">
           {person.data.realName && <span>{person.data.realName}</span>}
-          <span>{franchiseName(person.data.franchise)}</span>
+          {/* The franchise is dropped when it repeats the alias already in
+              the heading, which it does for anyone who gave a franchise its
+              name. */}
+          {franchiseName(person.data.franchise) !== prose.entry.data.tagline && (
+            <span>{franchiseName(person.data.franchise)}</span>
+          )}
           <span>{universe.designation}</span>
         </p>
       </div>

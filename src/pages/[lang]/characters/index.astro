@@ -26,13 +26,16 @@ for (const person of await getCollection('characters')) {
     id: person.data.id,
     sigil: person.data.sigil,
     name: prose.entry.data.title,
+    /* The name people use and the name they are known by are both the
+       answer to "who is this", so the card carries both. */
+    alias: prose.entry.data.tagline ?? null,
     line: prose.entry.data.oneLine,
     actors,
     franchise: person.data.franchise,
     saga: sagaOf.get(person.data.firstAppearance) ?? 'unbound',
     universe: universeOf(person.data.universe),
     appearances: person.data.appearsIn.length,
-    haystack: `${prose.entry.data.title} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)}`.toLowerCase(),
+    haystack: `${prose.entry.data.title} ${prose.entry.data.tagline ?? ''} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)}`.toLowerCase(),
   });
 }
 
@@ -84,8 +87,13 @@ people.sort((a, b) => collator.compare(a.name, b.name));
           style={liveryStyle(person.saga, person.franchise)}
         >
           <a href={localePath(language.code, 'characters', person.id)}>
-            <Emblem id={person.id} sigil={person.sigil} saga={person.saga} franchise={person.franchise} size={64} />
-            <h2 class="person-name">{person.name}</h2>
+            <div class="person-head">
+              <Emblem id={person.id} sigil={person.sigil} saga={person.saga} franchise={person.franchise} size={64} />
+              <div>
+                <h2 class="person-name">{person.name}</h2>
+                {person.alias && <p class="person-alias">{person.alias}</p>}
+              </div>
+            </div>
             <p class="person-line">{person.line}</p>
             <p class="person-meta">
               {person.actors && <span>{t('characters.playedBy')} {person.actors}</span>}
