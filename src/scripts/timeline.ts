@@ -12,10 +12,12 @@
 import {
   getDepth,
   getOrder,
+  getPrimer,
   getSeparate,
   getWatched,
   setDepth,
   setOrder,
+  setPrimer,
   setSeparate,
   toggleWatched,
   type Depth,
@@ -90,7 +92,7 @@ if (timeline) {
       if (!visible) continue;
       shown += 1;
       if (watched.has(row.dataset.titleId!)) watchedShown += 1;
-      else minutesLeft += Number(row.dataset.runtime ?? '0');
+      else minutesLeft += Number(row.dataset.minutes ?? '0');
     }
 
     numberAndMarkNext();
@@ -176,6 +178,14 @@ if (timeline) {
       state.separate = button.dataset.separate === 'on';
       setSeparate(state.separate);
       press('separate', state.separate ? 'on' : 'off');
+
+  /* The primer is open in the markup, so it is there with no JavaScript at
+     all. Once the reader closes it, it stays closed. */
+  const primer = document.querySelector<HTMLDetailsElement>('[data-primer]');
+  if (primer) {
+    primer.open = getPrimer();
+    primer.addEventListener('toggle', () => setPrimer(primer.open));
+  }
     }
     apply();
   });

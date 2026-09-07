@@ -17,6 +17,7 @@ const shots = [
   { name: 'desktop-day', path: '/en', width: 1440, height: 900, theme: 'light' },
   { name: 'mobile', path: '/en', width: 390, height: 844, theme: 'dark' },
     { name: 'timeline', path: '/en/timeline', width: 1440, height: 900, theme: 'dark' },
+  { name: 'timeline-top', path: '/it/timeline', width: 1440, height: 820, theme: 'dark' },
   { name: 'timeline-mobile', path: '/en/timeline', width: 390, height: 844, theme: 'dark' },
   { name: 'desktop-entry', path: '/en/titles/iron-man', width: 1440, height: 900, theme: 'dark' },
   { name: 'mobile-entry', path: '/en/titles/iron-man', width: 390, height: 844, theme: 'dark' },

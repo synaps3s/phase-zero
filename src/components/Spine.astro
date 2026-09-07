@@ -61,6 +61,11 @@ const {
   setting,
 } = Astro.props;
 const t = useTranslations(language);
+
+/* How long the whole entry takes. A series runtime is per episode, so a
+   thirteen part season is thirteen times it. The hours left to watch were
+   wrong by an order of magnitude while this was the per-episode figure. */
+const totalMinutes = unreleased ? 0 : (runtime ?? 0) * (episodes ?? 1);
 ---
 
 <li
@@ -75,7 +80,7 @@ const t = useTranslations(language);
   data-kind={kind}
   data-continuity={continuity}
   data-unreleased={String(unreleased)}
-  data-runtime={unreleased ? 0 : (runtime ?? 0)}
+  data-minutes={totalMinutes}
   data-search={searchText}
   style={liveryStyle(saga, franchise)}
 >

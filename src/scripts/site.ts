@@ -124,3 +124,32 @@ function wireWatched(): void {
 wireTheme();
 wireLanguagePicker();
 wireWatched();
+
+
+/* --- Back to the top --------------------------------------------- */
+
+/*
+ * The catalogue is long. Somebody who has scrolled to the end of a hundred
+ * and sixty entries should not have to scroll back. The button is hidden in
+ * the markup and only ever appears once there is something to go back up to,
+ * so a short page never grows a control it does not need.
+ */
+function wireBackToTop(): void {
+  const button = document.querySelector<HTMLButtonElement>('[data-to-top]');
+  if (!button) return;
+
+  const update = () => {
+    button.hidden = window.scrollY < window.innerHeight;
+  };
+
+  const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  button.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+  });
+
+  // Passive, because this listener never prevents the scroll it observes.
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+wireBackToTop();
