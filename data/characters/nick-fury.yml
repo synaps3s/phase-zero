@@ -1,0 +1,30 @@
+id: nick-fury
+universe: earth-616
+franchise: nick-fury
+realName: Nicholas Joseph Fury
+sigil: nick-fury
+
+actors:
+  - name: Samuel L. Jackson
+
+firstAppearance: iron-man
+
+appearsIn:
+  - iron-man
+  - iron-man-2
+  - thor
+  - captain-america-the-first-avenger
+  - the-avengers
+  - captain-america-the-winter-soldier
+  - avengers-age-of-ultron
+  - avengers-infinity-war
+  - captain-marvel
+  - avengers-endgame
+  - spider-man-far-from-home
+  - the-marvels
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Nick_Fury_(Marvel_Cinematic_Universe)"
+    title: "Nick Fury (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

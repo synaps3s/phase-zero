@@ -1,0 +1,25 @@
+id: pepper-potts
+universe: earth-616
+franchise: iron-man
+realName: Virginia Potts
+sigil: pepper-potts
+
+actors:
+  - name: Gwyneth Paltrow
+
+firstAppearance: iron-man
+
+appearsIn:
+  - iron-man
+  - iron-man-2
+  - the-avengers
+  - iron-man-3
+  - spider-man-homecoming
+  - avengers-infinity-war
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Pepper_Potts_(Marvel_Cinematic_Universe)"
+    title: "Pepper Potts (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

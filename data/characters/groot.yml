@@ -1,0 +1,24 @@
+id: groot
+universe: earth-616
+franchise: guardians
+sigil: groot
+realName: null
+
+actors:
+  - name: Vin Diesel
+
+firstAppearance: guardians-of-the-galaxy
+
+appearsIn:
+  - guardians-of-the-galaxy
+  - guardians-of-the-galaxy-vol-2
+  - avengers-infinity-war
+  - avengers-endgame
+  - thor-love-and-thunder
+  - guardians-of-the-galaxy-vol-3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Groot_(Marvel_Cinematic_Universe)"
+    title: "Groot (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

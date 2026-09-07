@@ -1,0 +1,22 @@
+id: shuri
+universe: earth-616
+franchise: black-panther
+sigil: shuri
+realName: null
+
+actors:
+  - name: Letitia Wright
+
+firstAppearance: black-panther
+
+appearsIn:
+  - black-panther
+  - avengers-infinity-war
+  - avengers-endgame
+  - black-panther-wakanda-forever
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Shuri_(Marvel_Cinematic_Universe)"
+    title: "Shuri (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

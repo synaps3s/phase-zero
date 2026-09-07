@@ -1,0 +1,21 @@
+id: vision
+universe: earth-616
+franchise: avengers
+realName: null
+sigil: vision
+
+actors:
+  - name: Paul Bettany
+
+firstAppearance: avengers-age-of-ultron
+
+appearsIn:
+  - avengers-age-of-ultron
+  - captain-america-civil-war
+  - avengers-infinity-war
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Vision_(Marvel_Cinematic_Universe)"
+    title: "Vision (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

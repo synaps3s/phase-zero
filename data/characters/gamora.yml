@@ -1,0 +1,23 @@
+id: gamora
+universe: earth-616
+franchise: guardians
+sigil: gamora
+realName: Gamora Zen Whoberi Ben Titan
+
+actors:
+  - name: Zoe Saldaña
+
+firstAppearance: guardians-of-the-galaxy
+
+appearsIn:
+  - guardians-of-the-galaxy
+  - guardians-of-the-galaxy-vol-2
+  - avengers-infinity-war
+  - avengers-endgame
+  - guardians-of-the-galaxy-vol-3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Gamora_(Marvel_Cinematic_Universe)"
+    title: "Gamora (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
