@@ -1,0 +1,124 @@
+/* ============================================================
+   EMBLEM PALETTES
+
+   Four colours per character, tuned by hand: the lit face of the
+   disc, its shadowed side, the accent the sigil is struck in, and
+   the light it throws.
+
+   These are the only colours in the project chosen one at a time
+   rather than derived. That is deliberate. A franchise colour says
+   which story a person belongs to; this says who they are, and no
+   rule can produce ninety-nine of those.
+
+   A character with no palette here falls back to their franchise
+   colour, which is always defined, so nobody is ever left grey.
+   ============================================================ */
+
+/** [lit face, shadowed side, accent, glow] */
+export type Palette = [string, string, string, string];
+
+export const EMBLEM_PALETTES: Record<string, Palette> = {
+  'iron-man': ['#ff5a4d', '#7f1d1d', '#ffc16b', 'rgba(255,120,90,0.55)'],
+  'war-machine': ['#8290a8', '#2b3446', '#ff7a6b', 'rgba(130,144,168,0.45)'],
+  'captain-america': ['#4d86ff', '#16277a', '#ff6b6b', 'rgba(77,134,255,0.5)'],
+  'sam-wilson': ['#38b6ff', '#0b4a86', '#ff6b6b', 'rgba(56,182,255,0.45)'],
+  'bucky-barnes': ['#7f93b5', '#232f45', '#7fd4ff', 'rgba(127,147,181,0.45)'],
+  thor: ['#38a9ff', '#1b2f8a', '#8fe0ff', 'rgba(56,169,255,0.55)'],
+  hela: ['#22c26a', '#0a4a2f', '#5fffb0', 'rgba(34,194,106,0.5)'],
+  loki: ['#22c26a', '#123f24', '#ffc85a', 'rgba(34,194,106,0.5)'],
+  sylvie: ['#1fae7a', '#0c4a3a', '#ffd24a', 'rgba(31,174,122,0.45)'],
+  kang: ['#a06bff', '#3a1d95', '#3fdfff', 'rgba(160,107,255,0.55)'],
+  mobius: ['#e0a13c', '#5a3410', '#ffd27a', 'rgba(224,161,60,0.45)'],
+  'doctor-doom': ['#22c26a', '#1a2540', '#e2e8f0', 'rgba(34,194,106,0.45)'],
+  hulk: ['#3ad46a', '#0e4a24', '#a7ffb8', 'rgba(58,212,106,0.55)'],
+  'she-hulk': ['#4fe08a', '#146030', '#c7ffd8', 'rgba(79,224,138,0.45)'],
+  'black-widow': ['#ff4d5e', '#3a0f18', '#ff8a95', 'rgba(255,77,94,0.55)'],
+  'yelena-belova': ['#8290a8', '#232f45', '#4fe08a', 'rgba(130,144,168,0.45)'],
+  hawkeye: ['#a06bff', '#3a0f64', '#d0a4ff', 'rgba(160,107,255,0.55)'],
+  'kate-bishop': ['#b06bff', '#4a1c87', '#e9d5ff', 'rgba(176,107,255,0.45)'],
+  'nick-fury': ['#8a97ad', '#1a2230', '#ff6b6b', 'rgba(138,151,173,0.4)'],
+  'doctor-strange': ['#ff5a5a', '#3a1d95', '#ffc16b', 'rgba(255,90,90,0.55)'],
+  wong: ['#e0a13c', '#5a2410', '#ffd27a', 'rgba(224,161,60,0.45)'],
+  'scarlet-witch': ['#ff3d6e', '#4c0519', '#ff7fa0', 'rgba(255,61,110,0.6)'],
+  vision: ['#22c26a', '#5a1843', '#ffd24a', 'rgba(255,210,74,0.5)'],
+  'agatha-harkness': ['#a06bff', '#3a0f64', '#d0a4ff', 'rgba(160,107,255,0.5)'],
+  'spider-man': ['#ff4d5e', '#1d4fef', '#7fd4ff', 'rgba(255,77,94,0.6)'],
+  'peter-parker-raimi': ['#e04d4d', '#1e3a8a', '#7fb0ff', 'rgba(224,77,77,0.5)'],
+  'peter-parker-asm': ['#ff5a4d', '#38b6ff', '#ffe04a', 'rgba(255,90,77,0.5)'],
+  'black-panther': ['#8290a8', '#161f2e', '#c99bff', 'rgba(201,155,255,0.45)'],
+  shuri: ['#38b6ff', '#231b6b', '#7fd4ff', 'rgba(56,182,255,0.45)'],
+  killmonger: ['#ff9a3c', '#241818', '#ffc16b', 'rgba(255,154,60,0.45)'],
+  'captain-marvel': ['#ff5a4d', '#1e3a8a', '#ffd24a', 'rgba(255,210,74,0.55)'],
+  'monica-rambeau': ['#38b6ff', '#161f2e', '#8fe0ff', 'rgba(56,182,255,0.45)'],
+  'ms-marvel': ['#38b6ff', '#b91c1c', '#ffe04a', 'rgba(255,224,74,0.5)'],
+  valkyrie: ['#22c9b0', '#0f5f57', '#ffd24a', 'rgba(34,201,176,0.45)'],
+  'ant-man': ['#ff5a4d', '#201a2e', '#ff8a6b', 'rgba(255,90,77,0.45)'],
+  wasp: ['#ffca4a', '#241a10', '#ffe27a', 'rgba(255,202,74,0.45)'],
+  'hank-pym': ['#38b6ff', '#231b45', '#8fe0ff', 'rgba(56,182,255,0.4)'],
+  'star-lord': ['#ff9a3c', '#7f1d1d', '#5fd0ff', 'rgba(255,154,60,0.45)'],
+  gamora: ['#22c26a', '#5a1843', '#5fffb0', 'rgba(34,194,106,0.45)'],
+  rocket: ['#ff7a3c', '#431a08', '#ffb87a', 'rgba(255,122,60,0.45)'],
+  groot: ['#8ad42f', '#2f5314', '#c7ff6b', 'rgba(138,212,47,0.45)'],
+  drax: ['#22c9b0', '#5a1030', '#5fffe0', 'rgba(34,201,176,0.45)'],
+  nebula: ['#5aa0ff', '#231b45', '#8fd0ff', 'rgba(90,160,255,0.45)'],
+  mantis: ['#3ad46a', '#0e4a3a', '#a7ffb8', 'rgba(58,212,106,0.45)'],
+  yondu: ['#ff5a4d', '#241010', '#8fd0ff', 'rgba(255,90,77,0.45)'],
+  thanos: ['#a06bff', '#a5641c', '#ffd24a', 'rgba(160,107,255,0.55)'],
+  gorr: ['#c2d0e0', '#0a0f1a', '#a06bff', 'rgba(160,107,255,0.4)'],
+  namor: ['#22c9b0', '#0a3a4a', '#8fe8ff', 'rgba(34,201,176,0.45)'],
+  'moon-knight': ['#c2d0e0', '#161f2e', '#ffffff', 'rgba(220,232,252,0.55)'],
+  'shang-chi': ['#ff5a4d', '#a5641c', '#ffd24a', 'rgba(255,90,77,0.5)'],
+  'xu-wenwu': ['#e0a13c', '#3a1818', '#ffd27a', 'rgba(224,161,60,0.45)'],
+  ultron: ['#ff5a4d', '#2a1010', '#ff8a6b', 'rgba(255,90,77,0.45)'],
+  zemo: ['#a06bff', '#241833', '#c9a0ff', 'rgba(160,107,255,0.4)'],
+  echo: ['#ff4d5e', '#231018', '#ff8a95', 'rgba(255,77,94,0.4)'],
+  'red-guardian': ['#ff4d4d', '#3a0f0f', '#ffffff', 'rgba(255,77,77,0.45)'],
+  taskmaster: ['#8a97ad', '#161f2e', '#ffca4a', 'rgba(138,151,173,0.4)'],
+  'john-walker': ['#4d86ff', '#161f2e', '#ff6b6b', 'rgba(77,134,255,0.4)'],
+  'bob-sentry': ['#ffd24a', '#231b10', '#ffffff', 'rgba(255,210,74,0.5)'],
+  valentina: ['#c2d0e0', '#1a2230', '#a06bff', 'rgba(160,107,255,0.35)'],
+  daredevil: ['#ff4d4d', '#4a0a0a', '#ff8a8a', 'rgba(255,77,77,0.55)'],
+  'frank-castle': ['#c2d0e0', '#0a0f1a', '#ffffff', 'rgba(220,232,252,0.4)'],
+  'wilson-fisk': ['#e6ebf2', '#1a2230', '#ff4d4d', 'rgba(230,235,242,0.35)'],
+  'jessica-jones': ['#a06bff', '#1a1030', '#c9a0ff', 'rgba(160,107,255,0.4)'],
+  'luke-cage': ['#ffca4a', '#2a1e08', '#ffe27a', 'rgba(255,202,74,0.45)'],
+  'peggy-carter': ['#ff4d4d', '#2a0f0f', '#ffca4a', 'rgba(255,77,77,0.4)'],
+  'matt-murdock': ['#ff4d4d', '#4a0a0a', '#ff8a8a', 'rgba(255,77,77,0.55)'],
+  'reed-richards': ['#5aa0ff', '#1a2540', '#8fd0ff', 'rgba(90,160,255,0.45)'],
+  'sue-storm': ['#5fd0ff', '#1a2540', '#ffffff', 'rgba(95,208,255,0.45)'],
+  'johnny-storm': ['#ff7a3c', '#7f1d1d', '#ffd24a', 'rgba(255,122,60,0.5)'],
+  'ben-grimm': ['#ff9a5a', '#3a2410', '#ffc16b', 'rgba(255,154,90,0.45)'],
+  wolverine: ['#ffca2f', '#1e3a8a', '#7fd4ff', 'rgba(255,202,47,0.55)'],
+  'professor-x': ['#5aa0ff', '#232f45', '#8fd0ff', 'rgba(90,160,255,0.45)'],
+  magneto: ['#e0455a', '#4a1c87', '#ff8a95', 'rgba(224,69,90,0.5)'],
+  mystique: ['#5ad0ff', '#231b45', '#ffca4a', 'rgba(90,208,255,0.45)'],
+  'jean-grey': ['#ff7a3c', '#7f1d1d', '#ffd24a', 'rgba(255,122,60,0.55)'],
+  cyclops: ['#ff4d4d', '#16277a', '#ff8a8a', 'rgba(255,77,77,0.5)'],
+  storm: ['#5fd0ff', '#232f45', '#ffffff', 'rgba(95,208,255,0.55)'],
+  beast: ['#5aa0ff', '#161f2e', '#8fd0ff', 'rgba(90,160,255,0.4)'],
+  deadpool: ['#ff4d4d', '#201818', '#ffffff', 'rgba(255,77,77,0.55)'],
+  cable: ['#8a97ad', '#231b45', '#ff9a3c', 'rgba(138,151,173,0.4)'],
+  domino: ['#e6ebf2', '#1a1030', '#111111', 'rgba(230,235,242,0.4)'],
+  apocalypse: ['#a06bff', '#161f2e', '#7fd4ff', 'rgba(160,107,255,0.45)'],
+  'quicksilver-fox': ['#c2d0e0', '#232f45', '#5fd0ff', 'rgba(194,208,224,0.45)'],
+  colossus: ['#8a97ad', '#232f45', '#e6ebf2', 'rgba(138,151,173,0.45)'],
+  sabretooth: ['#ff9a3c', '#241808', '#ffd27a', 'rgba(255,154,60,0.45)'],
+  'mary-jane-watson': ['#ff5a7a', '#3a0f28', '#ffb0c0', 'rgba(255,90,122,0.45)'],
+  'norman-osborn': ['#3ad46a', '#4a1c87', '#ffd24a', 'rgba(58,212,106,0.5)'],
+  'otto-octavius': ['#22c9b0', '#201818', '#ffc16b', 'rgba(34,201,176,0.45)'],
+  'harry-osborn': ['#4fe08a', '#231833', '#c7ffd8', 'rgba(79,224,138,0.45)'],
+  'flint-marko': ['#e0b060', '#3a2a10', '#ffe0a0', 'rgba(224,176,96,0.45)'],
+  'gwen-stacy': ['#5fd0ff', '#231b45', '#ffffff', 'rgba(95,208,255,0.45)'],
+  'curt-connors': ['#4fd18a', '#0e3a24', '#a7ffb8', 'rgba(79,209,138,0.45)'],
+  'max-dillon': ['#5fd0ff', '#161f45', '#e6ffff', 'rgba(95,208,255,0.55)'],
+  'eddie-brock': ['#5a6b8a', '#05080f', '#7fd4ff', 'rgba(90,107,138,0.5)'],
+  venom: ['#4a5a78', '#05080f', '#7fd4ff', 'rgba(74,90,120,0.5)'],
+  'cletus-kasady': ['#ff4d4d', '#2a0808', '#ff8a8a', 'rgba(255,77,77,0.5)'],
+  'michael-morbius': ['#7f93b5', '#161f2e', '#c9a0ff', 'rgba(127,147,181,0.45)'],
+  kraven: ['#ff9a3c', '#241808', '#ffc16b', 'rgba(255,154,60,0.45)'],
+  'cassandra-webb': ['#5fd0ff', '#161f2e', '#e6ebf2', 'rgba(95,208,255,0.45)'],
+};
+
+export function paletteFor(id: string): Palette | null {
+  return EMBLEM_PALETTES[id] ?? null;
+}
