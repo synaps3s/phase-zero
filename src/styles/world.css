@@ -1569,3 +1569,79 @@ a:focus-visible .emblem-halo {
   gap: var(--s5);
   margin-bottom: var(--s5);
 }
+
+/* --- Character facts and journey ------------------------------------ */
+
+.facts {
+  display: grid;
+  gap: var(--s4);
+  margin: 0 0 var(--s7);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--hairline);
+}
+
+.facts div {
+  display: grid;
+  gap: var(--s1);
+}
+
+.facts dt {
+  color: var(--ink-faint);
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+/* One person's thread through the catalogue, which is a different thing from
+   a plot summary and is what a reader wants after finishing a film. */
+.journey {
+  display: grid;
+  gap: var(--s5);
+  border-top: 1px solid var(--hairline);
+  padding-top: var(--s5);
+}
+
+.step {
+  padding-inline-start: var(--s5);
+  border-inline-start: 2px solid var(--livery);
+}
+
+.step-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s3);
+  margin: 0 0 var(--s2);
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  color: var(--livery);
+}
+
+.step-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.step-title a:hover {
+  text-decoration: underline;
+}
+
+.step-year {
+  font-size: var(--size-label);
+  color: var(--ink-faint);
+}
+
+.step-text {
+  max-width: var(--measure);
+  margin: 0;
+  color: var(--ink);
+}
+
+@media (min-width: 46rem) {
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s5) var(--s7);
+  }
+}

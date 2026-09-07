@@ -174,7 +174,31 @@ const titleProse = defineCollection({
 
 const characterProse = defineCollection({
   loader: glob({ pattern: '*/characters/**/*.md', base: './content' }),
-  schema: proseFrontmatter,
+  schema: proseFrontmatter.extend({
+    /* Short translatable facts. They sit here rather than in data/ because
+       every one of them is a phrase rather than a value: "inventor and
+       industrialist" is not a date. */
+    role: z.string().optional(),
+    affiliation: z.string().optional(),
+    born: z.string().optional(),
+    powers: z.string().optional(),
+
+    /* The journey: what happens to this person in each title, in order.
+       It is the thing a reader actually wants after a film, and it is
+       deliberately not a plot summary of the film: it is one person's
+       thread through it.
+
+       Fate is not recorded here. It belongs behind a spoiler in the body,
+       because a facts row cannot be opted out of. */
+    journey: z
+      .array(
+        z.object({
+          title: z.string(),
+          text: z.string(),
+        }),
+      )
+      .default([]),
+  }),
 });
 
 const setProse = defineCollection({
