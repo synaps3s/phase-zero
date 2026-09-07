@@ -2008,3 +2008,26 @@ a:focus-visible .emblem-halo {
     grid-column: 2;
   }
 }
+
+/* --- Connections on an entry ----------------------------------------- */
+
+.connections {
+  margin-top: var(--s7);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--hairline);
+}
+
+.connections > h2 {
+  color: var(--ink-faint);
+  margin-bottom: var(--s4);
+}
+
+.connection + .connection {
+  margin-top: var(--s5);
+}
+
+.connection-lede {
+  margin-bottom: var(--s3);
+  color: var(--ink-soft);
+  font-size: var(--size-data);
+}
