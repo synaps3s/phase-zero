@@ -1,0 +1,12 @@
+id: nano-gauntlet
+set: the-gauntlets
+designation: "The Nano Gauntlet"
+order: 3
+tint: red
+firstAppearance: avengers-endgame
+lastAppearance: avengers-endgame
+sources:
+  - url: https://en.wikipedia.org/wiki/Features_of_the_Marvel_Cinematic_Universe#Weapons
+    title: "Features of the Marvel Cinematic Universe, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08
