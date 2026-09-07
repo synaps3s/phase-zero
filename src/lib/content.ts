@@ -11,7 +11,17 @@ import { defaultLanguage } from './i18n';
  * language says so, and offers a link to translate it.
  */
 
-export type ProseCollection = 'titleProse' | 'characterProse' | 'guides';
+export type ProseCollection = 'titleProse' | 'characterProse' | 'setProse' | 'pieceProse' | 'guides';
+
+/* Where each prose collection lives under content/<code>/. A piece's slug
+   carries its set, as in "infinity-stones/space-stone". */
+const AREA: Record<ProseCollection, string> = {
+  titleProse: 'titles',
+  characterProse: 'characters',
+  setProse: 'sets',
+  pieceProse: 'sets',
+  guides: 'guides',
+};
 
 export interface Resolved<T> {
   entry: T;
@@ -31,7 +41,7 @@ export async function resolveProse<C extends ProseCollection>(
   language: string,
   slug: string,
 ): Promise<Resolved<CollectionEntry<C>> | null> {
-  const area = collection === 'guides' ? 'guides' : collection === 'titleProse' ? 'titles' : 'characters';
+  const area = AREA[collection];
 
   const requested = await getEntry(collection, `${language}/${area}/${slug}`);
   if (requested) {
@@ -55,7 +65,10 @@ export async function sourceSlugs(collection: ProseCollection): Promise<string[]
   const entries = await getCollection(collection, ({ id }: { id: string }) =>
     id.startsWith(`${defaultLanguage.code}/`),
   );
-  return entries.map((entry: { id: string }) => entry.id.split('/').at(-1)!);
+  const prefix = `${defaultLanguage.code}/${AREA[collection]}/`;
+  // A piece's slug keeps its set, so "en/sets/infinity-stones/space-stone"
+  // resolves back to "infinity-stones/space-stone" and not just the leaf.
+  return entries.map((entry: { id: string }) => entry.id.slice(prefix.length));
 }
 
 /** The path of a content file on disk, used to build "translate this page" links. */

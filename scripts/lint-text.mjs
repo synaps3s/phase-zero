@@ -56,6 +56,37 @@ const RULES = [
   },
 ];
 
+/*
+ * Italian words that are simply wrong without their accent. This exists
+ * because it already happened: a batch of Italian content was written inside
+ * shell commands where accented characters felt risky, and shipped saying
+ * "puo" and "perche". A reader of that language reads it as a typo on every
+ * line.
+ *
+ * Only the unambiguous cases are listed. The one that matters most, "e"
+ * against "è", cannot be checked mechanically because both are real words in
+ * the same sentence position, so it stays a job for a human reviewer.
+ */
+const ACCENTS = {
+  it: {
+    perche: 'perché', poiche: 'poiché', finche: 'finché', affinche: 'affinché',
+    benche: 'benché', nonche: 'nonché', percio: 'perciò', pero: 'però',
+    puo: 'può', piu: 'più', gia: 'già', cosi: 'così',
+    citta: 'città', qualita: 'qualità', quantita: 'quantità', realta: 'realtà',
+    liberta: 'libertà', verita: 'verità', novita: 'novità', meta: 'metà',
+    continuita: 'continuità', comicita: 'comicità', identita: 'identità',
+    umilta: 'umiltà', possibilita: 'possibilità', responsabilita: 'responsabilità',
+    sara: 'sarà', fara: 'farà', avra: 'avrà', potra: 'potrà', dovra: 'dovrà',
+    andra: 'andrà', verra: 'verrà',
+  },
+};
+
+/** The language a content file is written in, from its path. */
+function languageOfPath(path) {
+  const match = /[/\\]content[/\\]([^/\\]+)[/\\]/.exec(path);
+  return match ? match[1] : null;
+}
+
 /** Legal marks that the emoji rule would otherwise flag. */
 const ALLOWED_PICTOGRAPHIC = /[\u00a9\u00ae\u2122]/gu;
 
@@ -82,9 +113,26 @@ async function collectFiles(directory) {
 function checkFile(path) {
   const problems = [];
   const lines = readFileSync(path, 'utf8').split('\n');
+  const accents = ACCENTS[languageOfPath(path) ?? ''] ?? null;
 
   lines.forEach((line, index) => {
     const cleaned = line.replace(ALLOWED_PICTOGRAPHIC, '');
+
+    if (accents) {
+      for (const [wrong, right] of Object.entries(accents)) {
+        const found = new RegExp(`\\b${wrong}\\b`, 'i').exec(cleaned);
+        if (!found) continue;
+        problems.push({
+          file: relative(ROOT, path),
+          line: index + 1,
+          column: found.index + 1,
+          rule: 'accent',
+          message: `"${wrong}" is missing its accent. Write "${right}".`,
+          excerpt: line.trim().slice(0, 90),
+        });
+      }
+    }
+
     for (const rule of RULES) {
       const match = cleaned.match(rule.test);
       if (!match) continue;

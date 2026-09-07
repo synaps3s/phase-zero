@@ -12,7 +12,7 @@ addossato.
 
 È figlio di Howard Stark, un industriale che ha contribuito a dare forma al
 secolo e non è mai stato particolarmente interessato a fare il padre. Tony
-eredita l'azienda a ventuno anni e la gestisce come un predestinato gestisce
+eredità l'azienda a ventuno anni e la gestisce come un predestinato gestisce
 qualsiasi cosa gli venga messa in mano: benissimo, e senza chiedersi mai se
 debba esistere.
 

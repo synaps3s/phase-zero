@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
+import { resolveProse } from '../../../lib/content';
+import { liveryStyle } from '../../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const sets = (await getCollection('sets')).sort((a, b) => a.data.order - b.data.order);
+const pieces = await getCollection('setPieces');
+
+const listed = [];
+for (const set of sets) {
+  const prose = await resolveProse('setProse', language.code, set.data.id);
+  if (!prose) continue;
+  listed.push({
+    set,
+    prose,
+    count: pieces.filter((piece) => piece.data.set === set.data.id).length,
+  });
+}
+---
+
+<Base
+  language={language.code}
+  title={`${t('collections.title')}. Phase Zero`}
+  description={t('collections.lede')}
+  path="collections"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-multiverse); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('collections.title')}</h1>
+        <p class="plate-meta">{t('collections.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    <ul class="set-list">
+      {listed.map(({ set, prose, count }) => (
+        <li class="set-card" data-livery style={liveryStyle(set.data.saga, set.data.franchise)}>
+          <a href={localePath(language.code, 'collections', set.data.id)}>
+            <h2 class="set-card-name">{prose.entry.data.title}</h2>
+            <p class="set-card-line">{prose.entry.data.oneLine}</p>
+            <p class="set-card-count label figure">
+              {t(`collections.kind.${set.data.kind}`)}
+              {' '}
+              {t('collections.pieceCount', { count })}
+            </p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>

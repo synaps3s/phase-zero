@@ -1,0 +1,11 @@
+id: power-stone
+set: infinity-stones
+designation: Power Stone
+order: 4
+tint: purple
+firstAppearance: guardians-of-the-galaxy
+sources:
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

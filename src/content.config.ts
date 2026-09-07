@@ -90,6 +90,44 @@ const titles = defineCollection({
   }),
 });
 
+/*
+ * Named sets: the variants of a thing, each explained rather than listed.
+ * The Iron Man armours, Spider-Man's suits, the forms Hulk takes, the
+ * Infinity Stones. A set belongs to a franchise; a piece belongs to a set
+ * and carries its own first appearance and sources like any other fact.
+ */
+const sets = defineCollection({
+  loader: glob({ pattern: '*.yml', base: './data/sets' }),
+  schema: z.object({
+    id: z.string(),
+    kind: z.enum(['armour', 'suit', 'form', 'weapon', 'relic', 'artifact']),
+    universe: z.string(),
+    saga: z.string(),
+    franchise: z.string(),
+    order: z.number().int(),
+    ...attribution,
+  }),
+});
+
+const setPieces = defineCollection({
+  loader: glob({ pattern: '*/*.yml', base: './data/sets' }),
+  schema: z.object({
+    id: z.string(),
+    set: z.string(),
+    /** The name inside the fiction. A proper noun, so it is a fact. */
+    designation: z.string(),
+    order: z.number().int(),
+    /* Some things have a documented colour of their own. It names a token
+       rather than a value, so the stylesheet still owns what the colour is. */
+    tint: z
+      .enum(['blue', 'yellow', 'red', 'purple', 'green', 'orange', 'silver'])
+      .nullable()
+      .default(null),
+    firstAppearance: z.string(),
+    ...attribution,
+  }),
+});
+
 const characters = defineCollection({
   loader: glob({ pattern: '**/*.yml', base: './data/characters' }),
   schema: z.object({
@@ -135,6 +173,16 @@ const characterProse = defineCollection({
   schema: proseFrontmatter,
 });
 
+const setProse = defineCollection({
+  loader: glob({ pattern: '*/sets/*.md', base: './content' }),
+  schema: proseFrontmatter,
+});
+
+const pieceProse = defineCollection({
+  loader: glob({ pattern: '*/sets/*/*.md', base: './content' }),
+  schema: proseFrontmatter,
+});
+
 const guides = defineCollection({
   loader: glob({ pattern: '*/guides/**/*.md', base: './content' }),
   schema: z.object({
@@ -151,7 +199,11 @@ const guides = defineCollection({
 export const collections = {
   titles,
   characters,
+  sets,
+  setPieces,
   titleProse,
   characterProse,
+  setProse,
+  pieceProse,
   guides,
 };

@@ -1,0 +1,35 @@
+id: avengers-infinity-war
+type: film
+universe: earth-616
+franchise: avengers
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2018-04-27
+  approximate: null
+  runtime: 149
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 1400
+  setting: null
+
+requires: [the-avengers, guardians-of-the-galaxy, doctor-strange, thor-the-dark-world]
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Avengers:_Infinity_War
+    title: "Avengers: Infinity War, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,11 @@
+id: infinity-stones
+kind: artifact
+universe: earth-616
+saga: infinity
+franchise: avengers
+order: 1
+sources:
+  - url: https://en.wikipedia.org/wiki/Infinity_Stones
+    title: Infinity Stones, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07
