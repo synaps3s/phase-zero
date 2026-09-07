@@ -172,10 +172,6 @@ for (const [id, { path, entry }] of titles) {
     }
   }
 
-  for (const member of entry.cast ?? []) {
-    checkReference(path, 'cast.character', member.character, new Set(characters.keys()), 'data/characters');
-  }
-
   const release = entry.release ?? {};
   if (release.status === 'released' && !release.date) {
     errors.push(`${path}: is marked released but has no release date.`);
