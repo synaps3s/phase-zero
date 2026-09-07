@@ -1,0 +1,11 @@
+id: spider-man-suits
+kind: suit
+universe: earth-616
+saga: infinity
+franchise: spider-man
+order: 4
+sources:
+  - url: https://en.wikipedia.org/wiki/Peter_Parker_(Marvel_Cinematic_Universe)
+    title: "Peter Parker (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

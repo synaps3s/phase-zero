@@ -1,0 +1,12 @@
+id: stark-suit
+set: spider-man-suits
+designation: "Homecoming Suit"
+order: 2
+tint: red
+firstAppearance: captain-america-civil-war
+lastAppearance: spider-man-no-way-home
+sources:
+  - url: https://en.wikipedia.org/wiki/Peter_Parker_(Marvel_Cinematic_Universe)
+    title: "Peter Parker (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

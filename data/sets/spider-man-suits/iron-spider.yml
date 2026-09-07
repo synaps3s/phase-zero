@@ -1,0 +1,12 @@
+id: iron-spider
+set: spider-man-suits
+designation: "Iron Spider"
+order: 3
+tint: orange
+firstAppearance: spider-man-homecoming
+lastAppearance: avengers-endgame
+sources:
+  - url: https://en.wikipedia.org/wiki/Peter_Parker_(Marvel_Cinematic_Universe)
+    title: "Peter Parker (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

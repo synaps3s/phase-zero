@@ -1,0 +1,12 @@
+id: sewn-suit
+set: spider-man-suits
+designation: "Sewn Suit"
+order: 7
+tint: blue
+firstAppearance: spider-man-no-way-home
+lastAppearance: null
+sources:
+  - url: https://en.wikipedia.org/wiki/Peter_Parker_(Marvel_Cinematic_Universe)
+    title: "Peter Parker (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
