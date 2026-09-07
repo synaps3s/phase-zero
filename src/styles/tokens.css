@@ -19,9 +19,12 @@
 
   /* --- The void --- */
   --void: #05080f;
-  --void-2: #070b14;
-  --fog: #0d1420;
-  --fog-2: #111a29;
+
+  /* Three slow fields of colour behind the particle canvas. Atmosphere, not
+     structure: nothing is ever read against them alone. */
+  --nebula-1: rgba(224, 161, 60, 0.13);
+  --nebula-2: rgba(80, 110, 190, 0.12);
+  --nebula-3: rgba(176, 123, 232, 0.1);
   --panel: rgba(15, 22, 37, 0.66);
   --panel-solid: #0e1626;
 
@@ -109,7 +112,6 @@
   --page: 78rem;
 
   /* --- Depth. Real offset and blur, plus the light a lit thing casts. --- */
-  --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.55);
   --shadow-2: 0 26px 80px rgba(0, 0, 0, 0.62), 0 4px 14px rgba(0, 0, 0, 0.4);
   --inset-lit: inset 0 1px 0 rgba(255, 255, 255, 0.07);
 
@@ -127,9 +129,16 @@
     color-scheme: light;
 
     --void: #f5f6f8;
-    --void-2: #eef0f4;
-    --fog: #ffffff;
-    --fog-2: #f7f8fa;
+
+  /* Far weaker on paper: a wash, not a glow. */
+  --nebula-1: rgba(224, 161, 60, 0.09);
+  --nebula-2: rgba(80, 110, 190, 0.08);
+  --nebula-3: rgba(176, 123, 232, 0.07);
+
+    /* Far weaker on paper: a wash, not a glow. */
+    --nebula-1: rgba(224, 161, 60, 0.09);
+    --nebula-2: rgba(80, 110, 190, 0.08);
+    --nebula-3: rgba(176, 123, 232, 0.07);
     --panel: rgba(255, 255, 255, 0.78);
     --panel-solid: #ffffff;
 
@@ -162,7 +171,6 @@
 
     --weight-plate: 350;
 
-    --shadow-1: 0 10px 26px rgba(16, 24, 40, 0.1);
     --shadow-2: 0 22px 60px rgba(16, 24, 40, 0.14), 0 3px 10px rgba(16, 24, 40, 0.08);
     --inset-lit: inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
@@ -172,9 +180,6 @@
   color-scheme: light;
 
   --void: #f5f6f8;
-  --void-2: #eef0f4;
-  --fog: #ffffff;
-  --fog-2: #f7f8fa;
   --panel: rgba(255, 255, 255, 0.78);
   --panel-solid: #ffffff;
 
@@ -207,7 +212,6 @@
 
   --weight-plate: 350;
 
-  --shadow-1: 0 10px 26px rgba(16, 24, 40, 0.1);
   --shadow-2: 0 22px 60px rgba(16, 24, 40, 0.14), 0 3px 10px rgba(16, 24, 40, 0.08);
   --inset-lit: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }

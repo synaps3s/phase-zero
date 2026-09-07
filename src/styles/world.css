@@ -1214,3 +1214,106 @@ a.plate:focus-visible {
     gap: var(--s5);
   }
 }
+
+/* --- Search --------------------------------------------------------- */
+
+.search-field {
+  display: flex;
+  gap: var(--s3);
+  margin-bottom: var(--s5);
+}
+
+.search-field input {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 34rem;
+  padding: var(--s3) var(--s4);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  color: var(--core);
+  font-family: var(--face-display);
+  font-size: var(--size-lede);
+  letter-spacing: 0.02em;
+  transition: border-color var(--fast) var(--ease);
+}
+
+.search-field input::placeholder {
+  color: var(--ink-faint);
+}
+
+.search-field input:hover,
+.search-field input:focus-visible {
+  border-color: var(--hairline-strong);
+}
+
+.search-field button {
+  padding-inline: var(--s3);
+  color: var(--ink-faint);
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  transition: color var(--fast) var(--ease);
+}
+
+.search-field button:hover {
+  color: var(--core);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--hairline);
+}
+
+.result {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.result a {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--s2) var(--s4);
+  padding: var(--s4) var(--s3) var(--s4) var(--s4);
+  text-decoration: none;
+  border-inline-start: 2px solid transparent;
+  transition:
+    background-color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease);
+}
+
+.result a:hover,
+.result a:focus-visible {
+  background: color-mix(in oklab, var(--livery) 8%, transparent);
+  border-inline-start-color: var(--livery);
+}
+
+.result-kind {
+  grid-column: 1;
+  color: var(--livery);
+}
+
+.result-label {
+  grid-column: 2;
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  color: var(--core);
+}
+
+.result-detail {
+  grid-column: 2;
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+@media (max-width: 46rem) {
+  .result a {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .result-kind,
+  .result-label,
+  .result-detail {
+    grid-column: 1;
+  }
+}

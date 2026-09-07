@@ -3,9 +3,6 @@ name: Phase Zero
 description: A navigable void where colour classifies, amber means watched, and every page reads without JavaScript.
 colors:
   void: "#05080f"
-  void-2: "#070b14"
-  fog: "#0d1420"
-  fog-2: "#111a29"
   panel: "rgba(15, 22, 37, 0.66)"
   panel-solid: "#0e1626"
   hairline: "rgba(176, 199, 236, 0.14)"
@@ -31,8 +28,6 @@ colors:
   watched-glow: "rgba(255, 196, 122, 0.42)"
   watched-soft: "rgba(255, 196, 122, 0.13)"
   day-void: "#f5f6f8"
-  day-void-2: "#eef0f4"
-  day-fog: "#ffffff"
   day-panel: "rgba(255, 255, 255, 0.78)"
   day-panel-solid: "#ffffff"
   day-hairline: "rgba(24, 34, 56, 0.14)"
@@ -236,8 +231,11 @@ fiction only. They are never used to classify a title, a saga or a section.
 
 ### Neutral
 
-- **Void** (`--void`) and **Void 2** (`--void-2`): the ground itself. `--void` is the page background and the stroke colour that separates a map node from its neighbours.
-- **Fog** and **Fog 2** (`--fog`, `--fog-2`): raised flat surfaces above the void.
+Every token below is referenced by the build. A colour defined and never used
+teaches the next contributor a palette that does not exist, so an unused token
+is deleted rather than carried.
+
+- **Void** (`--void`): the ground itself. It is the page background and the stroke colour that separates a map node from its neighbours.
 - **Panel** (`--panel`) and **Panel Solid** (`--panel-solid`): translucent glass for plates, cards, inputs and the fallback notice; the solid variant only where transparency would make text unreadable, as behind a map node's label.
 - **Hairline** and **Hairline Strong** (`--hairline`, `--hairline-strong`): every divider, border and scrollbar thumb. Both are tinted blue, never neutral grey.
 - **Core** (`--core`): headings, titles, and text that must sit at full strength.
