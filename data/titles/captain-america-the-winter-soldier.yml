@@ -1,0 +1,32 @@
+id: captain-america-the-winter-soldier
+type: film
+universe: earth-616
+franchise: captain-america
+saga: infinity
+phase: 2
+tier: essential
+
+release:
+  date: 2014-04-04
+  approximate: null
+  runtime: 136
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 830
+  setting: null
+
+requires: [captain-america-the-first-avenger, the-avengers]
+leadsTo: [avengers-age-of-ultron]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier
+    title: "Captain America: The Winter Soldier, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

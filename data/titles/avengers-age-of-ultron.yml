@@ -1,0 +1,32 @@
+id: avengers-age-of-ultron
+type: film
+universe: earth-616
+franchise: avengers
+saga: infinity
+phase: 2
+tier: essential
+
+release:
+  date: 2015-05-01
+  approximate: null
+  runtime: 141
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 880
+  setting: null
+
+requires: [the-avengers]
+leadsTo: [captain-america-civil-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Avengers:_Age_of_Ultron
+    title: "Avengers: Age of Ultron, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
