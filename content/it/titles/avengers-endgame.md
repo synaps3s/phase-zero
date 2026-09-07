@@ -1,5 +1,5 @@
 ---
-title: Avengers: Endgame
+title: "Avengers: Endgame"
 oneLine: Cinque anni dopo aver perso, i sopravvissuti hanno un tentativo per rimediare.
 tagline: Undici anni che arrivano tutti insieme
 ---

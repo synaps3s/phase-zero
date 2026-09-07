@@ -1,5 +1,5 @@
 ---
-title: Captain America: The Winter Soldier
+title: "Captain America: The Winter Soldier"
 oneLine: The organisation Captain America works for turns out to have been run from the inside by the people he fought in the war.
 tagline: A conspiracy thriller that happens to have a shield in it
 ---

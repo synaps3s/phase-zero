@@ -148,6 +148,20 @@ Do not write section headings such as `## Synopsis` into content files. The
 template renders headings from `ui.json`, so that translators translate
 sentences and never structure.
 
+## A gotcha worth knowing
+
+A value containing a colon has to be quoted, in YAML frontmatter and in data
+files alike:
+
+```yaml
+title: "Captain America: The Winter Soldier"
+```
+
+Without the quotes, YAML reads everything after the colon as a nested key and
+the file fails to parse. This has caught this project three times. The build
+catches it, which is why `npm run validate` builds the site rather than only
+type-checking it.
+
 ## Adding a title
 
 1. Pick an id: lowercase, hyphenated, stable, derived from the English title.
