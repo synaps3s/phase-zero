@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [x-men]
 leadsTo: []
 
 cast: []

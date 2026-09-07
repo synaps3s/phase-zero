@@ -27,6 +27,8 @@ const shots = [
   { name: 'character-mobile', path: '/en/characters', width: 390, height: 900, theme: 'dark' },
   { name: 'collections', path: '/en/collections', width: 1440, height: 1100, theme: 'dark' },
   { name: 'questions', path: '/it/questions', width: 1440, height: 1200, theme: 'dark' },
+  { name: 'masthead', path: '/it/timeline', width: 1440, height: 260, theme: 'dark' },
+  { name: 'masthead-narrow', path: '/it/timeline', width: 720, height: 320, theme: 'dark' },
   { name: 'paths', path: '/it/paths', width: 1440, height: 1400, theme: 'dark' },
   { name: 'timeline-day', path: '/en/timeline', width: 1440, height: 900, theme: 'light' },
   { name: 'unconnected-entry', path: '/en/titles/the-punisher-1989', width: 1440, height: 1000, theme: 'dark' },

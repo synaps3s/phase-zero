@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [captain-america-1979]
 leadsTo: []
 
 cast: []
@@ -29,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: "https://en.wikipedia.org/wiki/Captain_America_II:_Death_Too_Soon"
     title: "Captain America II: Death Too Soon, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Captain_America_(1979_film)"
+    title: "Captain America (1979 film), Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

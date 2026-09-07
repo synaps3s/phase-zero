@@ -19,7 +19,11 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires:
+  - jessica-jones-s1
+  - daredevil-s2
+  - luke-cage-s1
+  - iron-fist-s1
 leadsTo: []
 
 cast: []

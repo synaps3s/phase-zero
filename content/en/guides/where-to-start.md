@@ -29,12 +29,13 @@ You do not have to watch everything, and most people should not start by trying.
 **Films only.** The main run of feature films and nothing else. It is a complete
 story on its own, and it is the smallest thing that still makes sense.
 
-**Films and series.** Adds the streaming series that carry the main plot forward.
+**Plus series.** Adds the streaming series that carry the main plot forward.
 From 2021 onwards some of these are not optional if you want the films to make
 sense, which is a real change from how this used to work.
 
-**Everything.** Adds shorts, older television, and the films made by other
-studios about X-Men, Deadpool and Spider-Man. Worth it once you care.
+**Plus everything else.** Adds the shorts, the specials, the older television,
+and the films made by other studios about the X-Men, Deadpool and Spider-Man.
+Worth it once you care.
 
 Pick the middle one if you are unsure. You can always go deeper later, and going
 deeper later is more enjoyable than giving up early.

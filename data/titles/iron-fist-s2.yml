@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [iron-fist-s1, the-defenders]
 leadsTo: []
 
 cast: []

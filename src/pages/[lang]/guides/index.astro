@@ -1,0 +1,75 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
+import { resolveProse, sourceSlugs } from '../../../lib/content';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const slugs = await sourceSlugs('guides');
+
+type Listed = {
+  slug: string;
+  data: { title: string; oneLine: string; order: number; audience: string };
+};
+
+const guides: Listed[] = [];
+for (const slug of slugs) {
+  const prose = await resolveProse('guides', language.code, slug);
+  if (!prose) continue;
+  guides.push({ slug, data: prose.entry.data });
+}
+guides.sort((first, second) => first.data.order - second.data.order);
+
+/* Grouped by who each one is for, because a newcomer and somebody coming back
+   after five years want opposite things from the same catalogue. */
+const AUDIENCES = ['newcomer', 'returning', 'everyone'] as const;
+const groups = AUDIENCES.map((audience) => ({
+  audience,
+  guides: guides.filter((guide) => guide.data.audience === audience),
+})).filter((group) => group.guides.length > 0);
+---
+
+<Base
+  language={language.code}
+  title={`${t('guides.title')}. Phase Zero`}
+  description={t('guides.lede')}
+  path="guides"
+  editPath={`content/${language.code}/guides/`}
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-next); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('guides.title')}</h1>
+        <p class="plate-meta">{t('guides.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    {groups.map((group) => (
+      <section class="question-group">
+        <h2 class="label">{t(`guides.audience.${group.audience}`)}</h2>
+        <ul class="people">
+          {group.guides.map((guide) => (
+            <li class="person" data-livery style="--livery-base: var(--livery-next); --shade: 0">
+              <a href={localePath(language.code, 'guides', guide.slug)}>
+                <div class="person-head">
+                  <div>
+                    <h3 class="person-name">{guide.data.title}</h3>
+                  </div>
+                </div>
+                <p class="person-line">{guide.data.oneLine}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>
