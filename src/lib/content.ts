@@ -17,6 +17,7 @@ export type ProseCollection =
   | 'setProse'
   | 'pieceProse'
   | 'glossaryProse'
+  | 'universeProse'
   | 'guides';
 
 /* Where each prose collection lives under content/<code>/. A piece's slug
@@ -27,6 +28,7 @@ const AREA: Record<ProseCollection, string> = {
   setProse: 'sets',
   pieceProse: 'sets',
   glossaryProse: 'glossary',
+  universeProse: 'universes',
   guides: 'guides',
 };
 

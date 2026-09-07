@@ -1,0 +1,97 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+import { liveryStyle, orderedUniverses } from '../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+
+const blocks = [];
+for (const universe of orderedUniverses()) {
+  const prose = await resolveProse('universeProse', language.code, universe.id);
+  if (!prose) continue;
+  const { Content } = await render(prose.entry);
+
+  const own = titles
+    .filter((title) => title.data.universe === universe.id)
+    .sort((a, b) => Number(a.data.release.date) - Number(b.data.release.date));
+
+  const entries = [];
+  for (const title of own) {
+    const titleProse = await resolveProse('titleProse', language.code, title.data.id);
+    entries.push({
+      id: title.data.id,
+      label: titleProse?.entry.data.title ?? title.data.id,
+      year: title.data.release.date ? String(title.data.release.date.getUTCFullYear()) : '',
+      saga: title.data.saga,
+      franchise: title.data.franchise,
+    });
+  }
+
+  blocks.push({ universe, prose, Body: Content, entries });
+}
+---
+
+<Base
+  language={language.code}
+  title={`${t('universes.title')}. Phase Zero`}
+  description={t('universes.lede')}
+  path="universes"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-fox); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('universes.title')}</h1>
+        <p class="plate-meta">{t('universes.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    {blocks.map(({ universe, prose, Body, entries }) => (
+      <section
+        class="universe section"
+        id={universe.id}
+        data-livery
+        style={liveryStyle(entries[0]?.saga ?? 'unbound')}
+      >
+        <div class="section-head">
+          <p class="universe-designation label figure">{universe.designation}</p>
+          <h2>{prose.entry.data.title}</h2>
+          <p>{prose.entry.data.oneLine}</p>
+        </div>
+
+        <p class="universe-facts">
+          <span class="label">{t('universes.studio')}</span>
+          <span>{universe.studio}</span>
+          <span class="figure">{t('universes.titleCount', { count: entries.length })}</span>
+          <span class="universe-continuity">{t(`universes.continuity.${universe.continuity}`)}</span>
+        </p>
+
+        <div class="prose universe-body"><Body /></div>
+
+        {entries.length > 0 && (
+          <ol class="saga-run universe-run">
+            {entries.map((entry) => (
+              <li class="chip" data-livery style={liveryStyle(entry.saga, entry.franchise)}>
+                <a href={localePath(language.code, 'titles', entry.id)}>
+                  <span class="chip-title">{entry.label}</span>
+                  <span class="chip-year figure">{entry.year}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        )}
+      </section>
+    ))}
+  </div>
+</Base>
