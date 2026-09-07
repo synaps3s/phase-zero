@@ -1,0 +1,11 @@
+id: mark-iii
+set: iron-man-armour
+designation: "Mark III"
+order: 2
+tint: red
+firstAppearance: iron-man
+sources:
+  - url: https://en.wikipedia.org/wiki/Iron_Man's_armor_(Marvel_Cinematic_Universe)
+    title: "Iron Man's armor (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

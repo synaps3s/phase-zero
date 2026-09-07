@@ -205,6 +205,25 @@ for (const [id, { path, entry }] of characters) {
   }
 }
 
+/* The timeline sorts every title by this number, so two titles sharing one
+   have an undefined order between them: the page would show whichever the
+   browser happened to lay out first. Nothing caught this until a contributor
+   pointed it out. */
+const seenOrder = new Map();
+for (const [id, { path, entry }] of titles) {
+  const order = entry?.chronology?.order;
+  if (order === undefined || order === null) continue;
+  if (seenOrder.has(order)) {
+    errors.push(
+      `${path}: chronology.order ${order} is already used by ${seenOrder.get(order)}. ` +
+        `The story order sorts on this number, so a shared value leaves those two titles ` +
+        `in whatever order the browser happens to pick. Numbers are sparse on purpose; choose a free one.`,
+    );
+  } else {
+    seenOrder.set(order, id);
+  }
+}
+
 /* --- Named sets --- */
 
 for (const [id, { path, entry }] of sets) {
