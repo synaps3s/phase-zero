@@ -1381,3 +1381,57 @@ a.plate:focus-visible {
   color: var(--ink-faint);
   font-size: var(--size-data);
 }
+
+/* --- Characters ----------------------------------------------------- */
+
+.people {
+  display: grid;
+  gap: var(--s4);
+}
+
+.person a {
+  display: block;
+  padding: var(--s5);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-inline-start: 2px solid var(--livery);
+  text-decoration: none;
+  transition:
+    border-color var(--fast) var(--ease),
+    transform var(--slow) var(--ease);
+}
+
+.person a:hover,
+.person a:focus-visible {
+  border-color: color-mix(in oklab, var(--livery) 60%, transparent);
+  border-inline-start-color: var(--livery);
+  transform: translateY(-3px);
+}
+
+.person-name {
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  font-weight: 400;
+  color: var(--livery);
+}
+
+.person-line {
+  margin-top: var(--s3);
+  max-width: var(--measure-tight);
+  color: var(--ink);
+}
+
+.person-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s5);
+  margin-top: var(--s4);
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+@media (min-width: 56rem) {
+  .people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

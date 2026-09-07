@@ -1,0 +1,122 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import FallbackNotice from '../../../components/FallbackNotice.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
+import { resolveProse } from '../../../lib/content';
+import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
+
+export async function getStaticPaths() {
+  const people = await getCollection('characters');
+  return languages.flatMap((language) =>
+    people.map((person) => ({
+      params: { lang: language.code, id: person.data.id },
+      props: { personId: person.data.id },
+    })),
+  );
+}
+
+const { lang } = Astro.params;
+const { personId } = Astro.props;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const person = (await getCollection('characters')).find((entry) => entry.data.id === personId)!;
+const prose = await resolveProse('characterProse', language.code, personId);
+if (!prose) return Astro.rewrite('/404');
+
+const { Content } = await render(prose.entry);
+
+const titles = await getCollection('titles');
+const byId = new Map(titles.map((title) => [title.data.id, title]));
+const saga = byId.get(person.data.firstAppearance)?.data.saga ?? 'unbound';
+
+const appearances = [];
+for (const id of person.data.appearsIn) {
+  const title = byId.get(id);
+  if (!title) continue;
+  const titleProse = await resolveProse('titleProse', language.code, id);
+  appearances.push({
+    id,
+    label: titleProse?.entry.data.title ?? id,
+    year: title.data.release.date ? String(title.data.release.date.getUTCFullYear()) : '',
+    saga: title.data.saga,
+    franchise: title.data.franchise,
+  });
+}
+
+const universe = universeOf(person.data.universe);
+const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
+  person.data.verified,
+);
+---
+
+<Base
+  language={language.code}
+  title={`${prose.entry.data.title}. Phase Zero`}
+  description={prose.entry.data.oneLine}
+  path={`characters/${personId}`}
+  editPath={`content/${language.code}/characters/${personId}.md`}
+>
+  <section class="bleed band" data-livery style={liveryStyle(saga, person.data.franchise)}>
+    <div class="page">
+      <div class="plate">
+        <a class="crumb" href={localePath(language.code, 'characters')}>{t('characters.title')}</a>
+        <h1 class="plate-title">{prose.entry.data.title}</h1>
+        <p class="plate-meta">
+          {person.data.realName && <span>{person.data.realName}</span>}
+          <span>{franchiseName(person.data.franchise)}</span>
+          <span>{universe.designation}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    {prose.isFallback && (
+      <FallbackNotice
+        language={language.code}
+        shownLanguage={prose.language}
+        editPath={`content/${language.code}/characters/${personId}.md`}
+      />
+    )}
+
+    <article class="entry-body prose">
+      <p class="entry-lede">{prose.entry.data.oneLine}</p>
+      <Content />
+    </article>
+
+    {person.data.actors.length > 0 && (
+      <p class="universe-facts">
+        <span class="label">{t('characters.playedBy')}</span>
+        {person.data.actors.map((actor) => <span>{actor.name}</span>)}
+      </p>
+    )}
+
+    {appearances.length > 0 && (
+      <section class="section">
+        <div class="section-head"><h2>{t('character.appearsIn')}</h2></div>
+        <ol class="saga-run">
+          {appearances.map((entry) => (
+            <li class="chip" data-livery style={liveryStyle(entry.saga, entry.franchise)}>
+              <a href={localePath(language.code, 'titles', entry.id)}>
+                <span class="chip-title">{entry.label}</span>
+                <span class="chip-year figure">{entry.year}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    <section class="sources">
+      <h2 class="label">{t('common.sources')}</h2>
+      <ul>
+        {person.data.sources.map((source) => (
+          <li><a href={source.url}>{source.title ?? source.url}</a></li>
+        ))}
+      </ul>
+      <p style="margin-top: var(--s3)">{t('common.verifiedOn', { date: verified })}</p>
+    </section>
+  </div>
+</Base>
