@@ -1,0 +1,17 @@
+id: mystic-relics
+kind: relic
+universe: earth-616
+saga: infinity
+franchise: doctor-strange
+order: 6
+sources:
+  - url: "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)"
+    title: "Doctor Strange (2016 film), Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Stephen_Strange_(Marvel_Cinematic_Universe)
+    title: "Stephen Strange (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Doctor_Strange_in_the_Multiverse_of_Madness
+    title: Doctor Strange in the Multiverse of Madness, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

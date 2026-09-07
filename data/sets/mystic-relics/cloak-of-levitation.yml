@@ -1,0 +1,12 @@
+id: cloak-of-levitation
+set: mystic-relics
+designation: "Cloak of Levitation"
+order: 1
+tint: red
+firstAppearance: doctor-strange
+lastAppearance: null
+sources:
+  - url: "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)"
+    title: "Doctor Strange (2016 film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
