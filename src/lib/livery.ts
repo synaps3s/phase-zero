@@ -79,9 +79,24 @@ export function franchiseOf(id: string): Franchise | undefined {
 export function liveryStyle(sagaId: string, franchiseId?: string): string {
   const saga = sagaById.get(sagaId) ?? UNBOUND_SAGA;
   const franchise = franchiseId ? franchiseById.get(franchiseId) : undefined;
-  const shade = franchise?.shade ?? 0;
 
-  return [`--livery-base: var(--livery-${saga.livery})`, `--shade: ${shade}`].join('; ');
+  /* A franchise with a colour of its own uses it. That is the level a reader
+     actually recognises: Thor is purple and Hulk is green whatever era they
+     are in. The saga colour stays for era-level surfaces, and the shade
+     ladder is the fallback for a franchise that has no colour yet, so
+     nothing is ever left without one. */
+  const base = franchise
+    ? `var(--franchise-${franchise.id}, var(--livery-${saga.livery}))`
+    : `var(--livery-${saga.livery})`;
+
+  return [`--livery-base: ${base}`, `--shade: ${franchise?.shade ?? 0}`].join('; ');
+}
+
+/** The era colour on its own, for surfaces that group by saga rather than by
+    story: the saga blocks, the phases, a section's own band. */
+export function sagaStyle(sagaId: string): string {
+  const saga = sagaById.get(sagaId) ?? UNBOUND_SAGA;
+  return `--livery-base: var(--livery-${saga.livery}); --shade: 0`;
 }
 
 /** The name a shade belongs to. Colour narrows the field; the name settles it. */

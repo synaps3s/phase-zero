@@ -1435,3 +1435,77 @@ a.plate:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* --- Emblems -------------------------------------------------------- */
+
+/* The project's only figurative artwork, and the whole answer to having no
+   photographs. Drawn at a real size and given light, never treated as an
+   icon sitting beside a label. */
+.emblem {
+  display: inline-block;
+  width: var(--emblem-size, 96px);
+  height: var(--emblem-size, 96px);
+  flex: 0 0 auto;
+  color: var(--livery);
+}
+
+.emblem svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.emblem-disc {
+  fill: color-mix(in oklab, var(--livery) 10%, transparent);
+}
+
+.emblem-ring {
+  fill: none;
+  stroke: color-mix(in oklab, var(--livery) 34%, transparent);
+  stroke-width: 0.7;
+}
+
+.emblem-field circle {
+  fill: var(--livery);
+}
+
+.emblem-glyph {
+  filter: drop-shadow(0 0 6px color-mix(in oklab, var(--livery) 45%, transparent));
+}
+
+.emblem-fallback circle {
+  fill: var(--livery);
+}
+
+.emblem-fallback line {
+  stroke: var(--livery);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+/* On a card the emblem sits beside the text; on a page header it leads. */
+.person a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--s4);
+  align-items: start;
+}
+
+.person-name,
+.person-line,
+.person-meta {
+  grid-column: 2;
+}
+
+.person .emblem {
+  grid-row: 1 / span 3;
+  grid-column: 1;
+}
+
+.entry-emblem {
+  display: flex;
+  align-items: center;
+  gap: var(--s5);
+  margin-bottom: var(--s5);
+}
