@@ -1,39 +1,43 @@
 ---
 import { SIGILS } from '../lib/sigils';
+import { paletteFor } from '../lib/emblem-palettes';
 import { liveryStyle } from '../lib/livery';
 
 /*
  * A character's emblem.
  *
- * The sigil is authored artwork (see sigils.ts). Everything around it is
- * generated: the disc, the ring, and a scatter of particles whose positions
- * are derived from the character's own id, so two people never get the same
- * arrangement and nobody has to place them by hand.
+ * The sigil is authored artwork (sigils.ts) and the four colours around it
+ * are chosen by hand (emblem-palettes.ts). Everything else is generated from
+ * the character's own id: the dust, its positions, its opacities. The same
+ * person always produces the same field, on every machine and in every
+ * language.
  *
- * This is the project's whole answer to having no photographs. It has to
- * carry recognition on its own, so it is drawn at a real size and given
- * light rather than being treated as an icon.
+ * This is the project's entire answer to having no photographs, so it is
+ * drawn at a real size and given light rather than being treated as an icon.
+ * A character with no palette falls back to their franchise colour, which is
+ * always defined, so nobody is left grey.
  */
 
 interface Props {
-  /** The character, used to seed the generated field. */
+  /** The character, which seeds the generated field. */
   id: string;
   /** Which authored glyph to draw. Falls back to the id. */
   sigil?: string | null;
   saga: string;
   franchise?: string;
-  /** Rendered size in pixels. The glyph scales with it. */
   size?: number;
-  /** A character with no authored sigil still gets a mark, never initials. */
+  /** Present makes the emblem an image with a name; absent makes it decoration. */
   label?: string;
 }
 
 const { id, sigil: sigilKey, saga, franchise, size = 96, label } = Astro.props;
 
-const sigil = SIGILS[sigilKey ?? id];
+const key = sigilKey ?? id;
+const sigil = SIGILS[key];
+const palette = paletteFor(key) ?? paletteFor(id);
 
-/* A small deterministic hash of the id. The same character always produces
-   the same field, across languages, builds and machines. */
+/* Deterministic, so the field is a property of the character rather than of
+   the moment the page was built. */
 function seedOf(value: string): number {
   let hash = 2166136261;
   for (let index = 0; index < value.length; index += 1) {
@@ -43,28 +47,23 @@ function seedOf(value: string): number {
   return hash >>> 0;
 }
 
-const seed = seedOf(id);
-let cursor = seed;
+let cursor = seedOf(id);
 const next = () => {
   cursor = (cursor * 1664525 + 1013904223) >>> 0;
   return cursor / 4294967296;
 };
 
-const particles = Array.from({ length: 7 }, () => {
-  const angle = next() * Math.PI * 2;
-  const radius = 17 + next() * 6;
-  return {
-    x: 24 + Math.cos(angle) * radius,
-    y: 24 + Math.sin(angle) * radius,
-    r: 0.5 + next() * 0.9,
-    o: 0.3 + next() * 0.5,
-  };
-});
+const dust = Array.from({ length: 16 }, () => ({
+  x: 2 + next() * 44,
+  y: 2 + next() * 44,
+  r: next() < 0.25 ? 0.9 : 0.5,
+  o: 0.22 + next() * 0.55,
+}));
 
-/* With no authored sigil, the fallback is a figure built from the same seed:
-   a ring of struck marks. It is deliberately not a monogram, because a letter
-   in a box says the entry is unfinished and a mark does not. */
-const fallbackSpokes = Array.from({ length: 6 }, (unused, index) => {
+/* With no authored glyph, a figure built from the same seed. Deliberately not
+   a monogram: a letter in a box says the entry is unfinished, a mark does not. */
+const seed = seedOf(id);
+const spokes = Array.from({ length: 6 }, (unused, index) => {
   const angle = (index / 6) * Math.PI * 2 + (seed % 360) * (Math.PI / 180);
   const inner = 7 + ((seed >> (index * 3)) % 4);
   const outer = 14 + ((seed >> (index * 2)) % 5);
@@ -75,32 +74,60 @@ const fallbackSpokes = Array.from({ length: 6 }, (unused, index) => {
     y2: 24 + Math.sin(angle) * outer,
   };
 });
+
+const uid = `em-${key}`;
+const style = [
+  liveryStyle(saga, franchise),
+  `--emblem-size: ${size}px`,
+  palette
+    ? `--face: ${palette[0]}; --shade: ${palette[1]}; --accent: ${palette[2]}; --glow: ${palette[3]}`
+    : '--face: var(--livery); --shade: var(--void); --accent: var(--livery); --glow: var(--livery-glow)',
+].join('; ');
 ---
 
-<span
-  class="emblem"
-  data-livery
-  style={`${liveryStyle(saga, franchise)}; --emblem-size: ${size}px`}
->
-  <svg viewBox="0 0 48 48" role={label ? 'img' : 'presentation'} aria-label={label} aria-hidden={label ? undefined : 'true'}>
-    <circle class="emblem-disc" cx="24" cy="24" r="21" />
-    <circle class="emblem-ring" cx="24" cy="24" r="21" />
+<span class="emblem" data-livery style={style}>
+  <span class="emblem-halo" aria-hidden="true"></span>
 
-    <g class="emblem-field">
-      {particles.map((particle) => (
-        <circle cx={particle.x} cy={particle.y} r={particle.r} opacity={particle.o} />
-      ))}
+  <svg
+    class="emblem-svg"
+    viewBox="0 0 48 48"
+    role={label ? 'img' : 'presentation'}
+    aria-label={label}
+    aria-hidden={label ? undefined : 'true'}
+  >
+    <defs>
+      <radialGradient id={`face-${uid}`} cx="34%" cy="28%" r="82%">
+        <stop offset="0%" stop-color="var(--face)" />
+        <stop offset="60%" stop-color="var(--shade)" />
+        <stop offset="100%" stop-color="var(--void)" />
+      </radialGradient>
+      <radialGradient id={`core-${uid}`} cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="var(--accent)" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+
+    <rect width="48" height="48" rx="14" fill={`url(#face-${uid})`} />
+    <rect width="48" height="48" rx="14" fill={`url(#core-${uid})`} />
+
+    <g class="emblem-dust" aria-hidden="true">
+      {dust.map((mote) => <circle cx={mote.x} cy={mote.y} r={mote.r} opacity={mote.o} />)}
     </g>
 
-    <g class="emblem-glyph" set:html={sigil} />
+    <circle class="emblem-rim" cx="24" cy="24" r="20.5" />
+    <circle class="emblem-orbit" cx="24" cy="24" r="18" />
 
-    {!sigil && (
-      <g class="emblem-fallback">
+    {sigil ? (
+      <g class="emblem-glyph" set:html={sigil} />
+    ) : (
+      <g class="emblem-glyph emblem-fallback">
         <circle cx="24" cy="24" r="4.2" />
-        {fallbackSpokes.map((spoke) => (
+        {spokes.map((spoke) => (
           <line x1={spoke.x1} y1={spoke.y1} x2={spoke.x2} y2={spoke.y2} />
         ))}
       </g>
     )}
+
+    <rect class="emblem-edge" x="0.6" y="0.6" width="46.8" height="46.8" rx="13.6" />
   </svg>
 </span>

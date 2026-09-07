@@ -197,6 +197,18 @@ there is no third-party imagery in this project and there never will be.
 - Two grounds, both first class, both numerically contrast checked.
 - Every page is complete and readable with JavaScript off.
 
+### The one rounded thing
+
+Every surface in this system has square corners. The character emblem does
+not: it carries a 30 percent radius, and its inner edge 13.6 units on a 48
+unit frame.
+
+That is deliberate and it is the only exception. The emblem is not chrome, it
+is the project's only figurative artwork and its entire answer to having no
+photographs. It behaves like an object placed on the page rather than like a
+panel the page is made of, and objects are allowed a shape of their own.
+Nothing else earns this.
+
 ## Colors
 
 A luminous classification palette on a near-black blue void, with a single amber

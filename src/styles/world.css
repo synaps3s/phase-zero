@@ -1439,49 +1439,109 @@ a.plate:focus-visible {
 /* --- Emblems -------------------------------------------------------- */
 
 /* The project's only figurative artwork, and the whole answer to having no
-   photographs. Drawn at a real size and given light, never treated as an
-   icon sitting beside a label. */
+   photographs. It is an object rather than chrome, which is why it is the one
+   thing here carrying a corner radius. */
 .emblem {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
   width: var(--emblem-size, 96px);
   height: var(--emblem-size, 96px);
-  flex: 0 0 auto;
-  color: var(--livery);
 }
 
-.emblem svg {
+/* The light the emblem throws, sitting behind it rather than on it. */
+.emblem-halo {
+  position: absolute;
+  inset: -18%;
+  z-index: 0;
+  border-radius: 40%;
+  background: radial-gradient(circle at 50% 45%, var(--glow), transparent 70%);
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity var(--slow) var(--ease);
+}
+
+.emblem-svg {
+  position: relative;
+  z-index: 1;
+  display: block;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  border-radius: 30%;
 }
 
-.emblem-disc {
-  fill: color-mix(in oklab, var(--livery) 10%, transparent);
+.emblem-dust circle {
+  fill: #fff;
 }
 
-.emblem-ring {
+.emblem-rim {
   fill: none;
-  stroke: color-mix(in oklab, var(--livery) 34%, transparent);
-  stroke-width: 0.7;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 0.8;
 }
 
-.emblem-field circle {
-  fill: var(--livery);
+/* The orbit turns slowly, and faster when the reader is on it. */
+.emblem-orbit {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.7;
+  stroke-dasharray: 1 5;
+  opacity: 0.7;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: emblem-orbit 34s linear infinite;
+}
+
+@keyframes emblem-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emblem-orbit {
+    animation: none;
+  }
 }
 
 .emblem-glyph {
-  filter: drop-shadow(0 0 6px color-mix(in oklab, var(--livery) 45%, transparent));
+  color: var(--accent);
+  filter: drop-shadow(0 0 3px var(--glow));
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform var(--slow) var(--ease);
 }
 
 .emblem-fallback circle {
-  fill: var(--livery);
+  fill: var(--accent);
 }
 
 .emblem-fallback line {
-  stroke: var(--livery);
+  stroke: var(--accent);
   stroke-width: 1.6;
   stroke-linecap: round;
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+.emblem-edge {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 1;
+}
+
+a:hover .emblem-orbit,
+a:focus-visible .emblem-orbit {
+  animation-duration: 8s;
+}
+
+a:hover .emblem-glyph,
+a:focus-visible .emblem-glyph {
+  transform: scale(1.08);
+}
+
+a:hover .emblem-halo,
+a:focus-visible .emblem-halo {
+  opacity: 1;
 }
 
 /* On a card the emblem sits beside the text; on a page header it leads. */
