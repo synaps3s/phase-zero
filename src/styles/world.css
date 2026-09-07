@@ -817,3 +817,135 @@ a.plate:focus-visible {
     align-items: start;
   }
 }
+
+/* --- The map of connections --------------------------------------- */
+
+.map {
+  margin-block: var(--s5);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.map > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  padding-block: var(--s4);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--face-data);
+  font-size: var(--size-data);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color var(--fast) var(--ease);
+}
+
+.map > summary::-webkit-details-marker {
+  display: none;
+}
+
+.map > summary:hover {
+  color: var(--core);
+}
+
+.map .map-close,
+.map[open] .map-open {
+  display: none;
+}
+
+.map[open] .map-close {
+  display: inline;
+}
+
+.map-body {
+  padding-bottom: var(--s6);
+}
+
+.map-title {
+  font-size: var(--size-head);
+}
+
+.map-lede {
+  margin-top: var(--s3);
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  font-size: var(--size-data);
+}
+
+.map-scroll {
+  margin-top: var(--s5);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.map-svg {
+  display: block;
+  height: auto;
+  max-width: none;
+}
+
+.map-year line {
+  stroke: var(--hairline);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+}
+
+.map-year text {
+  fill: var(--ink-faint);
+  font-family: var(--face-data);
+  font-size: 11px;
+}
+
+.map-lane line {
+  stroke: color-mix(in oklab, var(--livery) 28%, transparent);
+  stroke-width: 1;
+}
+
+.map-lane text {
+  fill: var(--livery);
+  font-family: var(--face-data);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* The divider is the point the shared story stops. It is drawn, not implied. */
+.map-divider {
+  stroke: var(--hairline-strong);
+  stroke-width: 1;
+  stroke-dasharray: 1 5;
+}
+
+.map-link {
+  fill: none;
+  stroke: var(--ink-faint);
+  stroke-width: 1.2;
+  opacity: 0.5;
+  transition: opacity var(--fast) var(--ease);
+}
+
+.map-svg:hover .map-link {
+  opacity: 0.28;
+}
+
+.map-node circle {
+  fill: var(--livery);
+  stroke: var(--void);
+  stroke-width: 2;
+  transition: r var(--fast) var(--ease);
+}
+
+.map-node:hover circle,
+.map-node:focus-visible circle {
+  r: 9;
+}
+
+.map-node:focus-visible {
+  outline: none;
+}
+
+.map-node:focus-visible circle {
+  stroke: var(--watched);
+  stroke-width: 3;
+}

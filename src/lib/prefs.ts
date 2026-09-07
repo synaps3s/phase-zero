@@ -28,9 +28,18 @@ interface Prefs {
   order: Order;
   /** How much of the catalogue the reader wants to see. */
   depth: Depth;
+  /** Whether the separate continuities are shown alongside the main one. */
+  separate: boolean;
 }
 
-const EMPTY: Prefs = { version: VERSION, theme: 'system', watched: [], order: 'release', depth: 2 };
+const EMPTY: Prefs = {
+  version: VERSION,
+  theme: 'system',
+  watched: [],
+  order: 'release',
+  depth: 2,
+  separate: false,
+};
 
 function read(): Prefs {
   try {
@@ -45,6 +54,7 @@ function read(): Prefs {
       watched: Array.isArray(parsed.watched) ? parsed.watched.filter((id) => typeof id === 'string') : [],
       order: parsed.order === 'chrono' ? 'chrono' : 'release',
       depth: parsed.depth === 1 || parsed.depth === 3 ? parsed.depth : 2,
+      separate: parsed.separate === true,
     };
   } catch {
     return { ...EMPTY };
@@ -109,6 +119,16 @@ export function getDepth(): Depth {
 export function setDepth(depth: Depth): void {
   const prefs = read();
   prefs.depth = depth;
+  write(prefs);
+}
+
+export function getSeparate(): boolean {
+  return read().separate;
+}
+
+export function setSeparate(separate: boolean): void {
+  const prefs = read();
+  prefs.separate = separate;
   write(prefs);
 }
 

@@ -12,9 +12,11 @@
 import {
   getDepth,
   getOrder,
+  getSeparate,
   getWatched,
   setDepth,
   setOrder,
+  setSeparate,
   toggleWatched,
   type Depth,
   type Order,
@@ -40,6 +42,7 @@ if (timeline) {
   const state = {
     order: getOrder(),
     depth: getDepth(),
+    separate: getSeparate(),
     query: '',
   };
 
@@ -55,9 +58,28 @@ if (timeline) {
     let minutesLeft = 0;
 
     for (const row of rows) {
-      const withinDepth = Number(row.dataset.tier ?? '3') <= state.depth;
+      /* Depth one is a question about format rather than about how deep the
+         reader wants to go: it means feature films and nothing else. */
+      const withinDepth =
+        state.depth === 1
+          ? row.dataset.kind === 'film'
+          : Number(row.dataset.tier ?? '3') <= state.depth;
+
+      /* The separate continuities are a different story rather than a later
+         part of this one, so they are their own axis. They also need the
+         fullest depth: asking for films only and getting another studio's
+         twenty-year run is not what that control means. */
+      const continuity = row.dataset.continuity ?? 'shared';
+      const isSeparate = continuity === 'separate' || continuity === 'unbound';
+      const isAlternate = continuity === 'alternate';
+
+      let allowed: boolean;
+      if (isSeparate) allowed = state.separate && state.depth === 3;
+      else if (isAlternate) allowed = state.separate && withinDepth;
+      else allowed = withinDepth;
+
       const matches = state.query === '' || (row.dataset.search ?? '').includes(state.query);
-      const visible = withinDepth && matches;
+      const visible = allowed && matches;
 
       row.hidden = !visible;
       row.style.order = String(
@@ -132,7 +154,9 @@ if (timeline) {
   }
 
   controls?.addEventListener('click', (event) => {
-    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('button[data-order], button[data-tier]');
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>(
+      'button[data-order], button[data-tier], button[data-separate]',
+    );
     if (!button) return;
 
     if (button.dataset.order) {
@@ -147,6 +171,10 @@ if (timeline) {
       setDepth(state.depth);
       press('tier', String(state.depth));
       if (depthHelp) depthHelp.textContent = helpFor(depthHelp, `d${state.depth}`);
+    } else if (button.dataset.separate) {
+      state.separate = button.dataset.separate === 'on';
+      setSeparate(state.separate);
+      press('separate', state.separate ? 'on' : 'off');
     }
     apply();
   });
@@ -183,6 +211,7 @@ if (timeline) {
      list, so they never have to set it twice. */
   press('order', state.order);
   press('tier', String(state.depth));
+  press('separate', state.separate ? 'on' : 'off');
   if (orderHelp) orderHelp.textContent = helpFor(orderHelp, state.order === 'release' ? 'release' : 'chrono');
   if (depthHelp) depthHelp.textContent = helpFor(depthHelp, `d${state.depth}`);
   for (const row of rows) {
