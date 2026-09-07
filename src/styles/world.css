@@ -949,3 +949,47 @@ a.plate:focus-visible {
   stroke: var(--watched);
   stroke-width: 3;
 }
+
+/* The node's own name, revealed on hover and on keyboard focus. Doing this
+   in CSS rather than in script means it works before any JavaScript loads
+   and for a reader tabbing through the map. */
+.map-label {
+  opacity: 0;
+  transition: opacity var(--fast) var(--ease);
+  pointer-events: none;
+}
+
+.map-node:hover .map-label,
+.map-node:focus-visible .map-label {
+  opacity: 1;
+}
+
+.map-label rect {
+  fill: var(--panel-solid);
+  stroke: color-mix(in oklab, var(--livery) 50%, transparent);
+  stroke-width: 1;
+}
+
+.map-label text {
+  fill: var(--core);
+  font-family: var(--face-body);
+  font-size: 11px;
+}
+
+/* A node's own curves come forward while the rest step back. */
+.map-svg[data-focused] .map-link {
+  opacity: 0.14;
+}
+
+.map-svg .map-link[data-lit] {
+  opacity: 1;
+  stroke: var(--core);
+  stroke-width: 1.6;
+}
+
+/* The hovered node sits above its neighbours so its label is never clipped
+   by the node drawn after it. */
+.map-node:hover,
+.map-node:focus-visible {
+  isolation: isolate;
+}
