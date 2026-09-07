@@ -1,5 +1,6 @@
 ---
 title: Phase
+aliases: ["Phases"]
 oneLine: A numbered block of releases, the way a long-running series is divided
   into seasons.
 ---

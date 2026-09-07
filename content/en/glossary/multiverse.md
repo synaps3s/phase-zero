@@ -1,5 +1,6 @@
 ---
 title: Multiverse
+aliases: ["multiverses"]
 oneLine: The idea that this is not the only version of reality, and that other
   versions of the same people are living slightly different lives elsewhere.
 ---

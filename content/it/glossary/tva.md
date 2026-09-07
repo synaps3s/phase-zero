@@ -1,5 +1,6 @@
 ---
 title: TVA, Autorità di Variazione Temporale
+aliases: ["TVA", "Autorità di Variazione Temporale"]
 oneLine: Una burocrazia che esiste fuori dal tempo e sorveglia la linea
   temporale, cancellando tutto quello che si allontana dalla versione che
   protegge.

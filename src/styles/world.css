@@ -1645,3 +1645,22 @@ a:focus-visible .emblem-halo {
     gap: var(--s5) var(--s7);
   }
 }
+
+/* A glossary term met inside prose. Marked, not shouted: a dotted underline
+   in the page's own colour, so a reader can follow it without the paragraph
+   turning into a field of links. */
+.term-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: color-mix(in oklab, var(--livery-next) 70%, transparent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.22em;
+  transition: text-decoration-color var(--fast) var(--ease);
+}
+
+.term-link:hover,
+.term-link:focus-visible {
+  text-decoration-style: solid;
+  text-decoration-color: var(--livery-next);
+}

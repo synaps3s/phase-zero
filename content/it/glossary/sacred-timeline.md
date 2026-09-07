@@ -1,5 +1,6 @@
 ---
 title: Timeline Sacra
+aliases: ["Timeline Sacra"]
 oneLine: L'unica versione approvata della storia, che un'organizzazione fuori
   dal tempo teneva in piedi cancellando ogni versione che provasse a
   diramarsene.
