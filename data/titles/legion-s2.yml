@@ -1,0 +1,36 @@
+id: legion-s2
+type: series
+universe: earth-10005
+franchise: x-men
+saga: fox
+phase: null
+tier: complete
+
+release:
+  date: 2018-04-03
+  approximate: null
+  runtime: 56
+  episodes: 11
+  finale: 2018-06-12
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Legion_season_2"
+    title: "Legion season 2, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Legion_(TV_series)"
+    title: "Legion (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

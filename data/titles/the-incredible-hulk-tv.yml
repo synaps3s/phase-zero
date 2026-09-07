@@ -1,0 +1,36 @@
+id: the-incredible-hulk-tv
+type: series
+universe: unbound
+franchise: hulk
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1977-11-04
+  approximate: null
+  runtime: 49
+  episodes: 80
+  finale: 1982-05-12
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Incredible_Hulk_(1978_TV_series)"
+    title: "The Incredible Hulk (1978 TV series), Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/List_of_The_Incredible_Hulk_(1978_TV_series)_episodes"
+    title: "List of The Incredible Hulk (1978 TV series) episodes, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

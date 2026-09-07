@@ -1,0 +1,40 @@
+id: your-friendly-neighborhood-spider-man-s2
+type: series
+universe: earth-616
+franchise: spider-man
+saga: multiverse
+phase: 6
+tier: complete
+
+release:
+  # The article gives a month, not a day, so the window is recorded instead.
+  date: null
+  approximate: "January 2027"
+  runtime: null
+  # The season article leaves the episode count blank.
+  episodes: null
+  finale: null
+  status: in-production
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+# The article states the season is set in an alternate timeline from the main
+# films and television series, as the first season was.
+alternateUniverse: true
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Your_Friendly_Neighborhood_Spider-Man_season_2"
+    title: "Your Friendly Neighborhood Spider-Man season 2, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Your_Friendly_Neighborhood_Spider-Man"
+    title: "Your Friendly Neighborhood Spider-Man, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

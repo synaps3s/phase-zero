@@ -87,7 +87,15 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
               {t(release.status === 'announced' ? 'title.status.announced' : 'title.status.inProduction')}
             </span>
           )}
-          {release.runtime && <span class="figure">{t('title.runtime', { minutes: release.runtime })}</span>}
+          <span class="plate-kind">{t(`title.kind.${facts.data.type}`)}</span>
+          {release.episodes && (
+            <span class="figure">{t('title.episodes', { count: release.episodes })}</span>
+          )}
+          {release.runtime && (
+            <span class="figure">
+              {t(release.episodes ? 'title.runtimeEach' : 'title.runtime', { minutes: release.runtime })}
+            </span>
+          )}
           {facts.data.phase !== null && <span>{t('title.phase', { number: facts.data.phase })}</span>}
           <span>{franchiseName(facts.data.franchise)}</span>
           <span>{universe.designation}</span>

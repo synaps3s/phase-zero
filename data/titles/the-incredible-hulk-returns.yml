@@ -1,0 +1,33 @@
+id: the-incredible-hulk-returns
+type: film
+universe: unbound
+franchise: hulk
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1988-05-22
+  approximate: null
+  runtime: 93
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Incredible_Hulk_Returns"
+    title: "The Incredible Hulk Returns, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

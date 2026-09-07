@@ -1,0 +1,34 @@
+id: spider-man-beyond-the-spider-verse
+type: film
+universe: unbound
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2027-06-18
+  approximate: null
+  # The article's runtime field is empty, as the film is not finished.
+  runtime: null
+  episodes: null
+  finale: null
+  status: in-production
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Beyond_the_Spider-Verse"
+    title: "Spider-Man: Beyond the Spider-Verse, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

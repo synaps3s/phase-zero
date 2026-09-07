@@ -21,7 +21,11 @@ interface Props {
   releaseOrder?: number;
   chronoOrder?: number;
   tierRank?: number;
+  /* film, series, special or short. The row says which, because "54 min" on a
+     thirteen episode series and "54 min" on a film mean very different things
+     to somebody deciding what to watch tonight. */
   kind?: string;
+  episodes?: number | null;
   continuity?: string;
   /* Shown only for an entry of this run whose story is set somewhere other
      than the universe the run otherwise takes place in. */
@@ -49,6 +53,7 @@ const {
   chronoOrder,
   tierRank,
   kind,
+  episodes = null,
   continuity,
   universeLabel = null,
   unreleased = false,
@@ -84,7 +89,13 @@ const t = useTranslations(language);
     <p class="spine-meta">
       <span class="figure">{year}</span>
       {unreleased && <span class="spine-upcoming">{t('title.upcoming')}</span>}
-      {runtime && <span class="figure">{t('title.runtime', { minutes: runtime })}</span>}
+      {kind && <span class="spine-kind">{t(`title.kind.${kind}`)}</span>}
+      {episodes && <span class="figure">{t('title.episodes', { count: episodes })}</span>}
+      {runtime && (
+        <span class="figure">
+          {t(episodes ? 'title.runtimeEach' : 'title.runtime', { minutes: runtime })}
+        </span>
+      )}
       <span class="spine-franchise">{franchiseName(franchise)}</span>
       {universeLabel && <span class="spine-elsewhere figure">{universeLabel}</span>}
       {setting && <span class="spine-setting figure">{setting}</span>}

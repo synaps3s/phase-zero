@@ -170,6 +170,7 @@ const mapTitles = rows
           chronoOrder={row.facts.data.chronology.order ?? 100000 + row.releaseOrder}
           tierRank={TIER_RANK[row.facts.data.tier] ?? 3}
           kind={row.facts.data.type}
+          episodes={row.facts.data.release.episodes}
           continuity={
             row.facts.data.alternateUniverse
               ? 'alternate'

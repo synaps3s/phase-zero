@@ -1,0 +1,33 @@
+id: dr-strange-1978
+type: film
+universe: unbound
+franchise: doctor-strange
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1978-09-06
+  approximate: null
+  runtime: 93
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Dr._Strange_(1978_film)"
+    title: "Dr. Strange (1978 film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
