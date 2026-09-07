@@ -1,0 +1,33 @@
+id: hawkeye
+type: series
+universe: earth-616
+franchise: avengers
+saga: multiverse
+phase: 4
+tier: extended
+
+release:
+  date: 2021-11-24
+  approximate: null
+  runtime: 51
+  episodes: 6
+  finale: 2021-12-22
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Hawkeye_(miniseries)"
+    title: "Hawkeye (miniseries), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

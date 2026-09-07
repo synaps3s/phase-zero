@@ -1,0 +1,22 @@
+id: hope-van-dyne
+universe: earth-616
+franchise: ant-man
+realName: null
+sigil: wasp
+
+actors:
+  - name: Evangeline Lilly
+
+firstAppearance: ant-man
+
+appearsIn:
+  - ant-man
+  - ant-man-and-the-wasp
+  - avengers-endgame
+  - ant-man-and-the-wasp-quantumania
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Hope_van_Dyne"
+    title: "Hope van Dyne, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

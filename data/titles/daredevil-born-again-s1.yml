@@ -1,0 +1,33 @@
+id: daredevil-born-again-s1
+type: series
+universe: earth-616
+franchise: defenders
+saga: multiverse
+phase: 5
+tier: extended
+
+release:
+  date: 2025-03-04
+  approximate: null
+  runtime: 51
+  episodes: 9
+  finale: 2025-04-15
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Daredevil:_Born_Again_season_1"
+    title: "Daredevil: Born Again season 1, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

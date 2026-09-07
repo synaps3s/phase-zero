@@ -1,0 +1,22 @@
+id: eddie-brock
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Edward Charles Allan Brock
+sigil: eddie-brock
+
+actors:
+  - name: Tom Hardy
+
+firstAppearance: venom
+
+appearsIn:
+  - venom
+  - venom-let-there-be-carnage
+  - spider-man-no-way-home
+  - venom-the-last-dance
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Venom_(Sony%27s_Spider-Man_Universe)"
+    title: "Venom (Sony's Spider-Man Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

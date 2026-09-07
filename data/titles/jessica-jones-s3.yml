@@ -1,0 +1,36 @@
+id: jessica-jones-s3
+type: series
+universe: earth-616
+franchise: defenders
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2019-06-14
+  approximate: null
+  runtime: 50
+  episodes: 13
+  finale: 2019-06-14
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Jessica_Jones_season_3"
+    title: "Jessica Jones season 3, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Jessica_Jones_(TV_series)"
+    title: "Jessica Jones (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

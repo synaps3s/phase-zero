@@ -1,0 +1,33 @@
+id: inhumans
+type: series
+universe: earth-616
+franchise: marvel-television
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2017-09-29
+  approximate: null
+  runtime: 42
+  episodes: 8
+  finale: 2017-11-10
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Inhumans_(TV_series)"
+    title: "Inhumans (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -63,7 +63,13 @@ const titles = defineCollection({
       date: z.coerce.date().nullable(),
       // Set when a date is announced but not exact, for example "Summer 2027".
       approximate: z.string().nullable().default(null),
-      // Total minutes for a film, or per-episode for a series.
+      /* Total minutes for a film, or per-episode for a series.
+
+         A series rarely has one runtime. Where a source gives a range, this
+         records the median of that range rounded up, because a single number
+         is what a reader planning an evening actually needs, and the range is
+         a click away on the source. Where the source gives no figure at all,
+         this is null rather than a guess. */
       runtime: z.number().int().positive().nullable(),
       episodes: z.number().int().positive().nullable().default(null),
       finale: z.coerce.date().nullable().default(null),

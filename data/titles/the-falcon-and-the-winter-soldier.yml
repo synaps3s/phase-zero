@@ -1,0 +1,33 @@
+id: the-falcon-and-the-winter-soldier
+type: series
+universe: earth-616
+franchise: captain-america
+saga: multiverse
+phase: 4
+tier: extended
+
+release:
+  date: 2021-03-19
+  approximate: null
+  runtime: 56
+  episodes: 6
+  finale: 2021-04-23
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Falcon_and_the_Winter_Soldier"
+    title: "The Falcon and the Winter Soldier, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

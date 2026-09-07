@@ -1,0 +1,33 @@
+id: ms-marvel
+type: series
+universe: earth-616
+franchise: captain-marvel
+saga: multiverse
+phase: 4
+tier: extended
+
+release:
+  date: 2022-06-08
+  approximate: null
+  runtime: 44
+  episodes: 6
+  finale: 2022-07-13
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Ms._Marvel_(miniseries)"
+    title: "Ms. Marvel (miniseries), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

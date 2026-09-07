@@ -1,0 +1,33 @@
+id: she-hulk-attorney-at-law
+type: series
+universe: earth-616
+franchise: hulk
+saga: multiverse
+phase: 4
+tier: extended
+
+release:
+  date: 2022-08-18
+  approximate: null
+  runtime: 34
+  episodes: 9
+  finale: 2022-10-13
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/She-Hulk:_Attorney_at_Law"
+    title: "She-Hulk: Attorney at Law, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

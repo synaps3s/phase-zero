@@ -1,0 +1,25 @@
+id: hank-pym
+universe: earth-616
+franchise: ant-man
+realName: Henry Pym
+sigil: hank-pym
+
+actors:
+  - name: Michael Douglas
+
+firstAppearance: ant-man
+
+appearsIn:
+  - ant-man
+  - ant-man-and-the-wasp
+  - avengers-endgame
+  - ant-man-and-the-wasp-quantumania
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Hank_Pym"
+    title: "Hank Pym, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

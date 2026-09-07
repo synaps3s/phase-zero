@@ -1,0 +1,33 @@
+id: the-punisher-one-last-kill
+type: special
+universe: earth-616
+franchise: punisher
+saga: multiverse
+phase: 6
+tier: extended
+
+release:
+  date: 2026-05-12
+  approximate: null
+  runtime: 51
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Punisher:_One_Last_Kill"
+    title: "The Punisher: One Last Kill, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,36 @@
+id: the-punisher-s2
+type: series
+universe: earth-616
+franchise: defenders
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2019-01-18
+  approximate: null
+  runtime: 54
+  episodes: 13
+  finale: 2019-01-18
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Punisher_season_2"
+    title: "The Punisher season 2, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/The_Punisher_(TV_series)"
+    title: "The Punisher (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

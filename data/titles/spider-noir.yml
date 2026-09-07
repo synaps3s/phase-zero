@@ -1,0 +1,35 @@
+id: spider-noir
+type: series
+universe: earth-688
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2026-05-25
+  approximate: null
+  runtime: 46
+  episodes: 8
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+# Sony describes it as an alternate universe inside its own Spider-Man
+# Universe, so it carries the flag as well as that universe id.
+alternateUniverse: true
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Spider-Noir
+    title: "Spider-Noir, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

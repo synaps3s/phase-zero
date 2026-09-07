@@ -1,0 +1,33 @@
+id: agatha-all-along
+type: series
+universe: earth-616
+franchise: scarlet-witch
+saga: multiverse
+phase: 5
+tier: extended
+
+release:
+  date: 2024-09-18
+  approximate: null
+  runtime: 39
+  episodes: 9
+  finale: 2024-10-30
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Agatha_All_Along"
+    title: "Agatha All Along, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

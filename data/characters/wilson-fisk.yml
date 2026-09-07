@@ -1,0 +1,25 @@
+id: wilson-fisk
+universe: earth-616
+franchise: defenders
+realName: Wilson Grant Fisk
+sigil: wilson-fisk
+
+actors:
+  - name: Vincent D'Onofrio
+
+firstAppearance: daredevil-s1
+
+appearsIn:
+  - daredevil-s1
+  - daredevil-s2
+  - daredevil-s3
+  - hawkeye
+  - echo
+  - daredevil-born-again-s1
+  - daredevil-born-again-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Wilson_Fisk_(Marvel_Cinematic_Universe)"
+    title: "Wilson Fisk (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

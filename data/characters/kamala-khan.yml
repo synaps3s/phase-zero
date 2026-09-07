@@ -1,0 +1,20 @@
+id: kamala-khan
+universe: earth-616
+franchise: captain-marvel
+realName: null
+sigil: ms-marvel
+
+actors:
+  - name: Iman Vellani
+
+firstAppearance: ms-marvel
+
+appearsIn:
+  - ms-marvel
+  - the-marvels
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Kamala_Khan_(Marvel_Cinematic_Universe)"
+    title: "Kamala Khan (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

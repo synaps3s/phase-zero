@@ -1,0 +1,36 @@
+id: agents-of-shield
+type: series
+universe: earth-616
+franchise: marvel-television
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2013-09-24
+  approximate: null
+  runtime: 43
+  episodes: 136
+  finale: 2020-08-12
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D."
+    title: "Agents of S.H.I.E.L.D., Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/List_of_Agents_of_S.H.I.E.L.D._episodes"
+    title: "List of Agents of S.H.I.E.L.D. episodes, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
