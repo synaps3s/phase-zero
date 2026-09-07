@@ -21,6 +21,8 @@ interface Props {
   releaseOrder?: number;
   chronoOrder?: number;
   tierRank?: number;
+  kind?: string;
+  continuity?: string;
   searchText?: string;
   setting?: string | null;
 }
@@ -39,6 +41,8 @@ const {
   releaseOrder,
   chronoOrder,
   tierRank,
+  kind,
+  continuity,
   searchText,
   setting,
 } = Astro.props;
@@ -54,6 +58,8 @@ const t = useTranslations(language);
   data-release={releaseOrder}
   data-chrono={chronoOrder}
   data-tier={tierRank}
+  data-kind={kind}
+  data-continuity={continuity}
   data-runtime={runtime ?? 0}
   data-search={searchText}
   style={liveryStyle(saga, franchise)}

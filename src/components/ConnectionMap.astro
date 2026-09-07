@@ -1,0 +1,160 @@
+---
+import { liveryStyle, franchiseName, universeOf } from '../lib/livery';
+import { useTranslations, localePath } from '../lib/i18n';
+
+/*
+ * The map of connections.
+ *
+ * One row per story, time running left to right, and a line wherever one
+ * title sets up another. It is drawn on the server as plain SVG, so it is
+ * there with no JavaScript, every node is a real link, and a screen reader
+ * gets the same relationships the picture shows.
+ *
+ * The separate continuities sit below a divider rather than mixed in,
+ * because they are a different story and not a later part of this one.
+ */
+
+export interface MapTitle {
+  id: string;
+  title: string;
+  year: number;
+  saga: string;
+  franchise: string;
+  continuity: string;
+  leadsTo: string[];
+}
+
+interface Props {
+  language: string;
+  titles: MapTitle[];
+}
+
+const { language, titles } = Astro.props;
+const t = useTranslations(language);
+
+const YEAR_WIDTH = 62;
+const LANE_HEIGHT = 38;
+const NODE_RADIUS = 6;
+const LABEL_WIDTH = 168;
+const PAD_TOP = 26;
+const DIVIDER_GAP = 26;
+
+const years = titles.map((title) => title.year).filter((year) => year > 0);
+const firstYear = Math.min(...years);
+const lastYear = Math.max(...years);
+
+const isSeparate = (continuity: string) => continuity === 'separate' || continuity === 'unbound';
+
+/* Lanes are ordered so the shared continuity comes first, then the divider,
+   then everything that stands apart from it. */
+const laneIds: string[] = [];
+for (const group of [false, true]) {
+  for (const title of titles) {
+    if (isSeparate(title.continuity) !== group) continue;
+    if (!laneIds.includes(title.franchise)) laneIds.push(title.franchise);
+  }
+}
+
+const sharedLanes = laneIds.filter(
+  (id) => !titles.some((title) => title.franchise === id && isSeparate(title.continuity)),
+);
+
+const laneY = new Map<string, number>();
+laneIds.forEach((id, index) => {
+  const afterDivider = index >= sharedLanes.length ? DIVIDER_GAP : 0;
+  laneY.set(id, PAD_TOP + index * LANE_HEIGHT + afterDivider);
+});
+
+const dividerY = PAD_TOP + sharedLanes.length * LANE_HEIGHT + DIVIDER_GAP / 2 - LANE_HEIGHT / 2;
+
+const x = (year: number) => LABEL_WIDTH + (year - firstYear) * YEAR_WIDTH + YEAR_WIDTH / 2;
+const width = LABEL_WIDTH + (lastYear - firstYear + 1) * YEAR_WIDTH + 24;
+const height = PAD_TOP + laneIds.length * LANE_HEIGHT + DIVIDER_GAP + 16;
+
+const placed = new Map(titles.map((title) => [title.id, title]));
+const links = titles.flatMap((title) =>
+  title.leadsTo
+    .map((toId) => placed.get(toId))
+    .filter((to): to is MapTitle => Boolean(to))
+    .map((to) => ({ from: title, to })),
+);
+
+const decadeYears = [];
+for (let year = firstYear; year <= lastYear; year += 1) {
+  if (year % 5 === 0) decadeYears.push(year);
+}
+---
+
+<details class="map">
+  <summary class="map-summary">
+    <span class="map-open">{t('map.show')}</span>
+    <span class="map-close">{t('map.hide')}</span>
+  </summary>
+
+  <div class="map-body">
+    <h3 class="map-title">{t('map.title')}</h3>
+    <p class="map-lede">{t('map.lede')}</p>
+
+    <div class="map-scroll">
+      <svg
+        class="map-svg"
+        viewBox={`0 0 ${width} ${height}`}
+        width={width}
+        height={height}
+        role="group"
+        aria-label={t('map.title')}
+      >
+        {decadeYears.map((year) => (
+          <g class="map-year">
+            <line x1={x(year)} y1={PAD_TOP - 14} x2={x(year)} y2={height - 10} />
+            <text x={x(year)} y={PAD_TOP - 18} text-anchor="middle">{year}</text>
+          </g>
+        ))}
+
+        {laneIds.map((id) => (
+          <g class="map-lane" data-livery style={liveryStyle(
+            titles.find((title) => title.franchise === id)!.saga,
+            id,
+          )}>
+            <line x1={LABEL_WIDTH - 12} y1={laneY.get(id)} x2={width - 14} y2={laneY.get(id)} />
+            <text x={LABEL_WIDTH - 22} y={laneY.get(id)! + 4} text-anchor="end">
+              {franchiseName(id)}
+            </text>
+          </g>
+        ))}
+
+        <line
+          class="map-divider"
+          x1={0}
+          y1={dividerY}
+          x2={width}
+          y2={dividerY}
+        />
+
+        {links.map((link) => (
+          <path
+            class="map-link"
+            d={`M ${x(link.from.year)} ${laneY.get(link.from.franchise)}
+                C ${x(link.from.year) + 26} ${laneY.get(link.from.franchise)},
+                  ${x(link.to.year) - 26} ${laneY.get(link.to.franchise)},
+                  ${x(link.to.year)} ${laneY.get(link.to.franchise)}`}
+          >
+            <title>{t('map.connects', { from: link.from.title, to: link.to.title })}</title>
+          </path>
+        ))}
+
+        {titles.map((title) => (
+          <a
+            class="map-node"
+            href={localePath(language, 'titles', title.id)}
+            data-livery
+            style={liveryStyle(title.saga, title.franchise)}
+          >
+            <title>{t('map.nodeLabel', { title: title.title, year: title.year })}</title>
+            <circle cx={x(title.year)} cy={laneY.get(title.franchise)} r={NODE_RADIUS} />
+          </a>
+        ))}
+      </svg>
+    </div>
+  </div>
+</details>

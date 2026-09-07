@@ -2,9 +2,10 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Spine from '../../components/Spine.astro';
+import ConnectionMap from '../../components/ConnectionMap.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
 import { resolveProse } from '../../lib/content';
-import { franchiseName } from '../../lib/livery';
+import { franchiseName, universeOf } from '../../lib/livery';
 
 export function getStaticPaths() {
   return languages.map((language) => ({ params: { lang: language.code } }));
@@ -40,6 +41,22 @@ for (const [index, entry] of titles.entries()) {
 }
 
 const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
+
+/* The map shows every title, not the filtered set: its job is to show how
+   the whole thing connects, which is exactly the question a filter hides. */
+const mapTitles = rows
+  .filter((row) => row.facts.data.release.date)
+  .map((row) => ({
+    id: row.facts.data.id,
+    title: row.title,
+    year: row.facts.data.release.date!.getUTCFullYear(),
+    saga: row.facts.data.saga,
+    franchise: row.facts.data.franchise,
+    continuity: row.facts.data.alternateUniverse
+      ? 'alternate'
+      : universeOf(row.facts.data.universe).continuity,
+    leadsTo: row.facts.data.leadsTo,
+  }));
 ---
 
 <Base
@@ -89,6 +106,15 @@ const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
         >{t('watchOrder.tier.extendedHelp')}</p>
       </fieldset>
 
+      <fieldset class="control">
+        <legend class="label">{t('timeline.separate')}</legend>
+        <div class="switch">
+          <button type="button" data-separate="off" aria-pressed="true">{t('timeline.separateOff')}</button>
+          <button type="button" data-separate="on" aria-pressed="false">{t('timeline.separateOn')}</button>
+        </div>
+        <p class="control-help">{t('timeline.separateHelp')}</p>
+      </fieldset>
+
       <fieldset class="control control-search">
         <legend class="label">{t('common.search')}</legend>
         <input
@@ -100,6 +126,8 @@ const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
         />
       </fieldset>
     </div>
+
+    <ConnectionMap language={language.code} titles={mapTitles} />
 
     <p
       class="tally"
@@ -133,6 +161,12 @@ const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
           releaseOrder={row.releaseOrder}
           chronoOrder={row.facts.data.chronology.order}
           tierRank={TIER_RANK[row.facts.data.tier] ?? 3}
+          kind={row.facts.data.type}
+          continuity={
+            row.facts.data.alternateUniverse
+              ? 'alternate'
+              : universeOf(row.facts.data.universe).continuity
+          }
           searchText={row.search}
           setting={row.facts.data.chronology.setting}
         />
