@@ -1,0 +1,20 @@
+id: neena-thurman
+universe: earth-10005
+franchise: x-men
+realName: Neena Thurman
+alignment: hero
+sigil: domino
+
+actors:
+  - name: Zazie Beetz
+
+firstAppearance: deadpool-2
+
+appearsIn:
+  - deadpool-2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Domino"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

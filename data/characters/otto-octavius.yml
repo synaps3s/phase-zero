@@ -1,0 +1,20 @@
+id: otto-octavius
+universe: earth-96283
+franchise: raimi-spider-man
+realName: Otto Octavius
+alignment: villain
+
+actors:
+  - name: Alfred Molina
+
+firstAppearance: spider-man-2
+
+appearsIn:
+  - spider-man-2
+  - spider-man-no-way-home
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Otto_Octavius_/_Doctor_Octopus"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

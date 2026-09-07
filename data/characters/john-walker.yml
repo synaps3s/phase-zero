@@ -1,0 +1,20 @@
+id: john-walker
+universe: earth-616
+franchise: captain-america
+realName: John Walker
+alignment: antihero
+
+actors:
+  - name: Wyatt Russell
+
+firstAppearance: the-falcon-and-the-winter-soldier
+
+appearsIn:
+  - the-falcon-and-the-winter-soldier
+  - thunderbolts
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#John_Walker_/_Captain_America_/_U.S._Agent"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

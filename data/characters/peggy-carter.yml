@@ -1,0 +1,28 @@
+id: peggy-carter
+universe: earth-616
+franchise: agent-carter
+realName: Margaret Elizabeth Carter
+alignment: hero
+
+actors:
+  - name: Hayley Atwell
+  - name: Gabriella Graves
+    note: as a young Carter
+
+firstAppearance: captain-america-the-first-avenger
+
+appearsIn:
+  - captain-america-the-first-avenger
+  - one-shot-agent-carter
+  - agents-of-shield
+  - captain-america-the-winter-soldier
+  - agent-carter
+  - avengers-age-of-ultron
+  - ant-man
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Peggy_Carter_(Marvel_Cinematic_Universe)#Appearances"
+    title: "Peggy Carter (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

@@ -1,0 +1,24 @@
+id: mantis
+universe: earth-616
+franchise: guardians
+realName: null
+alignment: hero
+
+actors:
+  - name: Pom Klementieff
+
+firstAppearance: guardians-of-the-galaxy-vol-2
+
+appearsIn:
+  - guardians-of-the-galaxy-vol-2
+  - avengers-infinity-war
+  - avengers-endgame
+  - guardians-of-the-galaxy-holiday-special
+  - thor-love-and-thunder
+  - guardians-of-the-galaxy-vol-3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Mantis_(Marvel_Cinematic_Universe)"
+    title: "Mantis (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

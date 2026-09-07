@@ -1,0 +1,19 @@
+id: cassandra-webb
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Cassandra Webb
+alignment: hero
+
+actors:
+  - name: Dakota Johnson
+
+firstAppearance: madame-web
+
+appearsIn:
+  - madame-web
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Sony%27s_Spider-Man_Universe#Cast_and_characters"
+    title: "Sony's Spider-Man Universe, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

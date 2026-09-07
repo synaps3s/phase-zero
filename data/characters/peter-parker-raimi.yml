@@ -1,0 +1,22 @@
+id: peter-parker-raimi
+universe: earth-96283
+franchise: raimi-spider-man
+realName: Peter Parker
+alignment: hero
+
+actors:
+  - name: Tobey Maguire
+
+firstAppearance: spider-man-2002
+
+appearsIn:
+  - spider-man-2002
+  - spider-man-2
+  - spider-man-3
+  - spider-man-no-way-home
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man_in_film#Cast"
+    title: "Spider-Man in film, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

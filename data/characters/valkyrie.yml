@@ -1,0 +1,22 @@
+id: valkyrie
+universe: earth-616
+franchise: thor
+realName: null
+alignment: hero
+
+actors:
+  - name: Tessa Thompson
+
+firstAppearance: thor-ragnarok
+
+appearsIn:
+  - thor-ragnarok
+  - avengers-endgame
+  - thor-love-and-thunder
+  - the-marvels
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Valkyrie"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

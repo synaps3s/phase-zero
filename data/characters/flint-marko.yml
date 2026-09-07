@@ -1,0 +1,20 @@
+id: flint-marko
+universe: earth-96283
+franchise: raimi-spider-man
+realName: Flint Marko
+alignment: villain
+
+actors:
+  - name: Thomas Haden Church
+
+firstAppearance: spider-man-3
+
+appearsIn:
+  - spider-man-3
+  - spider-man-no-way-home
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Flint_Marko_/_Sandman"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

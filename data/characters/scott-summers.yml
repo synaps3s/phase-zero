@@ -1,0 +1,29 @@
+id: scott-summers
+universe: earth-10005
+franchise: x-men
+realName: Scott Summers
+alignment: hero
+sigil: cyclops
+
+actors:
+  - name: James Marsden
+  - name: Tim Pocock
+  - name: Tye Sheridan
+
+firstAppearance: x-men
+
+appearsIn:
+  - x-men
+  - x2
+  - x-men-the-last-stand
+  - x-men-origins-wolverine
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+  - deadpool-2
+  - dark-phoenix
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Scott_Summers/Cyclops"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

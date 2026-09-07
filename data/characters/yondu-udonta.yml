@@ -1,0 +1,23 @@
+id: yondu-udonta
+universe: earth-616
+franchise: guardians
+realName: Yondu Udonta
+alignment: antihero
+sigil: yondu
+
+actors:
+  - name: Michael Rooker
+
+firstAppearance: guardians-of-the-galaxy
+
+appearsIn:
+  - guardians-of-the-galaxy
+  - guardians-of-the-galaxy-vol-2
+  - guardians-of-the-galaxy-holiday-special
+  - guardians-of-the-galaxy-vol-3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Yondu_Udonta"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

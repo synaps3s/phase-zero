@@ -1,0 +1,20 @@
+id: marc-spector
+universe: earth-616
+franchise: marvel-television
+realName: Marc Spector
+alignment: antihero
+sigil: moon-knight
+
+actors:
+  - name: Oscar Isaac
+
+firstAppearance: moon-knight
+
+appearsIn:
+  - moon-knight
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Marc_Spector_(Marvel_Cinematic_Universe)"
+    title: "Marc Spector (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

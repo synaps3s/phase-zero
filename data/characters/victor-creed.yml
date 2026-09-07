@@ -1,0 +1,23 @@
+id: victor-creed
+universe: earth-10005
+franchise: x-men
+realName: Victor Creed
+alignment: villain
+sigil: sabretooth
+
+actors:
+  - name: Tyler Mane
+  - name: Liev Schreiber
+
+firstAppearance: x-men
+
+appearsIn:
+  - x-men
+  - x-men-origins-wolverine
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Victor_Creed_/_Sabretooth"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

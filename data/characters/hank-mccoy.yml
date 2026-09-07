@@ -1,0 +1,28 @@
+id: hank-mccoy
+universe: earth-10005
+franchise: x-men
+realName: Henry McCoy
+alignment: hero
+sigil: beast
+
+actors:
+  - name: Steve Bacic
+  - name: Kelsey Grammer
+  - name: Nicholas Hoult
+
+firstAppearance: x2
+
+appearsIn:
+  - x2
+  - x-men-the-last-stand
+  - x-men-first-class
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+  - deadpool-2
+  - dark-phoenix
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Hank_McCoy_/_Beast"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08

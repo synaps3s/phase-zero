@@ -1,0 +1,19 @@
+id: ultron
+universe: earth-616
+franchise: avengers
+realName: null
+alignment: villain
+
+actors:
+  - name: James Spader
+
+firstAppearance: avengers-age-of-ultron
+
+appearsIn:
+  - avengers-age-of-ultron
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Ultron"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08
