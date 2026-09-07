@@ -9,27 +9,61 @@ import { applyTheme, getTheme, getWatched, setTheme, toggleWatched, type Theme }
 
 /* --- Theme ------------------------------------------------------- */
 
-function markActiveTheme(current: Theme): void {
-  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-theme-set]')) {
-    button.setAttribute('aria-pressed', String(button.dataset.themeSet === current));
-  }
-}
+/*
+ * One button, three states, cycling in that order. A row of three buttons
+ * spent horizontal room the language list now needs, and with more languages
+ * coming that room only gets scarcer.
+ */
+const ORDER: Theme[] = ['system', 'light', 'dark'];
 
 function wireTheme(): void {
-  const current = getTheme();
-  applyTheme(current);
-  markActiveTheme(current);
+  const button = document.querySelector<HTMLButtonElement>('[data-theme-cycle]');
+  if (!button) return;
 
-  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-theme-set]')) {
-    button.addEventListener('click', () => {
-      const next = button.dataset.themeSet as Theme;
-      setTheme(next);
-      markActiveTheme(next);
-      // The particle field takes its colours from the theme, so it is told
-      // to rebuild rather than left painted in the previous palette.
-      document.dispatchEvent(new CustomEvent('themechange'));
-    });
-  }
+  const label = button.querySelector<HTMLElement>('[data-theme-label]');
+  const names: Record<Theme, string> = {
+    light: button.dataset.labelLight ?? 'Light',
+    dark: button.dataset.labelDark ?? 'Dark',
+    system: button.dataset.labelSystem ?? 'System',
+  };
+
+  const show = (theme: Theme) => {
+    applyTheme(theme);
+    button.dataset.theme = theme;
+    if (label) label.textContent = names[theme];
+    // The accessible name says which state the control is in, not just what
+    // it does, so somebody who cannot see the icon is not guessing.
+    button.setAttribute(
+      'aria-label',
+      (button.dataset.announce ?? '{current}').replace('{current}', names[theme]),
+    );
+  };
+
+  show(getTheme());
+
+  button.addEventListener('click', () => {
+    const next = ORDER[(ORDER.indexOf(getTheme()) + 1) % ORDER.length]!;
+    setTheme(next);
+    show(next);
+    document.dispatchEvent(new CustomEvent('themechange'));
+  });
+}
+
+/* The language list closes when the reader clicks away from it or presses
+   escape, which a bare disclosure element does not do on its own. */
+function wireLanguagePicker(): void {
+  const picker = document.querySelector<HTMLDetailsElement>('[data-language-picker]');
+  if (!picker) return;
+
+  document.addEventListener('click', (event) => {
+    if (picker.open && !picker.contains(event.target as Node)) picker.open = false;
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && picker.open) {
+      picker.open = false;
+      picker.querySelector('summary')?.focus();
+    }
+  });
 }
 
 /* --- Watched ----------------------------------------------------- */
@@ -88,4 +122,5 @@ function wireWatched(): void {
 }
 
 wireTheme();
+wireLanguagePicker();
 wireWatched();

@@ -7,7 +7,7 @@ tagline: Iron Man
 role: Inventore, industriale, e guida degli Avengers
 affiliation: Avengers, S.H.I.E.L.D., Stark Industries, Damage Control
 born: 29 maggio 1970, Manhattan, New York
-powers: Nessuno suo. Tutto quello che sa fare se l'è costruito.
+powers: Nessun potere. Tutto quello che sa fare se l'è costruito.
 journey:
   - title: iron-man
     text: Rapito in Afghanistan, costruisce un'armatura per fuggire, torna a

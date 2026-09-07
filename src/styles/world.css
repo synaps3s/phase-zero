@@ -347,42 +347,144 @@ a.plate:focus-visible {
 .masthead-tools {
   display: flex;
   align-items: center;
-  gap: var(--s4);
+  gap: var(--s3);
 }
 
-.switch {
-  display: inline-flex;
+/* --- Language picker ------------------------------------------------ */
+
+/* A disclosure rather than a row of buttons, because this has to hold thirty
+   languages as comfortably as it holds two. */
+.picker {
+  position: relative;
+}
+
+.picker > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: 0.45rem 0.6rem;
   border: 1px solid var(--hairline);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition:
+    color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease);
 }
 
-.switch button,
-.switch a {
-  padding: 0.45rem 0.72rem;
+.picker > summary::-webkit-details-marker {
+  display: none;
+}
+
+.picker > summary:hover {
+  color: var(--core);
+  border-color: var(--hairline-strong);
+}
+
+.picker > summary svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: transform var(--fast) var(--ease);
+}
+
+.picker[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.picker-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 20;
+  min-width: 11rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--panel-solid);
+  border: 1px solid var(--hairline-strong);
+  box-shadow: var(--shadow-2);
+}
+
+.picker-list a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  padding: var(--s3) var(--s4);
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition:
+    background-color var(--fast) var(--ease),
+    color var(--fast) var(--ease);
+}
+
+.picker-list a:hover,
+.picker-list a:focus-visible {
+  background: color-mix(in oklab, var(--watched) 10%, transparent);
+  color: var(--core);
+}
+
+.picker-list [aria-current='true'] {
+  color: var(--watched);
+}
+
+.picker-code {
   font-family: var(--face-data);
   font-size: var(--size-label);
   letter-spacing: var(--track-label);
   text-transform: uppercase;
   color: var(--ink-faint);
-  text-decoration: none;
+}
+
+/* --- Theme button --------------------------------------------------- */
+
+/* One control, three states. The icon shows which, and the label says it in
+   words for anybody the icon does not reach. */
+.theme {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--hairline);
+  color: var(--ink-soft);
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
   transition:
     color var(--fast) var(--ease),
-    background-color var(--fast) var(--ease);
+    border-color var(--fast) var(--ease);
 }
 
-.switch button + button,
-.switch a + a {
-  border-inline-start: 1px solid var(--hairline);
-}
-
-.switch button:hover,
-.switch a:hover {
+.theme:hover {
   color: var(--core);
+  border-color: var(--hairline-strong);
 }
 
-.switch [aria-pressed='true'],
-.switch [aria-current='true'] {
-  background: var(--watched-soft);
-  color: var(--watched);
+.theme-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.theme-moon,
+.theme-auto {
+  display: none;
+}
+
+.theme[data-theme='dark'] .theme-sun,
+.theme[data-theme='dark'] .theme-rays,
+.theme[data-theme='system'] .theme-rays {
+  display: none;
+}
+
+.theme[data-theme='dark'] .theme-moon {
+  display: block;
+}
+
+.theme[data-theme='system'] .theme-auto {
+  display: block;
 }
 
 .colophon {

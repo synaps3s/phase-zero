@@ -5,7 +5,7 @@ oneLine: Un'altra versione di una persona proveniente da un'altra linea
   temporale, che è davvero lei e davvero non è quella che state seguendo.
 ---
 
-La parola fa molto lavoro. Significa che la persona è riconoscibilmente lo
+La parola porta più peso di quanto sembri. Significa che la persona è riconoscibilmente lo
 stesso personaggio, con lo stesso nome e spesso lo stesso volto, e che niente di
 quello che ha fatto nella propria vita è condiviso con la versione che
 conoscete.
