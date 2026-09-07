@@ -1,0 +1,32 @@
+id: black-panther
+type: film
+universe: earth-616
+franchise: black-panther
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2018-02-16
+  approximate: null
+  runtime: 134
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 1150
+  setting: null
+
+requires: [captain-america-civil-war]
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Black_Panther_(film)
+    title: Black Panther (film), Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

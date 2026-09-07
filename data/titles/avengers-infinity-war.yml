@@ -19,7 +19,7 @@ chronology:
   setting: null
 
 requires: [the-avengers, guardians-of-the-galaxy, doctor-strange, thor-the-dark-world]
-leadsTo: []
+leadsTo: [avengers-endgame]
 
 cast: []
 

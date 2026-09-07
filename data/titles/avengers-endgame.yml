@@ -1,0 +1,32 @@
+id: avengers-endgame
+type: film
+universe: earth-616
+franchise: avengers
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2019-04-26
+  approximate: null
+  runtime: 181
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 1500
+  setting: null
+
+requires: [avengers-infinity-war]
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Avengers:_Endgame
+    title: "Avengers: Endgame, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,32 @@
+id: thor-ragnarok
+type: film
+universe: earth-616
+franchise: thor
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2017-11-03
+  approximate: null
+  runtime: 130
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 1100
+  setting: null
+
+requires: [thor-the-dark-world]
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Thor:_Ragnarok
+    title: "Thor: Ragnarok, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

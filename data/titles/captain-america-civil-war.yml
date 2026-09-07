@@ -1,0 +1,32 @@
+id: captain-america-civil-war
+type: film
+universe: earth-616
+franchise: captain-america
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2016-05-06
+  approximate: null
+  runtime: 147
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 950
+  setting: null
+
+requires: [avengers-age-of-ultron, captain-america-the-winter-soldier]
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Captain_America:_Civil_War
+    title: "Captain America: Civil War, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
