@@ -1,0 +1,38 @@
+id: the-fantastic-four-first-steps
+type: film
+universe: earth-828
+franchise: fantastic-four
+saga: multiverse
+phase: 6
+tier: complete
+
+release:
+  date: 2025-07-25
+  approximate: null
+  runtime: 114
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 150
+  setting: "1964"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+
+requires: []
+leadsTo: []
+
+cast: []
+
+# Set on Earth-828 rather than the universe the rest of the run takes place in,
+# which is a deliberate production decision rather than a late twist.
+alternateUniverse: true
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps"
+    title: "The Fantastic Four: First Steps, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

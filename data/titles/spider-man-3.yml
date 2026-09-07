@@ -1,0 +1,33 @@
+id: spider-man-3
+type: film
+universe: earth-96283
+franchise: raimi-spider-man
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2007-05-04
+  approximate: null
+  runtime: 139
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man_3"
+    title: "Spider-Man 3, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

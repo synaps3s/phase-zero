@@ -1,0 +1,33 @@
+id: x-men-apocalypse
+type: film
+universe: earth-10005
+franchise: x-men
+saga: fox
+phase: null
+tier: complete
+
+release:
+  date: 2016-05-27
+  approximate: null
+  runtime: 144
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/X-Men:_Apocalypse"
+    title: "X-Men: Apocalypse, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

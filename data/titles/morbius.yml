@@ -1,0 +1,33 @@
+id: morbius
+type: film
+universe: earth-688
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2022-04-01
+  approximate: null
+  runtime: 104
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Morbius_(film)"
+    title: "Morbius (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

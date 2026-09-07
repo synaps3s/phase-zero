@@ -40,11 +40,19 @@
     "order": 5
   },
   {
+    "id": "earth-828",
+    "designation": "Earth-828",
+    "studio": "Marvel Studios",
+    "continuity": "separate",
+    "livery": "828",
+    "order": 6
+  },
+  {
     "id": "unbound",
     "designation": "Unbound",
     "studio": "Various",
     "continuity": "unbound",
     "livery": "unbound",
-    "order": 9
+    "order": 10
   }
 ]
