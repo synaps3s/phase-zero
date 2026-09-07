@@ -304,6 +304,20 @@ const pathProse = defineCollection({
   schema: proseFrontmatter,
 });
 
+/* Questions a newcomer actually asks, answered in full. Prose only: a
+   question has no language-neutral facts of its own, so there is nothing for
+   it in data/. */
+const questions = defineCollection({
+  loader: glob({ pattern: '*/questions/**/*.md', base: './content' }),
+  schema: z.object({
+    /* The question itself, written the way somebody would ask it. */
+    title: z.string(),
+    order: z.number().int().default(100),
+    /* Grouped on the page so twenty questions do not read as a wall. */
+    topic: z.enum(['starting', 'watching', 'story', 'catalogue']).default('starting'),
+  }),
+});
+
 const guides = defineCollection({
   loader: glob({ pattern: '*/guides/**/*.md', base: './content' }),
   schema: z.object({
@@ -328,6 +342,7 @@ export const collections = {
   pieceProse,
   glossary,
   glossaryProse,
+  questions,
   universeProse,
   phaseProse,
   paths,

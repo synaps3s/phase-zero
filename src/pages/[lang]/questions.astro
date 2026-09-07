@@ -1,0 +1,87 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations } from '../../lib/i18n';
+import { resolveProse, sourceSlugs } from '../../lib/content';
+import FallbackNotice from '../../components/FallbackNotice.astro';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+/* The source language decides which questions exist. A translation that has
+   not been written yet falls back rather than disappearing. */
+const slugs = await sourceSlugs('questions');
+
+type Entry = {
+  slug: string;
+  prose: NonNullable<Awaited<ReturnType<typeof resolveProse<'questions'>>>>;
+  Body: Awaited<ReturnType<typeof render>>['Content'];
+  data: { title: string; order: number; topic: string };
+};
+
+const entries: Entry[] = [];
+for (const slug of slugs) {
+  const prose = await resolveProse('questions', language.code, slug);
+  if (!prose) continue;
+  const { Content } = await render(prose.entry);
+  entries.push({ slug, prose, Body: Content, data: prose.entry.data });
+}
+entries.sort((a, b) => a.data.order - b.data.order);
+
+/* Grouped so twenty questions read as four short lists rather than one long
+   one. Order within a topic is the order the entries carry. */
+const TOPICS = ['starting', 'watching', 'story', 'catalogue'] as const;
+const groups = TOPICS.map((topic) => ({
+  topic,
+  entries: entries.filter((entry) => entry.data.topic === topic),
+})).filter((group) => group.entries.length > 0);
+
+/* One notice for the page rather than one per question: the gap is the same
+   directory either way, and twenty notices would be noise. */
+const fallback = entries.find((entry) => entry.prose.isFallback);
+---
+
+<Base
+  language={language.code}
+  title={`${t('questions.title')}. Phase Zero`}
+  description={t('questions.lede')}
+  path="questions"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-infinity); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('questions.title')}</h1>
+        <p class="plate-meta">{t('questions.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    {fallback && (
+      <FallbackNotice
+        language={language.code}
+        shownLanguage={fallback.prose.language}
+        editPath={`content/${language.code}/questions/${fallback.slug}.md`}
+      />
+    )}
+
+    {groups.map((group) => (
+      <section class="question-group">
+        <h2 class="label">{t(`questions.topic.${group.topic}`)}</h2>
+        {group.entries.map((entry) => (
+          <details class="question">
+            <summary>{entry.data.title}</summary>
+            <div class="question-body prose">
+              <entry.Body />
+            </div>
+          </details>
+        ))}
+      </section>
+    ))}
+  </div>
+</Base>

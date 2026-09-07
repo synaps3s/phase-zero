@@ -1,0 +1,17 @@
+id: the-cosmic-run
+order: 7
+titles:
+  - guardians-of-the-galaxy
+  - guardians-of-the-galaxy-vol-2
+  - i-am-groot-s1
+  - avengers-infinity-war
+  - avengers-endgame
+  - thor-love-and-thunder
+  - guardians-of-the-galaxy-holiday-special
+  - i-am-groot-s2
+  - guardians-of-the-galaxy-vol-3
+sources:
+  - url: "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
+    title: "Guardians of the Galaxy (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

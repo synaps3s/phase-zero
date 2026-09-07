@@ -1,0 +1,14 @@
+id: wakanda-in-order
+order: 6
+titles:
+  - eyes-of-wakanda
+  - captain-america-civil-war
+  - black-panther
+  - avengers-infinity-war
+  - avengers-endgame
+  - black-panther-wakanda-forever
+sources:
+  - url: "https://en.wikipedia.org/wiki/Black_Panther_(film)"
+    title: "Black Panther (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

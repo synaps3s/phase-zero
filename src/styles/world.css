@@ -971,6 +971,68 @@ a.plate:focus-visible {
   padding: 0;
 }
 
+/* --- Questions ------------------------------------------------------ */
+
+.question-group {
+  margin-bottom: var(--s7);
+}
+
+.question-group > .label {
+  margin-bottom: var(--s4);
+}
+
+.question {
+  border-top: 1px solid var(--hairline);
+}
+
+.question:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.question > summary {
+  display: flex;
+  gap: var(--s4);
+  align-items: baseline;
+  padding-block: var(--s4);
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  font-weight: 400;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.question > summary::-webkit-details-marker {
+  display: none;
+}
+
+.question > summary::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.45em;
+  height: 0.45em;
+  margin-top: 0.32em;
+  border-right: 1px solid var(--livery-infinity);
+  border-bottom: 1px solid var(--livery-infinity);
+  transform: rotate(-45deg);
+  transition: transform var(--fast) var(--ease);
+}
+
+.question[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+.question > summary:hover,
+.question > summary:focus-visible {
+  color: var(--livery-infinity);
+}
+
+.question-body {
+  padding-bottom: var(--s5);
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
 /* --- Back to the top ------------------------------------------------ */
 
 /* Appears once there is a screenful behind you, and never covers the last

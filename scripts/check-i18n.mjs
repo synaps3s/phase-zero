@@ -51,7 +51,7 @@ if (!sourceStrings) {
 }
 const sourceKeys = Object.keys(sourceStrings);
 
-const AREAS = ['titles', 'characters', 'sets', 'glossary', 'universes', 'phases', 'paths', 'guides'];
+const AREAS = ['titles', 'characters', 'sets', 'glossary', 'universes', 'phases', 'paths', 'questions', 'guides'];
 const sourceContent = Object.fromEntries(
   AREAS.map((area) => [area, listMarkdown(`content/${source.code}/${area}`)]),
 );
