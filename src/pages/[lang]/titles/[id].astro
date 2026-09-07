@@ -4,7 +4,7 @@ import Base from '../../../layouts/Base.astro';
 import FallbackNotice from '../../../components/FallbackNotice.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse } from '../../../lib/content';
-import { liveryStyle, universeOf } from '../../../lib/livery';
+import { liveryStyle, universeOf, franchiseName } from '../../../lib/livery';
 
 export async function getStaticPaths() {
   const titles = await getCollection('titles');
@@ -26,6 +26,32 @@ const prose = await resolveProse('titleProse', language.code, titleId);
 if (!prose) return Astro.rewrite('/404');
 
 const { Content } = await render(prose.entry);
+
+/* The connections are already in the data and were only ever visible on the
+   map. On the entry itself they answer the two questions a reader actually
+   has in front of a film: what do I need first, and what does this open. */
+const allTitles = await getCollection('titles');
+const byId = new Map(allTitles.map((entry) => [entry.data.id, entry]));
+
+async function linksFor(ids: string[]) {
+  const out = [];
+  for (const id of ids) {
+    const entry = byId.get(id);
+    if (!entry) continue;
+    const linkProse = await resolveProse('titleProse', language.code, id);
+    out.push({
+      id,
+      label: linkProse?.entry.data.title ?? id,
+      year: entry.data.release.date ? String(entry.data.release.date.getUTCFullYear()) : '',
+      saga: entry.data.saga,
+      franchise: entry.data.franchise,
+    });
+  }
+  return out;
+}
+
+const requires = await linksFor(facts.data.requires);
+const leadsTo = await linksFor(facts.data.leadsTo);
 
 const universe = universeOf(facts.data.universe);
 const release = facts.data.release;
@@ -52,6 +78,7 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
           <span class="figure">{year}</span>
           {release.runtime && <span class="figure">{t('title.runtime', { minutes: release.runtime })}</span>}
           <span>{t('title.phase', { number: facts.data.phase ?? 0 })}</span>
+          <span>{franchiseName(facts.data.franchise)}</span>
           <span>{universe.designation}</span>
         </p>
       </div>
@@ -70,6 +97,44 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
     <article class="entry-body prose">
       <p class="entry-lede">{prose.entry.data.oneLine}</p>
       <Content />
+
+      {(requires.length > 0 || leadsTo.length > 0) && (
+        <section class="connections">
+          <h2 class="label">{t('title.connections')}</h2>
+
+          {requires.length > 0 && (
+            <div class="connection">
+              <p class="connection-lede">{t('title.requiresHelp')}</p>
+              <ol class="saga-run">
+                {requires.map((link) => (
+                  <li class="chip" data-livery style={liveryStyle(link.saga, link.franchise)}>
+                    <a href={localePath(language.code, 'titles', link.id)}>
+                      <span class="chip-title">{link.label}</span>
+                      <span class="chip-year figure">{link.year}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          {leadsTo.length > 0 && (
+            <div class="connection">
+              <p class="connection-lede">{t('title.leadsToHelp')}</p>
+              <ol class="saga-run">
+                {leadsTo.map((link) => (
+                  <li class="chip" data-livery style={liveryStyle(link.saga, link.franchise)}>
+                    <a href={localePath(language.code, 'titles', link.id)}>
+                      <span class="chip-title">{link.label}</span>
+                      <span class="chip-year figure">{link.year}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+        </section>
+      )}
 
       <section class="sources">
         <h2 class="label">{t('common.sources')}</h2>
