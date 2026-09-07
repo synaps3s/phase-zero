@@ -1,0 +1,12 @@
+id: alternate-shield
+set: the-shields
+designation: "The alternate shield"
+order: 2
+tint: silver
+firstAppearance: avengers-endgame
+lastAppearance: captain-america-brave-new-world
+sources:
+  - url: https://en.wikipedia.org/wiki/Features_of_the_Marvel_Cinematic_Universe#Weapons
+    title: "Features of the Marvel Cinematic Universe, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08
