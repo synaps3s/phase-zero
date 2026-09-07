@@ -1,0 +1,24 @@
+id: rocket
+universe: earth-616
+franchise: guardians
+sigil: rocket
+realName: Rocket Raccoon
+
+actors:
+  - name: Bradley Cooper
+
+firstAppearance: guardians-of-the-galaxy
+
+appearsIn:
+  - guardians-of-the-galaxy
+  - guardians-of-the-galaxy-vol-2
+  - avengers-infinity-war
+  - avengers-endgame
+  - thor-love-and-thunder
+  - guardians-of-the-galaxy-vol-3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Rocket_(Marvel_Cinematic_Universe)"
+    title: "Rocket (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

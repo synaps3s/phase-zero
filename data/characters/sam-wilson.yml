@@ -1,0 +1,25 @@
+id: sam-wilson
+universe: earth-616
+franchise: captain-america
+realName: Samuel Thomas Wilson
+sigil: sam-wilson
+
+actors:
+  - name: Anthony Mackie
+
+firstAppearance: captain-america-the-winter-soldier
+
+appearsIn:
+  - captain-america-the-winter-soldier
+  - avengers-age-of-ultron
+  - ant-man
+  - captain-america-civil-war
+  - avengers-infinity-war
+  - avengers-endgame
+  - captain-america-brave-new-world
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Sam_Wilson_(Marvel_Cinematic_Universe)"
+    title: "Sam Wilson (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

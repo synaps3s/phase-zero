@@ -1,0 +1,26 @@
+id: james-rhodes
+universe: earth-616
+franchise: iron-man
+realName: James Rupert Rhodes
+sigil: war-machine
+
+actors:
+  - name: Don Cheadle
+
+firstAppearance: iron-man
+
+appearsIn:
+  - iron-man
+  - iron-man-2
+  - iron-man-3
+  - avengers-age-of-ultron
+  - captain-america-civil-war
+  - avengers-infinity-war
+  - captain-marvel
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/James_Rhodes_(Marvel_Cinematic_Universe)"
+    title: "James Rhodes (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -1,0 +1,27 @@
+id: bucky-barnes
+universe: earth-616
+franchise: captain-america
+realName: James Buchanan Barnes
+sigil: bucky-barnes
+
+actors:
+  - name: Sebastian Stan
+
+firstAppearance: captain-america-the-first-avenger
+
+appearsIn:
+  - captain-america-the-first-avenger
+  - captain-america-the-winter-soldier
+  - ant-man
+  - captain-america-civil-war
+  - black-panther
+  - avengers-infinity-war
+  - avengers-endgame
+  - captain-america-brave-new-world
+  - thunderbolts
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Bucky_Barnes_(Marvel_Cinematic_Universe)"
+    title: "Bucky Barnes (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

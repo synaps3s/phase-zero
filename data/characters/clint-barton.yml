@@ -1,0 +1,24 @@
+id: clint-barton
+universe: earth-616
+franchise: avengers
+realName: Clinton Francis Barton
+sigil: hawkeye
+
+actors:
+  - name: Jeremy Renner
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - the-avengers
+  - avengers-age-of-ultron
+  - captain-america-civil-war
+  - avengers-endgame
+  - black-widow
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Clint_Barton_(Marvel_Cinematic_Universe)"
+    title: "Clint Barton (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
