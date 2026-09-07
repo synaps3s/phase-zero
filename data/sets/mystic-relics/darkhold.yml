@@ -1,0 +1,12 @@
+id: darkhold
+set: mystic-relics
+designation: "The Darkhold"
+order: 5
+tint: purple
+firstAppearance: doctor-strange-in-the-multiverse-of-madness
+lastAppearance: doctor-strange-in-the-multiverse-of-madness
+sources:
+  - url: https://en.wikipedia.org/wiki/Doctor_Strange_in_the_Multiverse_of_Madness
+    title: Doctor Strange in the Multiverse of Madness, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07
