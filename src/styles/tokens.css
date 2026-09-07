@@ -99,6 +99,7 @@
   --franchise-howard-the-duck: #e8c93f;
   --franchise-man-thing: #86b44a;
   --franchise-punisher: #d5dae2;
+  --franchise-spider-verse: #c974e8;
 
   /* --- The one universal state: a title you have watched. --- */
   --watched: #ffc47a;
@@ -206,6 +207,8 @@
     --franchise-howard-the-duck: #806a08;
     --franchise-man-thing: #517029;
     --franchise-punisher: #51617b;
+  --franchise-spider-verse: #8c14b8;
+    --franchise-spider-verse: #8c14b8;
 
     /* Far weaker on paper: a wash, not a glow. */
     --nebula-1: rgba(224, 161, 60, 0.09);

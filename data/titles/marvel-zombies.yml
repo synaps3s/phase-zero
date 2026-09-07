@@ -1,0 +1,37 @@
+id: marvel-zombies
+type: series
+universe: earth-616
+franchise: marvel-television
+saga: multiverse
+phase: 6
+tier: complete
+
+release:
+  date: 2025-09-24
+  approximate: null
+  # The article gives 31 to 37 minutes, so this is the median rounded up.
+  runtime: 34
+  episodes: 4
+  finale: 2025-09-24
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+# The article states outright that the series continues the alternate timeline
+# introduced in the "What If...?" episode "What If... Zombies?!", rather than
+# the timeline the films run on.
+alternateUniverse: true
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Marvel_Zombies_(TV_series)"
+    title: "Marvel Zombies (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
