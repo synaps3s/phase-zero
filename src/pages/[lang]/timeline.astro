@@ -6,6 +6,7 @@ import ConnectionMap from '../../components/ConnectionMap.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
 import { resolveProse } from '../../lib/content';
 import { franchiseName, universeOf } from '../../lib/livery';
+import { leadsToMap } from '../../lib/connections';
 
 export function getStaticPaths() {
   return languages.map((language) => ({ params: { lang: language.code } }));
@@ -52,6 +53,8 @@ const when = (release: { date: Date | null; approximate: string | null }) =>
 
 /* The map shows every title, not the filtered set: its job is to show how
    the whole thing connects, which is exactly the question a filter hides. */
+const leadsTo = leadsToMap(titles);
+
 const mapTitles = rows
   .filter((row) => row.facts.data.release.date)
   .map((row) => ({
@@ -63,7 +66,7 @@ const mapTitles = rows
     continuity: row.facts.data.alternateUniverse
       ? 'alternate'
       : universeOf(row.facts.data.universe).continuity,
-    leadsTo: row.facts.data.leadsTo,
+    leadsTo: leadsTo.get(row.facts.data.id) ?? [],
   }));
 ---
 
