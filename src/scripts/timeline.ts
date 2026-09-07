@@ -223,3 +223,41 @@ if (timeline) {
   }
   apply();
 }
+
+/* --- The map of connections ---------------------------------------- */
+
+/*
+ * Enhancement only. The node labels already appear on hover and on keyboard
+ * focus without this, because that part is CSS. What this adds is the thing
+ * CSS cannot express: lighting up the specific curves that touch the node
+ * the reader is pointing at, and dimming the rest.
+ */
+const map = document.querySelector<SVGSVGElement>('.map-svg');
+
+if (map) {
+  const links = [...map.querySelectorAll<SVGPathElement>('.map-link')];
+
+  const clear = (): void => {
+    map.removeAttribute('data-focused');
+    for (const link of links) link.removeAttribute('data-lit');
+  };
+
+  const light = (id: string): void => {
+    map.setAttribute('data-focused', id);
+    for (const link of links) {
+      if (link.dataset.from === id || link.dataset.to === id) link.setAttribute('data-lit', 'true');
+      else link.removeAttribute('data-lit');
+    }
+  };
+
+  for (const node of map.querySelectorAll<SVGAElement>('[data-node]')) {
+    const id = node.dataset.node;
+    if (!id) continue;
+    node.addEventListener('pointerenter', () => light(id));
+    node.addEventListener('focus', () => light(id));
+    node.addEventListener('pointerleave', clear);
+    node.addEventListener('blur', clear);
+  }
+
+  map.addEventListener('pointerleave', clear);
+}

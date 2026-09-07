@@ -134,6 +134,8 @@ for (let year = firstYear; year <= lastYear; year += 1) {
         {links.map((link) => (
           <path
             class="map-link"
+            data-from={link.from.id}
+            data-to={link.to.id}
             d={`M ${x(link.from.year)} ${laneY.get(link.from.franchise)}
                 C ${x(link.from.year) + 26} ${laneY.get(link.from.franchise)},
                   ${x(link.to.year) - 26} ${laneY.get(link.to.franchise)},
@@ -143,18 +145,42 @@ for (let year = firstYear; year <= lastYear; year += 1) {
           </path>
         ))}
 
-        {titles.map((title) => (
-          <a
-            class="map-node"
-            href={localePath(language, 'titles', title.id)}
-            data-livery
-            style={liveryStyle(title.saga, title.franchise)}
-          >
-            <title>{t('map.nodeLabel', { title: title.title, year: title.year })}</title>
-            <circle cx={x(title.year)} cy={laneY.get(title.franchise)} r={NODE_RADIUS} />
-          </a>
-        ))}
+        {titles.map((title) => {
+          /* The label is placed away from the edge it is nearest, so a node
+             late in the run does not push its own name out of the frame. */
+          const nearRightEdge = x(title.year) > width - 220;
+          return (
+            <a
+              class="map-node"
+              href={localePath(language, 'titles', title.id)}
+              data-livery
+              data-node={title.id}
+              data-franchise={title.franchise}
+              style={liveryStyle(title.saga, title.franchise)}
+            >
+              <title>{t('map.nodeLabel', { title: title.title, year: title.year })}</title>
+              <circle cx={x(title.year)} cy={laneY.get(title.franchise)} r={NODE_RADIUS} />
+              <g class="map-label" aria-hidden="true">
+                <rect
+                  x={nearRightEdge ? x(title.year) - 16 - title.title.length * 6.6 : x(title.year) + 14}
+                  y={laneY.get(title.franchise)! - 20}
+                  width={title.title.length * 6.6 + 8}
+                  height={17}
+                  rx="0"
+                />
+                <text
+                  x={nearRightEdge ? x(title.year) - 12 : x(title.year) + 18}
+                  y={laneY.get(title.franchise)! - 8}
+                  text-anchor={nearRightEdge ? 'end' : 'start'}
+                >
+                  {title.title}
+                </text>
+              </g>
+            </a>
+          );
+        })}
       </svg>
     </div>
   </div>
+
 </details>
