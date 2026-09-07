@@ -46,6 +46,25 @@ for (const id of person.data.appearsIn) {
   });
 }
 
+/* The journey is ordered by the catalogue rather than by how it was written,
+   so it always reads in release order even if an entry is added out of turn. */
+const journey = [];
+for (const step of prose.entry.data.journey) {
+  const title = byId.get(step.title);
+  if (!title) continue;
+  const titleProse = await resolveProse('titleProse', language.code, step.title);
+  journey.push({
+    id: step.title,
+    text: step.text,
+    label: titleProse?.entry.data.title ?? step.title,
+    year: title.data.release.date ? String(title.data.release.date.getUTCFullYear()) : '',
+    saga: title.data.saga,
+    franchise: title.data.franchise,
+    order: Number(title.data.release.date ?? 0),
+  });
+}
+journey.sort((a, b) => a.order - b.order);
+
 const universe = universeOf(person.data.universe);
 const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
   person.data.verified,
@@ -97,11 +116,45 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
       <Content />
     </article>
 
-    {person.data.actors.length > 0 && (
-      <p class="universe-facts">
-        <span class="label">{t('characters.playedBy')}</span>
-        {person.data.actors.map((actor) => <span>{actor.name}</span>)}
-      </p>
+    <dl class="facts">
+      {person.data.actors.length > 0 && (
+        <div>
+          <dt class="label">{t('characters.playedBy')}</dt>
+          <dd>{person.data.actors.map((actor) => actor.name).join(', ')}</dd>
+        </div>
+      )}
+      {prose.entry.data.role && (
+        <div><dt class="label">{t('character.role')}</dt><dd>{prose.entry.data.role}</dd></div>
+      )}
+      {prose.entry.data.born && (
+        <div><dt class="label">{t('character.born')}</dt><dd>{prose.entry.data.born}</dd></div>
+      )}
+      {prose.entry.data.affiliation && (
+        <div><dt class="label">{t('character.affiliation')}</dt><dd>{prose.entry.data.affiliation}</dd></div>
+      )}
+      {prose.entry.data.powers && (
+        <div><dt class="label">{t('character.powers')}</dt><dd>{prose.entry.data.powers}</dd></div>
+      )}
+    </dl>
+
+    {journey.length > 0 && (
+      <section class="section">
+        <div class="section-head">
+          <h2>{t('character.journey')}</h2>
+          <p>{t('character.journeyLede')}</p>
+        </div>
+        <ol class="journey">
+          {journey.map((step) => (
+            <li class="step" data-livery style={liveryStyle(step.saga, step.franchise)}>
+              <p class="step-title">
+                <a href={localePath(language.code, 'titles', step.id)}>{step.label}</a>
+                <span class="step-year figure">{step.year}</span>
+              </p>
+              <p class="step-text">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
     )}
 
     {appearances.length > 0 && (
