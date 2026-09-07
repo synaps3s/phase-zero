@@ -100,6 +100,16 @@ a.plate:focus-visible {
   color: var(--livery);
 }
 
+/* The name a character is known by, set under the name they were given, in
+   their own livery so the two read as one heading rather than two lines. */
+.plate-alias {
+  margin-top: 0.25em;
+  font-size: var(--size-data);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--livery);
+}
+
 .plate-meta {
   display: flex;
   flex-wrap: wrap;
@@ -1156,8 +1166,14 @@ a.plate:focus-visible {
   gap: var(--s5);
 }
 
+.set-card {
+  display: flex;
+}
+
 .set-card a {
-  display: block;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: var(--s5);
   background: var(--panel);
   border: 1px solid var(--hairline);
@@ -1186,7 +1202,8 @@ a.plate:focus-visible {
 }
 
 .set-card-count {
-  margin-top: var(--s4);
+  margin-top: auto;
+  padding-top: var(--s4);
   color: var(--ink-faint);
 }
 
@@ -1544,8 +1561,16 @@ a.plate:focus-visible {
   gap: var(--s4);
 }
 
+/* The card fills its row rather than shrink-wrapping its text, so a short
+   one-line summary does not leave a hole next to a long one. */
+.person {
+  display: flex;
+}
+
 .person a {
-  display: block;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: var(--s5);
   background: var(--panel);
   border: 1px solid var(--hairline);
@@ -1563,11 +1588,26 @@ a.plate:focus-visible {
   transform: translateY(-3px);
 }
 
+.person-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+}
+
 .person-name {
   font-family: var(--face-display);
   font-size: var(--size-head);
   font-weight: 400;
   color: var(--livery);
+}
+
+/* The name they are known by, under the name they were given. */
+.person-alias {
+  margin-top: 0.1em;
+  font-size: var(--size-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
 }
 
 .person-line {
@@ -1580,7 +1620,9 @@ a.plate:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s2) var(--s5);
-  margin-top: var(--s4);
+  /* Pinned to the bottom so every footer in a row sits on the same line. */
+  margin-top: auto;
+  padding-top: var(--s4);
   color: var(--ink-faint);
   font-size: var(--size-data);
 }
@@ -1697,25 +1739,6 @@ a:focus-visible .emblem-glyph {
 a:hover .emblem-halo,
 a:focus-visible .emblem-halo {
   opacity: 1;
-}
-
-/* On a card the emblem sits beside the text; on a page header it leads. */
-.person a {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: var(--s4);
-  align-items: start;
-}
-
-.person-name,
-.person-line,
-.person-meta {
-  grid-column: 2;
-}
-
-.person .emblem {
-  grid-row: 1 / span 3;
-  grid-column: 1;
 }
 
 .entry-emblem {
