@@ -26,3 +26,15 @@ assume you know what happened here, and they do not stop to explain it.
 If you are watching at the "films only" level, this is the point at which that
 level starts costing you.
 :::
+
+:::detail{title="Why this entry has no place in the story order"}
+Wikipedia's Marvel Cinematic Universe timeline builds a single diagram of when
+each project happens, and it leaves two entries out of it entirely: *Loki* and
+*What If...?*. The stated reason is that they occur outside the main timeline
+with no set timeframe.
+
+So the chronological position of this page is empty on purpose. It is not a
+gap somebody forgot to fill, and filling it with a guess would be worse than
+leaving it open. If a source ever places it, the entry takes one line to
+update.
+:::

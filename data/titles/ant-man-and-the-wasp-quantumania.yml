@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 1600
+  setting: "2026"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: []
 leadsTo: []
@@ -29,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: https://en.wikipedia.org/wiki/Ant-Man_and_the_Wasp:_Quantumania
     title: "Ant-Man and the Wasp: Quantumania, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07
