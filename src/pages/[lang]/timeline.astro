@@ -20,8 +20,13 @@ const TIER_RANK: Record<string, number> = { essential: 1, extended: 2, complete:
 /* Every title is rendered, in release order, and the browser reorders and
    filters what is already here. With no JavaScript the page is still the
    complete catalogue in a sensible order, which is the point. */
+/* A title with no date at all is announced for a window rather than a day.
+   It belongs at the end of a release-ordered list, not at the start, which is
+   where a null would otherwise put it. */
+const UNDATED = Number.MAX_SAFE_INTEGER;
+const releaseKey = (date: Date | null) => (date ? Number(date) : UNDATED);
 const titles = (await getCollection('titles')).sort(
-  (a, b) => Number(a.data.release.date) - Number(b.data.release.date),
+  (a, b) => releaseKey(a.data.release.date) - releaseKey(b.data.release.date),
 );
 
 const rows = [];
@@ -41,6 +46,9 @@ for (const [index, entry] of titles.entries()) {
 }
 
 const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
+/* What goes where the year would be: the year, or the window a source gave. */
+const when = (release: { date: Date | null; approximate: string | null }) =>
+  year(release.date) || release.approximate || '';
 
 /* The map shows every title, not the filtered set: its job is to show how
    the whole thing connects, which is exactly the question a filter hides. */
@@ -155,7 +163,7 @@ const mapTitles = rows
           saga={row.facts.data.saga}
           franchise={row.facts.data.franchise}
           setNumber={row.releaseOrder}
-          year={year(row.facts.data.release.date)}
+          year={when(row.facts.data.release)}
           runtime={row.facts.data.release.runtime}
           href={localePath(language.code, 'titles', row.facts.data.id)}
           releaseOrder={row.releaseOrder}
@@ -172,6 +180,7 @@ const mapTitles = rows
               ? universeOf(row.facts.data.universe).designation
               : null
           }
+          unreleased={row.facts.data.release.status !== 'released'}
           searchText={row.search}
           setting={row.facts.data.chronology.setting}
         />

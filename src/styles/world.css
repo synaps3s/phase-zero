@@ -963,6 +963,27 @@ a.plate:focus-visible {
   vertical-align: 0.32em;
 }
 
+.not-found-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s5);
+  list-style: none;
+  padding: 0;
+}
+
+/* Announced, not out. Reads as a state rather than as a warning: it is the
+   one row on the page you are not expected to have seen. */
+.spine-upcoming,
+.plate-upcoming {
+  font-size: var(--size-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--void);
+  background: var(--livery-base, var(--livery));
+  border-radius: 999px;
+  padding: 0.12em 0.6em;
+}
+
 /* An entry of this run whose story is set on another Earth. It stays in the
    list because it is one of the films you are following; the badge is how it
    admits that it is not where the rest of them are. */
