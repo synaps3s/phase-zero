@@ -19,7 +19,16 @@ chronology:
   setting: "2018"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: [the-avengers, guardians-of-the-galaxy, doctor-strange, thor-the-dark-world]
+requires:
+  - thor
+  - captain-america-the-first-avenger
+  - the-avengers
+  - thor-the-dark-world
+  - guardians-of-the-galaxy
+  - avengers-age-of-ultron
+  - captain-america-civil-war
+  - doctor-strange
+  - thor-ragnarok
 leadsTo: [avengers-endgame]
 
 cast: []

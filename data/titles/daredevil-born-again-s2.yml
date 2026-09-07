@@ -19,7 +19,11 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires:
+  - daredevil-s1
+  - daredevil-s2
+  - daredevil-s3
+  - daredevil-born-again-s1
 leadsTo: []
 
 cast: []

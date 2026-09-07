@@ -19,7 +19,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [the-incredible-hulk, iron-man-2]
 leadsTo: []
 
 cast: []

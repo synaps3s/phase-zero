@@ -19,7 +19,10 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires:
+  - shang-chi-and-the-legend-of-the-ten-rings
+  - spider-man-no-way-home
+  - she-hulk-attorney-at-law
 leadsTo: []
 
 cast: []

@@ -19,7 +19,11 @@ chronology:
   setting: "2024"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: []
+requires:
+  - spider-man-2
+  - the-amazing-spider-man-2
+  - spider-man-homecoming
+  - spider-man-far-from-home
 leadsTo: []
 
 cast: []

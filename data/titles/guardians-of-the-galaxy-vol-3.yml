@@ -19,7 +19,7 @@ chronology:
   setting: "2026"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: []
+requires: [guardians-of-the-galaxy, guardians-of-the-galaxy-vol-2]
 leadsTo: []
 
 cast: []

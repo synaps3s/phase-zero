@@ -19,7 +19,11 @@ chronology:
   setting: "2024"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: []
+requires:
+  - doctor-strange
+  - wandavision
+  - loki-s1
+  - spider-man-no-way-home
 leadsTo: []
 
 cast: []

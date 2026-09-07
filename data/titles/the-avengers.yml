@@ -19,7 +19,12 @@ chronology:
   setting: "2012"
   source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
-requires: [iron-man, the-incredible-hulk, iron-man-2, thor, captain-america-the-first-avenger]
+requires:
+  - iron-man
+  - the-incredible-hulk
+  - iron-man-2
+  - thor
+  - captain-america-the-first-avenger
 leadsTo: []
 
 cast: []

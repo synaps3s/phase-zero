@@ -19,7 +19,10 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires:
+  - avengers-infinity-war
+  - wandavision
+  - agatha-all-along
 leadsTo: []
 
 cast: []
