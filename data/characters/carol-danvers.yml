@@ -1,0 +1,22 @@
+id: carol-danvers
+universe: earth-616
+franchise: captain-marvel
+realName: Carol Susan Jane Danvers
+sigil: captain-marvel
+
+actors:
+  - name: Brie Larson
+
+firstAppearance: captain-marvel
+
+appearsIn:
+  - captain-marvel
+  - avengers-endgame
+  - shang-chi-and-the-legend-of-the-ten-rings
+  - the-marvels
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Captain_Marvel_(Marvel_Cinematic_Universe)"
+    title: "Carol Danvers (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

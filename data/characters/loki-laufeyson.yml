@@ -1,0 +1,28 @@
+id: loki-laufeyson
+universe: earth-616
+franchise: loki
+realName: Loki Laufeyson
+sigil: loki
+
+actors:
+  - name: Tom Hiddleston
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - the-avengers
+  - thor-the-dark-world
+  - thor-ragnarok
+  - avengers-infinity-war
+  - avengers-endgame
+  - loki-s1
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Loki_(Marvel_Cinematic_Universe)
+    title: "Loki (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/D._B._Cooper
+    title: "D. B. Cooper, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

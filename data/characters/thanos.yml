@@ -1,0 +1,22 @@
+id: thanos
+universe: earth-616
+franchise: avengers
+realName: null
+sigil: thanos
+
+actors:
+  - name: Josh Brolin
+
+firstAppearance: the-avengers
+
+appearsIn:
+  - the-avengers
+  - guardians-of-the-galaxy
+  - avengers-infinity-war
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Thanos_(Marvel_Cinematic_Universe)"
+    title: "Thanos (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

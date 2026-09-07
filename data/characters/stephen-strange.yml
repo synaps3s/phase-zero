@@ -1,0 +1,24 @@
+id: stephen-strange
+universe: earth-616
+franchise: doctor-strange
+realName: Stephen Vincent Strange
+sigil: doctor-strange
+
+actors:
+  - name: Benedict Cumberbatch
+
+firstAppearance: doctor-strange
+
+appearsIn:
+  - doctor-strange
+  - thor-ragnarok
+  - avengers-infinity-war
+  - avengers-endgame
+  - spider-man-no-way-home
+  - doctor-strange-in-the-multiverse-of-madness
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Stephen_Strange_(Marvel_Cinematic_Universe)
+    title: "Stephen Strange (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

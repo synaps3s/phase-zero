@@ -1,0 +1,26 @@
+id: wade-wilson
+universe: earth-10005
+franchise: x-men
+realName: Wade Wilson
+sigil: deadpool
+
+actors:
+  - name: Ryan Reynolds
+
+firstAppearance: deadpool
+
+appearsIn:
+  - deadpool
+  - deadpool-2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Deadpool_(film_series)"
+    title: "X-Men (film series), Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Deadpool_(film)"
+    title: "Deadpool (film), Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Deadpool_2
+    title: "Deadpool 2, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

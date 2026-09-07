@@ -1,0 +1,24 @@
+id: peter-parker
+universe: earth-616
+franchise: spider-man
+realName: Peter Benjamin Parker
+sigil: spider-man
+
+actors:
+  - name: Tom Holland
+
+firstAppearance: captain-america-civil-war
+
+appearsIn:
+  - captain-america-civil-war
+  - spider-man-homecoming
+  - avengers-infinity-war
+  - avengers-endgame
+  - spider-man-far-from-home
+  - spider-man-no-way-home
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man_(Marvel_Cinematic_Universe)"
+    title: "Peter Parker (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
