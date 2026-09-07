@@ -1,0 +1,30 @@
+id: bruce-banner
+universe: earth-616
+franchise: hulk
+realName: Bruce Banner
+sigil: hulk
+
+actors:
+  - name: Edward Norton
+  - name: Mark Ruffalo
+
+firstAppearance: the-incredible-hulk
+
+appearsIn:
+  - the-incredible-hulk
+  - the-avengers
+  - iron-man-3
+  - avengers-age-of-ultron
+  - thor-ragnarok
+  - avengers-infinity-war
+  - captain-marvel
+  - avengers-endgame
+  - loki-s1
+  - shang-chi-and-the-legend-of-the-ten-rings
+  - deadpool-and-wolverine
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Bruce_Banner_(Marvel_Cinematic_Universe)
+    title: "Bruce Banner (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

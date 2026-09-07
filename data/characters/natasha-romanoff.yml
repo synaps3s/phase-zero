@@ -1,0 +1,27 @@
+id: natasha-romanoff
+universe: earth-616
+franchise: black-widow
+realName: Natalia Alianovna Romanova
+sigil: black-widow
+
+actors:
+  - name: Scarlett Johansson
+
+firstAppearance: iron-man-2
+
+appearsIn:
+  - iron-man-2
+  - the-avengers
+  - captain-america-the-winter-soldier
+  - avengers-age-of-ultron
+  - captain-america-civil-war
+  - avengers-infinity-war
+  - captain-marvel
+  - avengers-endgame
+  - black-widow
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Natasha_Romanoff_(Marvel_Cinematic_Universe)
+    title: "Natasha Romanoff (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

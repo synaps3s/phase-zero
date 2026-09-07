@@ -1,0 +1,12 @@
+id: stormbreaker
+set: thor-weapons
+designation: "Stormbreaker"
+order: 2
+tint: blue
+firstAppearance: avengers-infinity-war
+lastAppearance: null
+sources:
+  - url: https://en.wikipedia.org/wiki/Thor_(Marvel_Cinematic_Universe)
+    title: "Thor (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

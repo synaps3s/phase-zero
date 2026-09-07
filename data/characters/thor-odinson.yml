@@ -1,0 +1,29 @@
+id: thor-odinson
+universe: earth-616
+franchise: thor
+realName: Thor Odinson
+sigil: thor
+
+actors:
+  - name: Chris Hemsworth
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - the-avengers
+  - thor-the-dark-world
+  - avengers-age-of-ultron
+  - doctor-strange
+  - thor-ragnarok
+  - avengers-infinity-war
+  - avengers-endgame
+  - loki-s1
+  - thor-love-and-thunder
+  - deadpool-and-wolverine
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Thor_(Marvel_Cinematic_Universe)
+    title: "Thor (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

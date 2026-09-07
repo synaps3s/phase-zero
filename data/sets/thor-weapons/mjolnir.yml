@@ -1,0 +1,12 @@
+id: mjolnir
+set: thor-weapons
+designation: "Mjolnir"
+order: 1
+tint: silver
+firstAppearance: thor
+lastAppearance: thor-love-and-thunder
+sources:
+  - url: https://en.wikipedia.org/wiki/Thor_(Marvel_Cinematic_Universe)
+    title: "Thor (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

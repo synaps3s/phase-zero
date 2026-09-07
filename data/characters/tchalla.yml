@@ -1,0 +1,22 @@
+id: tchalla
+universe: earth-616
+franchise: black-panther
+realName: "T'Challa"
+sigil: black-panther
+
+actors:
+  - name: Chadwick Boseman
+
+firstAppearance: captain-america-civil-war
+
+appearsIn:
+  - captain-america-civil-war
+  - black-panther
+  - avengers-infinity-war
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/T%27Challa_(Marvel_Cinematic_Universe)"
+    title: "T'Challa (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
