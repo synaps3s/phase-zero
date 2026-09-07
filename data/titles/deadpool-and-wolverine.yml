@@ -25,7 +25,6 @@ requires:
   - loki-s1
 leadsTo: []
 
-cast: []
 
 # Made inside this run, in Phase 5, but its story is on Earth-10005 and in
 # the Void. The timeline keeps it in the list and says so on its row.

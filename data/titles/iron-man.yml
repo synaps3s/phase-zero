@@ -24,9 +24,6 @@ requires: []
 leadsTo:
   - the-avengers
 
-cast:
-  - character: tony-stark
-    actor: Robert Downey Jr.
 
 alternateUniverse: false
 

@@ -103,16 +103,6 @@ const titles = defineCollection({
     // Titles this one sets up, including through post-credits scenes.
     leadsTo: z.array(z.string()).default([]),
 
-    cast: z
-      .array(
-        z.object({
-          character: z.string(),
-          actor: z.string(),
-          note: z.string().optional(),
-        }),
-      )
-      .default([]),
-
     // Set when the title is not part of the main continuity, with the reason.
     alternateUniverse: z.boolean().default(false),
 
