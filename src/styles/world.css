@@ -1939,3 +1939,72 @@ a:focus-visible .emblem-halo {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* --- Watch paths ---------------------------------------------------- */
+
+.route {
+  border-top: 1px solid var(--hairline);
+}
+
+.route-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s5);
+  margin-top: var(--s3);
+  color: var(--ink-faint);
+}
+
+.route-body {
+  margin-bottom: var(--s5);
+}
+
+/* Numbered, because in a route the order is the content. */
+.route-steps {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.route-step {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto auto;
+  align-items: baseline;
+  gap: var(--s3) var(--s4);
+  padding: var(--s3) var(--s2) var(--s3) 0;
+  border-bottom: 1px solid var(--hairline);
+  border-inline-start: 2px solid var(--livery);
+  padding-inline-start: var(--s4);
+}
+
+.route-number {
+  color: var(--livery);
+  font-size: var(--size-label);
+}
+
+.route-step a {
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  color: var(--core);
+  text-decoration: none;
+}
+
+.route-step a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--livery);
+}
+
+.route-year,
+.route-runtime {
+  font-size: var(--size-data);
+  color: var(--ink-faint);
+}
+
+@media (max-width: 40rem) {
+  .route-step {
+    grid-template-columns: 2rem minmax(0, 1fr);
+  }
+  .route-year,
+  .route-runtime {
+    grid-column: 2;
+  }
+}

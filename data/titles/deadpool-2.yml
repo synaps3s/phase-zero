@@ -1,0 +1,33 @@
+id: deadpool-2
+type: film
+universe: earth-10005
+franchise: x-men
+saga: fox
+phase: null
+tier: complete
+
+release:
+  date: 2018-05-18
+  approximate: null
+  runtime: 119
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Deadpool_2"
+    title: "Deadpool 2, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

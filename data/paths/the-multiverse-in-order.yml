@@ -1,0 +1,12 @@
+id: the-multiverse-in-order
+order: 3
+titles:
+  - loki-s1
+  - spider-man-no-way-home
+  - doctor-strange-in-the-multiverse-of-madness
+  - deadpool-and-wolverine
+sources:
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe
+    title: Marvel Cinematic Universe, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

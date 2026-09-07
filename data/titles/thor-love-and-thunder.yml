@@ -1,0 +1,33 @@
+id: thor-love-and-thunder
+type: film
+universe: earth-616
+franchise: thor
+saga: multiverse
+phase: 4
+tier: essential
+
+release:
+  date: 2022-07-08
+  approximate: null
+  runtime: 119
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Thor:_Love_and_Thunder
+    title: "Thor: Love and Thunder, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
