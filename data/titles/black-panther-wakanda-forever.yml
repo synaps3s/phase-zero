@@ -1,0 +1,33 @@
+id: black-panther-wakanda-forever
+type: film
+universe: earth-616
+franchise: black-panther
+saga: multiverse
+phase: 4
+tier: essential
+
+release:
+  date: 2022-11-11
+  approximate: null
+  runtime: 161
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Black_Panther:_Wakanda_Forever
+    title: "Black Panther: Wakanda Forever, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

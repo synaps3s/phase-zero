@@ -261,6 +261,31 @@ const phaseProse = defineCollection({
   schema: proseFrontmatter,
 });
 
+/*
+ * Watch paths: curated routes through the catalogue.
+ *
+ * Permanent rather than dated. "What to watch before the next film" is a
+ * post that expires; "everything that leads into this one" is a route that
+ * keeps being true and simply gains entries. The order is the point, so it
+ * is stored as an ordered list rather than derived from a filter.
+ */
+const paths = defineCollection({
+  loader: glob({ pattern: '**/*.yml', base: './data/paths' }),
+  schema: z.object({
+    id: z.string(),
+    order: z.number().int(),
+    /* Titles in the order they should be watched, which is not always
+       release order and not always story order. */
+    titles: z.array(z.string()).min(2),
+    ...attribution,
+  }),
+});
+
+const pathProse = defineCollection({
+  loader: glob({ pattern: '*/paths/*.md', base: './content' }),
+  schema: proseFrontmatter,
+});
+
 const guides = defineCollection({
   loader: glob({ pattern: '*/guides/**/*.md', base: './content' }),
   schema: z.object({
@@ -287,5 +312,7 @@ export const collections = {
   glossaryProse,
   universeProse,
   phaseProse,
+  paths,
+  pathProse,
   guides,
 };

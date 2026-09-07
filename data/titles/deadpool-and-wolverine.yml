@@ -1,0 +1,33 @@
+id: deadpool-and-wolverine
+type: film
+universe: earth-616
+franchise: x-men
+saga: multiverse
+phase: 5
+tier: complete
+
+release:
+  date: 2024-07-26
+  approximate: null
+  runtime: 128
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine"
+    title: "Deadpool & Wolverine, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

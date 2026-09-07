@@ -1,0 +1,16 @@
+id: the-shortest-complete-run
+order: 1
+titles:
+  - iron-man
+  - the-avengers
+  - captain-america-the-winter-soldier
+  - guardians-of-the-galaxy
+  - captain-america-civil-war
+  - thor-ragnarok
+  - avengers-infinity-war
+  - avengers-endgame
+sources:
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe
+    title: Marvel Cinematic Universe, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

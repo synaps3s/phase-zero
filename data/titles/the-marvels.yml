@@ -1,0 +1,33 @@
+id: the-marvels
+type: film
+universe: earth-616
+franchise: captain-marvel
+saga: multiverse
+phase: 5
+tier: essential
+
+release:
+  date: 2023-11-10
+  approximate: null
+  runtime: 105
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/The_Marvels
+    title: "The Marvels, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

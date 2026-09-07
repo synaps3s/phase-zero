@@ -1,0 +1,33 @@
+id: doctor-strange-in-the-multiverse-of-madness
+type: film
+universe: earth-616
+franchise: doctor-strange
+saga: multiverse
+phase: 4
+tier: essential
+
+release:
+  date: 2022-05-06
+  approximate: null
+  runtime: 126
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Doctor_Strange_in_the_Multiverse_of_Madness
+    title: Doctor Strange in the Multiverse of Madness, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

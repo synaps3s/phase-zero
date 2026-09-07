@@ -1,0 +1,93 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+import { liveryStyle, sagaStyle } from '../../lib/livery';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+const byId = new Map(titles.map((title) => [title.data.id, title]));
+
+const routes = [];
+for (const route of (await getCollection('paths')).sort((a, b) => a.data.order - b.data.order)) {
+  const prose = await resolveProse('pathProse', language.code, route.data.id);
+  if (!prose) continue;
+  const { Content } = await render(prose.entry);
+
+  /* A step whose title is not in the catalogue yet is skipped rather than
+     rendered as a dead link. The count and the running time then describe
+     what is actually here, which is the honest number. */
+  const steps = [];
+  let minutes = 0;
+  for (const id of route.data.titles) {
+    const title = byId.get(id);
+    if (!title) continue;
+    const titleProse = await resolveProse('titleProse', language.code, id);
+    minutes += title.data.release.runtime ?? 0;
+    steps.push({
+      id,
+      label: titleProse?.entry.data.title ?? id,
+      year: title.data.release.date ? String(title.data.release.date.getUTCFullYear()) : '',
+      runtime: title.data.release.runtime,
+      saga: title.data.saga,
+      franchise: title.data.franchise,
+    });
+  }
+
+  routes.push({ route, prose, Body: Content, steps, hours: Math.round(minutes / 60) });
+}
+---
+
+<Base
+  language={language.code}
+  title={`${t('paths.title')}. Phase Zero`}
+  description={t('paths.lede')}
+  path="paths"
+>
+  <section class="bleed band" data-livery style={sagaStyle('multiverse')}>
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('paths.title')}</h1>
+        <p class="plate-meta">{t('paths.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    {routes.map(({ route, prose, Body, steps, hours }) => (
+      <section class="route section" id={route.data.id}>
+        <div class="section-head">
+          <h2>{prose.entry.data.title}</h2>
+          <p>{prose.entry.data.oneLine}</p>
+          <p class="route-meta">
+            <span class="figure label">{t('paths.stepCount', { count: steps.length })}</span>
+            {hours > 0 && <span class="figure label">{t('paths.runtime', { hours })}</span>}
+          </p>
+        </div>
+
+        <div class="prose route-body"><Body /></div>
+
+        <ol class="route-steps">
+          {steps.map((step, index) => (
+            <li class="route-step" data-livery style={liveryStyle(step.saga, step.franchise)}>
+              <span class="route-number figure" aria-hidden="true">{index + 1}</span>
+              <a href={localePath(language.code, 'titles', step.id)}>{step.label}</a>
+              <span class="route-year figure">{step.year}</span>
+              {step.runtime && (
+                <span class="route-runtime figure">{t('title.runtime', { minutes: step.runtime })}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+</Base>

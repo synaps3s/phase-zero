@@ -1,0 +1,33 @@
+id: spider-man-2
+type: film
+universe: earth-96283
+franchise: raimi-spider-man
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2004-06-30
+  approximate: null
+  runtime: 127
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man_2"
+    title: "Spider-Man 2, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

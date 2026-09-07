@@ -1,0 +1,33 @@
+id: guardians-of-the-galaxy-vol-3
+type: film
+universe: earth-616
+franchise: guardians
+saga: multiverse
+phase: 5
+tier: essential
+
+release:
+  date: 2023-05-05
+  approximate: null
+  runtime: 150
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_Vol._3
+    title: "Guardians of the Galaxy Vol. 3, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

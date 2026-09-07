@@ -1,0 +1,33 @@
+id: captain-america-brave-new-world
+type: film
+universe: earth-616
+franchise: captain-america
+saga: multiverse
+phase: 5
+tier: essential
+
+release:
+  date: 2025-02-14
+  approximate: null
+  runtime: 118
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Captain_America:_Brave_New_World
+    title: "Captain America: Brave New World, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

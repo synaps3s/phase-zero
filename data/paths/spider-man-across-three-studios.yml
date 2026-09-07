@@ -1,0 +1,13 @@
+id: spider-man-across-three-studios
+order: 2
+titles:
+  - spider-man-2002
+  - spider-man-2
+  - spider-man-homecoming
+  - spider-man-far-from-home
+  - spider-man-no-way-home
+sources:
+  - url: https://en.wikipedia.org/wiki/Spider-Man_in_film
+    title: Spider-Man in film, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07

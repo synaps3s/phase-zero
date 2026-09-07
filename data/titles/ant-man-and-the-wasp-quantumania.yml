@@ -1,0 +1,33 @@
+id: ant-man-and-the-wasp-quantumania
+type: film
+universe: earth-616
+franchise: ant-man
+saga: multiverse
+phase: 5
+tier: essential
+
+release:
+  date: 2023-02-17
+  approximate: null
+  runtime: 124
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Ant-Man_and_the_Wasp:_Quantumania
+    title: "Ant-Man and the Wasp: Quantumania, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

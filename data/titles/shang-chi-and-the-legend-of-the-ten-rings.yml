@@ -1,0 +1,33 @@
+id: shang-chi-and-the-legend-of-the-ten-rings
+type: film
+universe: earth-616
+franchise: shang-chi
+saga: multiverse
+phase: 4
+tier: essential
+
+release:
+  date: 2021-09-03
+  approximate: null
+  runtime: 132
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Shang-Chi_and_the_Legend_of_the_Ten_Rings
+    title: Shang-Chi and the Legend of the Ten Rings, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07
