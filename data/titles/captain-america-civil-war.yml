@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 950
-  setting: null
+  order: 900
+  setting: "2016"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: [avengers-age-of-ultron, captain-america-the-winter-soldier]
 leadsTo: [avengers-infinity-war]
@@ -28,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: https://en.wikipedia.org/wiki/Captain_America:_Civil_War
     title: "Captain America: Civil War, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07

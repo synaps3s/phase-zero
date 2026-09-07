@@ -1,0 +1,12 @@
+id: mark-xlv
+set: iron-man-armour
+designation: "Mark XLV"
+order: 10
+tint: red
+firstAppearance: avengers-age-of-ultron
+lastAppearance: avengers-age-of-ultron
+sources:
+  - url: https://en.wikipedia.org/wiki/Iron_Man's_armor_(Marvel_Cinematic_Universe)
+    title: "Iron Man's armor (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

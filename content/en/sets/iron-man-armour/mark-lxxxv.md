@@ -1,6 +1,12 @@
 ---
-title: Mark LXXXV
-oneLine: The last one, built heavier than the one before it, and able to form a gauntlet.
+title: "Mark LXXXV"
+oneLine: "The last one, heavier than the one before it, and able to shape a gauntlet."
 ---
 
-It is designed for a single specific use that he has already worked out he might not survive. Everything about it, the bulk, the gold, the one thing it can shape, says that he built it knowing what it was for.
+It is built after five years of not building anything, by a man who had stopped and was asked to start again. Bulkier, with gold across the shoulders, and slower than the one it replaces, which is the first time a mark has gone backwards on any measure.
+
+It can form one specific thing that no other suit can. He built that capability deliberately, before he knew he would need it.
+
+:::detail{title="What the design admits"}
+Every detail of it is an answer to a scenario he had already run. The extra weight, the gold, the one shape it can make: he built it knowing exactly what it might be asked to do, and built it anyway.
+:::

@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 10300
+  order: null
   setting: null
+  source: null
 
 requires: []
 leadsTo: []

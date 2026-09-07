@@ -97,6 +97,14 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
               <a href={localePath(language.code, 'titles', piece.data.firstAppearance)}>
                 {titleName.get(piece.data.firstAppearance) ?? piece.data.firstAppearance}
               </a>
+              {piece.data.lastAppearance && piece.data.lastAppearance !== piece.data.firstAppearance && (
+                <>
+                  <span class="label">{t('piece.lastSeen')}</span>
+                  <a href={localePath(language.code, 'titles', piece.data.lastAppearance)}>
+                    {titleName.get(piece.data.lastAppearance) ?? piece.data.lastAppearance}
+                  </a>
+                </>
+              )}
             </p>
           </div>
         </li>

@@ -1,9 +1,10 @@
 id: mark-xlvi
 set: iron-man-armour
 designation: "Mark XLVI"
-order: 5
+order: 11
 tint: red
 firstAppearance: captain-america-civil-war
+lastAppearance: captain-america-civil-war
 sources:
   - url: https://en.wikipedia.org/wiki/Iron_Man's_armor_(Marvel_Cinematic_Universe)
     title: "Iron Man's armor (Marvel Cinematic Universe), Wikipedia"

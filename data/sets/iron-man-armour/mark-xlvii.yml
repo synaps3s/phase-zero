@@ -1,9 +1,10 @@
 id: mark-xlvii
 set: iron-man-armour
 designation: "Mark XLVII"
-order: 6
+order: 12
 tint: silver
 firstAppearance: spider-man-homecoming
+lastAppearance: spider-man-homecoming
 sources:
   - url: https://en.wikipedia.org/wiki/Iron_Man's_armor_(Marvel_Cinematic_Universe)
     title: "Iron Man's armor (Marvel Cinematic Universe), Wikipedia"

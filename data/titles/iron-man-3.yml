@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 750
-  setting: null
+  order: 610
+  setting: "2013"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: [iron-man, iron-man-2, the-avengers]
 leadsTo: [avengers-age-of-ultron]
@@ -28,5 +29,8 @@ alternateUniverse: false
 sources:
   - url: https://en.wikipedia.org/wiki/Iron_Man_3
     title: "Iron Man 3, Wikipedia"
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07

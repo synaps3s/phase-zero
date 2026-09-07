@@ -212,6 +212,30 @@ for (const [id, { path, entry }] of characters) {
 const seenOrder = new Map();
 for (const [id, { path, entry }] of titles) {
   const order = entry?.chronology?.order;
+  const setting = entry?.chronology?.setting;
+
+  /* A story placement is a claim like any other, so it has to name where it
+     came from, and that source has to be one this entry actually cites. */
+  const placementSource = entry?.chronology?.source ?? null;
+
+  if (order !== null && order !== undefined && !placementSource) {
+    errors.push(
+      `${path}: gives a chronology.order but no chronology.source. A position in ` +
+        `the story is a claim. Name the source it came from, or set order and ` +
+        `setting to null and let the title sort by release date.`,
+    );
+  }
+  if (setting && !placementSource) {
+    errors.push(`${path}: gives a chronology.setting but no chronology.source.`);
+  }
+  if (placementSource && !(entry.sources ?? []).some((source) => source?.url === placementSource)) {
+    errors.push(
+      `${path}: chronology.source points at "${placementSource}", which is not among ` +
+        `this entry's sources. It has to be one of them, so a reader following the ` +
+        `citation lands on the page that actually makes the claim.`,
+    );
+  }
+
   if (order === undefined || order === null) continue;
   if (seenOrder.has(order)) {
     errors.push(
@@ -264,6 +288,9 @@ for (const [key, { path, entry, setId }] of pieces) {
   checkAttribution(path, entry);
   checkReference(path, 'set', entry.set, new Set(sets.keys()), 'data/sets');
   checkReference(path, 'firstAppearance', entry.firstAppearance, new Set(titles.keys()), 'data/titles');
+  if (entry.lastAppearance) {
+    checkReference(path, 'lastAppearance', entry.lastAppearance, new Set(titles.keys()), 'data/titles');
+  }
 
   const prose = `content/${sourceLanguage.code}/sets/${setId}/${leaf}.md`;
   if (!existsSync(prose)) {

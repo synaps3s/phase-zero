@@ -89,6 +89,7 @@
   "phases.yearsOpen": "dal {from}",
   "piece.designation": "Conosciuta come",
   "piece.firstSeen": "Vista per la prima volta in",
+  "piece.lastSeen": "Vista l'ultima volta in",
   "portal.characters": "Chi sono queste persone e il loro filo dentro il catalogo.",
   "portal.collections": "Le armature, le gemme, le forme. Cose con un nome, spiegate.",
   "portal.glossary": "Le parole che questo materiale non si ferma mai a definire.",

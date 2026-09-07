@@ -15,8 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 700
+  order: 500
   setting: "2012"
+  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
 
 requires: [iron-man, the-incredible-hulk, iron-man-2, thor, captain-america-the-first-avenger]
 leadsTo: []

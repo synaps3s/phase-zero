@@ -1,9 +1,10 @@
 id: mark-v
 set: iron-man-armour
 designation: "Mark V"
-order: 3
+order: 5
 tint: red
 firstAppearance: iron-man-2
+lastAppearance: iron-man-2
 sources:
   - url: https://en.wikipedia.org/wiki/Iron_Man's_armor_(Marvel_Cinematic_Universe)
     title: "Iron Man's armor (Marvel Cinematic Universe), Wikipedia"
