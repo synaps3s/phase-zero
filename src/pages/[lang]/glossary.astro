@@ -1,0 +1,86 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { resolveProse } from '../../lib/content';
+
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const titles = await getCollection('titles');
+const titleName = new Map<string, string>();
+for (const title of titles) {
+  const prose = await resolveProse('titleProse', language.code, title.data.id);
+  if (prose) titleName.set(title.data.id, prose.entry.data.title);
+}
+
+const entries = [];
+for (const term of await getCollection('glossary')) {
+  const prose = await resolveProse('glossaryProse', language.code, term.data.id);
+  if (!prose) continue;
+  const { Content } = await render(prose.entry);
+  entries.push({ term, prose, Body: Content });
+}
+
+/* Sorted by the reader's own language rules, so accented and non-Latin
+   alphabets land where that language expects rather than where ASCII does. */
+const collator = new Intl.Collator(language.code);
+entries.sort((a, b) => collator.compare(a.prose.entry.data.title, b.prose.entry.data.title));
+
+const groups = [
+  { key: 'core', entries: entries.filter((entry) => entry.term.data.category === 'core') },
+  { key: 'advanced', entries: entries.filter((entry) => entry.term.data.category === 'advanced') },
+];
+---
+
+<Base
+  language={language.code}
+  title={`${t('glossary.title')}. Phase Zero`}
+  description={t('glossary.lede')}
+  path="glossary"
+>
+  <section class="bleed band" data-livery style="--livery-base: var(--livery-next); --shade: 0">
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('glossary.title')}</h1>
+        <p class="plate-meta">{t('glossary.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    {groups.map((group) => group.entries.length > 0 && (
+      <section class="section">
+        <div class="section-head">
+          <h2>{t(`glossary.${group.key}`)}</h2>
+          <p>{t(`glossary.${group.key}Help`)}</p>
+        </div>
+
+        <dl class="terms">
+          {group.entries.map(({ term, prose, Body }) => (
+            <div class="term" id={term.data.id}>
+              <dt class="term-name">{prose.entry.data.title}</dt>
+              <dd class="term-body">
+                <p class="term-lede">{prose.entry.data.oneLine}</p>
+                <div class="prose"><Body /></div>
+                {term.data.firstAppearance && titleName.has(term.data.firstAppearance) && (
+                  <p class="term-first">
+                    <span class="label">{t('glossary.firstIn')}</span>
+                    <a href={localePath(language.code, 'titles', term.data.firstAppearance)}>
+                      {titleName.get(term.data.firstAppearance)}
+                    </a>
+                  </p>
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    ))}
+  </div>
+</Base>

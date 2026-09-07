@@ -1152,3 +1152,65 @@ a.plate:focus-visible {
 .onward-link:hover svg {
   transform: translateX(3px);
 }
+
+/* --- Glossary ------------------------------------------------------ */
+
+/* A definition list, set as one. The term is the thing being looked up, so
+   it is what the eye lands on first and what a deep link scrolls to. */
+.terms {
+  display: grid;
+  gap: var(--s7);
+  margin: 0;
+  border-top: 1px solid var(--hairline);
+  padding-top: var(--s6);
+}
+
+.term {
+  display: grid;
+  gap: var(--s3);
+  scroll-margin-top: var(--s6);
+}
+
+.term-name {
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--livery-next);
+}
+
+.term-body {
+  margin: 0;
+}
+
+.term-lede {
+  max-width: var(--measure-tight);
+  font-size: var(--size-lede);
+  line-height: 1.5;
+  color: var(--core);
+}
+
+.term-body > .prose {
+  margin-top: var(--s4);
+}
+
+.term-first {
+  margin-top: var(--s4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s3);
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.term-first a {
+  color: var(--livery-next);
+}
+
+@media (min-width: 56rem) {
+  .term {
+    grid-template-columns: 16rem minmax(0, 1fr);
+    gap: var(--s5);
+  }
+}

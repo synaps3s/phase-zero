@@ -183,6 +183,28 @@ const pieceProse = defineCollection({
   schema: proseFrontmatter,
 });
 
+/*
+ * The glossary. Terms of art that this material uses constantly and rarely
+ * stops to define, which is the single biggest reason a newcomer gets lost.
+ */
+const glossary = defineCollection({
+  loader: glob({ pattern: '**/*.yml', base: './data/glossary' }),
+  schema: z.object({
+    id: z.string(),
+    /* Core terms are the ones a newcomer needs before anything makes sense.
+       Advanced ones are worth knowing once they are already in. */
+    category: z.enum(['core', 'advanced']),
+    /** The title where the term first appears, when one can be sourced. */
+    firstAppearance: z.string().nullable().default(null),
+    ...attribution,
+  }),
+});
+
+const glossaryProse = defineCollection({
+  loader: glob({ pattern: '*/glossary/*.md', base: './content' }),
+  schema: proseFrontmatter,
+});
+
 const guides = defineCollection({
   loader: glob({ pattern: '*/guides/**/*.md', base: './content' }),
   schema: z.object({
@@ -205,5 +227,7 @@ export const collections = {
   characterProse,
   setProse,
   pieceProse,
+  glossary,
+  glossaryProse,
   guides,
 };

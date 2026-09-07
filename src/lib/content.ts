@@ -11,7 +11,13 @@ import { defaultLanguage } from './i18n';
  * language says so, and offers a link to translate it.
  */
 
-export type ProseCollection = 'titleProse' | 'characterProse' | 'setProse' | 'pieceProse' | 'guides';
+export type ProseCollection =
+  | 'titleProse'
+  | 'characterProse'
+  | 'setProse'
+  | 'pieceProse'
+  | 'glossaryProse'
+  | 'guides';
 
 /* Where each prose collection lives under content/<code>/. A piece's slug
    carries its set, as in "infinity-stones/space-stone". */
@@ -20,6 +26,7 @@ const AREA: Record<ProseCollection, string> = {
   characterProse: 'characters',
   setProse: 'sets',
   pieceProse: 'sets',
+  glossaryProse: 'glossary',
   guides: 'guides',
 };
 
