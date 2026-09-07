@@ -1,0 +1,12 @@
+id: savage-hulk
+set: hulk-forms
+designation: "Savage Hulk"
+order: 1
+tint: green
+firstAppearance: the-incredible-hulk
+lastAppearance: avengers-infinity-war
+sources:
+  - url: https://en.wikipedia.org/wiki/Hulk_(Marvel_Cinematic_Universe)
+    title: "Hulk (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
