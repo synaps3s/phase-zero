@@ -1,0 +1,33 @@
+id: howard-the-duck
+type: film
+universe: unbound
+franchise: howard-the-duck
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1986-08-01
+  approximate: null
+  runtime: 111
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Howard_the_Duck_(film)"
+    title: "Howard the Duck (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

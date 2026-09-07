@@ -53,7 +53,13 @@ const titles = defineCollection({
          first, sometimes by weeks, so "the first release anywhere" would
          reorder the run against how almost every source describes it. When
          the article gives a premiere and a general release, the general
-         release is the one that counts. */
+         release is the one that counts.
+
+         A handful of the older unconnected films never had a United States
+         theatrical run at all: they opened abroad and went to video or
+         television at home. Those carry their first release date, and their
+         page says which kind of release it was, because a bare date would
+         otherwise imply a cinema run that did not happen. */
       date: z.coerce.date().nullable(),
       // Set when a date is announced but not exact, for example "Summer 2027".
       approximate: z.string().nullable().default(null),

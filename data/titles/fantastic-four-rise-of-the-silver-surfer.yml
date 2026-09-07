@@ -1,0 +1,33 @@
+id: fantastic-four-rise-of-the-silver-surfer
+type: film
+universe: unbound
+franchise: fantastic-four
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2007-06-15
+  approximate: null
+  runtime: 92
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Fantastic_Four:_Rise_of_the_Silver_Surfer
+    title: "Fantastic Four: Rise of the Silver Surfer, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

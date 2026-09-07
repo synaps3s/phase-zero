@@ -1,0 +1,33 @@
+id: man-thing
+type: film
+universe: unbound
+franchise: man-thing
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 2005-04-30
+  approximate: null
+  runtime: 97
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Man-Thing_(film)
+    title: "Man-Thing (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

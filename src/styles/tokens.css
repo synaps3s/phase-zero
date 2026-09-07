@@ -62,7 +62,7 @@
   --tint-silver: #b6c2d4;
 
 
-  /* --- Franchise colours. Twenty-four narrative lines, each with the hue
+  /* --- Franchise colours. Twenty-nine narrative lines, each with the hue
          it has carried since the earlier project, retuned only where the
          change of ground demanded it: Avengers was a near-black axis on
          paper and is a light ink here. A saga still owns the era; a
@@ -92,6 +92,13 @@
   --franchise-shang-chi: #b66b32;
   --franchise-spider-man: #cf5766;
   --franchise-thor: #8b73ba;
+
+  /* The unconnected properties, added as the catalogue reached them. */
+  --franchise-daredevil: #f75a4e;
+  --franchise-ghost-rider: #f8834a;
+  --franchise-howard-the-duck: #e8c93f;
+  --franchise-man-thing: #86b44a;
+  --franchise-punisher: #d5dae2;
 
   /* --- The one universal state: a title you have watched. --- */
   --watched: #ffc47a;
@@ -162,33 +169,6 @@
 
     --void: #f5f6f8;
 
-
-  /* Franchise colours, day. */
---franchise-agent-carter: #7a5230;
-  --franchise-amazing-spider-man: #8a4a12;
-  --franchise-ant-man: #24686f;
-  --franchise-avengers: #5c4a2e;
-  --franchise-black-panther: #2e5c42;
-  --franchise-black-widow: #8c3b4a;
-  --franchise-blade: #6b2f4a;
-  --franchise-captain-america: #2e5c8c;
-  --franchise-captain-marvel: #1a657d;
-  --franchise-defenders: #6b3a2a;
-  --franchise-doctor-strange: #4a3fa0;
-  --franchise-eternals: #6d5289;
-  --franchise-fantastic-four: #396381;
-  --franchise-guardians: #79581f;
-  --franchise-hulk: #366943;
-  --franchise-iron-man: #904d25;
-  --franchise-loki: #775a27;
-  --franchise-marvel-television: #4a5568;
-  --franchise-midnight-sons: #4a2e3e;
-  --franchise-nick-fury: #5a5a3e;
-  --franchise-scarlet-witch: #9c2e5a;
-  --franchise-shang-chi: #885025;
-  --franchise-spider-man: #a32f3d;
-  --franchise-thor: #6b4fa0;
-
   /* Far weaker on paper: a wash, not a glow. */
   --nebula-1: rgba(224, 161, 60, 0.09);
   --nebula-2: rgba(80, 110, 190, 0.08);
@@ -196,7 +176,7 @@
 
 
     /* Franchise colours, day. */
-  --franchise-agent-carter: #7a5230;
+    --franchise-agent-carter: #7a5230;
     --franchise-amazing-spider-man: #8a4a12;
     --franchise-ant-man: #24686f;
     --franchise-avengers: #5c4a2e;
@@ -220,6 +200,12 @@
     --franchise-shang-chi: #885025;
     --franchise-spider-man: #a32f3d;
     --franchise-thor: #6b4fa0;
+
+    --franchise-daredevil: #be1205;
+    --franchise-ghost-rider: #bc4105;
+    --franchise-howard-the-duck: #806a08;
+    --franchise-man-thing: #517029;
+    --franchise-punisher: #51617b;
 
     /* Far weaker on paper: a wash, not a glow. */
     --nebula-1: rgba(224, 161, 60, 0.09);
@@ -276,6 +262,40 @@
   --ink: #12151c;
   --ink-soft: #3f4855;
   --ink-faint: #5b6474;
+
+  /* Franchise colours, day. The toggle has to win here too, or an
+     explicit light theme on a dark system keeps the night hues on paper. */
+  --franchise-agent-carter: #7a5230;
+  --franchise-amazing-spider-man: #8a4a12;
+  --franchise-ant-man: #24686f;
+  --franchise-avengers: #5c4a2e;
+  --franchise-black-panther: #2e5c42;
+  --franchise-black-widow: #8c3b4a;
+  --franchise-blade: #6b2f4a;
+  --franchise-captain-america: #2e5c8c;
+  --franchise-captain-marvel: #1a657d;
+  --franchise-defenders: #6b3a2a;
+  --franchise-doctor-strange: #4a3fa0;
+  --franchise-eternals: #6d5289;
+  --franchise-fantastic-four: #396381;
+  --franchise-guardians: #79581f;
+  --franchise-hulk: #366943;
+  --franchise-iron-man: #904d25;
+  --franchise-loki: #775a27;
+  --franchise-marvel-television: #4a5568;
+  --franchise-midnight-sons: #4a2e3e;
+  --franchise-nick-fury: #5a5a3e;
+  --franchise-scarlet-witch: #9c2e5a;
+  --franchise-shang-chi: #885025;
+  --franchise-spider-man: #a32f3d;
+  --franchise-thor: #6b4fa0;
+
+  --franchise-daredevil: #be1205;
+  --franchise-ghost-rider: #bc4105;
+  --franchise-howard-the-duck: #806a08;
+  --franchise-man-thing: #517029;
+  --franchise-punisher: #51617b;
+
 
   --livery-infinity: #8a5a12;
   --livery-multiverse: #6b3fa8;
