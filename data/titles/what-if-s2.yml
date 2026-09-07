@@ -1,0 +1,41 @@
+id: what-if-s2
+type: series
+universe: earth-616
+franchise: marvel-television
+saga: multiverse
+phase: 5
+tier: complete
+
+release:
+  date: 2023-12-22
+  approximate: null
+  # The season article carries no runtime. The series article gives 30 to 37
+  # minutes across all three seasons, so this is the median rounded up.
+  runtime: 34
+  episodes: 9
+  finale: 2023-12-30
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+# The season article describes it as exploring alternate timelines in the
+# multiverse, and Marvel Studios Animation records the series as taking place
+# outside the MCU's "Sacred Timeline".
+alternateUniverse: true
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/What_If...%3F_season_2"
+    title: "What If...? season 2, Wikipedia"
+    accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/What_If...%3F_(TV_series)"
+    title: "What If...? (TV series), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

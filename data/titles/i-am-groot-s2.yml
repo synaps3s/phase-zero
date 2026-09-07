@@ -1,0 +1,35 @@
+id: i-am-groot-s2
+type: series
+universe: earth-616
+franchise: guardians
+saga: multiverse
+phase: 5
+tier: complete
+
+release:
+  date: 2023-09-06
+  approximate: null
+  # The article gives 4 to 6 minutes for the shorts, so this is the median
+  # rounded up.
+  runtime: 5
+  episodes: 5
+  finale: 2023-09-06
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/I_Am_Groot"
+    title: "I Am Groot, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07
