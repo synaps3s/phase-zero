@@ -167,6 +167,11 @@ const mapTitles = rows
               ? 'alternate'
               : universeOf(row.facts.data.universe).continuity
           }
+          universeLabel={
+            row.facts.data.alternateUniverse
+              ? universeOf(row.facts.data.universe).designation
+              : null
+          }
           searchText={row.search}
           setting={row.facts.data.chronology.setting}
         />

@@ -152,7 +152,7 @@
   "timeline.searchPlaceholder": "Filtra per titolo, era o saga",
   "timeline.separate": "Universi separati",
   "timeline.separateGroup": "Universi separati",
-  "timeline.separateHelp": "I film prodotti da altri studi, e tutto quello che sta fuori dalla continuità principale. Restano divisi perché sono un'altra storia, non un pezzo successivo di questa.",
+  "timeline.separateHelp": "I film prodotti da altri studi. Sono tenuti da parte perché sono un'altra storia, non un pezzo successivo di questa. Un film di questo percorso ambientato su un'altra Terra non sta qui dentro: resta nella lista e lo dichiara sulla sua riga.",
   "timeline.separateOff": "Nascosti",
   "timeline.separateOn": "Inclusi",
   "timeline.showing": "Ne mostra {count} su {total}",

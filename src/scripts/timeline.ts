@@ -68,15 +68,16 @@ if (timeline) {
       /* The separate continuities are a different story rather than a later
          part of this one, so they are their own axis. They also need the
          fullest depth: asking for films only and getting another studio's
-         twenty-year run is not what that control means. */
+         twenty-year run is not what that control means.
+
+         An alternate universe is not that. A film made inside this run, in
+         its numbered Phases, whose story happens to be set on another Earth
+         is still one of the films you are following, so it filters like any
+         other and says on its own row where it is set. */
       const continuity = row.dataset.continuity ?? 'shared';
       const isSeparate = continuity === 'separate' || continuity === 'unbound';
-      const isAlternate = continuity === 'alternate';
 
-      let allowed: boolean;
-      if (isSeparate) allowed = state.separate && state.depth === 3;
-      else if (isAlternate) allowed = state.separate && withinDepth;
-      else allowed = withinDepth;
+      const allowed = isSeparate ? state.separate && state.depth === 3 : withinDepth;
 
       const matches = state.query === '' || (row.dataset.search ?? '').includes(state.query);
       const visible = allowed && matches;

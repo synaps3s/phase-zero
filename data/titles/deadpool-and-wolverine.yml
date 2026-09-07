@@ -4,7 +4,7 @@ universe: earth-10005
 franchise: x-men
 saga: multiverse
 phase: 5
-tier: complete
+tier: essential
 
 release:
   date: 2024-07-26
@@ -24,7 +24,9 @@ leadsTo: []
 
 cast: []
 
-alternateUniverse: false
+# Made inside this run, in Phase 5, but its story is on Earth-10005 and in
+# the Void. The timeline keeps it in the list and says so on its row.
+alternateUniverse: true
 
 sources:
   - url: "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine"
