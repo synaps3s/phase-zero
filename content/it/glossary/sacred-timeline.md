@@ -10,7 +10,7 @@ Per quasi tutto il percorso c'era una linea temporale sola e nessuno lo diceva,
 perché nessuno sapeva che esistesse un'alternativa. Questo è il nome che le
 viene dato quando l'alternativa salta fuori.
 
-Chiamarla sacra fa molto lavoro: inquadra la cancellazione di ogni altra storia
+Chiamarla sacra non è neutro: inquadra la cancellazione di ogni altra storia
 possibile come protezione e non come omicidio, ed è esattamente quello che la
 serie che introduce il termine passa sei episodi a smontare.
 
