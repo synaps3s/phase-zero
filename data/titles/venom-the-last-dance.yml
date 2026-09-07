@@ -1,0 +1,33 @@
+id: venom-the-last-dance
+type: film
+universe: earth-688
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2024-10-25
+  approximate: null
+  runtime: 109
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Venom:_The_Last_Dance"
+    title: "Venom: The Last Dance, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

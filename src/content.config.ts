@@ -48,6 +48,12 @@ const titles = defineCollection({
     tier,
 
     release: z.object({
+      /* The United States theatrical release date, which is the one this
+         catalogue sorts and displays on. Many of these films opened abroad
+         first, sometimes by weeks, so "the first release anywhere" would
+         reorder the run against how almost every source describes it. When
+         the article gives a premiere and a general release, the general
+         release is the one that counts. */
       date: z.coerce.date().nullable(),
       // Set when a date is announced but not exact, for example "Summer 2027".
       approximate: z.string().nullable().default(null),

@@ -1,0 +1,33 @@
+id: x2
+type: film
+universe: earth-10005
+franchise: x-men
+saga: fox
+phase: null
+tier: complete
+
+release:
+  date: 2003-05-02
+  approximate: null
+  runtime: 133
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/X2_(film)"
+    title: "X2 (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

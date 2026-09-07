@@ -1,0 +1,33 @@
+id: madame-web
+type: film
+universe: earth-688
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2024-02-14
+  approximate: null
+  runtime: 116
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Madame_Web_(film)"
+    title: "Madame Web (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

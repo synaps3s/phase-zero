@@ -1,5 +1,5 @@
 ---
-title: Logan
+title: "Logan: The Wolverine"
 oneLine: Un Wolverine vecchio e malato guida una limousine e si prende cura
   dell'uomo che un tempo guidava gli X-Men, finché non arriva una bambina che
   non aveva chiesto.

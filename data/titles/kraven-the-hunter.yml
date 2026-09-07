@@ -1,0 +1,33 @@
+id: kraven-the-hunter
+type: film
+universe: earth-688
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2024-12-13
+  approximate: null
+  runtime: 127
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Kraven_the_Hunter_(film)"
+    title: "Kraven the Hunter (film), Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

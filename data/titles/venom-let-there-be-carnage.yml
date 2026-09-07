@@ -1,0 +1,33 @@
+id: venom-let-there-be-carnage
+type: film
+universe: earth-688
+franchise: sony-spider-man-universe
+saga: sony
+phase: null
+tier: complete
+
+release:
+  date: 2021-10-01
+  approximate: null
+  runtime: 97
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage"
+    title: "Venom: Let There Be Carnage, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

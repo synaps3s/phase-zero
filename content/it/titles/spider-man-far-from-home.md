@@ -1,5 +1,5 @@
 ---
-title: "Spider-Man: Far From Home"
+title: "Spider-Man: Far from Home"
 oneLine: Durante una gita scolastica in Europa, a un ragazzo che ha appena perso il suo maestro viene offerto un sostituto.
 tagline: "Quello sul lutto, travestito da vacanza"
 ---

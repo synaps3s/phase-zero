@@ -1,5 +1,5 @@
 ---
-title: "Captain America: Il primo Vendicatore"
+title: "Captain America - Il primo Vendicatore"
 oneLine: Un uomo troppo piccolo e troppo malato per arruolarsi viene scelto per
   un esperimento proprio perché ha passato la vita a essere quello che si
   rialza.
