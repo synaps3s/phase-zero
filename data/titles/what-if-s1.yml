@@ -21,7 +21,7 @@ chronology:
   setting: null
   source: null
 
-requires: []
+requires: [loki-s1]
 leadsTo: []
 
 cast: []

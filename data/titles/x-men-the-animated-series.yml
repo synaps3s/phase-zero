@@ -1,0 +1,33 @@
+id: x-men-the-animated-series
+type: series
+universe: unbound
+franchise: x-men
+saga: unbound
+phase: null
+tier: complete
+
+release:
+  date: 1992-10-31
+  approximate: null
+  runtime: 22
+  episodes: 76
+  finale: 1997-09-20
+  status: released
+
+chronology:
+  order: null
+  setting: null
+  source: null
+
+requires: []
+leadsTo: []
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/X-Men:_The_Animated_Series"
+    title: "X-Men: The Animated Series, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08
