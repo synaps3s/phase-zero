@@ -51,6 +51,7 @@ for (const route of (await getCollection('paths')).sort((a, b) => a.data.order -
   title={`${t('paths.title')}. Phase Zero`}
   description={t('paths.lede')}
   path="paths"
+  editPath={`content/${language.code}/paths/`}
 >
   <section class="bleed band" data-livery style={sagaStyle('multiverse')}>
     <div class="page">

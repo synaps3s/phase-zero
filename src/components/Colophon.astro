@@ -10,7 +10,13 @@ interface Props {
 
 const { language, editPath } = Astro.props;
 const t = useTranslations(language);
-const editUrl = editPath ? `${site.repository}/edit/main/${editPath}` : null;
+/* A page backed by one file links straight into an editor for it. A listing
+   page is generated from a whole directory, so it links to the directory
+   instead of pretending there is a single file to fix. */
+const isDirectory = editPath?.endsWith('/') ?? false;
+const editUrl = editPath
+  ? `${site.repository}/${isDirectory ? 'tree' : 'edit'}/main/${editPath}`
+  : null;
 ---
 
 <footer class="colophon">
@@ -19,7 +25,9 @@ const editUrl = editPath ? `${site.repository}/edit/main/${editPath}` : null;
     <p>{t('footer.license')}</p>
     <div class="colophon-row">
       <a href={site.repository}>{t('footer.sourceCode')}</a>
-      {editUrl && <a href={editUrl}>{t('footer.editThisPage')}</a>}
+      {editUrl && (
+        <a href={editUrl}>{t(isDirectory ? 'footer.editThisSection' : 'footer.editThisPage')}</a>
+      )}
     </div>
   </div>
 </footer>
