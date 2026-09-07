@@ -1,0 +1,32 @@
+id: spider-man-homecoming
+type: film
+universe: earth-616
+franchise: spider-man
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2017-07-07
+  approximate: null
+  runtime: 133
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 970
+  setting: null
+
+requires: [captain-america-civil-war]
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Spider-Man:_Homecoming
+    title: "Spider-Man: Homecoming, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

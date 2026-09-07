@@ -59,8 +59,13 @@ const titles = defineCollection({
     }),
 
     chronology: z.object({
-      // Position in the in-story timeline. Sparse on purpose so that a newly
-      // placed title does not force every later entry to be renumbered.
+      /* Position in the in-story timeline. Sparse on purpose, so placing a
+         new title does not renumber every later one, and unique, because the
+         timeline sorts on it and a shared value leaves two titles in
+         whatever order the browser picks.
+
+         A separate continuity has no story order relative to the shared one,
+         so those titles sit above 10000 where they can never interleave. */
       order: z.number(),
       // When the story is set, as a plain label such as "1943" or "2024".
       // Null when no source establishes one, which is common outside the

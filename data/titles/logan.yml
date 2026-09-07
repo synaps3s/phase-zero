@@ -15,7 +15,7 @@ release:
   status: released
 
 chronology:
-  order: 900
+  order: 10400
   setting: null
 
 requires: []

@@ -1,0 +1,32 @@
+id: guardians-of-the-galaxy-vol-2
+type: film
+universe: earth-616
+franchise: guardians
+saga: infinity
+phase: 3
+tier: essential
+
+release:
+  date: 2017-05-05
+  approximate: null
+  runtime: 136
+  episodes: null
+  finale: null
+  status: released
+
+chronology:
+  order: 860
+  setting: null
+
+requires: [guardians-of-the-galaxy]
+leadsTo: [avengers-infinity-war]
+
+cast: []
+
+alternateUniverse: false
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_Vol._2
+    title: "Guardians of the Galaxy Vol. 2, Wikipedia"
+    accessed: 2026-09-07
+verified: 2026-09-07

@@ -350,6 +350,47 @@ a.plate:focus-visible {
   gap: var(--s3);
 }
 
+/* --- Segmented switch ------------------------------------------------ */
+
+/* Two or three mutually exclusive choices shown at once, so the options are
+   the control rather than hidden behind it. Used by the timeline's order,
+   depth and separate-universes controls. */
+.switch {
+  display: inline-flex;
+  border: 1px solid var(--hairline);
+}
+
+.switch button,
+.switch a {
+  padding: 0.45rem 0.72rem;
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease);
+}
+
+.switch button + button,
+.switch a + a {
+  border-inline-start: 1px solid var(--hairline);
+}
+
+.switch button:hover,
+.switch a:hover {
+  color: var(--core);
+}
+
+.switch [aria-pressed='true'],
+.switch [aria-current='true'] {
+  background: var(--watched-soft);
+  color: var(--watched);
+}
+
 /* --- Language picker ------------------------------------------------ */
 
 /* A disclosure rather than a row of buttons, because this has to hold thirty

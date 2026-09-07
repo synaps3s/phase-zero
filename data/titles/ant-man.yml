@@ -1,32 +1,32 @@
-id: spider-man-no-way-home
+id: ant-man
 type: film
 universe: earth-616
-franchise: spider-man
-saga: multiverse
-phase: 4
+franchise: ant-man
+saga: infinity
+phase: 2
 tier: essential
 
 release:
-  date: 2021-12-17
+  date: 2015-07-17
   approximate: null
-  runtime: 148
+  runtime: 117
   episodes: null
   finale: null
   status: released
 
 chronology:
-  order: 1700
+  order: 910
   setting: null
 
 requires: []
-leadsTo: []
+leadsTo: [captain-america-civil-war]
 
 cast: []
 
 alternateUniverse: false
 
 sources:
-  - url: https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home
-    title: "Spider-Man: No Way Home, Wikipedia"
+  - url: https://en.wikipedia.org/wiki/Ant-Man_(film)
+    title: "Ant-Man (film), Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

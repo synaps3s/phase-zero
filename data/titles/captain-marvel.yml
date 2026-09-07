@@ -1,21 +1,21 @@
-id: spider-man-no-way-home
+id: captain-marvel
 type: film
 universe: earth-616
-franchise: spider-man
-saga: multiverse
-phase: 4
+franchise: captain-marvel
+saga: infinity
+phase: 3
 tier: essential
 
 release:
-  date: 2021-12-17
+  date: 2019-03-08
   approximate: null
-  runtime: 148
+  runtime: 124
   episodes: null
   finale: null
   status: released
 
 chronology:
-  order: 1700
+  order: 300
   setting: null
 
 requires: []
@@ -26,7 +26,7 @@ cast: []
 alternateUniverse: false
 
 sources:
-  - url: https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home
-    title: "Spider-Man: No Way Home, Wikipedia"
+  - url: https://en.wikipedia.org/wiki/Captain_Marvel_(film)
+    title: "Captain Marvel (film), Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07

@@ -1,21 +1,21 @@
-id: spider-man-no-way-home
+id: black-widow
 type: film
 universe: earth-616
-franchise: spider-man
+franchise: black-widow
 saga: multiverse
 phase: 4
 tier: essential
 
 release:
-  date: 2021-12-17
+  date: 2021-07-09
   approximate: null
-  runtime: 148
+  runtime: 134
   episodes: null
   finale: null
   status: released
 
 chronology:
-  order: 1700
+  order: 1200
   setting: null
 
 requires: []
@@ -26,7 +26,7 @@ cast: []
 alternateUniverse: false
 
 sources:
-  - url: https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home
-    title: "Spider-Man: No Way Home, Wikipedia"
+  - url: https://en.wikipedia.org/wiki/Black_Widow_(2021_film)
+    title: "Black Widow (2021 film), Wikipedia"
     accessed: 2026-09-07
 verified: 2026-09-07
