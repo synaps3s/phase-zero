@@ -20,19 +20,31 @@ const AGENT =
 const TIMEOUT = 15000;
 const GONE = new Set([404, 410]);
 
+/*
+ * Every fact file under data/, wherever it sits. This used to read titles and
+ * characters only, which quietly left the sources of the sets, the pieces
+ * inside them, the glossary, the organisations and the paths unchecked. A
+ * file is a file: walking the directory means a new kind of entry added later
+ * is covered on the day it lands rather than the day somebody remembers to
+ * add it here.
+ */
+function* factFiles(directory) {
+  if (!existsSync(directory)) return;
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) yield* factFiles(path);
+    else if (entry.name.endsWith('.yml')) yield path;
+  }
+}
+
 function collect() {
   const urls = new Map();
-  for (const area of ['titles', 'characters']) {
-    const directory = join('data', area);
-    if (!existsSync(directory)) continue;
-    for (const file of readdirSync(directory).filter((name) => name.endsWith('.yml'))) {
-      const path = join(directory, file);
-      const entry = parse(readFileSync(path, 'utf8'));
-      for (const source of entry?.sources ?? []) {
-        if (!source?.url) continue;
-        if (!urls.has(source.url)) urls.set(source.url, []);
-        urls.get(source.url).push(path);
-      }
+  for (const path of factFiles('data')) {
+    const entry = parse(readFileSync(path, 'utf8'));
+    for (const source of entry?.sources ?? []) {
+      if (!source?.url) continue;
+      if (!urls.has(source.url)) urls.set(source.url, []);
+      urls.get(source.url).push(path);
     }
   }
   return urls;
