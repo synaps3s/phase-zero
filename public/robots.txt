@@ -1,0 +1,16 @@
+# Phase Zero is meant to be found and meant to be reused.
+#
+# Every page is public, static and complete without JavaScript, and the prose
+# is licensed CC BY-SA 4.0, which asks for credit and for adaptations to stay
+# open rather than asking anyone not to take a copy. Blocking crawlers would
+# argue against the licence the project chose.
+#
+# So this file allows everything on purpose. It exists to say that out loud,
+# because a missing robots.txt says the same thing by accident, and the two
+# are worth telling apart.
+#
+# If that decision is ever revisited, one crawler at a time goes here, above
+# the general rule, as its own User-agent block.
+
+User-agent: *
+Allow: /
