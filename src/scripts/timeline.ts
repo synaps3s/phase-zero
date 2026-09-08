@@ -178,17 +178,22 @@ if (timeline) {
       state.separate = button.dataset.separate === 'on';
       setSeparate(state.separate);
       press('separate', state.separate ? 'on' : 'off');
+    }
+    apply();
+  });
 
   /* The primer is open in the markup, so it is there with no JavaScript at
-     all. Once the reader closes it, it stays closed. */
+     all. Once the reader closes it, it stays closed.
+
+     This has to be wired at the top level. It spent a while inside the click
+     handler above, in the branch for one control, which meant the stored
+     answer was never read on load and a listener was added every time that
+     control was pressed. */
   const primer = document.querySelector<HTMLDetailsElement>('[data-primer]');
   if (primer) {
     primer.open = getPrimer();
     primer.addEventListener('toggle', () => setPrimer(primer.open));
   }
-    }
-    apply();
-  });
 
   filterInput?.addEventListener('input', () => {
     state.query = filterInput.value.trim().toLowerCase();

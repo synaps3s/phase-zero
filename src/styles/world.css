@@ -2649,3 +2649,108 @@ a:focus-visible .emblem-halo {
   cursor: progress;
   color: var(--ink-faint);
 }
+
+/* --- Dialog ---------------------------------------------------------- */
+
+/* A real <dialog>, so the browser keeps focus inside it, closes it on Escape
+   and puts it above everything without a stacking context to argue with. The
+   only thing added here is the site's own material, because the browser's own
+   box is another piece of software wearing its own colours. */
+.dialog {
+  max-width: min(46rem, calc(100vw - var(--s5)));
+  padding: var(--s6);
+  border: 1px solid var(--hairline-strong);
+  border-inline-start: 2px solid var(--watched);
+  background: var(--panel-solid);
+  color: var(--ink);
+  box-shadow: var(--shadow-2);
+}
+
+.dialog[data-destructive] {
+  border-inline-start-color: var(--livery-sony);
+}
+
+.dialog::backdrop {
+  background: color-mix(in oklab, var(--void) 78%, transparent);
+  backdrop-filter: blur(3px);
+}
+
+.dialog-title {
+  margin: 0;
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  font-weight: 400;
+  color: var(--core);
+}
+
+.dialog-body {
+  margin: var(--s4) 0 0;
+  max-width: 54ch;
+  color: var(--ink-soft);
+}
+
+/* The preview draws itself at the size the card is shared at, so it is held
+   to the width of the dialog rather than allowed to set it. */
+.dialog-figure {
+  margin: var(--s5) 0 0;
+}
+
+.dialog-card {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--hairline);
+}
+
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--s3);
+  margin-top: var(--s6);
+}
+
+.dialog-button {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease);
+}
+
+.dialog-button:hover,
+.dialog-button:focus-visible {
+  color: var(--core);
+  border-color: var(--hairline-strong);
+}
+
+.dialog-confirm {
+  border-color: var(--watched);
+  color: var(--watched);
+}
+
+.dialog-confirm:hover,
+.dialog-confirm:focus-visible {
+  background: var(--watched-soft);
+  color: var(--watched);
+  border-color: var(--watched);
+}
+
+.dialog[data-destructive] .dialog-confirm {
+  border-color: var(--livery-sony);
+  color: var(--livery-sony);
+}
+
+.dialog[data-destructive] .dialog-confirm:hover,
+.dialog[data-destructive] .dialog-confirm:focus-visible {
+  background: color-mix(in oklab, var(--livery-sony) 14%, transparent);
+  color: var(--livery-sony);
+}

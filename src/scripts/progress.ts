@@ -6,6 +6,7 @@
  * script blocked they simply are not there, and nothing else on the page
  * depends on them.
  */
+import { ask } from '../lib/dialog';
 import { clearWatched, exportProgress, importProgress } from '../lib/prefs';
 
 const panel = document.querySelector<HTMLElement>('[data-progress]');
@@ -22,6 +23,9 @@ if (panel) {
     failed: panel.dataset.importFailed ?? '',
     cleared: panel.dataset.cleared ?? '',
     confirm: panel.dataset.resetConfirm ?? '',
+    resetTitle: panel.dataset.resetTitle ?? '',
+    resetAction: panel.dataset.resetAction ?? '',
+    cancel: panel.dataset.cancel ?? '',
   };
 
   panel.querySelector('[data-progress-export]')?.addEventListener('click', () => {
@@ -59,8 +63,15 @@ if (panel) {
     window.location.reload();
   });
 
-  panel.querySelector('[data-progress-clear]')?.addEventListener('click', () => {
-    if (!window.confirm(text.confirm)) return;
+  panel.querySelector('[data-progress-clear]')?.addEventListener('click', async () => {
+    const sure = await ask({
+      title: text.resetTitle,
+      body: text.confirm,
+      confirm: text.resetAction,
+      cancel: text.cancel,
+      destructive: true,
+    });
+    if (!sure) return;
     clearWatched();
     say(text.cleared);
     window.location.reload();

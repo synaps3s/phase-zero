@@ -13,6 +13,7 @@
  *
  * With this file blocked, the button is not shown and the page is unchanged.
  */
+import { ask } from '../lib/dialog';
 import { getWatched } from '../lib/prefs';
 
 /** The size every network crops a shared picture against, drawn at twice it. */
@@ -253,6 +254,24 @@ if (button && shelf && typeof HTMLCanvasElement.prototype.toBlob === 'function')
       await document.fonts.ready;
       const rows = [...shelf.querySelectorAll<HTMLElement>('[data-title-id]')];
       const canvas = draw(read(rows), labels, document.documentElement.lang || 'en');
+
+      /* Shown before it is saved, because a file that appears in the
+         downloads without being asked for is a small ambush, and because
+         nobody should have to open a picture to find out what is in it.
+
+         The canvas itself goes in the dialog rather than a copy of it as an
+         image, which keeps the whole thing inside the page: no blob address
+         is made until the reader actually asks for the file. */
+      canvas.className = 'dialog-card';
+      canvas.setAttribute('role', 'img');
+      canvas.setAttribute('aria-label', button.dataset.previewTitle ?? '');
+      const wanted = await ask({
+        title: button.dataset.previewTitle ?? '',
+        body: canvas,
+        confirm: button.dataset.download ?? '',
+        cancel: button.dataset.cancel ?? '',
+      });
+      if (!wanted) return;
 
       const blob = await new Promise<Blob | null>((resolve) =>
         canvas.toBlob((result) => resolve(result), 'image/png'),
