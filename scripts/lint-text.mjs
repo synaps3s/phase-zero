@@ -78,6 +78,19 @@ const ACCENTS = {
     umilta: 'umiltà', possibilita: 'possibilità', responsabilita: 'responsabilità',
     sara: 'sarà', fara: 'farà', avra: 'avrà', potra: 'potrà', dovra: 'dovrà',
     andra: 'andrà', verra: 'verrà',
+    /* Added after "celebrita" shipped in a title entry and this list did not
+       catch it. Every word here is one that does not exist in Italian without
+       its accent, which is the only test for belonging in this list.
+
+       Deliberately absent, because each of them is a real word unaccented and
+       would fail the build on correct prose: "unita", "capacita" and
+       "necessita" are verb forms or participles, "terra" is a noun, and "eta"
+       is how the Greek letter is spelled. */
+    celebrita: 'celebrità', societa: 'società', autorita: 'autorità',
+    difficolta: 'difficoltà', comunita: 'comunità', curiosita: 'curiosità',
+    velocita: 'velocità', attivita: 'attività', universita: 'università',
+    varieta: 'varietà',
+    dara: 'darà', stara: 'starà', sapra: 'saprà', vorra: 'vorrà',
   },
 };
 
