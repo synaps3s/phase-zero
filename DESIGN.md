@@ -338,8 +338,9 @@ Breakpoints are few and each exists for one structural reason, all in `rem` so
 they respond to the reader's own text size:
 
 - **40rem and below**: the spine's leading column narrows from `--s7` to `--s6`, band padding relaxes, plate padding drops to `--s5`.
-- **56rem and up**: the section nav leaves the wrapped third row and sits inline in the masthead; timeline controls become a three-column grid; the collections list becomes two columns.
+- **56rem and up**: the section nav leaves the wrapped third row and sits inline in the masthead; the collections list becomes two columns.
 - **60rem and up**: the era grid becomes two columns, with the first saga spanning both so the entrance to the catalogue stays the widest thing on the page.
+- **64rem and up**: the timeline controls become a three-column grid. This one is set by the longest language rather than by the layout: a switch never wraps its uppercase monospace labels, and in italian the three columns need 990px against 928px in english. It used to sit at 56rem, chosen against english, where the italian page scrolled sideways.
 
 Phone and desktop are both primary. Views that carry real structure are designed
 twice rather than shrunk: the connection map is a horizontally scrollable SVG
