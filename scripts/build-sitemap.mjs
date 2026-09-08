@@ -58,17 +58,14 @@ const groups = new Map();
 let skipped = 0;
 
 for (const file of files) {
-  const parts = file.split(sep).slice(1);
-  const name = parts.pop();
-  if (name !== 'index.html') {
-    // 404.html and anything else that is not a directory index.
-    skipped += 1;
-    continue;
-  }
-  const [code, ...rest] = parts;
+  /* The build writes en/timeline.html rather than en/timeline/index.html, so
+     the address is the path with the extension taken off. */
+  const [code, ...rest] = file.split(sep).slice(1).join('/').replace(/\.html$/, '').split('/');
   if (!codes.has(code)) {
-    /* The root page is a redirect to a language and says so with a canonical
-       link. Offering it here would ask a crawler to index a stub. */
+    /* Not a page of the catalogue: the root, which redirects to a language and
+       says so with a canonical link, the not-found page, and any verification
+       token a search engine asked to be served from the root. Offering any of
+       them here would ask a crawler to index something that is not an entry. */
     skipped += 1;
     continue;
   }
