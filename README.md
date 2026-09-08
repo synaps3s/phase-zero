@@ -4,6 +4,8 @@ An open, multilingual guide to the Marvel cinematic universes.
 
 Start from nothing. Understand everything.
 
+**Read it at [phasezero.pages.dev](https://phasezero.pages.dev)**
+
 **English** · [Italiano](README.it.md)
 
 ---
@@ -121,6 +123,10 @@ built from vector artwork generated from the data in this repository.
 
 There is a side effect we like: the site looks like itself, rather than like
 every other site built out of the same publicity stills.
+
+The single mark from outside is the GitHub logo in the footer, drawn as SVG in
+this repository and used only to link back to here. The rule is about the films,
+and about anything that is somebody else's to licence.
 
 ### Your progress stays in your browser
 
