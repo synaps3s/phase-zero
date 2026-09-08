@@ -3,22 +3,37 @@
  * The root path has no language of its own. Every language lives under its own
  * prefix so that none is treated as more canonical than another, so this page
  * exists only to send a visitor to one of them.
+ *
+ * It is also the first address a search engine tries, and the only page on the
+ * site the layout does not build, so the head it needs has to be written here
+ * by hand: an absolute canonical, because a relative one is read against the
+ * page it sits on and says nothing a crawler can act on, and the same set of
+ * alternates every other page carries.
  */
-import { defaultLanguage, languages } from '../lib/i18n';
+import { defaultLanguage, languages, localePath } from '../lib/i18n';
+import site from '../../config/site.json';
+
+const home = (code: string) => new URL(localePath(code), site.url).href;
 ---
 
 <html lang={defaultLanguage.code}>
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content={`0; url=/${defaultLanguage.code}`} />
-    <link rel="canonical" href={`/${defaultLanguage.code}`} />
+    <meta http-equiv="refresh" content={`0; url=${localePath(defaultLanguage.code)}`} />
+    <link rel="canonical" href={home(defaultLanguage.code)} />
+    {languages.map((language) => (
+      <link rel="alternate" hreflang={language.code} href={home(language.code)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={home(defaultLanguage.code)} />
     <title>Phase Zero</title>
   </head>
   <body>
     <p>Phase Zero is available in:</p>
     <ul>
       {languages.map((language) => (
-        <li><a href={`/${language.code}`} hreflang={language.code}>{language.endonym}</a></li>
+        <li>
+          <a href={localePath(language.code)} hreflang={language.code}>{language.endonym}</a>
+        </li>
       ))}
     </ul>
   </body>
