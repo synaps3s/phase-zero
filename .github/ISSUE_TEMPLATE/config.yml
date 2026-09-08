@@ -1,5 +1,12 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Ask, or argue about a judgement call
+    url: https://github.com/synaps3s/phase-zero/discussions
+    about: >-
+      For questions with no single right answer: whether a series belongs at
+      one completeness tier or another, whether a watch path is worth having,
+      how to treat a title that two sources describe differently. An issue
+      wants a fix. A discussion wants an opinion.
   - name: How to contribute
     url: https://github.com/synaps3s/phase-zero/blob/main/CONTRIBUTING.md
     about: Read this first if you want to fix a fact, translate a page, or add a title.

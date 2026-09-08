@@ -10,6 +10,13 @@ If you only read one file, read `CLAUDE.md`. It is the short version.
 
 1. **Report something wrong.** Open an issue. A wrong date you noticed is a real
    contribution, even if you never touch the code.
+1. **Argue about a judgement call.** Open a
+   [discussion](https://github.com/synaps3s/phase-zero/discussions). Not
+   everything has a right answer: whether the Marvel Television series belong
+   at one completeness tier or another, whether a watch path earns its place,
+   how to present a date two sources disagree about. Issues are for things
+   that are wrong. Discussions are for things that are arguable, and this
+   catalogue has plenty of those.
 2. **Fix a fact.** Edit one YAML file, add the source, open a pull request.
 3. **Improve the writing.** Make a synopsis clearer for someone starting from
    nothing, or add the depth an expert was looking for.
