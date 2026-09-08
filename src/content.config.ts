@@ -120,10 +120,17 @@ const sets = defineCollection({
   loader: glob({ pattern: '*.yml', base: './data/sets' }),
   schema: z.object({
     id: z.string(),
-    kind: z.enum(['armour', 'suit', 'form', 'weapon', 'relic', 'artifact']),
+    /* Objects, mostly. An "appearance" set catalogues the times somebody
+       turns up rather than the variants of a thing, which is the same shape
+       of question asked about a person instead of an armoury. */
+    kind: z.enum(['armour', 'suit', 'form', 'weapon', 'relic', 'artifact', 'appearance']),
     universe: z.string(),
     saga: z.string(),
-    franchise: z.string(),
+    /* Null for a set that runs across the whole catalogue instead of
+       belonging to one story. Naming a franchise it does not belong to would
+       classify it wrongly, and the colour system reads that classification,
+       so a set with no franchise takes its saga's livery on its own. */
+    franchise: z.string().nullable().default(null),
     order: z.number().int(),
     ...attribution,
   }),
