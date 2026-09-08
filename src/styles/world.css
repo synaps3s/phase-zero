@@ -93,6 +93,25 @@ a.plate:focus-visible {
   letter-spacing: var(--track-plate);
   line-height: var(--leading-plate);
   margin: 0;
+  /* Two lines of roughly equal length rather than a full line and one
+     stranded word, which is the usual shape of a wrapped display heading. */
+  text-wrap: balance;
+}
+
+/* A name is as long as it is, and the plate has to stay the same object
+   whether it reads Thor or Alexei Shostakov / Guardiano Rosso. The heading
+   steps down a size as the name grows, so it wraps to two lines at most and
+   the plate lands at about the height of the emblem beside it instead of
+   growing a line taller for every longer name.
+
+   The step is chosen by the page from the length of the rendered name, so a
+   translation that runs longer than the English gets the size it needs. */
+.plate-title[data-length='medium'] {
+  font-size: var(--size-plate-medium);
+}
+
+.plate-title[data-length='long'] {
+  font-size: var(--size-plate-long);
 }
 
 /* The subject of the sentence takes its saga's light. */
@@ -2060,6 +2079,34 @@ a:focus-visible .emblem-halo {
   align-items: center;
   gap: var(--s5);
   margin-bottom: var(--s5);
+}
+
+/* Two lines at the full plate size are reserved whether the name needs them
+   or not, so the plate is the same height on every character page. Without
+   this the panel grew a line for Natasha Romanoff and lost one for Hela, and
+   the reader saw the frame move rather than the person change.
+
+   The reservation is measured against --size-plate and not against the step
+   the heading actually took, because a smaller step has to land inside the
+   same box rather than shrink the panel with it. */
+.entry-emblem .plate-title {
+  min-height: calc(var(--size-plate) * var(--leading-plate) * 2);
+  /* A one-line name sits in the middle of the reserved box rather than at the
+     top of it, so the space it does not use is shared above and below instead
+     of opening a hole between the name and the alias under it. */
+  display: flex;
+  align-items: center;
+}
+
+/* Beside a 112px emblem the heading has about a third of a phone screen to
+   wrap in, which is where the long names ran to four lines. Narrow screens
+   put the emblem above the name instead and give it the full column. */
+@media (max-width: 40rem) {
+  .entry-emblem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s4);
+  }
 }
 
 /* --- Character facts and journey ------------------------------------ */
