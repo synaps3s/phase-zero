@@ -73,6 +73,17 @@ const fullName = prose.entry.data.tagline
   ? `${prose.entry.data.title}, ${prose.entry.data.tagline}`
   : prose.entry.data.title;
 
+/* The plate is meant to be the same object on every character page, and a
+   name of four letters next to a name of thirty-four was making it two
+   different shapes. The heading takes a size step down as the name grows so
+   it wraps to two lines at most, which keeps the plate close to the height
+   of the emblem standing beside it.
+
+   Measured on the rendered name rather than on the id, because a translated
+   name is not the same length as the English one. */
+const nameLength = prose.entry.data.title.length;
+const nameSize = nameLength > 26 ? 'long' : nameLength > 18 ? 'medium' : 'short';
+
 const universe = universeOf(person.data.universe);
 const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
   person.data.verified,
@@ -100,7 +111,7 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
             label={prose.entry.data.title}
           />
           <div>
-            <h1 class="plate-title">{prose.entry.data.title}</h1>
+            <h1 class="plate-title" data-length={nameSize}>{prose.entry.data.title}</h1>
             {prose.entry.data.tagline && (
               <p class="plate-alias">{prose.entry.data.tagline}</p>
             )}
