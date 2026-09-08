@@ -43,9 +43,18 @@ These are enforced by CI. A pull request that breaks them cannot be merged.
    that day. Writing it without opening the page puts a false claim inside the
    one field the project's credibility rests on. If you cannot open a source,
    do not write the claim.
-5. **No third-party images.** No posters, no logos, no promotional art, no
-   screenshots. The visual identity is built from vector artwork generated in
-   this repository. This is a legal boundary, not a stylistic preference.
+5. **No imagery of the material this catalogue is about.** No posters, no
+   studio logos, no promotional art, no screenshots, no photographs of anyone.
+   The visual identity is built from vector artwork generated in this
+   repository. This is a legal boundary, not a stylistic preference: hosting
+   that material would transfer risk to everyone who forks the project.
+
+   The one mark from outside is the GitHub logo in the colophon, drawn as SVG
+   in this repository and used for nothing but linking to the repository and
+   to the person who keeps it. GitHub's own guidelines allow the mark to be
+   used that way. It is not an exception a poster can be smuggled through:
+   the rule is about the films, and about anything that is somebody else's to
+   licence.
 
 ## Verifying a fact
 

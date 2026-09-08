@@ -576,6 +576,38 @@ a.plate:focus-visible {
   margin-top: var(--s4);
 }
 
+/* What the catalogue actually holds, counted from it rather than claimed.
+   Set as data, because these are figures a reader might compare, and spaced
+   with a gap rather than divided with rules: on a phone the three of them
+   wrap to three lines, and a leading hairline on each would read as a bullet
+   nobody asked for. */
+.colophon-tally {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s6);
+  margin-top: var(--s5);
+  max-width: none;
+  color: var(--ink-soft);
+}
+
+.colophon-made {
+  margin-top: var(--s4);
+}
+
+/* The mark sits on the text baseline rather than beside it, so the name and
+   the glyph read as one word instead of an icon with a caption. */
+.colophon-hand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.colophon-mark {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+}
+
 /* --- Sections ----------------------------------------------------- */
 
 .section {

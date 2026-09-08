@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import { useTranslations } from '../lib/i18n';
 import site from '../../config/site.json';
 
@@ -17,17 +18,66 @@ const isDirectory = editPath?.endsWith('/') ?? false;
 const editUrl = editPath
   ? `${site.repository}/${isDirectory ? 'tree' : 'edit'}/main/${editPath}`
   : null;
+
+/*
+ * The tally.
+ *
+ * Counted from the catalogue rather than written down, so it cannot drift and
+ * cannot flatter. The third number is the one worth showing: this project's
+ * whole claim is that somebody opened a page and read the value off it, and a
+ * count of sources is the shortest way to say that out loud.
+ */
+const FACTS = ['titles', 'characters', 'sets', 'setPieces', 'glossary', 'organisations', 'paths'] as const;
+
+let sources = 0;
+for (const name of FACTS) {
+  for (const entry of await getCollection(name)) sources += entry.data.sources.length;
+}
+
+const titles = (await getCollection('titles')).length;
+const people = (await getCollection('characters')).length;
 ---
 
 <footer class="colophon">
   <div class="page">
     <p>{t('footer.disclaimer')}</p>
     <p>{t('footer.license')}</p>
+
+    <!-- Three figures, set as data, in the monospace face that makes a figure
+         a figure. It is the least boastful way to say how much of this was
+         done by hand. -->
+    <p class="colophon-tally">
+      <span class="figure">{t('footer.count.titles', { count: titles })}</span>
+      <span class="figure">{t('footer.count.people', { count: people })}</span>
+      <span class="figure">{t('footer.count.sources', { count: sources })}</span>
+    </p>
+
+    <p class="colophon-made">
+      {t('footer.madeBy')}
+      {/* A real space in the sentence. Astro drops the whitespace between an
+          expression and the tag after it, and without this the mark butts
+          straight against the last word. */}
+      {' '}
+      <a class="colophon-hand" href={site.author.url} rel="me">
+        <!-- Drawn here rather than fetched, like every other mark in this
+             build. It is a link to a profile and nothing else: no badge, no
+             endorsement, no third-party script. -->
+        <svg class="colophon-mark" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <path
+            fill="currentColor"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+        <span>{site.author.name}</span>
+      </a>
+    </p>
+
     <div class="colophon-row">
       <a href={site.repository}>{t('footer.sourceCode')}</a>
       {editUrl && (
         <a href={editUrl}>{t(isDirectory ? 'footer.editThisSection' : 'footer.editThisPage')}</a>
       )}
+      <a href={`${site.repository}/issues/new/choose`}>{t('footer.foundAMistake')}</a>
     </div>
   </div>
 </footer>
