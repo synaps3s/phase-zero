@@ -2767,3 +2767,35 @@ a:focus-visible .emblem-halo {
 .shelf[data-order='chrono'] .spine[data-placed='false'] .spine-unplaced {
   display: inline;
 }
+
+/* --- Story bands ------------------------------------------------------ */
+
+/* In story order the shelf is not one sequence: the X-Men films happen on
+   another Earth, and reading them as a continuation of the run above would
+   say they share a timeline with it. So each story gets a heading, and the
+   titles nobody has placed get one of their own rather than trailing off the
+   end unexplained. */
+.shelf-band {
+  padding: var(--s7) 0 var(--s4);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.shelf-band:first-child {
+  padding-top: var(--s4);
+}
+
+.shelf-band-title {
+  margin: 0;
+  font-family: var(--face-display);
+  font-size: var(--size-head);
+  font-weight: 400;
+  color: var(--core);
+}
+
+.shelf-band-help {
+  margin: var(--s2) 0 0;
+  max-width: 62ch;
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+  line-height: 1.5;
+}

@@ -69,6 +69,19 @@ const leadsTo = leadsToMap(titles);
    drift from the data. */
 const placedInStory = titles.filter((entry) => entry.data.chronology.order !== null).length;
 
+/* Which story a row belongs to. In story order the shelf breaks into these,
+   because the X-Men films happen on another Earth and reading them as one
+   continuous list would say they share a timeline with the rest. */
+const bandOf = (entry: (typeof titles)[number]) =>
+  entry.data.chronology.order === null ? 'unplaced' : entry.data.saga === 'fox' ? 'fox' : 'shared';
+
+/* Each band sits just above the first row of its own range of numbers. */
+const BANDS = [
+  { id: 'shared', order: 50 },
+  { id: 'fox', order: 10_050 },
+  { id: 'unplaced', order: 999_999 },
+];
+
 const mapTitles = rows
   .filter((row) => row.facts.data.release.date)
   .map((row) => ({
@@ -234,6 +247,13 @@ const mapTitles = rows
       data-label-mark={t('watched.mark')}
       data-label-unmark={t('watched.unmark')}
     >
+      {BANDS.map((band) => (
+        <li class="shelf-band" data-band-head={band.id} style={`order: ${band.order}`} hidden>
+          <h2 class="shelf-band-title">{t(`timeline.band.${band.id}`)}</h2>
+          <p class="shelf-band-help">{t(`timeline.band.${band.id}Help`)}</p>
+        </li>
+      ))}
+
       {rows.map((row) => (
         <Spine
           language={language.code}
@@ -253,6 +273,7 @@ const mapTitles = rows
             row.facts.data.chronology.order ?? 1_000_000 + row.releaseOrder
           }
           placedInStory={row.facts.data.chronology.order !== null}
+          band={bandOf(row.facts)}
           tierRank={TIER_RANK[row.facts.data.tier] ?? 3}
           kind={row.facts.data.type}
           episodes={row.facts.data.release.episodes}

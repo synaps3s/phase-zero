@@ -103,6 +103,7 @@ if (timeline) {
     /* The shelf says which order it is in, so the rows that have no sourced
        place in the story can show that only when it matters. */
     shelf.dataset.order = state.order;
+    showBands();
     numberAndMarkNext();
     report(shown, watchedShown, minutesLeft);
     if (empty) empty.hidden = shown > 0;
@@ -110,6 +111,23 @@ if (timeline) {
     // which reads as a broken filter. Tooling waits for this rather than for
     // a guessed number of milliseconds.
     shelf.dataset.ready = 'true';
+  }
+
+  const bands = [...shelf.querySelectorAll<HTMLElement>('[data-band-head]')];
+
+  /**
+   * Shows the heading above each story, in story order only.
+   *
+   * A heading with nothing under it is worse than no heading, so a band whose
+   * rows are all filtered away goes with them. In release order there is only
+   * one sequence and nothing to divide, so they all go.
+   */
+  function showBands(): void {
+    for (const band of bands) {
+      const id = band.dataset.bandHead;
+      const has = rows.some((row) => !row.hidden && row.dataset.band === id);
+      band.hidden = state.order !== 'chrono' || !has;
+    }
   }
 
   /**
