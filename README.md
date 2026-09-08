@@ -29,7 +29,7 @@ Counted on 8 September 2026. The site's colophon counts the same things live.
 |---|---|---|---|
 | **161** titles | **102** characters | **47** glossary terms | **12** organisations |
 | **9** collections, 90 pieces | **9** watch paths | **24** questions answered | **5** guides |
-| **528** sources, opened and read | **2** languages, both complete | **583** static pages | **0** third-party scripts |
+| **585** citations across **311** sources | **2** languages, both complete | **583** static pages | **0** third-party scripts |
 
 ---
 

@@ -24,8 +24,13 @@ const editUrl = editPath
  *
  * Counted from the catalogue rather than written down, so it cannot drift and
  * cannot flatter. The third number is the one worth showing: this project's
- * whole claim is that somebody opened a page and read the value off it, and a
- * count of sources is the shortest way to say that out loud.
+ * whole claim is that somebody opened a page and read the value off it.
+ *
+ * It counts citations, not distinct pages, and says so. The same article backs
+ * many entries, and each of those carries its own date, so the number is a
+ * count of checks rather than of addresses. Calling it a count of sources would
+ * invite a reader to imagine several hundred different pages, which is a
+ * flattering thing to imply and not what is written down.
  */
 const FACTS = ['titles', 'characters', 'sets', 'setPieces', 'glossary', 'organisations', 'paths'] as const;
 

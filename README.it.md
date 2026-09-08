@@ -30,7 +30,7 @@ Contato l'8 settembre 2026. Il colophon del sito conta le stesse cose dal vivo.
 |---|---|---|---|
 | **161** titoli | **102** personaggi | **47** voci di glossario | **12** organizzazioni |
 | **9** collezioni, 90 pezzi | **9** percorsi | **24** domande | **5** guide |
-| **528** fonti, aperte e lette | **2** lingue, complete | **583** pagine statiche | **0** script di terze parti |
+| **585** citazioni su **311** fonti | **2** lingue, complete | **583** pagine statiche | **0** script di terze parti |
 
 ---
 
