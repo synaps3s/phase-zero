@@ -40,18 +40,26 @@ const people = (await getCollection('characters')).length;
 
 <footer class="colophon">
   <div class="page">
-    <p>{t('footer.disclaimer')}</p>
-    <p>{t('footer.license')}</p>
+    <!-- Two columns rather than one ladder: the small print reads down the
+         left at a narrow measure, the figures sit against the right margin.
+         Below 56rem there is no room for two of anything and it stacks. -->
+    <div class="colophon-top">
+      <div class="colophon-legal">
+        <p>{t('footer.disclaimer')}</p>
+        <p>{t('footer.license')}</p>
+      </div>
 
-    <!-- Three figures, set as data, in the monospace face that makes a figure
-         a figure. It is the least boastful way to say how much of this was
-         done by hand. -->
-    <p class="colophon-tally">
-      <span class="figure">{t('footer.count.titles', { count: titles })}</span>
-      <span class="figure">{t('footer.count.people', { count: people })}</span>
-      <span class="figure">{t('footer.count.sources', { count: sources })}</span>
-    </p>
+      <!-- Three figures, set as data, in the monospace face that makes a
+           figure a figure. It is the least boastful way to say how much of
+           this was done by hand. -->
+      <p class="colophon-tally">
+        <span class="figure">{t('footer.count.titles', { count: titles })}</span>
+        <span class="figure">{t('footer.count.people', { count: people })}</span>
+        <span class="figure">{t('footer.count.sources', { count: sources })}</span>
+      </p>
+    </div>
 
+    <div class="colophon-foot">
     <p class="colophon-made">
       {t('footer.madeBy')}
       {/* A real space in the sentence. Astro drops the whitespace between an
@@ -72,12 +80,13 @@ const people = (await getCollection('characters')).length;
       </a>
     </p>
 
-    <div class="colophon-row">
-      <a href={site.repository}>{t('footer.sourceCode')}</a>
-      {editUrl && (
-        <a href={editUrl}>{t(isDirectory ? 'footer.editThisSection' : 'footer.editThisPage')}</a>
-      )}
-      <a href={`${site.repository}/issues/new/choose`}>{t('footer.foundAMistake')}</a>
+      <div class="colophon-row">
+        <a href={site.repository}>{t('footer.sourceCode')}</a>
+        {editUrl && (
+          <a href={editUrl}>{t(isDirectory ? 'footer.editThisSection' : 'footer.editThisPage')}</a>
+        )}
+        <a href={`${site.repository}/issues/new/choose`}>{t('footer.foundAMistake')}</a>
+      </div>
     </div>
   </div>
 </footer>

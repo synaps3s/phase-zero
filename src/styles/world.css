@@ -565,7 +565,10 @@ a.plate:focus-visible {
   font-size: var(--size-data);
 }
 
-.colophon p {
+/* Scoped to the small print rather than to every paragraph in the footer.
+   As `.colophon p` it outranked the tally's own rule and kept forcing the
+   figures to wrap at 52 characters. */
+.colophon-legal p {
   max-width: var(--measure-tight);
 }
 
@@ -573,7 +576,52 @@ a.plate:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s3) var(--s5);
-  margin-top: var(--s4);
+}
+
+/* The colophon is two bands, and each band is a left and a right rather than
+   a column of things stacked. Narrow screens have room for neither, so both
+   collapse to one column and the order on the page is the order in the
+   markup. */
+.colophon-top,
+.colophon-foot {
+  display: grid;
+  gap: var(--s4);
+}
+
+.colophon-foot {
+  margin-top: var(--s5);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--hairline);
+}
+
+.colophon-legal > p + p {
+  margin-top: var(--s3);
+}
+
+@media (min-width: 56rem) {
+  /* The small print keeps its narrow measure on the left and the figures are
+     pushed to the right margin, which is what makes the block read as ordered
+     rather than as a list somebody stopped writing. */
+  .colophon-top {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: var(--s7);
+  }
+
+  /* minmax(0, 1fr) and not 1fr: a plain 1fr refuses to shrink below the
+     longest link, and at the narrow end of this breakpoint the last one ran
+     straight out of the footer instead of wrapping. */
+  .colophon-foot {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    gap: var(--s5) var(--s6);
+  }
+
+  .colophon-tally,
+  .colophon-foot .colophon-row {
+    justify-content: flex-end;
+    text-align: right;
+  }
 }
 
 /* What the catalogue actually holds, counted from it rather than claimed.
@@ -585,21 +633,19 @@ a.plate:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s2) var(--s6);
-  margin-top: var(--s5);
-  max-width: none;
   color: var(--ink-soft);
 }
 
-.colophon-made {
-  margin-top: var(--s4);
-}
-
-/* The mark sits on the text baseline rather than beside it, so the name and
-   the glyph read as one word instead of an icon with a caption. */
+/* The mark and the name are one thing, so the space inside the pair is
+   smaller than the space before it. With a word space of about four pixels
+   in front and a gap of eight behind, the logo read as attached to the
+   sentence and detached from the name it belongs to. Both are set in em so
+   they hold if the footer type ever changes size. */
 .colophon-hand {
   display: inline-flex;
   align-items: center;
-  gap: var(--s2);
+  gap: 0.3em;
+  margin-inline-start: 0.2em;
 }
 
 .colophon-mark {
