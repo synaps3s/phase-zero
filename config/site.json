@@ -5,5 +5,9 @@
   "tagline": {
     "en": "Start from nothing. Understand everything.",
     "it": "Parti da zero. Capisci tutto."
+  },
+  "author": {
+    "name": "synaps3s",
+    "url": "https://github.com/synaps3s"
   }
 }
