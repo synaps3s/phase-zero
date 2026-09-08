@@ -22,3 +22,18 @@ clothes.
 When the film is out, this route gets rewritten from what it actually used, and
 the difference between the two versions will be worth reading.
 :::
+
+:::detail{title="The one thing that is not a guess"}
+Everything above is this catalogue's reading. This is not.
+
+*Endgame* returns to cinemas on 25 September 2026 as *Avengers Endgame: Encore*,
+with a custom introduction, new footage and a new post-credits scene, about four
+minutes in total. Joe Russo, who directed both films, called the re-release
+"critically important" and said he believed it was "required viewing" to follow
+the story of *Doomsday*.
+
+So the one title on this route that a film-maker has actually named is one you
+have almost certainly already seen, in a version that did not exist until now.
+The new material is in the IMAX and Infinity Vision screenings, which also carry
+a further look at *Doomsday*; a standard screen may not show it.
+:::

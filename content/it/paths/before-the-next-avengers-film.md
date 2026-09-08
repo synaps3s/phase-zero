@@ -23,3 +23,19 @@ Quando il film sarà uscito, questo percorso verrà riscritto in base a quello c
 avrà davvero usato, e la differenza tra le due versioni varrà la pena di
 leggerla.
 :::
+
+:::detail{title="L'unica cosa che non è una supposizione"}
+Tutto quello che sta sopra è la lettura di questo catalogo. Questo no.
+
+*Endgame* torna al cinema il 25 settembre 2026 come *Avengers Endgame: Encore*,
+con un'introduzione inedita, materiale nuovo e una nuova scena dopo i titoli di
+coda, per circa quattro minuti in tutto. Joe Russo, che ha diretto entrambi i
+film, ha definito la riedizione "critically important" e ha detto di ritenerla
+"required viewing" per seguire la storia di *Doomsday*.
+
+Quindi l'unico titolo di questo percorso che un autore abbia davvero indicato è
+uno che quasi certamente hai già visto, in una versione che fino a ora non
+esisteva. Il materiale nuovo è nelle proiezioni IMAX e Infinity Vision, che
+portano anche un ulteriore sguardo su *Doomsday*: una sala normale potrebbe non
+mostrarlo.
+:::
