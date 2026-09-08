@@ -186,7 +186,9 @@ real second variant, not an inversion: the void becomes paper, the liveries
 become the same hues rendered dark enough to be read on paper, and every value
 was checked against its own ground rather than assumed to survive the flip. The
 whole identity is generated vector work and typography, because it has to be:
-there is no third-party imagery in this project and there never will be.
+there is no imagery of the films in this project and there never will be. The
+only mark from outside is the GitHub logo in the colophon, drawn here, pointing
+at the repository.
 
 **Key Characteristics:**
 
@@ -531,7 +533,7 @@ page is a guide and not a form.
 ### Don't:
 
 - **Don't use emoji or an em dash anywhere.** CI rejects both, in every text file including CSS comments. An en dash is permitted only between digits, as in a year range. Icons are authored SVG.
-- **Don't add third-party imagery of any kind.** No posters, no studio logos, no promotional art, no screenshots, no photographs. This is a legal boundary and not a matter of taste. All identity is generated vector work and typography.
+- **Don't add imagery of the material this catalogue is about.** No posters, no studio logos, no promotional art, no screenshots, no photographs. This is a legal boundary and not a matter of taste. All identity is generated vector work and typography. The one mark from outside is the GitHub logo in the colophon, authored as SVG here and used only to link to the repository and its author.
 - **Don't make amber mean anything but watched or here.** No amber saga, no amber tint, no amber section heading, no amber decoration.
 - **Don't write a hex value into `data/`, into content, or into a component.** Data names a livery or a tint; `tokens.css` owns the value.
 - **Don't add a corner radius.** The system is `rounded.none` throughout, and the flat rectangle is what makes floating panels read as instruments.

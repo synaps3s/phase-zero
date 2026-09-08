@@ -128,11 +128,15 @@ never transmitted, with explicit export and import to move between devices.
 
 **Theme.** Light, dark, or follow the system. The reader's choice is remembered.
 
-**No third-party imagery of any kind.** No posters, no studio logos, no
-promotional art, no screenshots. These are copyrighted and hosting them would
-transfer risk to everyone who forks the project. The entire visual identity has
-to be generated vector artwork derived from the data in the repository. This is a
-legal boundary and is not negotiable for aesthetic reasons.
+**No imagery of the material this catalogue is about.** No posters, no studio
+logos, no promotional art, no screenshots. These are copyrighted and hosting them
+would transfer risk to everyone who forks the project. The entire visual identity
+has to be generated vector artwork derived from the data in the repository. This
+is a legal boundary and is not negotiable for aesthetic reasons.
+
+The single mark from elsewhere is the GitHub logo in the colophon, drawn as SVG
+here and used only to link to the repository and its author, which GitHub's own
+guidelines permit.
 
 **House style, enforced by CI.** No emoji anywhere, ever. No em dash; an en dash
 is permitted only between digits. All code, comments, identifiers and commit
