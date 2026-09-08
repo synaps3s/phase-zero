@@ -1532,6 +1532,9 @@ a.plate:focus-visible {
   display: grid;
   grid-template-columns: 2.5rem 1fr;
   gap: var(--s5);
+  /* A piece is linked to directly from search, the same way a glossary term
+     is, so it keeps the same breathing room above it when jumped to. */
+  scroll-margin-top: var(--s6);
 }
 
 .piece[data-tint='blue'] { --piece-colour: var(--tint-blue); }
