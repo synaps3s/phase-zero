@@ -1,12 +1,35 @@
-# Phase Zero
+<p align="center">
+  <a href="https://phasezero.pages.dev">
+    <img src="public/social/en.png" width="840"
+         alt="Phase Zero. Start from nothing. Understand everything." />
+  </a>
+</p>
 
-An open, multilingual guide to the Marvel cinematic universes.
+<p align="center">
+  An open, multilingual guide to the Marvel cinematic universes.<br />
+  <strong><a href="https://phasezero.pages.dev">Read it at phasezero.pages.dev</a></strong>
+</p>
 
-Start from nothing. Understand everything.
+<p align="center">
+  <strong>English</strong> · <a href="README.it.md">Italiano</a>
+</p>
 
-**Read it at [phasezero.pages.dev](https://phasezero.pages.dev)**
+<img src="public/social/livery.svg" width="100%" alt="" />
 
-**English** · [Italiano](README.it.md)
+> [!NOTE]
+> Every colour above is a saga, and it is the same colour wherever a title from
+> that saga appears on the site. The card and the bar are generated from the
+> project's own design tokens, which is why nothing here is borrowed artwork.
+
+## What is in it
+
+Counted on 8 September 2026. The site's colophon counts the same things live.
+
+| | | | |
+|---|---|---|---|
+| **161** titles | **102** characters | **47** glossary terms | **12** organisations |
+| **9** collections, 90 pieces | **9** watch paths | **24** questions answered | **5** guides |
+| **528** sources, opened and read | **2** languages, both complete | **583** static pages | **0** third-party scripts |
 
 ---
 
@@ -175,7 +198,8 @@ content/    prose, one directory per language
   en/
   it/
 src/        code, containing no hardcoded text
-scripts/    the validation CI runs
+scripts/    the validation CI runs, and what the build writes afterwards
+public/     files served as they are, including the preview cards
 ```
 
 Here is one film across the whole system.

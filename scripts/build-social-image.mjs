@@ -180,6 +180,26 @@ function card(language, t) {
 const t = tokens();
 mkdirSync(OUT, { recursive: true });
 
+/*
+ * A bar of the six saga colours, for the readme.
+ *
+ * GitHub strips styling from a readme, so the only way to put the project's
+ * own colour in front of somebody reading it there is a picture. This one is
+ * generated from the same tokens as everything else rather than drawn by hand,
+ * so a change to a saga's colour reaches the readme too.
+ */
+const bar = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 10" width="1200" height="10" role="img" aria-label="The six saga colours of Phase Zero">
+${t.sagas
+  .map(
+    ({ saga, colour }, index) =>
+      `  <rect x="${index * 200}" y="0" width="200" height="10" fill="${colour}"><title>${saga}</title></rect>`,
+  )
+  .join('\n')}
+</svg>
+`;
+writeFileSync(join(OUT, 'livery.svg'), bar);
+console.log(`Wrote ${OUT}/livery.svg from ${t.sagas.length} saga colours.`);
+
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new' });
 for (const language of languages) {
   const file = join(tmpdir(), `phase-zero-card-${language.code}.html`);

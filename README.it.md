@@ -1,12 +1,36 @@
-# Phase Zero
+<p align="center">
+  <a href="https://phasezero.pages.dev">
+    <img src="public/social/it.png" width="840"
+         alt="Phase Zero. Parti da zero. Capisci tutto." />
+  </a>
+</p>
 
-Una guida aperta e multilingua agli universi cinematografici Marvel.
+<p align="center">
+  Una guida aperta e multilingua agli universi cinematografici Marvel.<br />
+  <strong><a href="https://phasezero.pages.dev">Si legge su phasezero.pages.dev</a></strong>
+</p>
 
-Parti da zero. Capisci tutto.
+<p align="center">
+  <a href="README.md">English</a> · <strong>Italiano</strong>
+</p>
 
-**Si legge su [phasezero.pages.dev](https://phasezero.pages.dev)**
+<img src="public/social/livery.svg" width="100%" alt="" />
 
-[English](README.md) · **Italiano**
+> [!NOTE]
+> Ogni colore qui sopra è una saga, ed è lo stesso colore ovunque un titolo di
+> quella saga compaia sul sito. La scheda e la barra sono generate dai token di
+> design del progetto, ed è il motivo per cui qui non c'è nessuna immagine presa
+> in prestito.
+
+## Cosa c'è dentro
+
+Contato l'8 settembre 2026. Il colophon del sito conta le stesse cose dal vivo.
+
+| | | | |
+|---|---|---|---|
+| **161** titoli | **102** personaggi | **47** voci di glossario | **12** organizzazioni |
+| **9** collezioni, 90 pezzi | **9** percorsi | **24** domande | **5** guide |
+| **528** fonti, aperte e lette | **2** lingue, complete | **583** pagine statiche | **0** script di terze parti |
 
 ---
 
@@ -182,7 +206,8 @@ content/    prosa, una cartella per lingua
   en/
   it/
 src/        codice, senza nessun testo scritto dentro
-scripts/    le verifiche che la CI esegue
+scripts/    le verifiche che la CI esegue, e cosa scrive la build dopo
+public/     file serviti così come sono, comprese le schede di anteprima
 ```
 
 ## Come si esegue in locale
