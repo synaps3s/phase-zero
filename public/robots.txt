@@ -15,7 +15,7 @@
 User-agent: *
 Allow: /
 
-# Written by scripts/build-sitemap.mjs during the build. It carries every
-# page in every language, and says which pages are translations of each
-# other so the two languages do not compete with one another.
-Sitemap: https://phasezero.pages.dev/sitemap.xml
+# The line pointing at the sitemap is added to this file during the build, by
+# scripts/build-sitemap.mjs, rather than written here. It has to carry the
+# site's full address, and the address has one home, config/site.json. A copy
+# of it here would be one more thing to remember on the day it changes.

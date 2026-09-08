@@ -17,7 +17,7 @@
  * on every build, so the file's own timestamp would say "today" about an entry
  * nobody has touched in months. A missing field is better than a false one.
  */
-import { readdir, writeFile } from 'node:fs/promises';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, sep } from 'node:path';
 import languages from '../config/languages.json' with { type: 'json' };
 import site from '../config/site.json' with { type: 'json' };
@@ -105,6 +105,12 @@ ${entries.join('\n')}
 `;
 
 await writeFile(join(OUT, 'sitemap.xml'), sitemap);
+
+/* Tell crawlers where it is, from the same source as the URLs inside it. A
+   sitemap nobody is pointed at is a file on a server. */
+const robots = join(OUT, 'robots.txt');
+const rules = await readFile(robots, 'utf8');
+await writeFile(robots, `${rules.trimEnd()}\n\nSitemap: ${site.url}/sitemap.xml\n`);
 
 console.log(
   `Wrote ${OUT}/sitemap.xml with ${entries.length} URL(s) across ` +
