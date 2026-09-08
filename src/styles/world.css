@@ -384,8 +384,16 @@ a.plate:focus-visible {
 /* Two or three mutually exclusive choices shown at once, so the options are
    the control rather than hidden behind it. Used by the timeline's order,
    depth and separate-universes controls. */
+/* Wraps rather than overflows. The labels inside are uppercase monospace and
+   never break, so a switch has a hard minimum width, and the depth control
+   is wider than a small phone in both languages: at 375px the english one
+   pushed the whole page sideways, and the italian one did it at 384px. This
+   is the rule about surviving a longer translation, applied to the control
+   that breaks first. */
 .switch {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   border: 1px solid var(--hairline);
 }
 
@@ -1383,7 +1391,16 @@ a.plate:focus-visible {
   padding: 0.1em 0.5em;
 }
 
-@media (min-width: 56rem) {
+/* 64rem and not 56rem. A switch sets its labels in uppercase monospace and
+   never wraps them, so the two of them plus the third column have a hard
+   minimum width, and in italian that minimum is 990px. At 56rem the grid
+   was wider than the viewport and the whole page scrolled sideways, which
+   this design system says must never happen.
+
+   Measured rather than guessed: the italian columns are 342, 341 and 358
+   against 267, 366 and 408 in english. The breakpoint had been chosen
+   against the shorter language. */
+@media (min-width: 64rem) {
   .controls {
     grid-template-columns: auto auto 1fr;
     gap: var(--s7);
