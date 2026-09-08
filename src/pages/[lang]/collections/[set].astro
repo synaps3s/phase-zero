@@ -83,9 +83,12 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
       <Content />
     </article>
 
+    {/* Each piece carries its own id: the search page links one as
+        collections/<set>#<piece>, and without a target those links landed at
+        the top of the set and left the reader to find the entry again. */}
     <ol class="piece-list">
       {pieces.map(({ piece, prose: piecePose, Body }) => (
-        <li class="piece" data-tint={piece.data.tint ?? undefined}>
+        <li class="piece" id={piece.data.id} data-tint={piece.data.tint ?? undefined}>
           <div class="piece-mark" aria-hidden="true"><span></span></div>
           <div class="piece-body">
             <h2 class="piece-name">{piecePose.entry.data.title}</h2>
