@@ -14,6 +14,12 @@
  * each spine lit by the colour of the saga it belongs to.
  *
  *   node scripts/build-social-image.mjs
+ *
+ * Running it twice on the same card does not produce the same file twice.
+ * Antialiasing and the gradients land a value or two apart between runs, so
+ * git reports both images as changed while the picture is identical. Commit a
+ * re-render only when the card has actually changed: a megabyte of binary in
+ * the history, permanently, buys nothing when nobody can see the difference.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
