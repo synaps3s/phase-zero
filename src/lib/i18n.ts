@@ -110,3 +110,20 @@ export function languageFromPath(pathname: string): Language {
   const segment = pathname.split('/').filter(Boolean)[0];
   return segment ? getLanguage(segment) : defaultLanguage;
 }
+
+/**
+ * An announced window, in the reader's language.
+ *
+ * The data holds YYYY-MM or YYYY, because a file every language reads cannot
+ * hold an English sentence. This turns it into "marzo 2027" or "March 2027"
+ * as needed, and leaves a bare year alone since a year reads the same either
+ * way.
+ */
+export function formatWindow(code: string, value: string): string {
+  const [year, month] = value.split('-');
+  if (!month) return year;
+  const when = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
+  return new Intl.DateTimeFormat(code, { year: 'numeric', month: 'long', timeZone: 'UTC' }).format(
+    when,
+  );
+}

@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import FallbackNotice from '../../../components/FallbackNotice.astro';
-import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
+import { formatWindow, languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse, sourceSlugs } from '../../../lib/content';
 import { liveryStyle, universeOf, franchiseName } from '../../../lib/livery';
 import { leadsToMap } from '../../../lib/connections';
@@ -87,7 +87,11 @@ people.sort((first, second) => collator.compare(first.sort, second.sort));
 const universe = universeOf(facts.data.universe);
 const release = facts.data.release;
 /* The year when there is one, and the announced window when there is not. */
-const year = release.date ? String(release.date.getUTCFullYear()) : (release.approximate ?? '');
+const year = release.date
+  ? String(release.date.getUTCFullYear())
+  : release.approximate
+    ? formatWindow(language.code, release.approximate)
+    : '';
 const unreleased = release.status !== 'released';
 const dateFormatter = new Intl.DateTimeFormat(language.code, { dateStyle: 'long', timeZone: 'UTC' });
 const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
@@ -214,7 +218,7 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
         )}
         {!release.date && release.approximate && (
           <p style="margin-top: var(--s2)">
-            {t('title.released')}: <span class="figure">{release.approximate}</span>
+            {t('title.released')}: <span class="figure">{formatWindow(language.code, release.approximate)}</span>
           </p>
         )}
       </section>

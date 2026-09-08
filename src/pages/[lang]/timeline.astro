@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Spine from '../../components/Spine.astro';
 import ConnectionMap from '../../components/ConnectionMap.astro';
-import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
+import { formatWindow, languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
 import { resolveProse } from '../../lib/content';
 import { franchiseName, universeOf } from '../../lib/livery';
 import { leadsToMap } from '../../lib/connections';
@@ -55,7 +55,8 @@ for (const [index, entry] of titles.entries()) {
 const year = (date: Date | null) => (date ? String(date.getUTCFullYear()) : '');
 /* What goes where the year would be: the year, or the window a source gave. */
 const when = (release: { date: Date | null; approximate: string | null }) =>
-  year(release.date) || release.approximate || '';
+  year(release.date) ||
+  (release.approximate ? formatWindow(language.code, release.approximate) : '');
 
 /* The map shows every title, not the filtered set: its job is to show how
    the whole thing connects, which is exactly the question a filter hides. */

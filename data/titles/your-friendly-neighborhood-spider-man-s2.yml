@@ -9,7 +9,7 @@ tier: complete
 release:
   # The article gives a month, not a day, so the window is recorded instead.
   date: null
-  approximate: "January 2027"
+  approximate: 2027-01
   runtime: null
   # The season article leaves the episode count blank.
   episodes: null

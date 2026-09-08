@@ -61,8 +61,15 @@ const titles = defineCollection({
          page says which kind of release it was, because a bare date would
          otherwise imply a cinema run that did not happen. */
       date: z.coerce.date().nullable(),
-      // Set when a date is announced but not exact, for example "Summer 2027".
-      approximate: z.string().nullable().default(null),
+      /* Set when a window is announced but not an exact day, as YYYY-MM or
+         YYYY, never as prose. "March 2027" is a sentence in one language, and
+         a sentence has no business in a file every language reads. The page
+         formats it in whichever language is being read. */
+      approximate: z
+        .string()
+        .regex(/^\d{4}(-\d{2})?$/, 'a window is YYYY or YYYY-MM, not prose')
+        .nullable()
+        .default(null),
       /* Total minutes for a film, or per-episode for a series.
 
          A series rarely has one runtime. Where a source gives a range, this
