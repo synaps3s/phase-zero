@@ -35,6 +35,15 @@ const t = useTranslations(language.code);
 /* Used twice, as the canonical link and as the address a shared link resolves
    to, and they must not be able to disagree. */
 const canonical = new URL(localePath(language.code, path), site.url).href;
+
+/* The preview card, which a network fetches from outside the page and so has
+   to be a full address rather than a path. */
+const card = new URL(`/social/${language.code}.png`, site.url).href;
+
+/* The taglines are keyed by language code in a JSON file, so the type read out
+   of it lists the languages that exist today rather than any language code. */
+const taglines: Record<string, string> = site.tagline;
+const tagline = taglines[language.code] ?? taglines[languages[0].code];
 ---
 
 <!doctype html>
@@ -62,18 +71,23 @@ const canonical = new URL(localePath(language.code, path), site.url).href;
       href={new URL(localePath(defaultLanguage.code, path), site.url).href}
     />
 
-    {/* How the page looks when somebody shares the link. There is no image:
-        the only pictures this project owns are the emblems, which are drawn per
-        character rather than per page, and a borrowed one would break the rule
-        the whole visual identity is built on. og:locale is left out for a
-        similar reason: it wants a territory, and this project has chosen a
-        language without ever choosing a country to attach it to. */}
+    {/* How the page looks when somebody shares the link. The card is drawn by
+        scripts/build-social-image.mjs from this project's own tokens and its own
+        wordmark, one per language, which is the only kind of picture the rules
+        here allow. og:locale is left out on purpose: it wants a territory, and
+        this project has chosen a language without ever choosing a country to
+        attach it to. */}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={card} />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content={`${site.name}. ${tagline}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={card} />
 
     <script is:inline>
       /* The stored theme is applied before the first paint, so a reader who
