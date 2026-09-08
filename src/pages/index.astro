@@ -10,10 +10,19 @@
  * page it sits on and says nothing a crawler can act on, and the same set of
  * alternates every other page carries.
  */
-import { defaultLanguage, languages, localePath } from '../lib/i18n';
+import { defaultLanguage, languages, localePath, useTranslations } from '../lib/i18n';
 import site from '../../config/site.json';
 
 const home = (code: string) => new URL(localePath(code), site.url).href;
+const t = useTranslations(defaultLanguage.code);
+
+/* This is the address people actually paste. It redirects, but a chat window
+   or a social network reads the head it is given and never follows the
+   redirect, so without these it shows a bare link or nothing at all. The
+   source language answers for the site here, the same way x-default does. */
+const title = `${site.name}. ${(site.tagline as Record<string, string>)[defaultLanguage.code]}`;
+const description = t('home.description');
+const card = new URL(`/social/${defaultLanguage.code}.png`, site.url).href;
 ---
 
 <html lang={defaultLanguage.code}>
@@ -25,7 +34,19 @@ const home = (code: string) => new URL(localePath(code), site.url).href;
       <link rel="alternate" hreflang={language.code} href={home(language.code)} />
     ))}
     <link rel="alternate" hreflang="x-default" href={home(defaultLanguage.code)} />
-    <title>Phase Zero</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={home(defaultLanguage.code)} />
+    <meta property="og:image" content={card} />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={card} />
   </head>
   <body>
     <p>Phase Zero is available in:</p>
