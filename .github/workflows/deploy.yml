@@ -31,12 +31,6 @@ jobs:
     # repository or a paid plan, so there are none today, and the job runs
     # straight through as it did before.
     environment: production
-    env:
-      # The secrets context cannot be read in a job-level "if", so it is lifted
-      # into an env var here and checked per step. Until someone configures the
-      # Cloudflare credentials the workflow still builds and validates, and
-      # skips only the publish itself, rather than failing on every push.
-      HAS_CLOUDFLARE_CREDENTIALS: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -54,9 +48,30 @@ jobs:
       - name: Build the site
         run: npm run build
 
+      # Whether the credentials are there has to be worked out in a step, not
+      # in the job's env block. The secrets context is readable there, but an
+      # environment secret does not exist yet when that block is evaluated:
+      # the environment is resolved as the job starts running its steps. With
+      # the credentials held on the repository the job-level check worked, and
+      # moving them into the environment silently turned it false forever.
+      #
+      # A step's own env can read them, and comparing them to nothing here
+      # never puts either one anywhere it can be read.
+      - name: Look for the Cloudflare credentials
+        id: credentials
+        env:
+          API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -n "$API_TOKEN" ] && [ -n "$ACCOUNT_ID" ]; then
+            echo 'present=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'present=false' >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Deploy to Cloudflare Pages
         id: deploy
-        if: env.HAS_CLOUDFLARE_CREDENTIALS == 'true'
+        if: steps.credentials.outputs.present == 'true'
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -69,7 +84,7 @@ jobs:
           command: pages deploy dist --project-name=phasezero
 
       - name: Explain why nothing was published
-        if: env.HAS_CLOUDFLARE_CREDENTIALS != 'true'
+        if: steps.credentials.outputs.present != 'true'
         run: |
           echo "The site built and validated, but it was not published."
           echo "Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID to the"
