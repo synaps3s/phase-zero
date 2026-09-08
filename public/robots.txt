@@ -14,3 +14,8 @@
 
 User-agent: *
 Allow: /
+
+# Written by scripts/build-sitemap.mjs during the build. It carries every
+# page in every language, and says which pages are translations of each
+# other so the two languages do not compete with one another.
+Sitemap: https://phasezero.pages.dev/sitemap.xml

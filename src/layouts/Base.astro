@@ -9,7 +9,13 @@ import '../styles/world.css';
 import Starfield from '../components/Starfield.astro';
 import Masthead from '../components/Masthead.astro';
 import Colophon from '../components/Colophon.astro';
-import { getLanguage, languages, localePath, useTranslations } from '../lib/i18n';
+import {
+  defaultLanguage,
+  getLanguage,
+  languages,
+  localePath,
+  useTranslations,
+} from '../lib/i18n';
 import site from '../../config/site.json';
 
 interface Props {
@@ -25,6 +31,10 @@ interface Props {
 const { language: code, title, description, path = '', editPath } = Astro.props;
 const language = getLanguage(code);
 const t = useTranslations(language.code);
+
+/* Used twice, as the canonical link and as the address a shared link resolves
+   to, and they must not be able to disagree. */
+const canonical = new URL(localePath(language.code, path), site.url).href;
 ---
 
 <!doctype html>
@@ -36,7 +46,7 @@ const t = useTranslations(language.code);
     <meta name="description" content={description} />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="canonical" href={new URL(localePath(language.code, path), site.url).href} />
+    <link rel="canonical" href={canonical} />
     {languages.map((other) => (
       <link
         rel="alternate"
@@ -44,6 +54,26 @@ const t = useTranslations(language.code);
         href={new URL(localePath(other.code, path), site.url).href}
       />
     ))}
+    {/* What to show a reader whose language cannot be worked out. It points at
+        the source language, which is the one guaranteed to be complete. */}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(localePath(defaultLanguage.code, path), site.url).href}
+    />
+
+    {/* How the page looks when somebody shares the link. There is no image:
+        the only pictures this project owns are the emblems, which are drawn per
+        character rather than per page, and a borrowed one would break the rule
+        the whole visual identity is built on. og:locale is left out for a
+        similar reason: it wants a territory, and this project has chosen a
+        language without ever choosing a country to attach it to. */}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
 
     <script is:inline>
       /* The stored theme is applied before the first paint, so a reader who

@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/build-headers.mjs",
+    "build": "astro build && node scripts/build-headers.mjs && node scripts/build-sitemap.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "lint:text": "node scripts/lint-text.mjs",
