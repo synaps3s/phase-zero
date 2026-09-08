@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 20300
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Spider-Man_3"
 
 requires: [spider-man-2]
 leadsTo: []

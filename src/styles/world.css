@@ -2799,3 +2799,16 @@ a:focus-visible .emblem-halo {
   font-size: var(--size-data);
   line-height: 1.5;
 }
+
+/* The season, next to a title that is not unique on its own. Set apart from
+   the name rather than run into it, so the row still reads as one programme
+   with a part number and not as two different things. */
+.spine-season {
+  margin-inline-start: 0.6em;
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}

@@ -17,9 +17,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 50200
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Spider-Man:_Across_the_Spider-Verse"
 
 requires: [spider-man-into-the-spider-verse]
 leadsTo: []

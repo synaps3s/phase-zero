@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 30100
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_(film)"
 
 requires: []
 leadsTo: []

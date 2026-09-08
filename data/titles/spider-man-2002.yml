@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 20100
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)"
 
 requires: []
 leadsTo: []

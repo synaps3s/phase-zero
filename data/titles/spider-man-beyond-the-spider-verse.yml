@@ -16,9 +16,9 @@ release:
   status: in-production
 
 chronology:
-  order: null
+  order: 50300
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Spider-Man:_Beyond_the_Spider-Verse"
 
 requires: [spider-man-across-the-spider-verse]
 leadsTo: []

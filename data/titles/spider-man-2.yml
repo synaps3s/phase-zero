@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 20200
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Spider-Man_2"
 
 requires: [spider-man-2002]
 leadsTo: []

@@ -6,6 +6,8 @@ interface Props {
   language: string;
   id: string;
   title: string;
+  /** Shown only when another title shares this one's name, such as a season. */
+  subtitle?: string | null;
   saga: string;
   franchise: string;
   setNumber: number;
@@ -46,6 +48,7 @@ const {
   language,
   id,
   title,
+  subtitle = null,
   saga,
   franchise,
   setNumber,
@@ -97,7 +100,7 @@ const totalMinutes = unreleased ? 0 : (runtime ?? 0) * (episodes ?? 1);
 
   <div class="spine-body">
     <h3 class="spine-title">
-      <a href={href}>{title}</a>
+      <a href={href}>{title}</a>{subtitle && <span class="spine-season">{subtitle}</span>}
       <span class="spine-next-label">{t('title.next')}</span>
     </h3>
     <p class="spine-meta">

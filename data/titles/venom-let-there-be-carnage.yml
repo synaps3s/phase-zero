@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 40200
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage"
 
 requires: [venom]
 leadsTo: []

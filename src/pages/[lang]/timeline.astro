@@ -45,6 +45,10 @@ for (const [index, entry] of titles.entries()) {
   rows.push({
     facts: entry,
     title,
+    /* Only useful when it disambiguates. Every entry has a subtitle, but on a
+       film it is editorial and would be noise on every row. On a series it is
+       the season, and without it two rows read as the same programme twice. */
+    subtitle: prose.entry.data.tagline ?? null,
     releaseOrder: index + 1,
     search: searchable(
       [title, t(`saga.${entry.data.saga}`), franchiseName(entry.data.franchise)].join(' '),
@@ -60,6 +64,18 @@ const when = (release: { date: Date | null; approximate: string | null }) =>
 
 /* The map shows every title, not the filtered set: its job is to show how
    the whole thing connects, which is exactly the question a filter hides. */
+/* Which titles share a name, so only those rows carry their subtitle. */
+const shared = new Set(
+  Object.entries(
+    rows.reduce<Record<string, number>>((seen, row) => {
+      seen[row.title] = (seen[row.title] ?? 0) + 1;
+      return seen;
+    }, {}),
+  )
+    .filter(([, count]) => count > 1)
+    .map(([title]) => title),
+);
+
 const leadsTo = leadsToMap(titles);
 
 /* How far the story order actually reaches. The control says it follows the
@@ -72,13 +88,27 @@ const placedInStory = titles.filter((entry) => entry.data.chronology.order !== n
 /* Which story a row belongs to. In story order the shelf breaks into these,
    because the X-Men films happen on another Earth and reading them as one
    continuous list would say they share a timeline with the rest. */
-const bandOf = (entry: (typeof titles)[number]) =>
-  entry.data.chronology.order === null ? 'unplaced' : entry.data.saga === 'fox' ? 'fox' : 'shared';
+const STORIES: Record<string, string> = {
+  'earth-10005': 'fox',
+  'earth-96283': 'raimi',
+  'earth-120703': 'webb',
+  'earth-688': 'sony',
+};
+
+const bandOf = (entry: (typeof titles)[number]) => {
+  if (entry.data.chronology.order === null) return 'unplaced';
+  if (entry.data.franchise === 'spider-verse') return 'spiderverse';
+  return STORIES[entry.data.universe] ?? 'shared';
+};
 
 /* Each band sits just above the first row of its own range of numbers. */
 const BANDS = [
   { id: 'shared', order: 50 },
   { id: 'fox', order: 10_050 },
+  { id: 'raimi', order: 20_050 },
+  { id: 'webb', order: 30_050 },
+  { id: 'sony', order: 40_050 },
+  { id: 'spiderverse', order: 50_050 },
   { id: 'unplaced', order: 999_999 },
 ];
 
@@ -259,6 +289,7 @@ const mapTitles = rows
           language={language.code}
           id={row.facts.data.id}
           title={row.title}
+          subtitle={shared.has(row.title) ? row.subtitle : null}
           saga={row.facts.data.saga}
           franchise={row.facts.data.franchise}
           setNumber={row.releaseOrder}

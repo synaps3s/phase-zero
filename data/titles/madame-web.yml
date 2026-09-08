@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 40400
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Madame_Web_(film)"
 
 requires: []
 leadsTo: []

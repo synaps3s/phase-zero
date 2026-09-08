@@ -17,9 +17,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 50100
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse"
 
 requires: []
 leadsTo: []

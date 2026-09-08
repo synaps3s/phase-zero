@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 40600
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Kraven_the_Hunter_(film)"
 
 requires: []
 leadsTo: []

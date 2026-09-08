@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 40500
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Venom:_The_Last_Dance"
 
 requires: [venom, venom-let-there-be-carnage]
 leadsTo: []
