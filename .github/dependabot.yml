@@ -1,0 +1,43 @@
+version: 2
+
+# Weekly and grouped, because the point is to keep the build honest without
+# turning the repository into a queue of pull requests nobody reads.
+#
+# Five hundred packages sit behind thirteen direct dependencies here, and the
+# deploy job runs with the Cloudflare token in hand, so a compromised build
+# dependency is the realistic risk this project carries. It is worth watching
+# even though the site itself ships no third-party code to a reader.
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    # Minor and patch arrive together as one pull request, which CI either
+    # passes or does not. A major is left on its own because it needs a person
+    # to read the changelog rather than the green tick.
+    groups:
+      npm-minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      prefix: 'chore'
+
+  # The workflows pin tags like actions/checkout@v4, which move. This is the
+  # supply chain that runs with the deploy secrets, so it is the half worth
+  # watching most.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      actions:
+        patterns:
+          - '*'
+    commit-message:
+      prefix: 'chore'
