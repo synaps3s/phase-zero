@@ -21,6 +21,16 @@ jobs:
   deploy:
     name: Build and deploy
     runs-on: ubuntu-latest
+    # Naming the environment is what lets the Cloudflare credentials live in
+    # it rather than on the repository. An environment secret can only be read
+    # by a job that asks for that environment, so no other workflow added later
+    # can reach the token by accident.
+    #
+    # It is also where a protection rule would go, such as allowing only main
+    # to deploy or requiring somebody to approve it. Those need a public
+    # repository or a paid plan, so there are none today, and the job runs
+    # straight through as it did before.
+    environment: production
     env:
       # The secrets context cannot be read in a job-level "if", so it is lifted
       # into an env var here and checked per step. Until someone configures the
