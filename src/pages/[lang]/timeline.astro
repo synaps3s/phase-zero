@@ -60,6 +60,13 @@ const when = (release: { date: Date | null; approximate: string | null }) =>
    the whole thing connects, which is exactly the question a filter hides. */
 const leadsTo = leadsToMap(titles);
 
+/* How far the story order actually reaches. The control says it follows the
+   order events happen in, and for a title with no sourced position that is
+   not true: it falls in behind the placed ones, in release order. Counting it
+   here rather than writing a number into the sentence means the claim cannot
+   drift from the data. */
+const placedInStory = titles.filter((entry) => entry.data.chronology.order !== null).length;
+
 const mapTitles = rows
   .filter((row) => row.facts.data.release.date)
   .map((row) => ({
@@ -137,7 +144,10 @@ const mapTitles = rows
           class="control-help"
           data-order-help
           data-release={t('watchOrder.byReleaseHelp')}
-          data-chrono={t('watchOrder.byChronologyHelp')}
+          data-chrono={t('watchOrder.byChronologyHelp', {
+            placed: placedInStory,
+            total: titles.length,
+          })}
         >{t('watchOrder.byReleaseHelp')}</p>
       </fieldset>
 
@@ -235,6 +245,7 @@ const mapTitles = rows
           href={localePath(language.code, 'titles', row.facts.data.id)}
           releaseOrder={row.releaseOrder}
           chronoOrder={row.facts.data.chronology.order ?? 100000 + row.releaseOrder}
+          placedInStory={row.facts.data.chronology.order !== null}
           tierRank={TIER_RANK[row.facts.data.tier] ?? 3}
           kind={row.facts.data.type}
           episodes={row.facts.data.release.episodes}

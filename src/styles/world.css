@@ -2754,3 +2754,16 @@ a:focus-visible .emblem-halo {
   background: color-mix(in oklab, var(--livery-sony) 14%, transparent);
   color: var(--livery-sony);
 }
+
+/* Said on the row only in story order, which is the only order it is about:
+   this title's place came from nowhere, so it is sitting in release order
+   behind the ones that were placed. */
+.spine-unplaced {
+  display: none;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.shelf[data-order='chrono'] .spine[data-placed='false'] .spine-unplaced {
+  display: inline;
+}

@@ -20,6 +20,8 @@ interface Props {
      the document order stays the one the server sent. */
   releaseOrder?: number;
   chronoOrder?: number;
+  /** Whether that position came from a source, or was merely inherited. */
+  placedInStory?: boolean;
   tierRank?: number;
   /* film, series, special or short. The row says which, because "54 min" on a
      thirteen episode series and "54 min" on a film mean very different things
@@ -51,6 +53,7 @@ const {
   isNext = false,
   releaseOrder,
   chronoOrder,
+  placedInStory = true,
   tierRank,
   kind,
   episodes = null,
@@ -77,6 +80,7 @@ const totalMinutes = unreleased ? 0 : (runtime ?? 0) * (episodes ?? 1);
   data-next={String(isNext)}
   data-release={releaseOrder}
   data-chrono={chronoOrder}
+  data-placed={String(placedInStory)}
   data-tier={tierRank}
   data-kind={kind}
   data-continuity={continuity}
@@ -93,6 +97,7 @@ const totalMinutes = unreleased ? 0 : (runtime ?? 0) * (episodes ?? 1);
       <span class="spine-next-label">{t('title.next')}</span>
     </h3>
     <p class="spine-meta">
+      {!placedInStory && <span class="spine-unplaced">{t('watchOrder.unplaced')}</span>}
       <span class="figure">{year}</span>
       {unreleased && <span class="spine-upcoming">{t('title.upcoming')}</span>}
       {kind && <span class="spine-kind">{t(`title.kind.${kind}`)}</span>}

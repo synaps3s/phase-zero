@@ -95,6 +95,9 @@ if (timeline) {
       else minutesLeft += Number(row.dataset.minutes ?? '0');
     }
 
+    /* The shelf says which order it is in, so the rows that have no sourced
+       place in the story can show that only when it matters. */
+    shelf.dataset.order = state.order;
     numberAndMarkNext();
     report(shown, watchedShown, minutesLeft);
     if (empty) empty.hidden = shown > 0;
