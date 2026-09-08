@@ -5,9 +5,9 @@ oneLine: La cosa che tiene in vita Tony Stark lo sta anche uccidendo, e lui non
 tagline: Il successo, e il conto da pagare
 ---
 
-Sei mesi dopo essersi dichiarato al mondo, Stark e una celebrita, un deterrente
+Sei mesi dopo essersi dichiarato al mondo, Stark è una celebrità, un deterrente
 di una persona sola, e sta morendo in silenzio: il reattore che ha nel petto gli
-sta avvelenando il sangue. La sua reazione e comportarsi peggio, che come
+sta avvelenando il sangue. La sua reazione è comportarsi peggio, che come
 ritratto del personaggio è più onesto di qualsiasi discorso sulla
 responsabilità.
 

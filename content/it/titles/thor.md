@@ -6,11 +6,11 @@ tagline: Il film che ha reso possibili le parti impossibili
 ---
 
 Fino a questo punto la serie era stata tecnologia e radiazioni: cose che si
-potevano argomentare come plausibili. Thor e il film che chiede al pubblico di
+potevano argomentare come plausibili. Thor è il film che chiede al pubblico di
 accettare degli dei, una città d'oro e un ponte arcobaleno, e ci riesce trattando
 come normali le parti fantastiche e come strane quelle ordinarie.
 
-A fare il lavoro e l'esilio. Senza il martello, Thor passa il film a essere un
+A fare il lavoro è l'esilio. Senza il martello, Thor passa il film a essere un
 uomo grosso e sicuro di sé gestito da una cittadina del New Mexico, e la comicità
 di quella situazione e cio che rende digeribile la mitologia.
 
