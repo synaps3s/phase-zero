@@ -35,9 +35,17 @@ updates:
     schedule:
       interval: weekly
       day: monday
+    # Grouped the same way as npm, and for the same reason. The first run of
+    # this file grouped majors in here too, and carried wrangler-action from
+    # v3 to v4 on a green tick that had not tested it: CI skips the publish
+    # step because it holds no credentials, so the one action that matters
+    # most was the one nothing exercised.
     groups:
-      actions:
+      actions-minor-and-patch:
         patterns:
           - '*'
+        update-types:
+          - minor
+          - patch
     commit-message:
       prefix: 'chore'
