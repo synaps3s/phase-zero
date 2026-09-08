@@ -30,11 +30,15 @@ import site from '../config/site.json' with { type: 'json' };
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const OUT = 'public/social';
+const defaultLanguage = languages.find((language) => language.default) ?? languages[0];
 
-/* The card is 1200 by 630, the size every network crops against, rendered at
-   twice that so it stays sharp on a dense screen. */
+/* Two sizes, because the two places a link gets shared crop differently.
+   1200 by 630 is what social networks expect; GitHub asks for 1280 by 640 for
+   the picture on a repository. Both are rendered at twice the size so they
+   stay sharp on a dense screen. */
 const WIDTH = 1200;
 const HEIGHT = 630;
+const GITHUB = { width: 1280, height: 640 };
 
 /** Read straight from the stylesheet, so the card cannot drift from the site. */
 function tokens() {
@@ -61,7 +65,7 @@ const font = readFileSync(
   'node_modules/@fontsource-variable/jost/files/jost-latin-wght-normal.woff2',
 ).toString('base64');
 
-function card(language, t) {
+function card(language, t, size = { width: WIDTH, height: HEIGHT }) {
   /* The six saga colours, as the rows they light on the timeline. The labels
      are the project's own vocabulary and need no translation. */
   const spines = t.sagas
@@ -87,8 +91,8 @@ function card(language, t) {
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
-        width: ${WIDTH}px;
-        height: ${HEIGHT}px;
+        width: ${size.width}px;
+        height: ${size.height}px;
         background: ${t.void};
         font-family: 'Jost Variable', sans-serif;
         color: ${t.core};
@@ -207,16 +211,27 @@ writeFileSync(join(OUT, 'livery.svg'), bar);
 console.log(`Wrote ${OUT}/livery.svg from ${t.sagas.length} saga colours.`);
 
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new' });
-for (const language of languages) {
-  const file = join(tmpdir(), `phase-zero-card-${language.code}.html`);
-  writeFileSync(file, card(language, t));
+
+async function shoot(name, language, size) {
+  const file = join(tmpdir(), `phase-zero-card-${name}.html`);
+  writeFileSync(file, card(language, t, size));
 
   const page = await browser.newPage();
-  await page.setViewport({ width: WIDTH, height: HEIGHT, deviceScaleFactor: 2 });
+  await page.setViewport({ ...size, deviceScaleFactor: 2 });
   await page.goto(`file://${file}`, { waitUntil: 'load' });
   // The card is one line of large type: a font that arrives late ruins it.
   await page.evaluate(() => document.fonts.ready);
-  await page.screenshot({ path: join(OUT, `${language.code}.png`) });
-  console.log(`Wrote ${OUT}/${language.code}.png at ${WIDTH * 2} by ${HEIGHT * 2}.`);
+  await page.screenshot({ path: join(OUT, `${name}.png`) });
+  console.log(`Wrote ${OUT}/${name}.png at ${size.width * 2} by ${size.height * 2}.`);
+  await page.close();
 }
+
+for (const language of languages) {
+  await shoot(language.code, language, { width: WIDTH, height: HEIGHT });
+}
+
+/* The repository's own picture. English, because that is the language the
+   repository itself is written in. */
+await shoot('github', defaultLanguage, GITHUB);
+
 await browser.close();
