@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 10400
+  setting: "1983"
+  source: "https://en.wikipedia.org/wiki/X-Men_(film_series)#Timeline"
 
 requires: [x-men-days-of-future-past]
 leadsTo: []
@@ -31,5 +31,8 @@ sources:
     accessed: 2026-09-07
   - url: "https://en.wikipedia.org/wiki/X-Men:_Days_of_Future_Past"
     title: "X-Men: Days of Future Past, Wikipedia"
+    accessed: 2026-09-08
+  - url: "https://en.wikipedia.org/wiki/X-Men_(film_series)#Timeline"
+    title: "X-Men (film series), Wikipedia"
     accessed: 2026-09-08
 verified: 2026-09-07

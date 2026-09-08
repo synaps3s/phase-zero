@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 10200
+  setting: "1962"
+  source: "https://en.wikipedia.org/wiki/X-Men_(film_series)#Timeline"
 
 requires: []
 leadsTo: []
@@ -29,4 +29,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/X-Men:_First_Class"
     title: "X-Men: First Class, Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/X-Men_(film_series)#Timeline"
+    title: "X-Men (film series), Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07

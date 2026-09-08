@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 10800
+  setting: "2006"
+  source: "https://en.wikipedia.org/wiki/X-Men_(film_series)#Timeline"
 
 requires: [x2]
 leadsTo: []
@@ -29,4 +29,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/X-Men:_The_Last_Stand"
     title: "X-Men: The Last Stand, Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/X-Men_(film_series)#Timeline"
+    title: "X-Men (film series), Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07
