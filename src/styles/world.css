@@ -1116,7 +1116,6 @@ a.plate:focus-visible {
   color: var(--ink);
   background: var(--panel-solid);
   border: 1px solid var(--hairline);
-  border-radius: 999px;
   box-shadow: var(--shadow-2);
   cursor: pointer;
   transition:
@@ -1273,7 +1272,6 @@ a.plate:focus-visible {
   text-transform: uppercase;
   color: var(--void);
   background: var(--livery-base, var(--livery));
-  border-radius: 999px;
   padding: 0.12em 0.6em;
 }
 
@@ -1285,7 +1283,6 @@ a.plate:focus-visible {
   letter-spacing: 0.06em;
   color: var(--livery-base);
   border: 1px solid color-mix(in oklab, var(--livery-base) 40%, transparent);
-  border-radius: 999px;
   padding: 0.1em 0.5em;
 }
 
