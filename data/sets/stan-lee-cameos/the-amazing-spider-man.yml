@@ -1,0 +1,12 @@
+id: the-amazing-spider-man
+set: stan-lee-cameos
+designation: School librarian
+order: 18
+tint: null
+firstAppearance: the-amazing-spider-man
+lastAppearance: null
+sources:
+  - url: https://en.wikipedia.org/wiki/List_of_cameo_appearances_by_Stan_Lee
+    title: List of cameo appearances by Stan Lee, Wikipedia
+    accessed: 2026-09-08
+verified: 2026-09-08

@@ -1,0 +1,13 @@
+id: stan-lee-cameos
+kind: appearance
+universe: unbound
+saga: unbound
+# The cameos run across every continuity in the catalogue, so there is no one
+# franchise they belong to and the set takes the unbound livery on its own.
+franchise: null
+order: 9
+sources:
+  - url: https://en.wikipedia.org/wiki/List_of_cameo_appearances_by_Stan_Lee
+    title: List of cameo appearances by Stan Lee, Wikipedia
+    accessed: 2026-09-08
+verified: 2026-09-08

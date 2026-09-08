@@ -1,0 +1,15 @@
+id: daredevil-s1
+set: stan-lee-cameos
+designation: Police officer in a photograph
+order: 26
+tint: null
+firstAppearance: daredevil-s1
+lastAppearance: null
+sources:
+  - url: https://en.wikipedia.org/wiki/List_of_cameo_appearances_by_Stan_Lee
+    title: List of cameo appearances by Stan Lee, Wikipedia
+    accessed: 2026-09-08
+  - url: https://www.cinemablend.com/television/Stan-Lee-Did-Have-Cameo-Daredevil-Get-Details-71306.html
+    title: Stan Lee Did Have A Cameo In Daredevil, Get The Details, CinemaBlend
+    accessed: 2026-09-08
+verified: 2026-09-08

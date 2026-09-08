@@ -1,0 +1,12 @@
+id: thor-the-dark-world
+set: stan-lee-cameos
+designation: Mental ward patient
+order: 21
+tint: null
+firstAppearance: thor-the-dark-world
+lastAppearance: null
+sources:
+  - url: https://en.wikipedia.org/wiki/List_of_cameo_appearances_by_Stan_Lee
+    title: List of cameo appearances by Stan Lee, Wikipedia
+    accessed: 2026-09-08
+verified: 2026-09-08

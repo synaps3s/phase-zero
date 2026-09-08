@@ -1,0 +1,12 @@
+id: guardians-of-the-galaxy
+set: stan-lee-cameos
+designation: Elderly gentleman on Xandar
+order: 24
+tint: null
+firstAppearance: guardians-of-the-galaxy
+lastAppearance: null
+sources:
+  - url: https://en.wikipedia.org/wiki/List_of_cameo_appearances_by_Stan_Lee
+    title: List of cameo appearances by Stan Lee, Wikipedia
+    accessed: 2026-09-08
+verified: 2026-09-08

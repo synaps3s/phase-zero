@@ -76,7 +76,7 @@ export function franchiseOf(id: string): Franchise | undefined {
  * bounded amount. The range is deliberately narrow: every step has to stay
  * above 4.5:1 against both grounds.
  */
-export function liveryStyle(sagaId: string, franchiseId?: string): string {
+export function liveryStyle(sagaId: string, franchiseId?: string | null): string {
   const saga = sagaById.get(sagaId) ?? UNBOUND_SAGA;
   const franchise = franchiseId ? franchiseById.get(franchiseId) : undefined;
 
