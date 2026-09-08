@@ -12,7 +12,9 @@ titles:
   - the-fantastic-four-first-steps
   - spider-man-brand-new-day
 sources:
-  - url: "https://en.wikipedia.org/wiki/Phase_Six_of_the_Marvel_Cinematic_Universe"
-    title: "Phase Six of the Marvel Cinematic Universe, Wikipedia"
-    accessed: 2026-09-07
-verified: 2026-09-07
+  # The article was moved. The old title, Phase_Six_of_the_Marvel_Cinematic_Universe,
+  # now returns 404; this is the same subject at its current address.
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe:_Phase_Six"
+    title: "Marvel Cinematic Universe: Phase Six, Wikipedia"
+    accessed: 2026-09-08
+verified: 2026-09-08
