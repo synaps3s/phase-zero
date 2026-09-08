@@ -26,7 +26,9 @@ interface Row {
   href: string;
   haystack: string;
   saga: string;
-  franchise?: string;
+  /* Null for a set that belongs to no single franchise, which takes its
+     saga's livery rather than a shade inside one. */
+  franchise?: string | null;
 }
 
 const rows: Row[] = [];
