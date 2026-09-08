@@ -2610,3 +2610,42 @@ a:focus-visible .emblem-halo {
     align-items: baseline;
   }
 }
+
+/* --- Share card ------------------------------------------------------ */
+
+/* Sits under the tally it is about. Amber rather than a saga colour, because
+   amber is the one state in this system that means "watched", and that is
+   exactly what the card counts. */
+.share-card {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  margin: 0 0 var(--s5);
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--hairline);
+  border-inline-start: 2px solid var(--watched);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease);
+}
+
+.share-card:hover,
+.share-card:focus-visible {
+  background: var(--watched-soft);
+  color: var(--watched);
+  border-color: var(--hairline-strong);
+  border-inline-start-color: var(--watched);
+}
+
+.share-card[disabled] {
+  cursor: progress;
+  color: var(--ink-faint);
+}

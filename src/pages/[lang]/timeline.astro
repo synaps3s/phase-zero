@@ -18,6 +18,11 @@ const t = useTranslations(language.code);
 
 const TIER_RANK: Record<string, number> = { essential: 1, extended: 2, complete: 3 };
 
+/* The order the shared card lists the sagas in, which is the order the
+   catalogue tells its story. Named here rather than in the script so the
+   labels can be translated with everything else. */
+const SHARE_SAGAS = ['infinity', 'multiverse', 'next', 'fox', 'sony', 'unbound'];
+
 /* Every title is rendered, in release order, and the browser reorders and
    filters what is already here. With no JavaScript the page is still the
    complete catalogue in a sensible order, which is the point. */
@@ -186,6 +191,27 @@ const mapTitles = rows
       data-remaining-done={t('timeline.remainingDone')}
     >{t('timeline.showing', { count: rows.length, total: rows.length })}</p>
 
+    {/* Drawn in the reader's own browser, because what they have watched is
+        the one thing this project knows about a person and it does not leave
+        the machine. Hidden until the script has run and the browser has said
+        it can produce a file at all. */}
+    <button
+      type="button"
+      class="share-card"
+      data-share-card
+      hidden
+      data-watched={t('share.watched')}
+      data-released={t('share.released')}
+      data-hours-watched={t('share.hoursWatched', { hours: '{hours}' })}
+      data-hours-left={t('share.hoursLeft', { hours: '{hours}' })}
+      data-by-saga={t('share.bySaga')}
+      data-sagas={JSON.stringify(
+        Object.fromEntries(SHARE_SAGAS.map((saga) => [saga, t(`saga.${saga}`)])),
+      )}
+      data-filename={t('share.filename')}
+      data-busy={t('share.busy')}
+    >{t('share.button')}</button>
+
     <ol
       class="shelf"
       data-shelf
@@ -262,5 +288,6 @@ const mapTitles = rows
   <script>
     import '../../scripts/timeline';
     import '../../scripts/progress';
+    import '../../scripts/share-card';
   </script>
 </Base>
