@@ -7,6 +7,7 @@ import { languages, getLanguage, useTranslations, localePath } from '../../lib/i
 import { resolveProse } from '../../lib/content';
 import { franchiseName, universeOf } from '../../lib/livery';
 import { leadsToMap } from '../../lib/connections';
+import { searchable } from '../../lib/search-text';
 
 export function getStaticPaths() {
   return languages.map((language) => ({ params: { lang: language.code } }));
@@ -45,9 +46,9 @@ for (const [index, entry] of titles.entries()) {
     facts: entry,
     title,
     releaseOrder: index + 1,
-    search: [title, t(`saga.${entry.data.saga}`), franchiseName(entry.data.franchise)]
-      .join(' ')
-      .toLowerCase(),
+    search: searchable(
+      [title, t(`saga.${entry.data.saga}`), franchiseName(entry.data.franchise)].join(' '),
+    ),
   });
 }
 

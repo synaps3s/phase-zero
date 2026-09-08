@@ -5,6 +5,7 @@ import { languages, getLanguage, useTranslations, localePath } from '../../../li
 import { resolveProse } from '../../../lib/content';
 import Emblem from '../../../components/Emblem.astro';
 import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
+import { searchable } from '../../../lib/search-text';
 
 export function getStaticPaths() {
   return languages.map((language) => ({ params: { lang: language.code } }));
@@ -51,7 +52,9 @@ for (const person of await getCollection('characters')) {
     universe: universeOf(person.data.universe),
     appearances: person.data.appearsIn.length,
     alignment: person.data.alignment,
-    haystack: `${prose.entry.data.title} ${prose.entry.data.tagline ?? ''} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)}`.toLowerCase(),
+    haystack: searchable(
+      `${prose.entry.data.title} ${prose.entry.data.tagline ?? ''} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)}`,
+    ),
   });
 }
 

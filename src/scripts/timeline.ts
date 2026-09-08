@@ -23,6 +23,7 @@ import {
   type Depth,
   type Order,
 } from '../lib/prefs';
+import { searchWords } from '../lib/search-text';
 
 const timeline = document.querySelector<HTMLElement>('[data-timeline]');
 
@@ -45,7 +46,10 @@ if (timeline) {
     order: getOrder(),
     depth: getDepth(),
     separate: getSeparate(),
-    query: '',
+    /* The typed query, reduced the same way the rows were, so "spiderman"
+       finds "Spider-Man". Held as words rather than a line so they can match
+       in any order. */
+    words: [] as string[],
   };
 
   const watched = getWatched();
@@ -81,7 +85,8 @@ if (timeline) {
 
       const allowed = isSeparate ? state.separate && state.depth === 3 : withinDepth;
 
-      const matches = state.query === '' || (row.dataset.search ?? '').includes(state.query);
+      const haystack = row.dataset.search ?? '';
+      const matches = state.words.every((word) => haystack.includes(word));
       const visible = allowed && matches;
 
       row.hidden = !visible;
@@ -199,13 +204,13 @@ if (timeline) {
   }
 
   filterInput?.addEventListener('input', () => {
-    state.query = filterInput.value.trim().toLowerCase();
+    state.words = searchWords(filterInput.value);
     apply();
   });
 
   document.querySelector('[data-clear-filter]')?.addEventListener('click', () => {
     if (filterInput) filterInput.value = '';
-    state.query = '';
+    state.words = [];
     apply();
     filterInput?.focus();
   });

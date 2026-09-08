@@ -6,6 +6,8 @@
  * script blocked the page is still a complete, linked list of everything on
  * the site.
  */
+import { searchWords } from '../lib/search-text';
+
 const input = document.querySelector<HTMLInputElement>('[data-search-input]');
 const list = document.querySelector<HTMLElement>('[data-results]');
 
@@ -22,9 +24,10 @@ if (input && list) {
   let alignment = 'all';
 
   function apply(): void {
-    /* Every word has to match, in any order, so "iron 2010" finds what
-       "2010 iron" finds. Matching the whole string would not. */
-    const words = input!.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    /* Reduced the same way the haystacks were, so a hyphen inside a name
+       cannot decide whether it is found. Every word has to match, in any
+       order, so "iron 2010" finds what "2010 iron" finds. */
+    const words = searchWords(input!.value);
     let shown = 0;
 
     for (const row of rows) {

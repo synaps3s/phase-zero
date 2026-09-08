@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../lib/i18n';
 import { resolveProse } from '../../lib/content';
 import { liveryStyle, franchiseName } from '../../lib/livery';
+import { searchable } from '../../lib/search-text';
 
 export function getStaticPaths() {
   return languages.map((language) => ({ params: { lang: language.code } }));
@@ -43,7 +44,9 @@ for (const entry of await getCollection('titles')) {
     label: prose.entry.data.title,
     detail: [year, franchise, t(`saga.${entry.data.saga}`)].filter(Boolean).join('   '),
     href: localePath(language.code, 'titles', entry.data.id),
-    haystack: `${prose.entry.data.title} ${franchise} ${t(`saga.${entry.data.saga}`)} ${year} ${prose.entry.data.oneLine}`.toLowerCase(),
+    haystack: searchable(
+      `${prose.entry.data.title} ${franchise} ${t(`saga.${entry.data.saga}`)} ${year} ${prose.entry.data.oneLine}`,
+    ),
     saga: entry.data.saga,
     franchise: entry.data.franchise,
   });
@@ -58,7 +61,7 @@ for (const entry of sets) {
     label: prose.entry.data.title,
     detail: t(`collections.kind.${entry.data.kind}`),
     href: localePath(language.code, 'collections', entry.data.id),
-    haystack: `${prose.entry.data.title} ${prose.entry.data.oneLine}`.toLowerCase(),
+    haystack: searchable(`${prose.entry.data.title} ${prose.entry.data.oneLine}`),
     saga: entry.data.saga,
     franchise: entry.data.franchise,
   });
@@ -75,7 +78,7 @@ for (const entry of await getCollection('setPieces')) {
     label: prose.entry.data.title,
     detail: parentProse?.entry.data.title ?? entry.data.set,
     href: `${localePath(language.code, 'collections', entry.data.set)}#${entry.data.id}`,
-    haystack: `${prose.entry.data.title} ${entry.data.designation} ${prose.entry.data.oneLine}`.toLowerCase(),
+    haystack: searchable(`${prose.entry.data.title} ${entry.data.designation} ${prose.entry.data.oneLine}`),
     saga: parent.data.saga,
   });
 }
@@ -88,7 +91,7 @@ for (const entry of await getCollection('glossary')) {
     label: prose.entry.data.title,
     detail: prose.entry.data.oneLine,
     href: `${localePath(language.code, 'glossary')}#${entry.data.id}`,
-    haystack: `${prose.entry.data.title} ${prose.entry.data.oneLine}`.toLowerCase(),
+    haystack: searchable(`${prose.entry.data.title} ${prose.entry.data.oneLine}`),
     saga: 'next',
   });
 }
@@ -103,7 +106,7 @@ for (const entry of await getCollection('guides')) {
     label: prose.entry.data.title,
     detail: prose.entry.data.oneLine,
     href: localePath(language.code, 'guides', slug),
-    haystack: `${prose.entry.data.title} ${prose.entry.data.oneLine}`.toLowerCase(),
+    haystack: searchable(`${prose.entry.data.title} ${prose.entry.data.oneLine}`),
     saga: 'multiverse',
   });
 }
