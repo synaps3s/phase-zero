@@ -61,7 +61,12 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=phase-zero
+          # The project name decides the address: a project called x is served
+          # at x.pages.dev. It has to match the url in config/site.json, which
+          # is where every canonical link on all 581 pages comes from, or the
+          # site publishes while telling search engines it lives somewhere
+          # that does not exist.
+          command: pages deploy dist --project-name=phasezero
 
       - name: Explain why nothing was published
         if: env.HAS_CLOUDFLARE_CREDENTIALS != 'true'
