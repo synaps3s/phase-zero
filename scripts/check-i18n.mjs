@@ -51,7 +51,52 @@ if (!sourceStrings) {
 }
 const sourceKeys = Object.keys(sourceStrings);
 
-const AREAS = ['titles', 'characters', 'sets', 'glossary', 'universes', 'phases', 'paths', 'organisations', 'questions', 'guides'];
+/*
+ * A key the code asks for that no language defines.
+ *
+ * This check exists because it already happened: the home page asked for
+ * home.firstRunLede, which was defined nowhere, and t() answers a key it does
+ * not know with the key itself. So the site's most visited page carried the
+ * literal string "home.firstRunLede" as its description, in both languages,
+ * where every search engine and every shared link would read it.
+ *
+ * Nothing else could have caught it. The report below compares languages
+ * against each other, and a key missing from all of them is missing from
+ * neither side of that comparison. The lint reads content, not code.
+ *
+ * Plural keys are referenced without the category, so t('x.count') is asking
+ * for x.count.one and x.count.other, and either one satisfies it.
+ */
+const PLURAL_CATEGORIES = new Set(['zero', 'one', 'two', 'few', 'many', 'other']);
+const pluralBases = new Set(
+  sourceKeys
+    .filter((key) => PLURAL_CATEGORIES.has(key.split('.').pop()))
+    .map((key) => key.slice(0, key.lastIndexOf('.'))),
+);
+
+function sourceFiles(directory) {
+  const found = [];
+  for (const entry of readdirSync(directory)) {
+    const full = join(directory, entry);
+    if (statSync(full).isDirectory()) found.push(...sourceFiles(full));
+    else if (entry.endsWith('.astro') || entry.endsWith('.ts')) found.push(full);
+  }
+  return found;
+}
+
+for (const file of sourceFiles('src')) {
+  const code = readFileSync(file, 'utf8');
+  for (const [, key] of code.matchAll(/\bt\(\s*'([a-zA-Z0-9_.]+)'/g)) {
+    if (!(key in sourceStrings) && !pluralBases.has(key)) {
+      errors.push(
+        `${file}: asks for the interface string "${key}", which no language defines. ` +
+          `A page would show the key itself where the text should be.`,
+      );
+    }
+  }
+}
+
+const AREAS =['titles', 'characters', 'sets', 'glossary', 'universes', 'phases', 'paths', 'organisations', 'questions', 'guides'];
 const sourceContent = Object.fromEntries(
   AREAS.map((area) => [area, listMarkdown(`content/${source.code}/${area}`)]),
 );

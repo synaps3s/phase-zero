@@ -91,7 +91,7 @@ const tagline = site.tagline[language.code as keyof typeof site.tagline] ?? site
 <Base
   language={language.code}
   title={`${site.name}. ${tagline}`}
-  description={t('home.firstRunLede')}
+  description={t('home.description')}
   editPath={`content/${language.code}/guides/where-to-start.md`}
 >
   {first && (
