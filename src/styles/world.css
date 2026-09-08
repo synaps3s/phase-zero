@@ -2532,7 +2532,7 @@ a:focus-visible .emblem-halo {
   margin: 0 0 var(--s7);
   padding: var(--s5);
   border: 1px solid var(--hairline);
-  border-left: 3px solid var(--livery-base);
+  border-inline-start: 2px solid var(--livery);
   background: var(--panel);
 }
 
