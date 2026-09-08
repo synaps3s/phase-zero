@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 1100
+  setting: "2015"
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: []
 leadsTo: []
@@ -32,4 +32,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Daredevil_(TV_series)"
     title: "Daredevil (TV series), Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+    title: "Marvel Cinematic Universe timeline, Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07

@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 100
+  order: 200
   setting: "1943-1945"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: []
 leadsTo: [the-avengers]

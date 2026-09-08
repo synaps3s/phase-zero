@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1510
+  order: 2050
   setting: "2025"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [thor-ragnarok, avengers-endgame]
 leadsTo: []

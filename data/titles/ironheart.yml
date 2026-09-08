@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 2200
+  setting: "2025"
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [black-panther-wakanda-forever]
 leadsTo: []
@@ -29,4 +29,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Ironheart_(miniseries)"
     title: "Ironheart (miniseries), Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+    title: "Marvel Cinematic Universe timeline, Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07

@@ -15,10 +15,9 @@ release:
   status: released
 
 chronology:
-  # Sparse numbering leaves room to insert titles without renumbering the rest.
-  order: 300
+  order: 600
   setting: "2010"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: []
 leadsTo:

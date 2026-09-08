@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 710
+  order: 1020
   setting: "2014"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: []
 leadsTo: [avengers-infinity-war]

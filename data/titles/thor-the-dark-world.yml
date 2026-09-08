@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 600
+  order: 900
   setting: "2013"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [thor]
 leadsTo: [avengers-infinity-war]

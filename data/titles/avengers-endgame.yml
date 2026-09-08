@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1300
+  order: 1600
   setting: "2023"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [thor-ragnarok, avengers-infinity-war]
 leadsTo: []

@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 1210
+  setting: "2016"
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires:
   - jessica-jones-s1
@@ -33,4 +33,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
     title: "The Defenders (miniseries), Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+    title: "Marvel Cinematic Universe timeline, Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07

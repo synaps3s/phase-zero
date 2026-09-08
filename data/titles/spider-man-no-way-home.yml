@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1440
+  order: 1950
   setting: "2024"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires:
   - spider-man-2

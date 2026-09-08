@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 2300
+  setting: "2025-2027"
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [iron-man-3, shang-chi-and-the-legend-of-the-ten-rings]
 leadsTo: []
@@ -29,4 +29,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Wonder_Man_(TV_series)"
     title: "Wonder Man (TV series), Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+    title: "Marvel Cinematic Universe timeline, Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07

@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1430
+  order: 1940
   setting: "2024"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [avengers-endgame]
 leadsTo: []

@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 800
+  order: 1120
   setting: "2015"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [the-avengers]
 leadsTo: [captain-america-civil-war]

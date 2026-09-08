@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 720
+  order: 1040
   setting: "2014"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [guardians-of-the-galaxy]
 leadsTo: [avengers-infinity-war]

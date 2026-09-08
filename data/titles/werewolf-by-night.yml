@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 2100
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: []
 leadsTo: []
@@ -29,4 +29,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Werewolf_by_Night_(TV_special)"
     title: "Werewolf by Night (TV special), Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+    title: "Marvel Cinematic Universe timeline, Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07

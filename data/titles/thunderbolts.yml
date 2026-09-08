@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1710
+  order: 2910
   setting: "2027"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires:
   - ant-man-and-the-wasp

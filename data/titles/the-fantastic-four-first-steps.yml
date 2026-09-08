@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 150
+  order: 400
   setting: "1964"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: []
 leadsTo: []

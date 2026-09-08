@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: null
-  setting: null
-  source: null
+  order: 3000
+  setting: "2028"
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires:
   - shang-chi-and-the-legend-of-the-ten-rings
@@ -32,4 +32,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day"
     title: "Spider-Man: Brand New Day, Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+    title: "Marvel Cinematic Universe timeline, Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07

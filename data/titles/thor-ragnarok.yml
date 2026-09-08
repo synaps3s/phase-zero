@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1100
+  order: 1440
   setting: "2017"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires:
   - thor

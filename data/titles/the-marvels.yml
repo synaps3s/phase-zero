@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 1620
+  order: 2430
   setting: "2026"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires:
   - captain-marvel

@@ -15,9 +15,9 @@ release:
   status: released
 
 chronology:
-  order: 700
+  order: 1010
   setting: "2014"
-  source: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: [captain-america-the-first-avenger, the-avengers]
 leadsTo: [avengers-age-of-ultron]

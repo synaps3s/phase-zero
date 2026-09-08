@@ -16,9 +16,9 @@ release:
   status: released
 
 chronology:
-  order: null
+  order: 100
   setting: null
-  source: null
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
 
 requires: []
 leadsTo: []
@@ -30,4 +30,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Eyes_of_Wakanda"
     title: "Eyes of Wakanda, Wikipedia"
     accessed: 2026-09-07
+  - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+    title: "Marvel Cinematic Universe timeline, Wikipedia"
+    accessed: 2026-09-08
 verified: 2026-09-07
