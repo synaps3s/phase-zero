@@ -86,6 +86,14 @@ export const SIGILS: Record<string, string> = {
   'wilson-fisk': `<path d="M18 38 L30 38 L29 24 C33 22, 33 15, 28 14 C28 10, 20 10, 20 14 C15 15, 15 22, 19 24 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="24" y1="10" x2="24" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
   'jessica-jones': `<path d="M10 30 L24 16 L38 30" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.5" stroke-linecap="round"/><path d="M20 12 L22 26 L18 26 L20 38" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="22" r="2" fill="currentColor"/>`,
   'luke-cage': `<circle cx="18" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="30" cy="28" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M21 23 L24 24 M24 24 L27 25" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>`,
+  /* The fist itself, struck through a ring: what the character can do is
+     concentrate everything into one hand, once, and then have to wait. */
+  'iron-fist': `<circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.45"/><path d="M17 21 C17 17, 31 17, 31 21 L31 28 C31 32, 17 32, 17 28 Z" fill="currentColor"/><line x1="20" y1="24" x2="28" y2="24" stroke="var(--void)" stroke-width="1.2"/><path d="M24 6 L24 10 M24 38 L24 42 M6 24 L10 24 M38 24 L42 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+  /* Three claw marks. The simplest thing a tiger leaves behind. */
+  'white-tiger': `<path d="M14 12 C18 20, 20 30, 19 38" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M24 10 C28 19, 29 30, 27 38" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M34 13 C36 21, 36 31, 34 37" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`,
+  /* The amulet, which is the thing that actually passes from one of them to
+     the other, drawn as the stone in its setting. */
+  'angela-del-toro': `<path d="M24 9 L34 17 L30 34 L18 34 L14 17 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="24" cy="23" r="5.5" fill="currentColor"/><path d="M24 18.5 L24 27.5" stroke="var(--void)" stroke-width="1.6" stroke-linecap="round"/><path d="M14 17 L34 17" stroke="currentColor" stroke-width="1.1" opacity="0.5"/>`,
   'frank-castle': `<path d="M15 16 C15 12, 33 12, 33 16 L33 24 L28 24 L28 34 L20 34 L20 24 L15 24 Z" fill="currentColor"/><rect x="18" y="18" width="3.5" height="3" rx="1" fill="var(--void)"/><rect x="26.5" y="18" width="3.5" height="3" rx="1" fill="var(--void)"/>`,
   'peggy-carter': `<path d="M10 20 C14 15, 34 15, 38 20 L34 22 C28 19, 20 19, 14 22 Z" fill="currentColor"/><circle cx="24" cy="17" r="2.4" fill="currentColor"/><polygon points="24,26 26,30 24,33 22,30" fill="currentColor"/>`,
 
