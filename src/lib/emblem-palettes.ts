@@ -216,6 +216,13 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'mac-gargan': ['#4fd18a', '#241808', '#ffca4a', 'rgba(79,209,138,0.45)'],
   'jackson-brice': ['#ffca4a', '#241808', '#ff9a3c', 'rgba(255,202,74,0.4)'],
   'herman-schultz': ['#ff9a3c', '#241808', '#ffe6a8', 'rgba(255,154,60,0.45)'],
+  'daisy-johnson': ['#5fd0ff', '#141a24', '#e6ebf2', 'rgba(95,208,255,0.5)'],
+  'bobbi-morse': ['#e0b060', '#141a24', '#5fd0ff', 'rgba(224,176,96,0.4)'],
+  'robbie-reyes': ['#ff7a2f', '#140a06', '#ffca2f', 'rgba(255,122,47,0.55)'],
+  maximus: ['#c9a0ff', '#1a1030', '#ffca4a', 'rgba(201,160,255,0.45)'],
+  'carlton-drake': ['#8a97ad', '#0e1a24', '#c2d0e0', 'rgba(138,151,173,0.4)'],
+  'frances-barrison': ['#ff5a9a', '#1a0a14', '#e6ebf2', 'rgba(255,90,154,0.5)'],
+  knull: ['#4a5a78', '#05080f', '#ff4d4d', 'rgba(74,90,120,0.5)'],
 };
 
 export function paletteFor(id: string): Palette | null {

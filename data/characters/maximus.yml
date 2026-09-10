@@ -1,0 +1,20 @@
+id: maximus
+universe: earth-616
+franchise: marvel-television
+realName: Maximus
+alignment: villain
+sigil: null
+
+actors:
+  - name: Iwan Rheon
+
+firstAppearance: inhumans
+
+appearsIn:
+  - inhumans
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Inhumans_(TV_series)#Main"
+    title: "Inhumans (TV series), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

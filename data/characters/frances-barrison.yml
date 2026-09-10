@@ -1,0 +1,22 @@
+id: frances-barrison
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Frances Barrison
+alignment: villain
+sigil: null
+
+actors:
+  - name: Naomie Harris
+  - name: Olumide Olorunfemi
+    note: as a young Frances
+
+firstAppearance: venom-let-there-be-carnage
+
+appearsIn:
+  - venom-let-there-be-carnage
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage#Cast"
+    title: "Venom: Let There Be Carnage, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

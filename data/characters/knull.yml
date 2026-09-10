@@ -1,0 +1,20 @@
+id: knull
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: null
+alignment: villain
+sigil: null
+
+actors:
+  - name: Andy Serkis
+
+firstAppearance: venom-the-last-dance
+
+appearsIn:
+  - venom-the-last-dance
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Venom:_The_Last_Dance#Cast"
+    title: "Venom: The Last Dance, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
