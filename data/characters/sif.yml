@@ -1,0 +1,23 @@
+id: sif
+universe: earth-616
+franchise: thor
+realName: null
+alignment: hero
+
+actors:
+  - name: Jaimie Alexander
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - thor-the-dark-world
+  - agents-of-shield
+  - loki-s1
+  - thor-love-and-thunder
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Sif"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

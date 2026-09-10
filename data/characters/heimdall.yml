@@ -1,0 +1,24 @@
+id: heimdall
+universe: earth-616
+franchise: thor
+realName: null
+alignment: hero
+
+actors:
+  - name: Idris Elba
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - thor-the-dark-world
+  - avengers-age-of-ultron
+  - thor-ragnarok
+  - avengers-infinity-war
+  - thor-love-and-thunder
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Heimdall"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

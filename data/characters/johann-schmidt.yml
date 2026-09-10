@@ -1,0 +1,21 @@
+id: johann-schmidt
+universe: earth-616
+franchise: captain-america
+realName: Johann Schmidt
+alignment: villain
+
+actors:
+  - name: Hugo Weaving
+  - name: Ross Marquand
+
+firstAppearance: captain-america-the-first-avenger
+
+appearsIn:
+  - captain-america-the-first-avenger
+  - avengers-infinity-war
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Johann_Schmidt_/_Red_Skull"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

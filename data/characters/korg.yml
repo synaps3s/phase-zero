@@ -1,0 +1,21 @@
+id: korg
+universe: earth-616
+franchise: thor
+realName: null
+alignment: supporting
+
+actors:
+  - name: Taika Waititi
+
+firstAppearance: thor-ragnarok
+
+appearsIn:
+  - thor-ragnarok
+  - avengers-endgame
+  - thor-love-and-thunder
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Korg"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
