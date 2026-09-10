@@ -1,0 +1,23 @@
+id: surtur
+universe: earth-616
+franchise: thor
+realName: null
+alignment: villain
+sigil: null
+
+actors:
+  - name: Clancy Brown
+    note: voice
+  - name: Taika Waititi
+    note: motion capture
+
+firstAppearance: thor-ragnarok
+
+appearsIn:
+  - thor-ragnarok
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Surtur"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

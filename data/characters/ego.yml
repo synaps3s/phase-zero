@@ -1,0 +1,20 @@
+id: ego
+universe: earth-616
+franchise: guardians
+realName: Ego
+alignment: villain
+sigil: null
+
+actors:
+  - name: Kurt Russell
+
+firstAppearance: guardians-of-the-galaxy-vol-2
+
+appearsIn:
+  - guardians-of-the-galaxy-vol-2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Ego"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

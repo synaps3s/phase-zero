@@ -1,0 +1,22 @@
+id: sharon-carter
+universe: earth-616
+franchise: captain-america
+realName: Sharon Carter
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Emily VanCamp
+
+firstAppearance: captain-america-the-winter-soldier
+
+appearsIn:
+  - captain-america-the-winter-soldier
+  - captain-america-civil-war
+  - the-falcon-and-the-winter-soldier
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Sharon_Carter_(Marvel_Cinematic_Universe)"
+    title: "Sharon Carter (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

@@ -1,0 +1,21 @@
+id: brock-rumlow
+universe: earth-616
+franchise: captain-america
+realName: Brock Rumlow
+alignment: villain
+sigil: null
+
+actors:
+  - name: Frank Grillo
+
+firstAppearance: captain-america-the-winter-soldier
+
+appearsIn:
+  - captain-america-the-winter-soldier
+  - captain-america-civil-war
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Brock_Rumlow_/_Crossbones"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

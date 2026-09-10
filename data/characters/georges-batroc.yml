@@ -1,0 +1,21 @@
+id: georges-batroc
+universe: earth-616
+franchise: captain-america
+realName: Georges Batroc
+alignment: villain
+sigil: null
+
+actors:
+  - name: Georges St-Pierre
+
+firstAppearance: captain-america-the-winter-soldier
+
+appearsIn:
+  - captain-america-the-winter-soldier
+  - the-falcon-and-the-winter-soldier
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Georges_Batroc"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

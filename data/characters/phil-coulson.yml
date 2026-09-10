@@ -1,0 +1,27 @@
+id: phil-coulson
+universe: earth-616
+franchise: nick-fury
+realName: Phillip J. Coulson
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Clark Gregg
+
+firstAppearance: iron-man
+
+appearsIn:
+  - iron-man
+  - iron-man-2
+  - one-shot-the-consultant
+  - thor
+  - one-shot-a-funny-thing-happened
+  - the-avengers
+  - agents-of-shield
+  - captain-marvel
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Phil_Coulson"
+    title: "Phil Coulson, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

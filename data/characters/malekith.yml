@@ -1,0 +1,20 @@
+id: malekith
+universe: earth-616
+franchise: thor
+realName: Malekith
+alignment: villain
+sigil: null
+
+actors:
+  - name: Christopher Eccleston
+
+firstAppearance: thor-the-dark-world
+
+appearsIn:
+  - thor-the-dark-world
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Malekith_the_Accursed"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
