@@ -348,7 +348,6 @@ a.plate:focus-visible {
   justify-content: space-between;
   gap: var(--s3) var(--s4);
   padding-block: var(--s4);
-  border-bottom: 1px solid var(--hairline);
 }
 
 .wordmark {
@@ -945,14 +944,54 @@ a.plate:focus-visible {
    first, pushed to opposite ends; the sections take the second on their own.
    They used to sit inline on a wide screen, which worked with seven links
    and broke into three ragged rows at eleven. */
+/*
+ * The section list.
+ *
+ * One line, always, in every language. It used to wrap, and wrapping is the
+ * wrong behaviour for this row: a menu that is one line in English and two in
+ * Italian moves the whole page down by 40px depending on which language you
+ * are reading, and the second line reads as a separate, lesser menu rather
+ * than as the rest of the first one.
+ *
+ * So it scrolls instead. It takes the full window width rather than the page
+ * measure, because the row is the one part of the frame that has a real
+ * reason to be wider than the text, and past that it scrolls sideways with a
+ * fade on the end that runs out of room. That holds however many sections
+ * there are and however long a translation turns out to be, which tuning the
+ * gap does not.
+ */
 .sections {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--s4) var(--s5);
   order: 3;
-  width: 100%;
-  padding-top: var(--s4);
-  border-top: 1px solid var(--hairline);
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  /* Starts where the page's own text starts, so the first section sits under
+     the wordmark rather than out in the margin, and only uses the window's
+     extra width for the far end of the row. */
+  padding-inline: calc(50vw - min(50vw, var(--page) / 2) + var(--gutter));
+  padding-block: var(--s4);
+  /* Both rules belong to this row rather than one to it and one to the
+     header, so that the two lines are the same length. The header is inside
+     the page measure and this is not. */
+  border-block: 1px solid var(--hairline);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  /* The fade only appears on the side there is more to see, because the mask
+     is anchored to the scroll container's own box. */
+  mask-image: linear-gradient(to right, #000 calc(100% - 3rem), transparent);
+}
+
+.sections::-webkit-scrollbar {
+  display: none;
+}
+
+/* Nothing in the row may break: a section name that wraps inside a scrolling
+   row produces a two-line item next to one-line items. */
+.sections a {
+  white-space: nowrap;
 }
 
 .sections a {

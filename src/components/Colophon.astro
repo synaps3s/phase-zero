@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { useTranslations } from '../lib/i18n';
+import { localePath, useTranslations } from '../lib/i18n';
 import site from '../../config/site.json';
 
 interface Props {
@@ -86,6 +86,7 @@ const people = (await getCollection('characters')).length;
     </p>
 
       <div class="colophon-row">
+        <a href={localePath(language, 'credits')}>{t('nav.credits')}</a>
         <a href={site.repository}>{t('footer.sourceCode')}</a>
         {editUrl && (
           <a href={editUrl}>{t(isDirectory ? 'footer.editThisSection' : 'footer.editThisPage')}</a>
