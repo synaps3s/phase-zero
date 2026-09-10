@@ -120,6 +120,88 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'michael-morbius': ['#7f93b5', '#161f2e', '#c9a0ff', 'rgba(127,147,181,0.45)'],
   kraven: ['#ff9a3c', '#241808', '#ffc16b', 'rgba(255,154,60,0.45)'],
   'cassandra-webb': ['#5fd0ff', '#161f2e', '#e6ebf2', 'rgba(95,208,255,0.45)'],
+
+  /* --- The Asgard court ------------------------------------------- */
+  'odin-borson': ['#e8c063', '#1e2a5a', '#ffe6a8', 'rgba(232,192,99,0.5)'],
+  frigga: ['#c9a0ff', '#2a1b4a', '#ffe0a0', 'rgba(201,160,255,0.4)'],
+  heimdall: ['#ffc16b', '#1a2540', '#7fd4ff', 'rgba(255,193,107,0.5)'],
+  sif: ['#c2d0e0', '#232f45', '#ff6b6b', 'rgba(194,208,224,0.4)'],
+  skurge: ['#8a97ad', '#2a2410', '#ffca4a', 'rgba(138,151,173,0.4)'],
+  surtur: ['#ff6a2f', '#3a0f08', '#ffd24a', 'rgba(255,106,47,0.6)'],
+  malekith: ['#4a5a78', '#0a0a14', '#c9a0ff', 'rgba(74,90,120,0.45)'],
+  korg: ['#8fb0a0', '#1a2a24', '#c7ffd8', 'rgba(143,176,160,0.4)'],
+
+  /* --- Out there --------------------------------------------------- */
+  ego: ['#c9a0ff', '#2a1b4a', '#7fd4ff', 'rgba(201,160,255,0.5)'],
+  'adam-warlock': ['#ffca4a', '#4a1c87', '#ffe6a8', 'rgba(255,202,74,0.5)'],
+  'high-evolutionary': ['#4fd18a', '#0e2a24', '#e6ebf2', 'rgba(79,209,138,0.4)'],
+  'taneleer-tivan': ['#e6ebf2', '#2a1b4a', '#c9a0ff', 'rgba(230,235,242,0.4)'],
+  grandmaster: ['#a06bff', '#3a1d95', '#ffca4a', 'rgba(160,107,255,0.5)'],
+  ronan: ['#a06bff', '#161f2e', '#5fd0ff', 'rgba(160,107,255,0.45)'],
+  'howard-the-duck': ['#ffca4a', '#3a2a10', '#5fd0ff', 'rgba(255,202,74,0.45)'],
+  'yon-rogg': ['#4fd1c5', '#0e2a3a', '#5fd0ff', 'rgba(79,209,197,0.45)'],
+  galactus: ['#a06bff', '#1a1030', '#5fd0ff', 'rgba(160,107,255,0.55)'],
+  'shalla-bal': ['#e6ebf2', '#161f2e', '#c2d0e0', 'rgba(230,235,242,0.5)'],
+  'harvey-elder': ['#c99a4a', '#2a1f10', '#ffd27a', 'rgba(201,154,74,0.4)'],
+
+  /* --- The ones who work at night ---------------------------------- */
+  blade: ['#c2d0e0', '#12060a', '#ff4d4d', 'rgba(194,208,224,0.45)'],
+  'johnny-blaze': ['#ff7a2f', '#1a0a06', '#ffd24a', 'rgba(255,122,47,0.55)'],
+  'jack-russell': ['#b08a5a', '#14100a', '#e6ebf2', 'rgba(176,138,90,0.45)'],
+  'elsa-bloodstone': ['#ff4d5e', '#1a0f14', '#ffca4a', 'rgba(255,77,94,0.45)'],
+  'man-thing': ['#6a8a4a', '#101a0e', '#4fd18a', 'rgba(106,138,74,0.45)'],
+
+  /* --- Street level ------------------------------------------------- */
+  'misty-knight': ['#ffca4a', '#2a1810', '#e6ebf2', 'rgba(255,202,74,0.45)'],
+  'colleen-wing': ['#4fd18a', '#10241a', '#ffe6a8', 'rgba(79,209,138,0.45)'],
+  davos: ['#3ad46a', '#0e2a1a', '#ff6b6b', 'rgba(58,212,106,0.45)'],
+  'trish-walker': ['#5fd0ff', '#231b45', '#ffca4a', 'rgba(95,208,255,0.45)'],
+  kilgrave: ['#a06bff', '#2a1b4a', '#c9a0ff', 'rgba(160,107,255,0.55)'],
+  'elektra-natchios': ['#ff4d4d', '#1a0808', '#ffca4a', 'rgba(255,77,77,0.5)'],
+  'dex-poindexter': ['#e6ebf2', '#1a1010', '#ff4d4d', 'rgba(230,235,242,0.45)'],
+  'billy-russo': ['#c2d0e0', '#141a24', '#5fd0ff', 'rgba(194,208,224,0.4)'],
+  'bastian-cooper': ['#ff4d4d', '#0a0a0f', '#e6ebf2', 'rgba(255,77,77,0.5)'],
+
+  /* --- The other studio's mutants ----------------------------------- */
+  'remy-lebeau': ['#ff5a9a', '#2a1030', '#ffca4a', 'rgba(255,90,154,0.5)'],
+  'kurt-wagner': ['#5a7aff', '#0e1030', '#ffca4a', 'rgba(90,122,255,0.5)'],
+  'marie-dcanto': ['#4fd18a', '#231b45', '#ffe6a8', 'rgba(79,209,138,0.45)'],
+  'kitty-pryde': ['#ffca4a', '#231b45', '#5fd0ff', 'rgba(255,202,74,0.45)'],
+  'betsy-braddock': ['#ff5a9a', '#2a1b4a', '#c9a0ff', 'rgba(255,90,154,0.5)'],
+  'cain-marko': ['#ff9a3c', '#2a1808', '#c2d0e0', 'rgba(255,154,60,0.45)'],
+  'fred-dukes': ['#b08a5a', '#241808', '#ffd27a', 'rgba(176,138,90,0.4)'],
+  'john-allerdyce': ['#ff7a2f', '#2a0f08', '#ffd24a', 'rgba(255,122,47,0.5)'],
+  'yuriko-oyama': ['#c2d0e0', '#161f2e', '#ff4d4d', 'rgba(194,208,224,0.45)'],
+  'ichiro-yashida': ['#c2d0e0', '#2a1010', '#ff4d4d', 'rgba(194,208,224,0.4)'],
+  'sebastian-shaw': ['#e0b060', '#2a1010', '#ff4d4d', 'rgba(224,176,96,0.45)'],
+  'cassandra-nova': ['#e6ebf2', '#1a1030', '#a06bff', 'rgba(230,235,242,0.45)'],
+  'negasonic-teenage-warhead': ['#ffca2f', '#141414', '#ff7a2f', 'rgba(255,202,47,0.5)'],
+  laura: ['#c2d0e0', '#1a1010', '#ffca2f', 'rgba(194,208,224,0.45)'],
+
+  /* --- The agency and the people around it -------------------------- */
+  'phil-coulson': ['#5aa0ff', '#1a2230', '#ffca4a', 'rgba(90,160,255,0.4)'],
+  'sharon-carter': ['#5aa0ff', '#16277a', '#c2d0e0', 'rgba(90,160,255,0.4)'],
+  'brock-rumlow': ['#8a97ad', '#141414', '#ff4d4d', 'rgba(138,151,173,0.4)'],
+  'georges-batroc': ['#5aa0ff', '#101830', '#ffca4a', 'rgba(90,160,255,0.4)'],
+  'johann-schmidt': ['#ff4d4d', '#1a0808', '#e6ebf2', 'rgba(255,77,77,0.55)'],
+  'obadiah-stane': ['#8a97ad', '#161f2e', '#ffc16b', 'rgba(138,151,173,0.4)'],
+  'ivan-vanko': ['#5fd0ff', '#141a24', '#ff4d4d', 'rgba(95,208,255,0.45)'],
+  'pepper-potts': ['#5fd0ff', '#1a2540', '#ff9a5a', 'rgba(95,208,255,0.45)'],
+  'riri-williams': ['#ff5a4d', '#3a1d95', '#5fd0ff', 'rgba(255,90,77,0.5)'],
+  'emil-blonsky': ['#6a8a4a', '#101a0e', '#a7ffb8', 'rgba(106,138,74,0.45)'],
+  'samuel-sterns': ['#4fd18a', '#101a24', '#c9a0ff', 'rgba(79,209,138,0.45)'],
+  vulture: ['#4fd18a', '#141414', '#ffca4a', 'rgba(79,209,138,0.45)'],
+  mysterio: ['#4fd18a', '#2a1b4a', '#c9a0ff', 'rgba(79,209,138,0.5)'],
+  'ulysses-klaue': ['#5fd0ff', '#141414', '#ff4d4d', 'rgba(95,208,255,0.45)'],
+
+  /* --- Wakanda, and the sanctum ------------------------------------- */
+  ramonda: ['#e6ebf2', '#1a1030', '#c9a0ff', 'rgba(230,235,242,0.4)'],
+  nakia: ['#3ad48a', '#0e2a1a', '#ffd27a', 'rgba(58,212,138,0.45)'],
+  mbaku: ['#d8d0c0', '#141a14', '#8fb0a0', 'rgba(216,208,192,0.4)'],
+  'the-ancient-one': ['#ffca4a', '#2a1b4a', '#e6ebf2', 'rgba(255,202,74,0.45)'],
+  'karl-mordo': ['#4fd18a', '#101a24', '#ffca4a', 'rgba(79,209,138,0.45)'],
+  kaecilius: ['#a06bff', '#1a1030', '#ff4d4d', 'rgba(160,107,255,0.45)'],
+  dormammu: ['#a06bff', '#2a0f4a', '#ff7a2f', 'rgba(160,107,255,0.55)'],
 };
 
 export function paletteFor(id: string): Palette | null {
