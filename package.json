@@ -19,7 +19,8 @@
     "lint:text": "node scripts/lint-text.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
     "check:sources": "node scripts/check-sources.mjs",
-    "validate": "npm run lint:text && npm run check:i18n && npm run check:sources && npm run check && npm run build",
+    "validate": "npm run lint:text && npm run check:i18n && npm run check:sources && npm run check && npm run build && npm run check:figures",
+    "check:figures": "node scripts/check-figures.mjs",
     "check:links": "node scripts/check-links.mjs"
   },
   "dependencies": {

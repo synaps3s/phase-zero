@@ -48,3 +48,6 @@ jobs:
 
       - name: Build the site
         run: npm run build
+
+      - name: Check the readme figures against the catalogue
+        run: npm run check:figures

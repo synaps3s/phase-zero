@@ -23,13 +23,14 @@
 
 ## What is in it
 
-Counted on 8 September 2026. The site's colophon counts the same things live.
+Counted on 10 September 2026. The site's colophon counts the same things live,
+so if these disagree, the colophon is right and this table is stale.
 
 | | | | |
 |---|---|---|---|
-| **161** titles | **102** characters | **47** glossary terms | **12** organisations |
+| **161** titles | **220** characters | **48** glossary terms | **20** organisations |
 | **9** collections, 90 pieces | **9** watch paths | **24** questions answered | **5** guides |
-| **585** citations across **311** sources | **2** languages, both complete | **583** static pages | **0** third-party scripts |
+| **724** citations across **430** sources | **2** languages, both complete | **818** static pages | **0** third-party scripts |
 
 ---
 
@@ -37,8 +38,8 @@ Counted on 8 September 2026. The site's colophon counts the same things live.
 
 Phase Zero explains the Marvel Cinematic Universe and the two connected
 universes made by other studios: the Fox X-Men and Deadpool films, and Sony's
-Spider-Man and Venom films. Together that is more than a hundred and twenty
-films and series made over almost twenty years, released in one order and set in
+Spider-Man and Venom films. Together that is more than a hundred and sixty films
+and series made over almost twenty years, released in one order and set in
 another, by three companies that did not always plan to be connected.
 
 It is not a list. Lists already exist. This is a guide that explains: what to
@@ -52,7 +53,7 @@ When a new film comes out, the watch order here is updated and published.
 Two people at once, and this shapes every decision in the project.
 
 **Someone who has never seen any of it** and is looking at a wall of a hundred
-and twenty titles wondering where the door is.
+and sixty titles wondering where the door is.
 
 **Someone who has seen all of it** and wants to know why a date in one series
 contradicts a line in a film, or which source says what.
@@ -154,7 +155,7 @@ and about anything that is somebody else's to licence.
 ### Your progress stays in your browser
 
 You can mark what you have already watched, and it is still there the next time
-you open the site in the same browser. Working through a hundred and twenty
+you open the site in the same browser. Working through a hundred and sixty
 titles takes months, and losing your place every visit would make the guide much
 less useful.
 
@@ -204,17 +205,38 @@ public/     files served as they are, including the preview cards
 
 Here is one film across the whole system.
 
-`data/titles/iron-man.yml`, written once for every language:
+`data/titles/iron-man.yml`, written once for every language. This is the real
+file, with the fields that are empty for this title left out:
 
 ```yaml
 id: iron-man
 type: film
+universe: earth-616
+franchise: iron-man
+saga: infinity
 phase: 1
+tier: essential
+
 release:
   date: 2008-05-02
   runtime: 126
+  status: released
+
+chronology:
+  order: 600
+  setting: "2010"
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+
+requires: []
+leadsTo:
+  - the-avengers
+
 sources:
-  - url: https://www.marvel.com/movies/iron-man
+  - url: https://en.wikipedia.org/wiki/Iron_Man_(2008_film)
+    title: Iron Man (2008 film), Wikipedia
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
     accessed: 2026-09-07
 verified: 2026-09-07
 ```
@@ -224,13 +246,15 @@ verified: 2026-09-07
 ```markdown
 ---
 title: Iron Man
-oneLine: A weapons manufacturer builds a flying suit of armor, then turns it
-  against the weapons he sold.
+oneLine: A weapons manufacturer builds a flying suit of armor to escape his
+  captors, then turns it against the weapons his own company sold.
+tagline: The film that started all of this
 ---
 
-Billionaire Tony Stark is captured in Afghanistan and escapes in an armored suit
-he builds in captivity. Back home he refines it, and decides to stop making the
-weapons that put him there.
+Tony Stark inherited a weapons company and never questioned it. He is brilliant,
+rich, and completely uninterested in what happens after a shipment leaves the
+factory. That ends when he is ambushed during a demonstration in Afghanistan,
+wounded by one of his own devices, and held in a cave by the people who bought it.
 
 :::detail{title="Why it matters"}
 This is the film that established the shared-universe format, and the

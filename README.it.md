@@ -24,13 +24,15 @@
 
 ## Cosa c'è dentro
 
-Contato l'8 settembre 2026. Il colophon del sito conta le stesse cose dal vivo.
+Contato il 10 settembre 2026. Il colophon del sito conta le stesse cose dal
+vivo, quindi se i due non concordano ha ragione il colophon e questa tabella è
+vecchia.
 
 | | | | |
 |---|---|---|---|
-| **161** titoli | **102** personaggi | **47** voci di glossario | **12** organizzazioni |
+| **161** titoli | **220** personaggi | **48** voci di glossario | **20** organizzazioni |
 | **9** collezioni, 90 pezzi | **9** percorsi | **24** domande | **5** guide |
-| **585** citazioni su **311** fonti | **2** lingue, complete | **583** pagine statiche | **0** script di terze parti |
+| **724** citazioni su **430** fonti | **2** lingue, complete | **818** pagine statiche | **0** script di terze parti |
 
 ---
 
@@ -38,7 +40,7 @@ Contato l'8 settembre 2026. Il colophon del sito conta le stesse cose dal vivo.
 
 Phase Zero spiega il Marvel Cinematic Universe e gli universi collegati prodotti
 da altri studi: i film Fox su X-Men e Deadpool, e quelli Sony su Spider-Man e
-Venom. In tutto sono più di centoventi tra film e serie, realizzati in quasi
+Venom. In tutto sono più di centosessanta tra film e serie, realizzati in quasi
 vent'anni, usciti in un ordine e ambientati in un altro, da tre aziende che non
 avevano sempre previsto di essere collegate.
 
@@ -54,7 +56,7 @@ Quando esce un film nuovo, l'ordine di visione qui viene aggiornato e pubblicato
 Per due persone contemporaneamente, e questa cosa condiziona ogni decisione del
 progetto.
 
-**Chi non ha visto niente** e si trova davanti a un muro di centoventi titoli
+**Chi non ha visto niente** e si trova davanti a un muro di centosessanta titoli
 chiedendosi dove sia la porta d'ingresso.
 
 **Chi ha visto tutto** e vuole sapere perché una data in una serie contraddice
@@ -161,7 +163,7 @@ riguarda i film, e tutto ciò che è di qualcun altro.
 ### I vostri progressi restano nel vostro browser
 
 Potete segnare quello che avete già visto, e lo ritrovate la volta dopo che
-aprite il sito nello stesso browser. Farsi centoventi titoli richiede mesi, e
+aprite il sito nello stesso browser. Farsi centosessanta titoli richiede mesi, e
 perdere il segno a ogni visita renderebbe la guida molto meno utile.
 
 Succede interamente nella memoria del browser. Niente viene mandato da nessuna
@@ -183,7 +185,7 @@ disegnare la pagina.
 Il motivo per non fare eccezioni è che così una questione di gusto diventa una
 cosa che uno script può controllare, e non deve più essere discussa in revisione.
 La build rifiuta entrambi. Le icone sono SVG. Il trattino medio è ammesso solo
-tra cifre, come in 2008-2012.
+tra cifre, come in 2008–2012.
 
 ### Due licenze
 
@@ -209,6 +211,69 @@ src/        codice, senza nessun testo scritto dentro
 scripts/    le verifiche che la CI esegue, e cosa scrive la build dopo
 public/     file serviti così come sono, comprese le schede di anteprima
 ```
+
+Ecco un film attraverso tutto il sistema.
+
+`data/titles/iron-man.yml`, scritto una volta sola per tutte le lingue. È il
+file vero, senza i campi che per questo titolo sono vuoti:
+
+```yaml
+id: iron-man
+type: film
+universe: earth-616
+franchise: iron-man
+saga: infinity
+phase: 1
+tier: essential
+
+release:
+  date: 2008-05-02
+  runtime: 126
+  status: released
+
+chronology:
+  order: 600
+  setting: "2010"
+  source: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline"
+
+requires: []
+leadsTo:
+  - the-avengers
+
+sources:
+  - url: https://en.wikipedia.org/wiki/Iron_Man_(2008_film)
+    title: Iron Man (2008 film), Wikipedia
+    accessed: 2026-09-07
+  - url: https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline
+    title: Marvel Cinematic Universe timeline, Wikipedia
+    accessed: 2026-09-07
+verified: 2026-09-07
+```
+
+`content/it/titles/iron-man.md`, la prosa:
+
+```markdown
+---
+title: Iron Man
+oneLine: Un fabbricante di armi costruisce un'armatura volante per scappare dai
+  suoi sequestratori, e poi la usa contro le armi vendute dalla sua azienda.
+tagline: Il film da cui è cominciato tutto
+---
+
+Tony Stark ha ereditato un'azienda di armi e non se l'è mai chiesto. È
+brillante, ricco e del tutto disinteressato a cosa succede dopo che una
+spedizione esce dalla fabbrica. Finisce quando lo attaccano durante una
+dimostrazione in Afghanistan, ferito da un suo stesso ordigno e chiuso in una
+grotta da chi quell'ordigno lo aveva comprato.
+
+:::detail{title="Perché conta"}
+È il film che ha stabilito il formato dell'universo condiviso, e la scena dopo i
+titoli di coda è la prima volta in cui quel piano viene detto ad alta voce.
+:::
+```
+
+`content/en/titles/iron-man.md` ha la stessa forma con frasi in inglese. Chi
+traduce copia il file inglese e lo traduce. Non serve toccare codice.
 
 ## Come si esegue in locale
 

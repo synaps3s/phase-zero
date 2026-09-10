@@ -19,7 +19,7 @@ Two audiences reading the same page at the same time. This is the defining
 constraint of the product, not a nice-to-have.
 
 **Newcomers** who have never seen any of this material and are looking at more
-than a hundred and twenty titles with no idea where the entrance is. They want to
+than a hundred and sixty titles with no idea where the entrance is. They want to
 be told where to start, in what order, and what they can skip.
 
 **Experts** who have seen everything and arrive with a specific question: why one
@@ -169,12 +169,12 @@ script that is not required to draw the page.
   pipeline with tested fallback, three validation scripts, CI and deploy
   workflows, and Iron Man plus Tony Stark as complete worked examples in English
   and Italian.
-- A recovered dataset from an earlier private project at
-  `a local directory`, holding 126 titles and 101 characters with
-  Italian prose, narrative-line metadata with contrast-checked colors, a
-  glossary, and actor cross-references. It is a starting point for migration and
-  expansion, not a finished source: it predates the wider catalogue scope and its
-  facts still need sources attached before they can ship.
+- A recovered dataset from an earlier private project, holding 126 titles and
+  101 characters with Italian prose, narrative-line metadata with
+  contrast-checked colors, a glossary, and actor cross-references. It was a
+  starting point for migration and expansion rather than a finished source: it
+  predated the wider catalogue scope and its facts needed sources attaching
+  before they could ship. That migration has since happened.
 - No imagery of any kind exists or may be created from third-party material.
   There are no photographs, posters or logos in this project and there never will
   be.

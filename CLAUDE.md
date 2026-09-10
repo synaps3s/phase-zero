@@ -156,8 +156,9 @@ you do, something is wrong with the code, and that is the bug to fix.
 npm run validate
 ```
 
-This runs the text lint, the translation report, the source check and the type
-check. CI runs the same thing, so if it passes locally it will pass there.
+This runs the text lint, the translation report, the source check, the type
+check, a full build, and a check that the figures in both readmes still match
+what is actually in the catalogue. CI runs the same thing, so if it passes locally it will pass there.
 
 ## Progress tracking
 

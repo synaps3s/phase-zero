@@ -177,7 +177,9 @@ type-checking it.
 3. Create `content/en/titles/<id>.md`. English is required, because it is the
    fallback every other language relies on.
 4. Add other languages if you can. Missing translations are fine.
-5. Run `npm run validate`.
+5. Run `npm run validate`. If it tells you the readme figures are out of date,
+   update the table at the top of `README.md` and `README.it.md`, and the date
+   beside it. The figures are written by hand and counted by CI.
 6. Open a pull request describing what you added and where the facts came from.
 
 ## Adding or working on a language
@@ -204,8 +206,9 @@ is a bug in the code and the right fix is to report it.
 npm run validate
 ```
 
-This runs the text lint, the translation report, the source check and the type
-check. CI runs exactly the same commands.
+This runs the text lint, the translation report, the source check, the type
+check, a full build, and a check that the figures in both readmes still match
+what is actually in the catalogue. CI runs exactly the same commands.
 
 ## Commit messages
 
