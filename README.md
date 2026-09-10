@@ -28,9 +28,9 @@ so if these disagree, the colophon is right and this table is stale.
 
 | | | | |
 |---|---|---|---|
-| **161** titles | **220** characters | **48** glossary terms | **20** organisations |
+| **161** titles | **236** characters | **48** glossary terms | **20** organisations |
 | **9** collections, 90 pieces | **9** watch paths | **24** questions answered | **5** guides |
-| **724** citations across **430** sources | **2** languages, both complete | **818** static pages | **0** third-party scripts |
+| **747** citations across **432** sources | **2** languages, both complete | **850** static pages | **0** third-party scripts |
 
 ---
 

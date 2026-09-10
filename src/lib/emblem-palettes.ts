@@ -263,6 +263,24 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'gertrude-yorkes': ['#ff5a9a', '#141a14', '#4fd18a', 'rgba(255,90,154,0.45)'],
   'chase-stein': ['#ff9a3c', '#141a24', '#5fd0ff', 'rgba(255,154,60,0.45)'],
   'molly-hayes': ['#ffca4a', '#2a1b4a', '#ff5a9a', 'rgba(255,202,74,0.45)'],
+
+  /* --- The animated ones -------------------------------------------- */
+  'miles-morales': ['#ff4d5e', '#1a1030', '#5fd0ff', 'rgba(255,77,94,0.55)'],
+  'gwen-stacy-65': ['#e6ebf2', '#2a1b4a', '#ff5a9a', 'rgba(230,235,242,0.5)'],
+  'peter-b-parker': ['#5aa0ff', '#2a1010', '#ff4d4d', 'rgba(90,160,255,0.45)'],
+  'peni-parker': ['#ff5a9a', '#141a30', '#5fd0ff', 'rgba(255,90,154,0.45)'],
+  'spider-man-noir': ['#c2d0e0', '#0a0a0f', '#e6ebf2', 'rgba(194,208,224,0.4)'],
+  'peter-porker': ['#ff9ab0', '#3a1810', '#ffca4a', 'rgba(255,154,176,0.45)'],
+  'olivia-octavius': ['#4fd1c5', '#141a24', '#ffca4a', 'rgba(79,209,197,0.45)'],
+  'aaron-davis': ['#a06bff', '#141018', '#4fd18a', 'rgba(160,107,255,0.5)'],
+  'jefferson-davis': ['#5aa0ff', '#141a24', '#e6ebf2', 'rgba(90,160,255,0.4)'],
+  'rio-morales': ['#ffca4a', '#2a1810', '#ff9ab0', 'rgba(255,202,74,0.45)'],
+  'miguel-ohara': ['#ff4d4d', '#0e1030', '#5a7aff', 'rgba(255,77,77,0.55)'],
+  'hobie-brown': ['#ff4d5e', '#141414', '#5fd0ff', 'rgba(255,77,94,0.5)'],
+  'pavitr-prabhakar': ['#4fd1c5', '#2a1810', '#ffca4a', 'rgba(79,209,197,0.5)'],
+  'jess-drew': ['#ffca2f', '#2a1010', '#ff4d4d', 'rgba(255,202,47,0.5)'],
+  'johnathon-ohnn': ['#e6ebf2', '#05080f', '#c2d0e0', 'rgba(230,235,242,0.45)'],
+  'miles-g-morales': ['#a06bff', '#0e0a18', '#ff4d5e', 'rgba(160,107,255,0.5)'],
 };
 
 export function paletteFor(id: string): Palette | null {

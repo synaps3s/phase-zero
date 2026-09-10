@@ -1,0 +1,20 @@
+id: peter-porker
+universe: unbound
+franchise: spider-verse
+realName: Peter Porker
+alignment: hero
+sigil: null
+
+actors:
+  - name: John Mulaney
+
+firstAppearance: spider-man-into-the-spider-verse
+
+appearsIn:
+  - spider-man-into-the-spider-verse
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse#Voice_cast"
+    title: "Spider-Man: Into the Spider-Verse, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
