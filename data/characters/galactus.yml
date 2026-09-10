@@ -1,0 +1,20 @@
+id: galactus
+universe: earth-828
+franchise: fantastic-four
+realName: null
+alignment: villain
+sigil: null
+
+actors:
+  - name: Ralph Ineson
+
+firstAppearance: the-fantastic-four-first-steps
+
+appearsIn:
+  - the-fantastic-four-first-steps
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Galactus"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

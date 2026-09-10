@@ -1,0 +1,24 @@
+id: howard-the-duck
+universe: earth-616
+franchise: guardians
+realName: null
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Seth Green
+    note: voice
+
+firstAppearance: guardians-of-the-galaxy
+
+appearsIn:
+  - guardians-of-the-galaxy
+  - guardians-of-the-galaxy-vol-2
+  - avengers-endgame
+  - guardians-of-the-galaxy-vol-3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Howard_the_Duck"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

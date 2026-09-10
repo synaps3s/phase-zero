@@ -1,0 +1,23 @@
+id: man-thing
+universe: earth-616
+franchise: midnight-sons
+realName: Ted
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Carey Jones
+    note: motion capture
+  - name: Jeffrey Ford
+    note: vocal effects
+
+firstAppearance: werewolf-by-night
+
+appearsIn:
+  - werewolf-by-night
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Ted_/_Man-Thing"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
