@@ -76,12 +76,18 @@ const spokes = Array.from({ length: 6 }, (unused, index) => {
 });
 
 const uid = `em-${key}`;
+/* The shadowed side is named --emblem-shade and not --shade on purpose.
+   liveryStyle sets --shade to a number, the step a franchise takes away from
+   its saga colour, and --livery is a color-mix that multiplies it. Setting a
+   colour on the same name here made that calculation invalid, which took
+   --livery with it, and every character who falls back to it lost both the
+   disc and the glyph: a black square with nothing on it. */
 const style = [
   liveryStyle(saga, franchise),
   `--emblem-size: ${size}px`,
   palette
-    ? `--face: ${palette[0]}; --shade: ${palette[1]}; --accent: ${palette[2]}; --glow: ${palette[3]}`
-    : '--face: var(--livery); --shade: var(--void); --accent: var(--livery); --glow: var(--livery-glow)',
+    ? `--face: ${palette[0]}; --emblem-shade: ${palette[1]}; --accent: ${palette[2]}; --glow: ${palette[3]}`
+    : '--face: var(--livery); --emblem-shade: var(--void); --accent: var(--livery); --glow: var(--livery-glow)',
 ].join('; ');
 ---
 
@@ -98,7 +104,7 @@ const style = [
     <defs>
       <radialGradient id={`face-${uid}`} cx="34%" cy="28%" r="82%">
         <stop offset="0%" stop-color="var(--face)" />
-        <stop offset="60%" stop-color="var(--shade)" />
+        <stop offset="60%" stop-color="var(--emblem-shade)" />
         <stop offset="100%" stop-color="var(--void)" />
       </radialGradient>
       <radialGradient id={`core-${uid}`} cx="50%" cy="50%" r="50%">
