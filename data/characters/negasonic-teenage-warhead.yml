@@ -1,0 +1,22 @@
+id: negasonic-teenage-warhead
+universe: earth-10005
+franchise: x-men
+realName: null
+alignment: hero
+sigil: null
+
+actors:
+  - name: Brianna Hildebrand
+
+firstAppearance: deadpool
+
+appearsIn:
+  - deadpool
+  - deadpool-2
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Negasonic_Teenage_Warhead"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

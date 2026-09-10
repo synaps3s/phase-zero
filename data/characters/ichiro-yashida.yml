@@ -1,0 +1,22 @@
+id: ichiro-yashida
+universe: earth-10005
+franchise: x-men
+realName: Ichiro Yashida
+alignment: villain
+sigil: null
+
+actors:
+  - name: Haruhiko Yamanouchi
+  - name: Ken Yamamura
+    note: as a young man
+
+firstAppearance: the-wolverine
+
+appearsIn:
+  - the-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Ichir%C5%8D_Yashida_/_Silver_Samurai"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

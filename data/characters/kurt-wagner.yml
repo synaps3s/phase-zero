@@ -1,0 +1,26 @@
+id: kurt-wagner
+universe: earth-10005
+franchise: x-men
+realName: Kurt Wagner
+alignment: hero
+sigil: null
+
+actors:
+  - name: Alan Cumming
+    note: in X2
+  - name: Kodi Smit-McPhee
+    note: in the prequel films
+
+firstAppearance: x2
+
+appearsIn:
+  - x2
+  - x-men-apocalypse
+  - deadpool-2
+  - dark-phoenix
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Kurt_Wagner_/_Nightcrawler"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

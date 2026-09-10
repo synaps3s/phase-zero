@@ -17,6 +17,9 @@ journey:
     text: Vanessa is killed in front of him and he cannot follow her, so he
       joins the X-Men, fails at it immediately, and ends up protecting a
       teenager from a soldier who came back from the future to kill him.
+  - title: deadpool-and-wolverine
+    text: Told his universe is ending because the man who anchored it is dead,
+      he goes shopping through other timelines for a replacement.
 ---
 
 Wade Wilson is dishonourably discharged from the Canadian special forces, works

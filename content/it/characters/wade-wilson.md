@@ -19,6 +19,10 @@ journey:
     text: Vanessa viene uccisa davanti a lui e lui non riesce a seguirla, così
       entra negli X-Men, fallisce quasi subito, e finisce a proteggere un
       ragazzino da un soldato tornato dal futuro per ucciderlo.
+  - title: deadpool-and-wolverine
+    text: Gli dicono che il suo universo sta finendo perché l'uomo che lo
+      teneva insieme è morto, e va a cercarne un sostituto in altre linee
+      temporali.
 ---
 
 Wade Wilson viene congedato con disonore dalle forze speciali canadesi, lavora

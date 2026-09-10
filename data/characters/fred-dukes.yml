@@ -1,0 +1,27 @@
+id: fred-dukes
+universe: earth-10005
+franchise: x-men
+realName: Frederick Dukes
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Kevin Durand
+    note: in X-Men Origins - Wolverine
+  - name: Gustav Claude Ouimet
+    note: in X-Men - Apocalypse
+  - name: Mike Waters
+    note: in Deadpool & Wolverine
+
+firstAppearance: x-men-origins-wolverine
+
+appearsIn:
+  - x-men-origins-wolverine
+  - x-men-apocalypse
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Fred_Dukes_/_Blob"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

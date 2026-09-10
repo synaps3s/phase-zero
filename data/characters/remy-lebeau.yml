@@ -1,0 +1,24 @@
+id: remy-lebeau
+universe: earth-10005
+franchise: x-men
+realName: Remy LeBeau
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Taylor Kitsch
+    note: in X-Men Origins - Wolverine
+  - name: Channing Tatum
+    note: in Deadpool & Wolverine
+
+firstAppearance: x-men-origins-wolverine
+
+appearsIn:
+  - x-men-origins-wolverine
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Remy_LeBeau_/_Gambit"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

@@ -1,0 +1,21 @@
+id: laura
+universe: earth-10005
+franchise: x-men
+realName: Laura
+alignment: hero
+sigil: null
+
+actors:
+  - name: Dafne Keen
+
+firstAppearance: logan
+
+appearsIn:
+  - logan
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Laura_/_X-23"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

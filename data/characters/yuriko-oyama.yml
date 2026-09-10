@@ -1,0 +1,24 @@
+id: yuriko-oyama
+universe: earth-10005
+franchise: x-men
+realName: Yuriko Oyama
+alignment: villain
+sigil: null
+
+actors:
+  - name: Kelly Hu
+    note: in X2
+  - name: Jade Lye
+    note: in Deadpool & Wolverine
+
+firstAppearance: x2
+
+appearsIn:
+  - x2
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Yuriko_Oyama_/_Lady_Deathstrike"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
