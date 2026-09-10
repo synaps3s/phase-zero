@@ -1,0 +1,22 @@
+id: alex-summers
+universe: earth-10005
+franchise: x-men
+realName: Alex Summers
+alignment: hero
+sigil: null
+
+actors:
+  - name: Lucas Till
+
+firstAppearance: x-men-first-class
+
+appearsIn:
+  - x-men-first-class
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Alex_Summers_/_Havok"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

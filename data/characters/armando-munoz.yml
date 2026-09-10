@@ -1,0 +1,20 @@
+id: armando-munoz
+universe: earth-10005
+franchise: x-men
+realName: Armando Munoz
+alignment: hero
+sigil: null
+
+actors:
+  - name: Edi Gathegi
+
+firstAppearance: x-men-first-class
+
+appearsIn:
+  - x-men-first-class
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Armando_Mu%C3%B1oz_/_Darwin"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

@@ -1,19 +1,17 @@
-id: inhuman-royal-family
-kind: order
-sigil: null
+id: medusa
 universe: earth-616
 franchise: marvel-television
-order: 16
+realName: Medusa
+alignment: hero
+sigil: null
 
-members:
-  - black-bolt
-  - medusa
-  - karnak
-  - gorgon
-  - crystal
-  - maximus
+actors:
+  - name: Serinda Swan
 
 firstAppearance: inhumans
+
+appearsIn:
+  - inhumans
 
 sources:
   - url: "https://en.wikipedia.org/wiki/Inhumans_(TV_series)#Main"

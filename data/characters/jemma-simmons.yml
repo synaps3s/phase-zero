@@ -1,0 +1,20 @@
+id: jemma-simmons
+universe: earth-616
+franchise: marvel-television
+realName: Jemma Anne Simmons
+alignment: hero
+sigil: null
+
+actors:
+  - name: Elizabeth Henstridge
+
+firstAppearance: agents-of-shield
+
+appearsIn:
+  - agents-of-shield
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Agents_of_S.H.I.E.L.D._characters#Jemma_Simmons"
+    title: "List of Agents of S.H.I.E.L.D. characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

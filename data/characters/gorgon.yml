@@ -1,19 +1,17 @@
-id: inhuman-royal-family
-kind: order
-sigil: null
+id: gorgon
 universe: earth-616
 franchise: marvel-television
-order: 16
+realName: Gorgon
+alignment: hero
+sigil: null
 
-members:
-  - black-bolt
-  - medusa
-  - karnak
-  - gorgon
-  - crystal
-  - maximus
+actors:
+  - name: Eme Ikwuakor
 
 firstAppearance: inhumans
+
+appearsIn:
+  - inhumans
 
 sources:
   - url: "https://en.wikipedia.org/wiki/Inhumans_(TV_series)#Main"

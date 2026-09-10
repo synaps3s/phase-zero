@@ -28,9 +28,9 @@ so if these disagree, the colophon is right and this table is stale.
 
 | | | | |
 |---|---|---|---|
-| **161** titles | **236** characters | **48** glossary terms | **20** organisations |
+| **161** titles | **257** characters | **48** glossary terms | **22** organisations |
 | **9** collections, 90 pieces | **9** watch paths | **24** questions answered | **5** guides |
-| **747** citations across **432** sources | **2** languages, both complete | **850** static pages | **0** third-party scripts |
+| **770** citations across **451** sources | **2** languages, both complete | **892** static pages | **0** third-party scripts |
 
 ---
 
@@ -298,6 +298,9 @@ everyone taking part.
 
 The smallest useful contribution is opening an issue about something that looks
 wrong. That is genuinely helpful and costs you two minutes.
+
+People who have improved the catalogue without opening a pull request are
+recorded in [CREDITS.md](CREDITS.md).
 
 ## Licenses
 

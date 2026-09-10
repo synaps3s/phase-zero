@@ -123,10 +123,43 @@ async function collectFiles(directory) {
   return found;
 }
 
+/*
+ * Frontmatter values that YAML will not hand back as text.
+ *
+ * `tagline: 1962` is a number, `powers: null` is nothing at all, and the
+ * schema rejects both with an error that points at the file and not at the
+ * line. It has happened three times here, always on a year used as a tagline,
+ * and each time the build was the thing that caught it, which is late and
+ * expensive. Quoting is the fix; saying so at the line is the point.
+ */
+const BARE_SCALAR = /^(title|oneLine|tagline|role|affiliation|born|powers|text):\s+(-?\d[\d.]*|true|false|null|yes|no|on|off)\s*$/i;
+
+function frontmatterProblems(path, lines) {
+  if (!path.endsWith('.md') || lines[0]?.trim() !== '---') return [];
+  const problems = [];
+  for (let index = 1; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (line.trim() === '---') break;
+    const match = BARE_SCALAR.exec(line.trim());
+    if (!match) continue;
+    problems.push({
+      file: relative(ROOT, path),
+      line: index + 1,
+      column: 1,
+      rule: 'bare-scalar',
+      message: `${match[1]} is "${match[2]}", which YAML reads as a value rather than as text. Put it in quotes.`,
+      excerpt: line.trim().slice(0, 90),
+    });
+  }
+  return problems;
+}
+
 function checkFile(path) {
   const problems = [];
   const lines = readFileSync(path, 'utf8').split('\n');
   const accents = ACCENTS[languageOfPath(path) ?? ''] ?? null;
+
+  problems.push(...frontmatterProblems(path, lines));
 
   lines.forEach((line, index) => {
     const cleaned = line.replace(ALLOWED_PICTOGRAPHIC, '');

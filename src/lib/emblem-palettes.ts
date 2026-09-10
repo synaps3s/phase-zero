@@ -281,6 +281,29 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'jess-drew': ['#ffca2f', '#2a1010', '#ff4d4d', 'rgba(255,202,47,0.5)'],
   'johnathon-ohnn': ['#e6ebf2', '#05080f', '#c2d0e0', 'rgba(230,235,242,0.45)'],
   'miles-g-morales': ['#a06bff', '#0e0a18', '#ff4d5e', 'rgba(160,107,255,0.5)'],
+
+  /* --- The second list from the same reader ------------------------- */
+  'emma-frost': ['#e6ebf2', '#1a2540', '#5fd0ff', 'rgba(230,235,242,0.55)'],
+  'alex-summers': ['#ff5a4d', '#2a1010', '#ffca4a', 'rgba(255,90,77,0.5)'],
+  'sean-cassidy': ['#4fd1c5', '#0e2a3a', '#e6ebf2', 'rgba(79,209,197,0.45)'],
+  'armando-munoz': ['#b08a5a', '#141a24', '#4fd18a', 'rgba(176,138,90,0.4)'],
+  'angel-salvadore': ['#5fd0ff', '#231b45', '#4fd18a', 'rgba(95,208,255,0.45)'],
+  'clarice-ferguson': ['#c9a0ff', '#1a1030', '#4fe08a', 'rgba(201,160,255,0.5)'],
+  'james-proudstar': ['#b08a5a', '#1a1408', '#ff9a3c', 'rgba(176,138,90,0.4)'],
+  'lucas-bishop': ['#5fd0ff', '#141a24', '#ffca2f', 'rgba(95,208,255,0.45)'],
+  'eric-brooks': ['#c2d0e0', '#12060a', '#ff4d4d', 'rgba(194,208,224,0.5)'],
+  medusa: ['#ff5a4d', '#2a1010', '#ffca4a', 'rgba(255,90,77,0.5)'],
+  karnak: ['#8fb0a0', '#141a24', '#e6ebf2', 'rgba(143,176,160,0.4)'],
+  gorgon: ['#b08a5a', '#1a1408', '#ff9a3c', 'rgba(176,138,90,0.45)'],
+  crystal: ['#5fd0ff', '#1a2540', '#ffe6a8', 'rgba(95,208,255,0.45)'],
+  'melinda-may': ['#8a97ad', '#141414', '#ff4d4d', 'rgba(138,151,173,0.4)'],
+  'grant-ward': ['#5a6b8a', '#141018', '#ff9a3c', 'rgba(90,107,138,0.4)'],
+  'leo-fitz': ['#5aa0ff', '#141a24', '#ffca4a', 'rgba(90,160,255,0.4)'],
+  'jemma-simmons': ['#4fd18a', '#101a24', '#5fd0ff', 'rgba(79,209,138,0.45)'],
+  'lance-hunter': ['#ff9a3c', '#141a24', '#e6ebf2', 'rgba(255,154,60,0.4)'],
+  'alphonso-mackenzie': ['#e0b060', '#141a14', '#4fd18a', 'rgba(224,176,96,0.45)'],
+  'elena-rodriguez': ['#ffca2f', '#2a1010', '#ff4d5e', 'rgba(255,202,47,0.5)'],
+  'deke-shaw': ['#4fd1c5', '#141a24', '#ffca4a', 'rgba(79,209,197,0.45)'],
 };
 
 export function paletteFor(id: string): Palette | null {

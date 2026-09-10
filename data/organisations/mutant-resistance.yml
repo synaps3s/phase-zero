@@ -1,0 +1,26 @@
+id: mutant-resistance
+kind: military
+sigil: magneto
+universe: earth-10005
+franchise: x-men
+order: 22
+
+members:
+  - charles-xavier
+  - erik-lehnsherr
+  - logan
+  - ororo-munroe
+  - kitty-pryde
+  - piotr-rasputin
+  - clarice-ferguson
+  - james-proudstar
+  - lucas-bishop
+  - roberto-da-costa
+
+firstAppearance: x-men-days-of-future-past
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Introduced_in_X-Men%3A_Days_of_Future_Past_%282014%29"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

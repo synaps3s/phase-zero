@@ -1,0 +1,24 @@
+id: x-men-first-class
+kind: team
+sigil: professor-x
+universe: earth-10005
+franchise: x-men
+order: 21
+
+members:
+  - charles-xavier
+  - erik-lehnsherr
+  - raven-darkholme
+  - hank-mccoy
+  - alex-summers
+  - sean-cassidy
+  - armando-munoz
+  - angel-salvadore
+
+firstAppearance: x-men-first-class
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Introduced_in_X-Men%3A_First_Class_%282011%29"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

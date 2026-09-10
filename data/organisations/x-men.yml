@@ -6,9 +6,23 @@ franchise: x-men
 order: 12
 
 members:
-  - logan
   - charles-xavier
   - erik-lehnsherr
+  - logan
+  - raven-darkholme
+  - hank-mccoy
+  - jean-grey
+  - scott-summers
+  - ororo-munroe
+  - kitty-pryde
+  - marie-dcanto
+  - kurt-wagner
+  - piotr-rasputin
+  - peter-maximoff
+  - alex-summers
+  - sean-cassidy
+  - negasonic-teenage-warhead
+  - betsy-braddock
 
 firstAppearance: x-men
 

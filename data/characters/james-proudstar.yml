@@ -1,0 +1,20 @@
+id: james-proudstar
+universe: earth-10005
+franchise: x-men
+realName: James Proudstar
+alignment: hero
+sigil: null
+
+actors:
+  - name: Booboo Stewart
+
+firstAppearance: x-men-days-of-future-past
+
+appearsIn:
+  - x-men-days-of-future-past
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#James_Proudstar_/_Warpath"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

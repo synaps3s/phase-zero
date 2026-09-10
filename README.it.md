@@ -30,9 +30,9 @@ vecchia.
 
 | | | | |
 |---|---|---|---|
-| **161** titoli | **236** personaggi | **48** voci di glossario | **20** organizzazioni |
+| **161** titoli | **257** personaggi | **48** voci di glossario | **22** organizzazioni |
 | **9** collezioni, 90 pezzi | **9** percorsi | **24** domande | **5** guide |
-| **747** citazioni su **432** fonti | **2** lingue, complete | **850** pagine statiche | **0** script di terze parti |
+| **770** citazioni su **451** fonti | **2** lingue, complete | **892** pagine statiche | **0** script di terze parti |
 
 ---
 
@@ -309,6 +309,9 @@ chiunque partecipi.
 
 Il contributo più piccolo e comunque utile è aprire una segnalazione su qualcosa
 che sembra sbagliato. Serve davvero, e vi costa due minuti.
+
+Chi ha migliorato il catalogo senza aprire una pull request è registrato in
+[CREDITS.md](CREDITS.md).
 
 ## Licenze
 

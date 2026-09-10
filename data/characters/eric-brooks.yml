@@ -1,0 +1,22 @@
+id: eric-brooks
+universe: unbound
+franchise: blade
+realName: Eric Brooks
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Wesley Snipes
+
+firstAppearance: blade
+
+appearsIn:
+  - blade
+  - blade-ii
+  - blade-trinity
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Blade_(1998_film)#Cast"
+    title: "Blade (1998 film), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

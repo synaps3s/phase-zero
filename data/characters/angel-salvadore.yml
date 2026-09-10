@@ -1,0 +1,20 @@
+id: angel-salvadore
+universe: earth-10005
+franchise: x-men
+realName: Angel Salvadore
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Zoe Kravitz
+
+firstAppearance: x-men-first-class
+
+appearsIn:
+  - x-men-first-class
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Angel_Salvadore"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

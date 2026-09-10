@@ -7,11 +7,21 @@ order: 2
 
 members:
   - nick-fury
+  - phil-coulson
   - natasha-romanoff
   - clint-barton
   - steve-rogers
   - sam-wilson
   - monica-rambeau
+  - melinda-may
+  - daisy-johnson
+  - leo-fitz
+  - jemma-simmons
+  - bobbi-morse
+  - lance-hunter
+  - alphonso-mackenzie
+  - elena-rodriguez
+  - grant-ward
 
 firstAppearance: iron-man
 

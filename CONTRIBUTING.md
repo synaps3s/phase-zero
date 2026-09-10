@@ -210,6 +210,12 @@ This runs the text lint, the translation report, the source check, the type
 check, a full build, and a check that the figures in both readmes still match
 what is actually in the catalogue. CI runs exactly the same commands.
 
+## Credit
+
+If you report something that is wrong or missing and it changes the catalogue,
+you belong in [CREDITS.md](CREDITS.md), whether or not you ever open a pull
+request. Say so, or somebody will notice and add you.
+
 ## Commit messages
 
 Plain English, imperative, with a short prefix:
