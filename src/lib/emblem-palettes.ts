@@ -304,6 +304,9 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'alphonso-mackenzie': ['#e0b060', '#141a14', '#4fd18a', 'rgba(224,176,96,0.45)'],
   'elena-rodriguez': ['#ffca2f', '#2a1010', '#ff4d5e', 'rgba(255,202,47,0.5)'],
   'deke-shaw': ['#4fd1c5', '#141a24', '#ffca4a', 'rgba(79,209,197,0.45)'],
+
+  /* --- Not characters ------------------------------------------------ */
+  'austin-canady': ['#ff4d4d', '#16277a', '#5fd0ff', 'rgba(255,77,77,0.5)'],
 };
 
 export function paletteFor(id: string): Palette | null {

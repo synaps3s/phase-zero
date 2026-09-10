@@ -1,0 +1,81 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Emblem from '../../components/Emblem.astro';
+import { languages, getLanguage, useTranslations } from '../../lib/i18n';
+import { resolveProse, sourceSlugs } from '../../lib/content';
+import { sagaStyle } from '../../lib/livery';
+
+/*
+ * The people who are in the catalogue without being in the commit log.
+ *
+ * Almost everything here was reported rather than committed: somebody read a
+ * page, noticed what was not on it, and said so. The git history cannot hold
+ * that, so this page does.
+ *
+ * Each person gets a mark from the same generator that draws a character who
+ * has no authored glyph, seeded from their own name. It costs nothing, it is
+ * drawn in this repository like everything else, and it means the page has a
+ * face on it without a photograph of anybody.
+ */
+export function getStaticPaths() {
+  return languages.map((language) => ({ params: { lang: language.code } }));
+}
+
+const { lang } = Astro.params;
+const language = getLanguage(lang!);
+const t = useTranslations(language.code);
+
+const people = [];
+for (const id of await sourceSlugs('credits')) {
+  const prose = await resolveProse('credits', language.code, id);
+  if (!prose) continue;
+  const { Content } = await render(prose.entry);
+  people.push({ id, data: prose.entry.data, Body: Content });
+}
+people.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  language={language.code}
+  title={`${t('credits.title')}. Phase Zero`}
+  description={t('credits.lede')}
+  path="credits"
+  editPath={`content/${language.code}/credits/`}
+>
+  <section class="bleed band" data-livery style={sagaStyle('sony')}>
+    <div class="page">
+      <div class="plate">
+        <h1 class="plate-title">{t('credits.title')}</h1>
+        <p class="plate-meta">{t('credits.lede')}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="page section">
+    <p class="credits-note">{t('credits.note')}</p>
+
+    {people.map((person) => (
+      <section class="org" data-livery style={sagaStyle(person.data.saga)}>
+        <div class="org-head">
+          <Emblem id={person.id} saga={person.data.saga} size={72} label={person.data.title} />
+          <div>
+            <h2 class="org-name">{person.data.title}</h2>
+            <p class="org-meta">
+              {person.data.handle && <span>{person.data.handle}</span>}
+              {person.data.link && (
+                <span><a href={person.data.link} rel="nofollow noopener">{t('credits.elsewhere')}</a></span>
+              )}
+            </p>
+            <p class="person-line">{person.data.oneLine}</p>
+          </div>
+        </div>
+        <div class="prose">
+          <person.Body />
+        </div>
+      </section>
+    ))}
+
+    <p class="credits-note">{t('credits.howTo')}</p>
+  </div>
+</Base>

@@ -363,6 +363,30 @@ const questions = defineCollection({
   }),
 });
 
+/*
+ * People whose work is in the catalogue without their name on a commit.
+ *
+ * Prose only, and deliberately so. There is nothing language-neutral about
+ * thanking somebody, and the thing being recorded is what they changed, which
+ * has to be readable in every language the site speaks.
+ *
+ * `link` is optional and stays optional. Nobody's personal accounts go on a
+ * public page because it would look nice; they go there if the person said so.
+ */
+const credits = defineCollection({
+  loader: glob({ pattern: '*/credits/*.md', base: './content' }),
+  schema: z.object({
+    title: z.string(),
+    oneLine: z.string(),
+    /* Where they said it, which is the part that is public already. */
+    handle: z.string().optional(),
+    link: z.url().optional(),
+    /* Which saga colour their entry is lit in. No meaning, just a colour. */
+    saga: z.string().default('unbound'),
+    order: z.number().int().default(100),
+  }),
+});
+
 const guides = defineCollection({
   loader: glob({ pattern: '*/guides/**/*.md', base: './content' }),
   schema: z.object({
@@ -394,5 +418,6 @@ export const collections = {
   phaseProse,
   paths,
   pathProse,
+  credits,
   guides,
 };

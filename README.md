@@ -30,7 +30,7 @@ so if these disagree, the colophon is right and this table is stale.
 |---|---|---|---|
 | **161** titles | **257** characters | **48** glossary terms | **22** organisations |
 | **9** collections, 90 pieces | **9** watch paths | **24** questions answered | **5** guides |
-| **770** citations across **451** sources | **2** languages, both complete | **892** static pages | **0** third-party scripts |
+| **770** citations across **451** sources | **2** languages, both complete | **894** static pages | **0** third-party scripts |
 
 ---
 

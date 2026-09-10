@@ -1,5 +1,12 @@
 # Credits
 
+<img src="public/social/livery.svg" width="100%" alt="" />
+
+There is a version of this page on the site itself, at
+[phasezero.pages.dev/en/credits](https://phasezero.pages.dev/en/credits), where
+everyone here gets a mark drawn by the same generator that draws a character
+with no authored glyph, seeded from their own name.
+
 Not every contribution arrives as a pull request. Some of the most useful work
 on this project has been somebody reading a page carefully and saying what is
 missing from it, which is harder than it sounds and easier to overlook when the

@@ -2828,3 +2828,18 @@ a:focus-visible .emblem-halo {
   color: var(--ink-faint);
   white-space: nowrap;
 }
+
+/* --- Credits --------------------------------------------------------- */
+
+/* The two lines that frame the list: an explanation above it and an
+   invitation below. Set at the width of a paragraph rather than the width of
+   the page, so they read as somebody talking rather than as a banner. */
+.credits-note {
+  max-width: 62ch;
+  margin: 0 0 var(--s6);
+  color: var(--ink-soft);
+}
+
+.credits-note:last-child {
+  margin: var(--s6) 0 0;
+}
