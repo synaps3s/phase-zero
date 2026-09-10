@@ -24,3 +24,6 @@ npm-debug.log*
 # Design tooling working state. The durable design system lives in
 # DESIGN.md at the root, which is tool neutral and is committed.
 .impeccable/
+
+# Lighthouse reports, written by the audit and read from the run
+.lighthouseci/

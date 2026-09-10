@@ -1,0 +1,60 @@
+name: Lighthouse
+
+# What this guards is not a score. It is the two promises the project makes
+# out loud and cannot check by reading the code: that every page is usable by
+# somebody who cannot see it or cannot use a mouse, and that the site stays
+# light because it ships nothing it does not need.
+#
+# Accessibility, best practices and SEO are asserted at 100 and fail the run.
+# They audit the document rather than the clock, so they give the same answer
+# on any machine, and the site already meets all three: a drop is a real
+# regression, not weather.
+#
+# Performance is a warning and not a failure, on purpose. It is measured from
+# timings on a shared runner, it moves by several points between two runs of
+# the same commit, and a gate that fails at random is a gate people learn to
+# ignore.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    name: Audit the built pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The audit runs against what is actually published, headers and all,
+      # rather than against the dev server.
+      - name: Build the site
+        run: npm run build
+
+      # Collected, asserted and kept. Run three times per page and take the
+      # median, because one run of anything timing-based tells you very little.
+      - name: Audit
+        run: npx --yes @lhci/cli@0.15 autorun --config=lighthouserc.json
+
+      # The reports are worth having when it fails, and worth nothing when it
+      # passes, which is what if:failure() is for.
+      - name: Keep the reports
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 14
