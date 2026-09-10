@@ -1,0 +1,105 @@
+name: Sources
+
+# The link check runs in CI as well, but CI only runs when somebody pushes,
+# and a source does not die on a schedule anybody controls. A Wikipedia
+# article is moved, a press release is taken down, a domain lapses, and this
+# repository goes on claiming that a human opened that page on a given day.
+#
+# That claim is the one thing the project is actually asking to be trusted on,
+# so it gets its own watch: once a week, and an issue when something is gone.
+
+on:
+  schedule:
+    # Monday morning, an hour after Dependabot, so the two do not report in
+    # the same minute and get read as one thing.
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    name: Check that every source still resolves
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check the sources
+        id: check
+        run: |
+          set +e
+          npm run check:links 2>&1 | tee check.log
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      # Only the dead ones. Timeouts and rate limits are noise on a schedule
+      # exactly as they are in a pull request, and an issue that cries wolf is
+      # an issue nobody opens the second time.
+      - name: Report what is gone
+        if: steps.check.outputs.status != '0'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { readFileSync } = require('node:fs');
+            const log = readFileSync('check.log', 'utf8');
+            const gone = log
+              .split('\n')
+              .filter((line) => line.trim().startsWith('gone'))
+              .map((line) => line.trim());
+
+            const title = `${gone.length} source${gone.length === 1 ? '' : 's'} no longer resolve`;
+            const body = [
+              'The weekly source check found citations that are gone. Each of these',
+              'is attached to a fact in `data/`, and the entry still carries the date',
+              'a human says they read it.',
+              '',
+              '```',
+              ...gone,
+              '```',
+              '',
+              'For each one: find the page again at its new address, or find another',
+              'source that says the same thing and record that instead, or remove the',
+              'claim. Do not simply delete the URL and leave the fact.',
+              '',
+              `Full log: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+            ].join('\n');
+
+            /* One open issue at a time. A second week of the same dead link
+               belongs in the thread that is already open, not in a new one. */
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'source',
+            });
+            const existing = open.data.find((issue) => issue.title.endsWith('no longer resolve'));
+
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['source', 'help wanted'],
+              });
+            }
+
+      - name: Fail the run if a source is gone
+        if: steps.check.outputs.status != '0'
+        run: exit 1
