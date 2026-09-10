@@ -1,0 +1,26 @@
+id: misty-knight
+universe: earth-616
+franchise: defenders
+realName: Mercedes Kelly Knight
+alignment: hero
+sigil: null
+
+actors:
+  - name: Simone Missick
+
+firstAppearance: luke-cage-s1
+
+appearsIn:
+  - luke-cage-s1
+  - the-defenders
+  - luke-cage-s2
+  - iron-fist-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Luke_Cage_characters#Misty_Knight"
+    title: "List of Luke Cage characters, Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/List_of_Iron_Fist_characters#Misty_Knight"
+    title: "List of Iron Fist characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

@@ -1,0 +1,24 @@
+id: billy-russo
+universe: earth-616
+franchise: punisher
+realName: William Russo
+alignment: villain
+sigil: null
+
+actors:
+  - name: Ben Barnes
+
+firstAppearance: the-punisher-s1
+
+appearsIn:
+  - the-punisher-s1
+  - the-punisher-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Punisher_(TV_series)#Cast_and_characters"
+    title: "The Punisher (TV series), Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/The_Punisher_season_2#Main"
+    title: "The Punisher season 2, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

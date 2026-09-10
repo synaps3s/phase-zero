@@ -1,0 +1,26 @@
+id: elektra-natchios
+universe: earth-616
+franchise: defenders
+realName: Elektra Natchios
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Élodie Yung
+  - name: Lily Chee
+    note: as a young Elektra
+
+firstAppearance: daredevil-s2
+
+appearsIn:
+  - daredevil-s2
+  - the-defenders
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Daredevil_characters#Elektra_Natchios"
+    title: "List of Daredevil characters, Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/Daredevil:_Born_Again"
+    title: "Daredevil: Born Again, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

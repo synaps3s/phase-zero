@@ -1,0 +1,22 @@
+id: kilgrave
+universe: earth-616
+franchise: defenders
+realName: Kevin Thompson
+alignment: villain
+sigil: null
+
+actors:
+  - name: David Tennant
+
+firstAppearance: jessica-jones-s1
+
+appearsIn:
+  - jessica-jones-s1
+  - jessica-jones-s2
+  - jessica-jones-s3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Jessica_Jones_characters#Kevin_Thompson_/_Kilgrave"
+    title: "List of Jessica Jones characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

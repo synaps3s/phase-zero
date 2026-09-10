@@ -1,0 +1,21 @@
+id: davos
+universe: earth-616
+franchise: defenders
+realName: Davos
+alignment: villain
+sigil: null
+
+actors:
+  - name: Sacha Dhawan
+
+firstAppearance: iron-fist-s1
+
+appearsIn:
+  - iron-fist-s1
+  - iron-fist-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Iron_Fist_characters#Davos"
+    title: "List of Iron Fist characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

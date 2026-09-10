@@ -1,0 +1,26 @@
+id: trish-walker
+universe: earth-616
+franchise: defenders
+realName: Patricia Walker
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Rachael Taylor
+
+firstAppearance: jessica-jones-s1
+
+appearsIn:
+  - jessica-jones-s1
+  - the-defenders
+  - jessica-jones-s2
+  - jessica-jones-s3
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Jessica_Jones_characters#Trish_Walker_/_Hellcat"
+    title: "List of Jessica Jones characters, Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
+    title: "The Defenders (miniseries), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

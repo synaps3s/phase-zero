@@ -1,0 +1,25 @@
+id: dex-poindexter
+universe: earth-616
+franchise: defenders
+realName: Benjamin Leonard Poindexter
+alignment: villain
+sigil: null
+
+actors:
+  - name: Wilson Bethel
+
+firstAppearance: daredevil-s3
+
+appearsIn:
+  - daredevil-s3
+  - daredevil-born-again-s1
+  - daredevil-born-again-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Benjamin_%22Dex%22_Poindexter_/_Bullseye"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/Daredevil:_Born_Again_season_2"
+    title: "Daredevil: Born Again season 2, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
