@@ -1,0 +1,17 @@
+id: inhuman-royal-family
+kind: order
+sigil: null
+universe: earth-616
+franchise: marvel-television
+order: 16
+
+members:
+  - maximus
+
+firstAppearance: inhumans
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Inhumans_(TV_series)#Main"
+    title: "Inhumans (TV series), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

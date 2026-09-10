@@ -1,0 +1,18 @@
+id: the-hand
+kind: order
+sigil: matt-murdock
+universe: earth-616
+franchise: defenders
+order: 13
+
+members:
+  - elektra-natchios
+  - colleen-wing
+
+firstAppearance: daredevil-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
+    title: "The Defenders (miniseries), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

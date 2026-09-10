@@ -1,0 +1,16 @@
+id: the-new-mutants
+kind: team
+sigil: null
+universe: earth-10005
+franchise: x-men
+order: 20
+
+members: []
+
+firstAppearance: the-new-mutants
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Introduced_in_The_New_Mutants_(2020)"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

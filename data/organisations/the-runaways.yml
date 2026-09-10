@@ -1,0 +1,16 @@
+id: the-runaways
+kind: team
+sigil: null
+universe: earth-616
+franchise: marvel-television
+order: 18
+
+members: []
+
+firstAppearance: runaways
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Runaways_(TV_series)"
+    title: "Runaways (TV series), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

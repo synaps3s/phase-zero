@@ -328,8 +328,11 @@ const organisations = defineCollection({
     id: z.string(),
     kind: z.enum(['team', 'agency', 'military', 'criminal', 'order', 'company']),
     /* An existing character glyph, because the emblems are drawn per person
-       and a group borrows the one that stands for it best. */
-    sigil: z.string(),
+       and a group borrows the one that stands for it best. Null where no
+       glyph in the repository stands for the group without misrepresenting
+       it, in which case the emblem draws the generated mark instead. Borrowing
+       a face that is not theirs would be worse than drawing no face. */
+    sigil: z.string().nullable().default(null),
     universe: z.string(),
     franchise: z.string(),
     order: z.number().int(),
