@@ -1,16 +1,22 @@
-id: warriors-three
-kind: team
-sigil: thor
+id: fandral
 universe: earth-616
 franchise: thor
-order: 14
+realName: Fandral
+alignment: hero
+sigil: null
 
-members:
-  - fandral
-  - hogun
-  - volstagg
+actors:
+  - name: Joshua Dallas
+    note: in Thor
+  - name: Zachary Levi
+    note: in the later films
 
 firstAppearance: thor
+
+appearsIn:
+  - thor
+  - thor-the-dark-world
+  - thor-ragnarok
 
 sources:
   - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Fandral_the_Dashing"

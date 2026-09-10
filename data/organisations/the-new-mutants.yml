@@ -5,7 +5,12 @@ universe: earth-10005
 franchise: x-men
 order: 20
 
-members: []
+members:
+  - dani-moonstar
+  - rahne-sinclair
+  - illyana-rasputina
+  - sam-guthrie
+  - roberto-da-costa
 
 firstAppearance: the-new-mutants
 

@@ -1,0 +1,23 @@
+id: proxima-midnight
+universe: earth-616
+franchise: avengers
+realName: Proxima Midnight
+alignment: villain
+sigil: null
+
+actors:
+  - name: Carrie Coon
+    note: voice and face
+  - name: Monique Ganderton
+    note: motion capture
+
+firstAppearance: avengers-infinity-war
+
+appearsIn:
+  - avengers-infinity-war
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Proxima_Midnight"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

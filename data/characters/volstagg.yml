@@ -1,0 +1,22 @@
+id: volstagg
+universe: earth-616
+franchise: thor
+realName: Volstagg
+alignment: hero
+sigil: null
+
+actors:
+  - name: Ray Stevenson
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - thor-the-dark-world
+  - thor-ragnarok
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Volstagg"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

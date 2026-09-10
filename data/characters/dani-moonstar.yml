@@ -1,0 +1,23 @@
+id: dani-moonstar
+universe: earth-10005
+franchise: x-men
+realName: Danielle Moonstar
+alignment: hero
+sigil: null
+
+actors:
+  - name: Blu Hunt
+
+firstAppearance: the-new-mutants
+
+appearsIn:
+  - the-new-mutants
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_New_Mutants_(film)#Cast"
+    title: "The New Mutants (film), Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Danielle_'Dani'_Moonstar"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

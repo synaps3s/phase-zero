@@ -1,0 +1,27 @@
+id: roberto-da-costa
+universe: earth-10005
+franchise: x-men
+realName: Roberto da Costa
+alignment: hero
+sigil: null
+
+actors:
+  - name: Adan Canto
+    note: in X-Men - Days of Future Past
+  - name: Henry Zaga
+    note: in The New Mutants
+
+firstAppearance: x-men-days-of-future-past
+
+appearsIn:
+  - x-men-days-of-future-past
+  - the-new-mutants
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Roberto_DaCosta_/_Sunspot"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/The_New_Mutants_(film)#Cast"
+    title: "The New Mutants (film), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

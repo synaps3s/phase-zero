@@ -223,6 +223,46 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'carlton-drake': ['#8a97ad', '#0e1a24', '#c2d0e0', 'rgba(138,151,173,0.4)'],
   'frances-barrison': ['#ff5a9a', '#1a0a14', '#e6ebf2', 'rgba(255,90,154,0.5)'],
   knull: ['#4a5a78', '#05080f', '#ff4d4d', 'rgba(74,90,120,0.5)'],
+
+  /* --- The groups that had nobody in them --------------------------- */
+  sersi: ['#ffca4a', '#2a1b4a', '#a06bff', 'rgba(255,202,74,0.5)'],
+  ikaris: ['#5fd0ff', '#16277a', '#ffe6a8', 'rgba(95,208,255,0.55)'],
+  ajak: ['#ffe6a8', '#2a1f10', '#ffca4a', 'rgba(255,230,168,0.45)'],
+  thena: ['#e6ebf2', '#2a1b4a', '#ffca4a', 'rgba(230,235,242,0.5)'],
+  kingo: ['#ff9a3c', '#3a1d95', '#ffd24a', 'rgba(255,154,60,0.5)'],
+  sprite: ['#4fd1c5', '#1a1030', '#ffe6a8', 'rgba(79,209,197,0.45)'],
+  phastos: ['#e0b060', '#141a24', '#5fd0ff', 'rgba(224,176,96,0.45)'],
+  makkari: ['#4fe08a', '#0e2a24', '#e6ebf2', 'rgba(79,224,138,0.5)'],
+  druig: ['#a06bff', '#101a0e', '#4fd18a', 'rgba(160,107,255,0.45)'],
+  gilgamesh: ['#ff9a5a', '#2a1810', '#ffd27a', 'rgba(255,154,90,0.45)'],
+  'dane-whitman': ['#8a97ad', '#141a24', '#4fd18a', 'rgba(138,151,173,0.4)'],
+
+  fandral: ['#ffca4a', '#1e2a5a', '#e6ebf2', 'rgba(255,202,74,0.45)'],
+  hogun: ['#8a97ad', '#1a2540', '#c2d0e0', 'rgba(138,151,173,0.4)'],
+  volstagg: ['#ff9a3c', '#1e2a5a', '#ffd27a', 'rgba(255,154,60,0.45)'],
+
+  'ebony-maw': ['#c2d0e0', '#1a1030', '#a06bff', 'rgba(194,208,224,0.45)'],
+  'corvus-glaive': ['#8fb0a0', '#101a24', '#5fd0ff', 'rgba(143,176,160,0.4)'],
+  'proxima-midnight': ['#5a7aff', '#141a30', '#c9a0ff', 'rgba(90,122,255,0.45)'],
+  'cull-obsidian': ['#b08a5a', '#1a1408', '#ff9a3c', 'rgba(176,138,90,0.4)'],
+
+  'black-bolt': ['#5fd0ff', '#0e1a30', '#e6ebf2', 'rgba(95,208,255,0.5)'],
+
+  'tandy-bowen': ['#ffe6a8', '#2a1b4a', '#ffffff', 'rgba(255,230,168,0.55)'],
+  'tyrone-johnson': ['#5a5a8a', '#05080f', '#c9a0ff', 'rgba(90,90,138,0.5)'],
+
+  'dani-moonstar': ['#ff7a3c', '#1a1010', '#ffca4a', 'rgba(255,122,60,0.45)'],
+  'rahne-sinclair': ['#b08a5a', '#1a1408', '#ffe6a8', 'rgba(176,138,90,0.45)'],
+  'illyana-rasputina': ['#a06bff', '#1a1030', '#ffca4a', 'rgba(160,107,255,0.5)'],
+  'sam-guthrie': ['#5fd0ff', '#241808', '#ffd27a', 'rgba(95,208,255,0.45)'],
+  'roberto-da-costa': ['#ff9a3c', '#2a1010', '#ffca2f', 'rgba(255,154,60,0.55)'],
+
+  'alex-wilder': ['#5aa0ff', '#141a24', '#ffca4a', 'rgba(90,160,255,0.4)'],
+  'nico-minoru': ['#c9a0ff', '#1a1030', '#ff5a9a', 'rgba(201,160,255,0.5)'],
+  'karolina-dean': ['#ffe6a8', '#2a1b4a', '#5fd0ff', 'rgba(255,230,168,0.5)'],
+  'gertrude-yorkes': ['#ff5a9a', '#141a14', '#4fd18a', 'rgba(255,90,154,0.45)'],
+  'chase-stein': ['#ff9a3c', '#141a24', '#5fd0ff', 'rgba(255,154,60,0.45)'],
+  'molly-hayes': ['#ffca4a', '#2a1b4a', '#ff5a9a', 'rgba(255,202,74,0.45)'],
 };
 
 export function paletteFor(id: string): Palette | null {

@@ -1,0 +1,25 @@
+id: illyana-rasputina
+universe: earth-10005
+franchise: x-men
+realName: Illyana Nikolaievna Rasputina
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Anya Taylor-Joy
+  - name: Colbi Gannett
+    note: as a child
+
+firstAppearance: the-new-mutants
+
+appearsIn:
+  - the-new-mutants
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/The_New_Mutants_(film)#Cast"
+    title: "The New Mutants (film), Wikipedia"
+    accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Illyana_Rasputin"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

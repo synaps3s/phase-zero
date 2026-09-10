@@ -5,7 +5,13 @@ universe: earth-616
 franchise: marvel-television
 order: 18
 
-members: []
+members:
+  - alex-wilder
+  - nico-minoru
+  - karolina-dean
+  - gertrude-yorkes
+  - chase-stein
+  - molly-hayes
 
 firstAppearance: runaways
 

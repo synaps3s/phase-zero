@@ -1,0 +1,21 @@
+id: corvus-glaive
+universe: earth-616
+franchise: avengers
+realName: Corvus Glaive
+alignment: villain
+sigil: null
+
+actors:
+  - name: Michael James Shaw
+    note: voice and motion capture
+
+firstAppearance: avengers-infinity-war
+
+appearsIn:
+  - avengers-infinity-war
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Corvus_Glaive"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

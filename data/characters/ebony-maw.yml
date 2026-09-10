@@ -1,17 +1,18 @@
-id: black-order
-kind: military
-sigil: thanos
+id: ebony-maw
 universe: earth-616
 franchise: avengers
-order: 15
+realName: null
+alignment: villain
+sigil: null
 
-members:
-  - ebony-maw
-  - corvus-glaive
-  - proxima-midnight
-  - cull-obsidian
+actors:
+  - name: Tom Vaughan-Lawlor
+    note: voice and motion capture
 
 firstAppearance: avengers-infinity-war
+
+appearsIn:
+  - avengers-infinity-war
 
 sources:
   - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Ebony_Maw"

@@ -5,7 +5,9 @@ universe: earth-616
 franchise: marvel-television
 order: 19
 
-members: []
+members:
+  - tandy-bowen
+  - tyrone-johnson
 
 firstAppearance: cloak-and-dagger
 
