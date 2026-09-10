@@ -959,6 +959,9 @@ a.plate:focus-visible {
  * fade on the end that runs out of room. That holds however many sections
  * there are and however long a translation turns out to be, which tuning the
  * gap does not.
+ *
+ * No rule above or below it. The header does not need drawing a box around:
+ * the space is the separation.
  */
 .sections {
   display: flex;
@@ -972,10 +975,6 @@ a.plate:focus-visible {
      extra width for the far end of the row. */
   padding-inline: calc(50vw - min(50vw, var(--page) / 2) + var(--gutter));
   padding-block: var(--s4);
-  /* Both rules belong to this row rather than one to it and one to the
-     header, so that the two lines are the same length. The header is inside
-     the page measure and this is not. */
-  border-block: 1px solid var(--hairline);
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scrollbar-width: none;
