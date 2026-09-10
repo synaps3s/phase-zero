@@ -1,0 +1,23 @@
+id: billy-maximoff
+universe: earth-616
+franchise: scarlet-witch
+realName: William Kaplan
+alignment: hero
+sigil: null
+
+actors:
+  - name: Julian Hilliard
+  - name: Baylen Bielitz
+    note: as a five year old
+
+firstAppearance: wandavision
+
+appearsIn:
+  - wandavision
+  - agatha-all-along
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Billy_Maximoff_/_William_Kaplan"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

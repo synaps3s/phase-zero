@@ -1,0 +1,23 @@
+id: ava-starr
+universe: earth-616
+franchise: ant-man
+realName: Ava Starr
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Hannah John-Kamen
+  - name: RaeLynn Bratten
+    note: as a child
+
+firstAppearance: ant-man-and-the-wasp
+
+appearsIn:
+  - ant-man-and-the-wasp
+  - thunderbolts
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Ava_Starr_/_Ghost"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

@@ -60,19 +60,79 @@ const dust = Array.from({ length: 16 }, () => ({
   o: 0.22 + next() * 0.55,
 }));
 
-/* With no authored glyph, a figure built from the same seed. Deliberately not
-   a monogram: a letter in a box says the entry is unfinished, a mark does not. */
-const seed = seedOf(id);
-const spokes = Array.from({ length: 6 }, (unused, index) => {
-  const angle = (index / 6) * Math.PI * 2 + (seed % 360) * (Math.PI / 180);
-  const inner = 7 + ((seed >> (index * 3)) % 4);
-  const outer = 14 + ((seed >> (index * 2)) % 5);
+/*
+ * With no authored glyph, a mark built from the same seed. Deliberately not a
+ * monogram: a letter in a box says the entry is unfinished, a mark does not.
+ *
+ * It draws from five families rather than one. A single family, however much
+ * its angles and radii were varied, produced sixty marks that all read as the
+ * same star, which is worse than no mark: it tells the reader these people are
+ * interchangeable. Five shapes that are obviously different from each other at
+ * 64 pixels, each picked and dimensioned by the character's own seed, do not.
+ */
+const CENTRE = 24;
+let markCursor = seedOf(`${id}:mark`);
+const roll = (): number => {
+  markCursor = (markCursor * 1664525 + 1013904223) >>> 0;
+  return markCursor / 4294967296;
+};
+/** An integer in [low, high], inclusive. */
+const pick = (low: number, high: number) => low + Math.floor(roll() * (high - low + 1));
+
+const family = pick(0, 4);
+const turn = roll() * Math.PI * 2;
+const at = (angle: number, radius: number) => ({
+  x: CENTRE + Math.cos(angle) * radius,
+  y: CENTRE + Math.sin(angle) * radius,
+});
+
+/* Rays out of a core. */
+const rayCount = pick(5, 9);
+const rayInner = 6 + pick(0, 3);
+const rays = Array.from({ length: rayCount }, (unused, index) => {
+  const angle = (index / rayCount) * Math.PI * 2 + turn;
+  const outer = rayInner + 5 + pick(0, 4);
+  const from = at(angle, rayInner);
+  const to = at(angle, outer);
+  return { x1: from.x, y1: from.y, x2: to.x, y2: to.y };
+});
+
+/* Orbits, with one body on the outermost. */
+const ringCount = pick(2, 3);
+const ringGap = pick(3, 5);
+const rings = Array.from({ length: ringCount }, (unused, index) => 6 + index * ringGap);
+const bodyAngle = roll() * Math.PI * 2;
+const body = at(bodyAngle, rings[rings.length - 1]);
+
+/* A regular polygon, held at an angle, with a mark on one corner. */
+const sides = pick(3, 6);
+const polygonRadius = 11 + pick(0, 3);
+const corners = Array.from({ length: sides }, (unused, index) =>
+  at((index / sides) * Math.PI * 2 + turn - Math.PI / 2, polygonRadius),
+);
+const polygon = corners.map((corner) => `${corner.x.toFixed(2)},${corner.y.toFixed(2)}`).join(' ');
+
+/* Stacked bars, read like a signal rather than a figure. */
+const barCount = pick(3, 5);
+const barStep = 5;
+const bars = Array.from({ length: barCount }, (unused, index) => {
+  const width = pick(8, 19);
   return {
-    x1: 24 + Math.cos(angle) * inner,
-    y1: 24 + Math.sin(angle) * inner,
-    x2: 24 + Math.cos(angle) * outer,
-    y2: 24 + Math.sin(angle) * outer,
+    x: CENTRE - width / 2,
+    y: CENTRE - ((barCount - 1) * barStep) / 2 + index * barStep - 1.1,
+    width,
+    height: 2.2,
   };
+});
+
+/* Chords crossing off centre, with a node at each end. */
+const chordCount = pick(2, 3);
+const chords = Array.from({ length: chordCount }, (unused, index) => {
+  const angle = turn + (index / chordCount) * Math.PI;
+  const reach = 12 + pick(0, 3);
+  const from = at(angle, reach);
+  const to = at(angle + Math.PI, reach);
+  return { x1: from.x, y1: from.y, x2: to.x, y2: to.y, from, to };
 });
 
 const uid = `em-${key}`;
@@ -126,11 +186,41 @@ const style = [
     {sigil ? (
       <g class="emblem-glyph" set:html={sigil} />
     ) : (
-      <g class="emblem-glyph emblem-fallback">
-        <circle cx="24" cy="24" r="4.2" />
-        {spokes.map((spoke) => (
-          <line x1={spoke.x1} y1={spoke.y1} x2={spoke.x2} y2={spoke.y2} />
+      <g class="emblem-glyph emblem-fallback" data-family={family}>
+        {family === 0 && (
+          <>
+            <circle cx="24" cy="24" r="4.2" />
+            {rays.map((ray) => <line x1={ray.x1} y1={ray.y1} x2={ray.x2} y2={ray.y2} />)}
+          </>
+        )}
+        {family === 1 && (
+          <>
+            {rings.map((radius) => <circle class="mark-ring" cx="24" cy="24" r={radius} />)}
+            <circle cx={body.x} cy={body.y} r="2.6" />
+          </>
+        )}
+        {family === 2 && (
+          <>
+            <polygon points={polygon} />
+            <circle cx={corners[0].x} cy={corners[0].y} r="2.4" />
+          </>
+        )}
+        {family === 3 && bars.map((bar) => (
+          <rect x={bar.x} y={bar.y} width={bar.width} height={bar.height} rx="1.1" />
         ))}
+        {family === 4 && (
+          <>
+            {chords.map((chord) => (
+              <line x1={chord.x1} y1={chord.y1} x2={chord.x2} y2={chord.y2} />
+            ))}
+            {chords.map((chord) => (
+              <>
+                <circle cx={chord.from.x} cy={chord.from.y} r="1.8" />
+                <circle cx={chord.to.x} cy={chord.to.y} r="1.8" />
+              </>
+            ))}
+          </>
+        )}
       </g>
     )}
 

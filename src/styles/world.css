@@ -2137,14 +2137,30 @@ a.plate:focus-visible {
   transition: transform var(--slow) var(--ease);
 }
 
-.emblem-fallback circle {
+/* The generated mark, in whichever of its five shapes this character drew.
+   Filled parts are the nodes, stroked parts are the structure. */
+.emblem-fallback circle,
+.emblem-fallback rect {
   fill: var(--accent);
+}
+
+.emblem-fallback rect {
+  opacity: 0.85;
 }
 
 .emblem-fallback line {
   stroke: var(--accent);
   stroke-width: 1.6;
   stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.emblem-fallback polygon,
+.emblem-fallback circle.mark-ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
   opacity: 0.85;
 }
 

@@ -20,8 +20,17 @@ if (input && list) {
 
   /* What somebody is cannot be typed into a search box, because the
      classification is not a word on the page. It is a second axis, and the
-     two combine rather than replace each other. */
-  let alignment = 'all';
+     two combine rather than replace each other.
+
+     It is read back out of the buttons rather than assumed, because this
+     script is not the only thing that writes it. A browser returning to this
+     page through history can hand back a document that has already been
+     filtered, and a variable initialised to 'all' would then disagree with
+     what the reader is looking at. The DOM is the record; this follows it. */
+  const pressed = () =>
+    filters.find((button) => button.getAttribute('aria-pressed') === 'true')?.dataset.alignment ??
+    'all';
+  let alignment = pressed();
 
   function apply(): void {
     /* Reduced the same way the haystacks were, so a hyphen inside a name
@@ -67,4 +76,14 @@ if (input && list) {
   }
 
   apply();
+
+  /* Restoring a page from history does not re-run this module, and different
+     browsers restore different amounts of it: the typed query and the pressed
+     filter can come back without the rows they were hiding, which leaves a
+     tally counting one thing and a list showing another. Re-reading both
+     sides here makes them agree again, however much came back. */
+  window.addEventListener('pageshow', () => {
+    alignment = pressed();
+    apply();
+  });
 }

@@ -1,0 +1,21 @@
+id: mac-gargan
+universe: earth-616
+franchise: spider-man
+realName: MacDonald Gargan
+alignment: villain
+sigil: null
+
+actors:
+  - name: Michael Mando
+
+firstAppearance: spider-man-homecoming
+
+appearsIn:
+  - spider-man-homecoming
+  - spider-man-brand-new-day
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Mac_Gargan_/_Scorpion"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

@@ -1,0 +1,22 @@
+id: jane-foster
+universe: earth-616
+franchise: thor
+realName: Jane Foster
+alignment: hero
+sigil: null
+
+actors:
+  - name: Natalie Portman
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - thor-the-dark-world
+  - thor-love-and-thunder
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Jane_Foster_(Marvel_Cinematic_Universe)"
+    title: "Jane Foster (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

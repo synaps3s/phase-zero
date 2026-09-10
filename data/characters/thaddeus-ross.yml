@@ -1,0 +1,29 @@
+id: thaddeus-ross
+universe: earth-616
+franchise: hulk
+realName: Thaddeus Ross
+alignment: villain
+sigil: null
+
+actors:
+  - name: William Hurt
+    note: from 2008 to 2021
+  - name: Harrison Ford
+    note: from 2025
+
+firstAppearance: the-incredible-hulk
+
+appearsIn:
+  - the-incredible-hulk
+  - one-shot-the-consultant
+  - captain-america-civil-war
+  - avengers-infinity-war
+  - avengers-endgame
+  - black-widow
+  - captain-america-brave-new-world
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Thaddeus_Ross_(Marvel_Cinematic_Universe)"
+    title: "Thaddeus Ross (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10

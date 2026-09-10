@@ -1,0 +1,28 @@
+id: cassie-lang
+universe: earth-616
+franchise: ant-man
+realName: Cassandra Lang
+alignment: hero
+sigil: null
+
+actors:
+  - name: Abby Ryder Fortson
+    note: in the first two films
+  - name: Emma Fuhrmann
+    note: in Avengers - Endgame
+  - name: Kathryn Newton
+    note: from Quantumania
+
+firstAppearance: ant-man
+
+appearsIn:
+  - ant-man
+  - ant-man-and-the-wasp
+  - avengers-endgame
+  - ant-man-and-the-wasp-quantumania
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Cassie_Lang"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-10
+verified: 2026-09-10
