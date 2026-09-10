@@ -202,6 +202,20 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'karl-mordo': ['#4fd18a', '#101a24', '#ffca4a', 'rgba(79,209,138,0.45)'],
   kaecilius: ['#a06bff', '#1a1030', '#ff4d4d', 'rgba(160,107,255,0.45)'],
   dormammu: ['#a06bff', '#2a0f4a', '#ff7a2f', 'rgba(160,107,255,0.55)'],
+
+  /* --- The next ones along ------------------------------------------ */
+  'cassie-lang': ['#5fd0ff', '#1a2a3a', '#ffca4a', 'rgba(95,208,255,0.45)'],
+  'america-chavez': ['#4a6bff', '#1a1030', '#ff4d5e', 'rgba(74,107,255,0.5)'],
+  'jane-foster': ['#ff5a7a', '#16277a', '#7fd4ff', 'rgba(255,90,122,0.5)'],
+  'billy-maximoff': ['#5a7aff', '#2a1b4a', '#ff5a5a', 'rgba(90,122,255,0.5)'],
+  'ava-starr': ['#c2d0e0', '#141a24', '#a06bff', 'rgba(194,208,224,0.45)'],
+  'parker-robbins': ['#ff4d4d', '#1a0a14', '#c9a0ff', 'rgba(255,77,77,0.5)'],
+  'thaddeus-ross': ['#ff4d4d', '#2a1810', '#c2d0e0', 'rgba(255,77,77,0.5)'],
+  'simon-williams': ['#ff5a9a', '#2a1b4a', '#ffca4a', 'rgba(255,90,154,0.5)'],
+  'jack-duquesne': ['#c2d0e0', '#1a1030', '#ffca4a', 'rgba(194,208,224,0.4)'],
+  'mac-gargan': ['#4fd18a', '#241808', '#ffca4a', 'rgba(79,209,138,0.45)'],
+  'jackson-brice': ['#ffca4a', '#241808', '#ff9a3c', 'rgba(255,202,74,0.4)'],
+  'herman-schultz': ['#ff9a3c', '#241808', '#ffe6a8', 'rgba(255,154,60,0.45)'],
 };
 
 export function paletteFor(id: string): Palette | null {
