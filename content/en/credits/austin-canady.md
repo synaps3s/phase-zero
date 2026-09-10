@@ -35,6 +35,11 @@ And he said the emblems were too plain and that too many looked alike. Checking
 that turned up a real bug, where two parts of the design system were writing to
 the same custom property and knocking the generated marks out to black, and
 then a rebuild of the generator so that a character without an authored glyph
-still gets a mark that belongs to them. The mark above was drawn by that
-generator, from his name.
+still gets a mark that belongs to them.
+
+The mark above is not from that generator. It is drawn by hand in
+`src/lib/sigils.ts`, on the same terms as every character glyph in this
+project: a web of twelve strands and three rings computed around the centre,
+with the eyes of the mask he wears as an avatar over it, in one colour, in the
+same frame. Nothing in it is traced from anything.
 :::

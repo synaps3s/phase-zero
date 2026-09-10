@@ -34,6 +34,11 @@ E ha detto che gli emblemi erano troppo elementari e che troppi si somigliavano.
 Verificarlo ha fatto emergere un bug vero, in cui due parti del sistema di
 design scrivevano sulla stessa proprietà e mandavano al nero tutti i segni
 generati, e poi una riscrittura del generatore perché un personaggio senza un
-glifo disegnato abbia comunque un segno che è suo. Il segno qui sopra lo ha
-disegnato quel generatore, a partire dal suo nome.
+glifo disegnato abbia comunque un segno che è suo.
+
+Il segno qui sopra non viene da quel generatore. È disegnato a mano in
+`src/lib/sigils.ts`, alle stesse condizioni di ogni glifo di personaggio di
+questo progetto: una ragnatela di dodici fili e tre anelli calcolati intorno al
+centro, con sopra gli occhi della maschera che porta come avatar, in un colore
+solo, nella stessa cornice. Niente al suo interno è ricalcato da qualcosa.
 :::
