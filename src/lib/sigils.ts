@@ -247,6 +247,43 @@ export const SIGILS: Record<string, string> = {
   kraven: `<circle cx="24" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M24 19 L24 10 M17 21 L11 13 M31 21 L37 13 M14 26 L7 24 M34 26 L41 24 M18 32 L13 38 M30 32 L35 38" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="21" cy="25" r="1.1" fill="currentColor"/><circle cx="27" cy="25" r="1.1" fill="currentColor"/>`,
   'cassandra-webb': `<circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1"/><path d="M24 9 L24 39 M9 24 L39 24 M13 13 L35 35 M35 13 L13 35" stroke="currentColor" stroke-width="0.9" opacity="0.7"/><path d="M24 24 m -6 0 a 6 6 0 1 0 12 0 a 6 6 0 1 0 -12 0 M24 24 m -10 0 a 10 10 0 1 0 20 0 a 10 10 0 1 0 -20 0" fill="none" stroke="currentColor" stroke-width="1" opacity="0.7"/><circle cx="24" cy="24" r="2" fill="currentColor"/>`,
 
+  /* ---------------- SONY (Spider-Verse, the animated films) ---------------- */
+  /* Read on 2026-09-11 from the voice cast sections of the two film pages
+     the fact files cite. */
+
+  /* Aaron Davis: the masked enforcer, the mask itself. */
+  'aaron-davis': `<path d="M10 20 C10 11, 38 11, 38 20 L38 30 C38 37, 30 41, 24 41 C18 41, 10 37, 10 30 Z" fill="currentColor"/><polygon points="13.5,22 22,24.5 20,29 13,27.5" fill="var(--void)"/><polygon points="34.5,22 26,24.5 28,29 35,27.5" fill="var(--void)"/>`,
+  /* Spider-Gwen: the hood, with a spider inside it. */
+  'gwen-stacy-65': `<path d="M24 6 C15 9, 11 20, 12.5 40 L35.5 40 C37 20, 33 9, 24 6 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><ellipse cx="24" cy="24" rx="2.4" ry="3" fill="currentColor"/><ellipse cx="24" cy="29.5" rx="3" ry="3.6" fill="currentColor"/><path d="M22 23 C18 20, 17 18, 16 15 M26 23 C30 20, 31 18, 32 15 M21.5 26 C17 25, 15 26, 14 28 M26.5 26 C31 25, 33 26, 34 28 M22 30 C18 32, 17 34, 16 37 M26 30 C30 32, 31 34, 32 37" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>`,
+  /* Spider-Punk: the guitar he fights with. */
+  'hobie-brown': `<circle cx="15" cy="32" r="7" fill="currentColor"/><circle cx="20.5" cy="25.5" r="5.5" fill="currentColor"/><line x1="22" y1="24" x2="39" y2="7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><rect x="36" y="4" width="6" height="7" rx="1.2" fill="currentColor" transform="rotate(45 39 7.5)"/><circle cx="14.5" cy="32.5" r="2" fill="var(--void)"/>`,
+  /* Jefferson Davis: the police captain, a badge. */
+  'jefferson-davis': `<path d="M24 7 L36.5 11.5 L36.5 24 C36.5 32, 30.5 38, 24 41 C17.5 38, 11.5 32, 11.5 24 L11.5 11.5 Z" fill="currentColor"/><polygon points="24,15 26,21 32.5,21 27.3,25 29.2,31.5 24,27.5 18.8,31.5 20.7,25 15.5,21 22,21" fill="var(--void)"/>`,
+  /* Jess Drew: the motorcycle she rides. */
+  'jess-drew': `<circle cx="12.5" cy="32" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="35.5" cy="32" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15 29 L21 18 L31.5 16.5 L37 22 L33 30 L21 32 Z" fill="currentColor"/><path d="M31.5 16.5 L35 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>`,
+  /* The Spot: a body covered in holes to somewhere else. */
+  'johnathon-ohnn': `<circle cx="24" cy="24" r="15" fill="currentColor"/><circle cx="18" cy="18" r="3.4" fill="var(--void)"/><circle cx="29" cy="15.5" r="2.2" fill="var(--void)"/><circle cx="31" cy="26" r="4" fill="var(--void)"/><circle cx="19.5" cy="30" r="2.8" fill="var(--void)"/><circle cx="26" cy="35" r="1.8" fill="var(--void)"/><circle cx="12" cy="26" r="1.6" fill="var(--void)"/>`,
+  /* Spider-Man 2099: the fangs, since the source calls him a vampire. */
+  'miguel-ohara': `<path d="M11 15 L37 15" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><polygon points="15,15 19.5,31 24,15" fill="currentColor"/><polygon points="24,15 28.5,31 33,15" fill="currentColor"/>`,
+  /* Miles G. Morales: the Prowler's claws. */
+  'miles-g-morales': `<path d="M12 12 C18 14, 22 15, 26 20 M20 8 C24 11, 27 14, 30 19 M29 7 C31 11, 33 15, 34 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M14 40 C14 28, 20 22, 32 22 C36 22, 38 26, 36 30 C30 30, 24 34, 24 40 Z" fill="currentColor"/>`,
+  /* Miles Morales: the spider, drawn sharp. */
+  'miles-morales': `<polygon points="24,13 29.5,24 24,36 18.5,24" fill="currentColor"/><path d="M20 19 L11 11 M28 19 L37 11 M19 24 L8 22 M29 24 L40 22 M19.5 28 L10 34 M28.5 28 L38 34 M22 32 L17 41 M26 32 L31 41" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
+  /* Olivia Octavius: one tentacle, coiled. */
+  'olivia-octavius': `<path d="M24 24 C24 19, 31 19, 31 24 C31 31, 19 31, 18 24 C17 15, 34 12, 38 21 C41 29, 33 41, 22 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="24" r="2.2" fill="currentColor"/>`,
+  /* Spider-Man India: the wrist band that slings the web. */
+  'pavitr-prabhakar': `<ellipse cx="14" cy="28" rx="5" ry="8.5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M19 25 L33 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="35" cy="13.5" r="2.4" fill="currentColor"/><path d="M35 13.5 L40 8 M35 13.5 L42 13 M35 13.5 L36.5 19.5 M35 13.5 L30 8.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>`,
+  /* Peni Parker: the suit she pilots, and the spider she pilots it with. */
+  'peni-parker': `<rect x="13" y="19" width="22" height="20" rx="4" fill="currentColor"/><rect x="17" y="24" width="14" height="3.5" rx="1.5" fill="var(--void)"/><circle cx="24" cy="11" r="2.6" fill="currentColor"/><path d="M22 10 L17 7 M26 10 L31 7 M22 12.5 L17.5 15 M26 12.5 L30.5 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>`,
+  /* Peter B. Parker: an older spider, legs hanging. */
+  'peter-b-parker': `<ellipse cx="24" cy="18" rx="3.2" ry="4.2" fill="currentColor"/><ellipse cx="24" cy="26.5" rx="4.6" ry="6" fill="currentColor"/><path d="M20 22 C13 22, 10 28, 9 37 M28 22 C35 22, 38 28, 39 37 M20 27 C15 29, 13 34, 13 40 M28 27 C33 29, 35 34, 35 40 M21 31 C19 34, 18 38, 18 42 M27 31 C29 34, 30 38, 30 42" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+  /* Spider-Ham: a pig's snout and ears. */
+  'peter-porker': `<ellipse cx="24" cy="27" rx="11" ry="8" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="20" cy="27" r="2" fill="currentColor"/><circle cx="28" cy="27" r="2" fill="currentColor"/><polygon points="11,20 13,8 21,16" fill="currentColor"/><polygon points="37,20 35,8 27,16" fill="currentColor"/>`,
+  /* Rio Morales: a mother and a nurse. */
+  'rio-morales': `<path d="M24 39 C10 29, 8 19, 15 14 C19 11, 23 14, 24 17 C25 14, 29 11, 33 14 C40 19, 38 29, 24 39 Z" fill="currentColor"/><path d="M24 19.5 L24 30 M18.5 24.5 L29.5 24.5" stroke="var(--void)" stroke-width="2.6" stroke-linecap="round"/>`,
+  /* Spider-Man Noir: the 1930s, a fedora. */
+  'spider-man-noir': `<path d="M14 30 L15.5 17 C20 13.5, 28 13.5, 32.5 17 L34 30 Z" fill="currentColor"/><path d="M7 31 C14 34, 34 34, 41 31" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M15 26 L33 26" stroke="var(--void)" stroke-width="1.6"/>`,
+
   /* ---------------- Not a character ----------------
      The credits page draws the people on it with the same component that
      draws a character, so somebody who is not in the story can still have a
