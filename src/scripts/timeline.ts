@@ -52,7 +52,7 @@ if (timeline) {
     words: [] as string[],
   };
 
-  const watched = getWatched();
+  let watched = getWatched();
 
   /* The help lines live in the markup rather than in this file, so they are
      translated with everything else. */
@@ -249,6 +249,17 @@ if (timeline) {
     apply();
   });
 
+  /** Paints every row from the stored set, so the shelf says what is saved. */
+  function paintWatched(): void {
+    for (const row of rows) {
+      const isWatched = watched.has(row.dataset.titleId!);
+      row.dataset.watched = String(isWatched);
+      const button = row.querySelector<HTMLButtonElement>('[data-watch-toggle]');
+      button?.setAttribute('aria-pressed', String(isWatched));
+      button?.setAttribute('aria-label', isWatched ? labels.unmark : labels.mark);
+    }
+  }
+
   /* Restore what the reader chose last time before the first paint of the
      list, so they never have to set it twice. */
   press('order', state.order);
@@ -256,14 +267,20 @@ if (timeline) {
   press('separate', state.separate ? 'on' : 'off');
   if (orderHelp) orderHelp.textContent = helpFor(orderHelp, state.order === 'release' ? 'release' : 'chrono');
   if (depthHelp) depthHelp.textContent = helpFor(depthHelp, `d${state.depth}`);
-  for (const row of rows) {
-    const isWatched = watched.has(row.dataset.titleId!);
-    row.dataset.watched = String(isWatched);
-    const button = row.querySelector<HTMLButtonElement>('[data-watch-toggle]');
-    button?.setAttribute('aria-pressed', String(isWatched));
-    button?.setAttribute('aria-label', isWatched ? labels.unmark : labels.mark);
-  }
+  paintWatched();
   apply();
+
+  /* A page restored from history does not run this module again, so a title
+     marked on another page in between is in storage and not on this shelf:
+     the tally counts one thing and the rows show another, and the wrong
+     title is called the next one. Reading the set again puts them back in
+     agreement, the same way the character index re-reads its filter. */
+  window.addEventListener('pageshow', (event) => {
+    if (!event.persisted) return;
+    watched = getWatched();
+    paintWatched();
+    apply();
+  });
 }
 
 /* --- The map of connections ---------------------------------------- */

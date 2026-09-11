@@ -97,13 +97,25 @@ function wireWatched(): void {
     unmark: shelf.dataset.labelUnmark ?? 'Mark as not watched',
   };
 
-  const watched = getWatched();
+  let watched = getWatched();
   const spines = [...shelf.querySelectorAll<HTMLElement>('[data-title-id]')];
 
-  for (const spine of spines) {
-    paint(spine, watched.has(spine.dataset.titleId!), label);
-  }
-  markNext(spines, watched);
+  const paintAll = (): void => {
+    for (const spine of spines) {
+      paint(spine, watched.has(spine.dataset.titleId!), label);
+    }
+    markNext(spines, watched);
+  };
+  paintAll();
+
+  /* Coming back from history restores the shelf as it was left, not as the
+     storage now is: a title marked on the timeline in between would still
+     show as unwatched here, and be called the next one. */
+  window.addEventListener('pageshow', (event) => {
+    if (!event.persisted) return;
+    watched = getWatched();
+    paintAll();
+  });
 
   shelf.addEventListener('click', (event) => {
     const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-watch-toggle]');
