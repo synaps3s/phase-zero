@@ -128,6 +128,63 @@ export const SIGILS: Record<string, string> = {
   /* Volstagg: the warrior who loves to eat. */
   volstagg: `<ellipse cx="27" cy="20" rx="12" ry="9" fill="currentColor" transform="rotate(-40 27 20)"/><line x1="19" y1="30" x2="10" y2="39" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="9" cy="40" r="2.6" fill="currentColor"/><circle cx="11.5" cy="36.5" r="2.2" fill="currentColor"/><circle cx="7" cy="37.5" r="2.2" fill="currentColor"/>`,
 
+  /* ---------------- MCU, the Eternals, the Defenders and the Guardians ---------------- */
+  /* Read on 2026-09-11 from the MCU character lists and the Netflix series
+     character lists the fact files cite. */
+
+  /* Ajak: the bridge between the Eternals and the Celestial. */
+  ajak: `<path d="M9 33 L9 26 C9 13, 39 13, 39 26 L39 33" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 34 L44 34" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M17 34 L17 27 M24 34 L24 25 M31 34 L31 27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>`,
+  /* Dane Whitman: the history professor, an open book. */
+  'dane-whitman': `<path d="M24 15 C18 11.5, 12 11.5, 8 13.5 L8 36 C12 34, 18 34, 24 37.5 C30 34, 36 34, 40 36 L40 13.5 C36 11.5, 30 11.5, 24 15 Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="24" y1="15" x2="24" y2="37.5" stroke="currentColor" stroke-width="1.4"/>`,
+  /* Druig: other people's minds, on strings. */
+  druig: `<path d="M11 11 L37 11 M24 6 L24 16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M14 11 L15.5 32 M24 16 L24 34 M34 11 L32.5 32" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="15.5" cy="35" r="2.6" fill="currentColor"/><circle cx="24" cy="37" r="2.6" fill="currentColor"/><circle cx="32.5" cy="35" r="2.6" fill="currentColor"/>`,
+  /* Gilgamesh: the fist, inside the exoskeleton of energy he puts around it. */
+  gilgamesh: `<circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-dasharray="3 2.5"/><rect x="15" y="17" width="18" height="15" rx="4" fill="currentColor"/><path d="M20 17 L20 26 M24.5 17 L24.5 26 M29 17 L29 26" stroke="var(--void)" stroke-width="1.2"/>`,
+  /* Ikaris: the beams from his eyes. */
+  ikaris: `<circle cx="17" cy="14" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="14" r="1.9" fill="currentColor"/><circle cx="20" cy="14" r="1.9" fill="currentColor"/><path d="M15 17 L27 42 M21 17 L36 40" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`,
+  /* Kingo: what leaves his hands. */
+  kingo: `<circle cx="24" cy="33" r="7" fill="currentColor"/><path d="M19 27 L13 18 M24 26 L24 15 M29 27 L35 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/><circle cx="12" cy="15.5" r="2.6" fill="currentColor"/><circle cx="24" cy="11.5" r="2.6" fill="currentColor"/><circle cx="36" cy="15.5" r="2.6" fill="currentColor"/>`,
+  /* Makkari: speed, the shape of a sonic boom. */
+  makkari: `<polygon points="41,24 14,9 22,24 14,39" fill="currentColor"/><path d="M6 17 L11 17 M4 24 L10 24 M6 31 L11 31" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>`,
+  /* Phastos: the inventor. */
+  phastos: `<path d="M24 7 C16 7, 12 13, 12 19 C12 25, 17 27, 18 32 L30 32 C31 27, 36 25, 36 19 C36 13, 32 7, 24 7 Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M19 36 L29 36 M20.5 40 L27.5 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 21 L24 26 L27 21" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>`,
+  /* Sersi: one thing turned into another. */
+  sersi: `<rect x="5" y="17" width="14" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M21 24 L27 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><polygon points="30,24 26,21 26,27" fill="currentColor"/><circle cx="36.5" cy="24" r="7" fill="currentColor"/>`,
+  /* Sprite: a child, and the grown woman she projects around herself. */
+  sprite: `<circle cx="24" cy="24" r="5" fill="currentColor"/><circle cx="24" cy="24" r="13.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2.5"/>`,
+  /* Thena: a weapon, forming out of nothing. */
+  thena: `<polygon points="24,4 29.5,17 24,20.5 18.5,17" fill="currentColor"/><line x1="24" y1="21" x2="24" y2="43" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="3.5 2.5"/>`,
+
+  /* Muse: the brush, and what he paints with. */
+  'bastian-cooper': `<line x1="8" y1="40" x2="24" y2="21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M22 19 L27.5 22.5 L37 8 Z" fill="currentColor"/><path d="M36 26 C34 29, 34 31, 36 32 C38 31, 38 29, 36 26 Z" fill="currentColor"/><path d="M40 34 C38.5 36, 38.5 37.5, 40 38.5 C41.5 37.5, 41.5 36, 40 34 Z" fill="currentColor"/>`,
+  /* Colleen Wing: bushido, a sheathed katana. */
+  'colleen-wing': `<path d="M23 42 C22 32, 22.5 25, 24.5 19" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round"/><ellipse cx="24.8" cy="17" rx="5.5" ry="1.9" fill="currentColor"/><path d="M25.5 15 C26 11, 26.5 8, 27.5 5" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/><path d="M24.5 12.5 L28 11.5 M25 9.5 L28.5 8.5" stroke="var(--void)" stroke-width="0.9"/>`,
+  /* Davos: the fist he thought was his, drawn empty. */
+  davos: `<path d="M14 21 C14 15.5, 18 15, 20 15 L30 15 C33 15, 35 17, 35 20 L35 30 C35 34, 32 36, 28 36 L19 36 C15.5 36, 14 33, 14 30 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M20 15 L20 24 M25 15 L25 24 M30 15 L30 24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>`,
+  /* Bullseye: the target, and something arriving at the centre of it. */
+  'dex-poindexter': `<circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="2.4" fill="currentColor"/><path d="M42 6 L26 22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><polygon points="24,24 27,19 29,21" fill="currentColor"/>`,
+  /* Elektra: the world is a chess game to her, and she is the queen. */
+  'elektra-natchios': `<circle cx="24" cy="7.5" r="2.4" fill="currentColor"/><path d="M14 14 L18 21 L21 13 L24 22 L27 13 L30 21 L34 14 L32 28 L16 28 Z" fill="currentColor"/><path d="M17 31 L31 31 M15 35 L33 35" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><rect x="13" y="37.5" width="22" height="4" rx="1" fill="currentColor"/>`,
+  /* Kilgrave: a mind pulled inward. */
+  kilgrave: `<path d="M24 24 C26 22, 29 23, 29 26 C29 30, 23 31, 20 28 C16 24, 20 17, 26 17 C34 17, 37 25, 33 31 C29 37, 18 38, 13 31 C8 24, 12 12, 24 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`,
+  /* Misty Knight: the arm they built her. */
+  'misty-knight': `<path d="M14 7 L14 23" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/><circle cx="15" cy="25.5" r="4.6" fill="currentColor"/><path d="M18 27.5 L36 27.5" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/><path d="M23 24.5 L23 30.5 M28 24.5 L28 30.5 M33 24.5 L33 30.5" stroke="var(--void)" stroke-width="1.2"/><circle cx="38.5" cy="27.5" r="4.2" fill="currentColor"/>`,
+  /* Hellcat: the cat. */
+  'trish-walker': `<circle cx="24" cy="26" r="11" fill="currentColor"/><polygon points="13,20 12,8 22,15.5" fill="currentColor"/><polygon points="35,20 36,8 26,15.5" fill="currentColor"/><ellipse cx="19.5" cy="25" rx="1.4" ry="2.2" fill="var(--void)"/><ellipse cx="28.5" cy="25" rx="1.4" ry="2.2" fill="var(--void)"/>`,
+
+  /* Adam Warlock: the cocoon, opened too early. */
+  'adam-warlock': `<ellipse cx="24" cy="25" rx="10.5" ry="14.5" fill="currentColor"/><path d="M24 10.5 L21 18 L26 24 L22 31 L25 38" fill="none" stroke="var(--void)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Ego: a planet that is a person. */
+  ego: `<circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M14 24 C18 18.5, 30 18.5, 34 24 C30 29.5, 18 29.5, 14 24 Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="24" cy="24" r="3" fill="currentColor"/>`,
+  /* The High Evolutionary: lower forms, pushed upward. */
+  'high-evolutionary': `<circle cx="10" cy="37" r="2.4" fill="currentColor"/><circle cx="19" cy="30" r="3.4" fill="currentColor"/><circle cx="29" cy="21.5" r="4.6" fill="currentColor"/><path d="M33 16 L40 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><polygon points="42,6 35,7.5 40.5,13" fill="currentColor"/>`,
+  /* Howard the Duck: the duck. */
+  'howard-the-duck': `<circle cx="20" cy="21" r="9.5" fill="currentColor"/><path d="M27 19 C34 16.5, 41 18.5, 42 23 C41 27, 34 28.5, 27 26 Z" fill="currentColor"/><circle cx="22" cy="18" r="1.7" fill="var(--void)"/><path d="M14 30 C13 35, 15 39, 20 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`,
+  /* Ronan the Accuser: the gavel. */
+  ronan: `<rect x="20" y="8" width="18" height="9" rx="2" fill="currentColor" transform="rotate(45 29 12.5)"/><line x1="26" y1="16" x2="12" y2="30" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><rect x="22" y="35" width="18" height="4.5" rx="1.5" fill="currentColor"/>`,
+  /* The Collector: cases, with something kept in each. */
+  'taneleer-tivan': `<rect x="8" y="9" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="26" y="9" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="8" y="26" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="26" y="26" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="15.5" r="2.4" fill="currentColor"/><polygon points="33,12 36.5,19 29.5,19" fill="currentColor"/><rect x="12" y="30" width="6" height="5" fill="currentColor"/><circle cx="33" cy="32.5" r="1.4" fill="currentColor"/><circle cx="33" cy="32.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1"/>`,
+
   /* ---------------- FOX (X-Men / Terra-10005) ---------------- */
   wolverine: `<path d="M14 12 C16 24, 15 32, 12 36" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="M24 10 C25 24, 24 34, 22 38" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="M34 12 C32 24, 33 32, 36 36" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>`,
   'professor-x': `<circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="16" y1="16" x2="32" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><line x1="32" y1="16" x2="16" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`,
