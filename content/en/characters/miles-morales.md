@@ -2,7 +2,7 @@
 title: Miles Morales
 oneLine: A Brooklyn teenager who gets bitten by the wrong spider in the wrong
   week, and inherits a job from a man he watched die.
-tagline: Earth-1610
+tagline: Spider-Man
 role: Student at Visions Academy
 affiliation: Nobody, for a long time
 powers: Everything Spider-Man has, plus turning invisible and a shock nobody

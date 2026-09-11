@@ -1,5 +1,7 @@
 id: spider-man-noir
 universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-90214
 franchise: spider-verse
 realName: Peter Parker
 alignment: hero
@@ -17,4 +19,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse#Voice_cast"
     title: "Spider-Man: Into the Spider-Verse, Wikipedia"
     accessed: 2026-09-10
-verified: 2026-09-10
+  - url: "https://marvel.fandom.com/wiki/Peter_Parker_(Earth-90214B)"
+    title: "Peter Parker (Earth-90214B), Marvel Database"
+    accessed: 2026-09-11
+verified: 2026-09-11

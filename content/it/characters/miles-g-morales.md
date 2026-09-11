@@ -2,7 +2,7 @@
 title: Miles G. Morales / the Prowler
 oneLine: Il Miles dell'universo in cui il ragno non lo ha mai morso, quindi
   nessuno è diventato Spider-Man, e tutto è andato dall'altra parte.
-tagline: Terra-42
+tagline: The Prowler
 role: The Prowler
 affiliation: Se stesso
 powers: Nessuno. Artigli, e la stessa testa.

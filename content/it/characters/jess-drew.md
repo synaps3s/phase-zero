@@ -2,7 +2,7 @@
 title: Jess Drew / Spider-Woman
 oneLine: Il vice di Miguel, incinta avanzata, in moto, e senza pazienza per i
   sentimenti di nessuno, i propri compresi.
-tagline: Terra-332
+tagline: Spider-Woman
 role: Vice di Miguel O'Hara
 affiliation: La Spider-Society
 powers: I soliti, e una moto.

@@ -2,7 +2,7 @@
 title: Hobie Brown / Spider-Punk
 oneLine: Uno Spider-Man che non crede nei capi, dentro una squadra guidata da
   uno, e che sta lì solo per romperla.
-tagline: Terra-138
+tagline: Spider-Punk
 role: Anarchico
 affiliation: Nessuna, per principio
 powers: I soliti, più una chitarra.

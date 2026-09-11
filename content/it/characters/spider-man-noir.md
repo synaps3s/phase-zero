@@ -20,3 +20,11 @@ popolare e non ne esce mai.
 È un personaggio da una battuta sola e la battuta è ottima: è reso in scala di
 grigi su uno schermo pieno di colore, il che vuol dire che a farlo funzionare è
 l'animazione e non i dialoghi.
+
+:::detail{title="Quale Terra è questa"}
+I film non dicono mai il numero. Il Marvel Database archivia questa versione
+come Earth-90214B, con un suffisso che usa per tenere il film separato dalla Earth-90214
+dei fumetti, e descrive la pagina come dedicata a Earth-90214 così come la
+mostrano i film. Qui il numero compare senza suffisso, che è una convenzione
+della wiki e non qualcosa che si vede sullo schermo.
+:::

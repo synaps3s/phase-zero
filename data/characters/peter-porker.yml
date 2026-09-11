@@ -1,5 +1,7 @@
 id: peter-porker
 universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-8311
 franchise: spider-verse
 realName: Peter Porker
 alignment: hero
@@ -17,4 +19,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse#Voice_cast"
     title: "Spider-Man: Into the Spider-Verse, Wikipedia"
     accessed: 2026-09-10
-verified: 2026-09-10
+  - url: "https://marvel.fandom.com/wiki/Peter_Porker_(Earth-8311B)"
+    title: "Peter Porker (Earth-8311B), Marvel Database"
+    accessed: 2026-09-11
+verified: 2026-09-11

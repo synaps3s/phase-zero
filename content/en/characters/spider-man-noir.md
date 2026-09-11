@@ -19,3 +19,11 @@ speaks entirely in the register of a pulp narrator and never breaks it.
 He is a one-joke character and the joke is very good: he is rendered in
 greyscale on a screen full of colour, which means the animation itself is doing
 the work rather than the dialogue.
+
+:::detail{title="Which Earth this is"}
+The films never say the number out loud. The Marvel Database files this
+version under Earth-90214B, with a suffix it uses to keep the film apart from the
+comics' Earth-90214, and describes the page as covering Earth-90214 as the films
+depict it. The number is shown here without the suffix, which is the wiki's
+own bookkeeping rather than anything on screen.
+:::

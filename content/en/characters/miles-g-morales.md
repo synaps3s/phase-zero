@@ -2,7 +2,7 @@
 title: Miles G. Morales / the Prowler
 oneLine: The Miles from the universe where the spider never bit him, so nobody
   became Spider-Man, and everything went the other way.
-tagline: Earth-42
+tagline: The Prowler
 role: The Prowler
 affiliation: Himself
 powers: None. Claws, and the same mind.

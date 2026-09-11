@@ -2,7 +2,7 @@
 title: Miguel O'Hara / Spider-Man 2099
 oneLine: The Spider-Man who runs the multiverse's police force, and who is
   certain that some people have to be allowed to die.
-tagline: Earth-928
+tagline: Spider-Man 2099
 role: Leader of the Spider-Society
 affiliation: The Spider-Society
 powers: Talons, fangs, and everything else. He is the one built like a threat.

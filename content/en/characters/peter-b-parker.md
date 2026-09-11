@@ -2,7 +2,7 @@
 title: Peter B. Parker
 oneLine: A Spider-Man who has been doing it for twenty-two years, is divorced,
   is not in good shape, and is the best mentor anyone in these films gets.
-tagline: Earth-616B
+tagline: Spider-Man
 role: Spider-Man, still
 affiliation: Miles, reluctantly
 powers: The usual, applied by somebody who is tired.

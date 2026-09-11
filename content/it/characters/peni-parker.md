@@ -24,3 +24,11 @@ l'animazione. Ogni Spider-persona nella stanza è disegnata nello stile del
 proprio universo: Peni a un'altra frequenza di fotogrammi, con un altro tratto e
 altri occhi, in piedi accanto a un detective in bianco e nero degli anni Trenta
 e a un maiale dei cartoni. Nient'altro in questo catalogo ci ha provato.
+
+:::detail{title="Quale Terra è questa"}
+I film non dicono mai il numero. Il Marvel Database archivia questa versione
+come Earth-14512B, con un suffisso che usa per tenere il film separato dalla Earth-14512
+dei fumetti, e descrive la pagina come dedicata a Earth-14512 così come la
+mostrano i film. Qui il numero compare senza suffisso, che è una convenzione
+della wiki e non qualcosa che si vede sullo schermo.
+:::

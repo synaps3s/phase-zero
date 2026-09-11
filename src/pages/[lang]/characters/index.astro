@@ -4,7 +4,7 @@ import Base from '../../../layouts/Base.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse } from '../../../lib/content';
 import Emblem from '../../../components/Emblem.astro';
-import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
+import { liveryStyle, franchiseName, designationOf } from '../../../lib/livery';
 import { searchable } from '../../../lib/search-text';
 
 export function getStaticPaths() {
@@ -38,12 +38,9 @@ for (const person of await getCollection('characters')) {
   const prose = await resolveProse('characterProse', language.code, person.data.id);
   if (!prose) continue;
   const actors = person.data.actors.map((actor) => actor.name).join(', ');
-  /* The Earth number, but only outside the shared story. Everyone in the
-     shared run would carry the same one, and a reader assumes it anyway; the
-     number earns its place next to a name when it says that this is not that
-     version of the character. The unbound set has no number to give. */
-  const universe = universeOf(person.data.universe);
-  const designation = universe.continuity === 'separate' ? universe.designation : null;
+  /* The Earth number earns its place next to a name when it says that this
+     is not the shared story's version of the character. */
+  const designation = designationOf(person.data);
   people.push({
     id: person.data.id,
     sigil: person.data.sigil,

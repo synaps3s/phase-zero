@@ -1,5 +1,7 @@
 id: olivia-octavius
 universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-1610
 franchise: spider-verse
 realName: Olivia Octavius
 alignment: villain
@@ -17,4 +19,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Spider-Man:_Into_the_Spider-Verse#Voice_cast"
     title: "Spider-Man: Into the Spider-Verse, Wikipedia"
     accessed: 2026-09-10
-verified: 2026-09-10
+  - url: "https://marvel.fandom.com/wiki/Olivia_Octavius_(Earth-1610B)"
+    title: "Olivia Octavius (Earth-1610B), Marvel Database"
+    accessed: 2026-09-11
+verified: 2026-09-11

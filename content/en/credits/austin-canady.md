@@ -28,7 +28,8 @@ The Earth numbers on the character index are his idea as well. He pointed out
 that somebody who meets Cyclops or the Green Goblin in a list with no mark on
 it will assume there is a version of them in the shared story, and asked for
 the universe to sit next to the name of everyone who is not from it. It does
-now.
+now. Then he sent the Earth numbers the first pass had missed, from Aaron
+Davis to Spider-Man Noir, and those are in as well.
 
 :::detail{title="The two he was most right about"}
 He asked why the Spider-Verse films were catalogued and none of their people

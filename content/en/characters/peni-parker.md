@@ -24,3 +24,11 @@ animation. Every Spider-Person in the room is drawn in the style of their own
 universe: Peni at a different frame rate, with different linework and different
 eyes, standing next to a monochrome detective from the 1930s and a cartoon pig.
 Nothing else in this catalogue has tried that.
+
+:::detail{title="Which Earth this is"}
+The films never say the number out loud. The Marvel Database files this
+version under Earth-14512B, with a suffix it uses to keep the film apart from the
+comics' Earth-14512, and describes the page as covering Earth-14512 as the films
+depict it. The number is shown here without the suffix, which is the wiki's
+own bookkeeping rather than anything on screen.
+:::

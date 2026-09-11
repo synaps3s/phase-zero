@@ -20,3 +20,11 @@ Funziona perché il film gli lascia portare dietro le proprie regole. Tira fuori
 un martello dal nulla in un mondo in cui non dovrebbe essere possibile, e il
 film non lo spiega, perché spiegarlo vorrebbe dire ammettere che gli altri
 Spider sono quelli veri.
+
+:::detail{title="Quale Terra è questa"}
+I film non dicono mai il numero. Il Marvel Database archivia questa versione
+come Earth-8311B, con un suffisso che usa per tenere il film separato dalla Earth-8311
+dei fumetti, e descrive la pagina come dedicata a Earth-8311 così come la
+mostrano i film. Qui il numero compare senza suffisso, che è una convenzione
+della wiki e non qualcosa che si vede sullo schermo.
+:::

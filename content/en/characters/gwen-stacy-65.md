@@ -2,7 +2,7 @@
 title: Gwen Stacy / Spider-Woman
 oneLine: The Spider-Woman of a universe where the person who died was Peter,
   and her father is the officer hunting her for it.
-tagline: Earth-65
+tagline: Spider-Woman
 role: Drummer, and a vigilante
 affiliation: The Spider-Society, eventually
 powers: The full set, and better balance than any of them.

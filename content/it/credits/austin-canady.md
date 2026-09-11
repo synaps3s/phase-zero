@@ -27,7 +27,8 @@ Anche i numeri di Terra nell'indice dei personaggi sono un'idea sua. Ha fatto
 notare che chi incontra Ciclope o Goblin in un elenco senza alcun segno darà
 per scontato che ne esista una versione nella storia condivisa, e ha chiesto
 che l'universo stia accanto al nome di chiunque non ne faccia parte. Adesso è
-così.
+così. Poi ha mandato i numeri di Terra che il primo passaggio aveva mancato, da
+Aaron Davis a Spider-Man Noir, e ci sono anche quelli.
 
 :::detail{title="Le due cose su cui aveva più ragione"}
 Ha chiesto perché i film Spider-Verse fossero in catalogo e i loro personaggi

@@ -5,7 +5,7 @@ import FallbackNotice from '../../../components/FallbackNotice.astro';
 import Emblem from '../../../components/Emblem.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse, sourceSlugs } from '../../../lib/content';
-import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
+import { liveryStyle, franchiseName, universeOf, designationOf } from '../../../lib/livery';
 
 export async function getStaticPaths() {
   // See the note on the title route: no prose, no page, and no broken build.
@@ -85,6 +85,9 @@ const nameLength = prose.entry.data.title.length;
 const nameSize = nameLength > 26 ? 'long' : nameLength > 18 ? 'medium' : 'short';
 
 const universe = universeOf(person.data.universe);
+/* Their own Earth when the films name one; the universe's otherwise, even in
+   the shared story, since on their own page there is room to say it. */
+const designation = person.data.designation ?? universe.designation;
 const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', timeZone: 'UTC' }).format(
   person.data.verified,
 );
@@ -125,7 +128,7 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
           {franchiseName(person.data.franchise) !== prose.entry.data.tagline && (
             <span>{franchiseName(person.data.franchise)}</span>
           )}
-          <span>{universe.designation}</span>
+          <span>{designation}</span>
         </p>
       </div>
     </div>

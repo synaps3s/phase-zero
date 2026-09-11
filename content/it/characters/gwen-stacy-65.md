@@ -2,7 +2,7 @@
 title: Gwen Stacy / Spider-Woman
 oneLine: La Spider-Woman di un universo in cui a morire è stato Peter, e in cui
   suo padre è il poliziotto che le dà la caccia per questo.
-tagline: Terra-65
+tagline: Spider-Woman
 role: Batterista, e vigilante
 affiliation: La Spider-Society, alla fine
 powers: Tutto il repertorio, e un equilibrio migliore di chiunque altro.

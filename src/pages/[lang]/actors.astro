@@ -24,6 +24,7 @@ type Role = {
   franchise: string;
   saga: string;
   universe: string;
+  designation: string;
 };
 
 type Actor = { name: string; roles: Role[]; universes: string[] };
@@ -45,6 +46,7 @@ for (const person of await getCollection('characters')) {
     franchise: person.data.franchise,
     saga: sagaOf.get(person.data.firstAppearance) ?? 'unbound',
     universe: person.data.universe,
+    designation: person.data.designation ?? universeOf(person.data.universe).designation,
   };
   cast.set(
     person.data.id,
@@ -115,7 +117,7 @@ recast.sort((a, b) => collator.compare(a.role.name, b.role.name));
                   <li class="chip" data-livery style={liveryStyle(role.saga, role.franchise)}>
                     <a href={localePath(language.code, 'characters', role.id)}>
                       <span class="chip-title">{role.name}</span>
-                      <span class="chip-alias">{universeOf(role.universe).designation}</span>
+                      <span class="chip-alias">{role.designation}</span>
                     </a>
                   </li>
                 ))}

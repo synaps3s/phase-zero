@@ -1,5 +1,7 @@
 id: eric-brooks
 universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-26320
 franchise: blade
 realName: Eric Brooks
 alignment: antihero
@@ -19,4 +21,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Blade_(1998_film)#Cast"
     title: "Blade (1998 film), Wikipedia"
     accessed: 2026-09-10
-verified: 2026-09-10
+  - url: "https://marvel.fandom.com/wiki/Eric_Brooks_(Earth-26320)"
+    title: "Eric Brooks (Earth-26320), Marvel Database"
+    accessed: 2026-09-11
+verified: 2026-09-11

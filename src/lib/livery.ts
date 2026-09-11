@@ -67,6 +67,19 @@ export function universeOf(id: string): Universe {
   return universeById.get(id) ?? UNBOUND;
 }
 
+/**
+ * The Earth number to show next to a person, or null when there is nothing
+ * worth saying. Their own designation wins when they have one. Otherwise the
+ * universe's, but only outside the shared story: everyone in the shared run
+ * would carry the same number and a reader assumes it anyway, and the unbound
+ * set has no number to give.
+ */
+export function designationOf(person: { universe: string; designation?: string | null }): string | null {
+  if (person.designation) return person.designation;
+  const universe = universeOf(person.universe);
+  return universe.continuity === 'separate' ? universe.designation : null;
+}
+
 export function franchiseOf(id: string): Franchise | undefined {
   return franchiseById.get(id);
 }

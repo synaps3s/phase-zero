@@ -2,7 +2,7 @@
 title: Pavitr Prabhakar / Spider-Man India
 oneLine: A Spider-Man from Mumbattan who has had none of the trauma, and is
   enjoying himself enormously.
-tagline: Earth-50101
+tagline: Spider-Man India
 role: Student
 affiliation: The Spider-Society
 powers: The usual, with no grief attached.

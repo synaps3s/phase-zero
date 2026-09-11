@@ -2,7 +2,7 @@
 title: Peter B. Parker
 oneLine: Uno Spider-Man che fa questo mestiere da ventidue anni, divorziato,
   fuori forma, ed è il miglior maestro che questi film concedano a chiunque.
-tagline: Terra-616B
+tagline: Spider-Man
 role: Spider-Man, ancora
 affiliation: Miles, controvoglia
 powers: I soliti, applicati da uno che è stanco.

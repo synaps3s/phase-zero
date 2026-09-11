@@ -2,7 +2,7 @@
 title: Jess Drew / Spider-Woman
 oneLine: Miguel's second in command, heavily pregnant, on a motorcycle, with no
   patience for anybody's feelings including her own.
-tagline: Earth-332
+tagline: Spider-Woman
 role: Second to Miguel O'Hara
 affiliation: The Spider-Society
 powers: The usual, and a bike.

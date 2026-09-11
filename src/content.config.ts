@@ -179,6 +179,10 @@ const characters = defineCollection({
   schema: z.object({
     id: z.string(),
     universe: z.string(),
+    /* The Earth this person is from, when the films name one and the catalogue
+       universe does not. The Spider-Verse films are filed as unbound because
+       they cross several Earths; the people in them still come from one each. */
+    designation: z.string().nullable().default(null),
     franchise: z.string(),
     // Real name where the character has one, for search and disambiguation.
     realName: z.string().nullable().default(null),

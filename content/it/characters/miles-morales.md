@@ -2,7 +2,7 @@
 title: Miles Morales
 oneLine: Un ragazzo di Brooklyn morso dal ragno sbagliato nella settimana
   sbagliata, che eredita un lavoro da un uomo che ha visto morire.
-tagline: Terra-1610
+tagline: Spider-Man
 role: Studente alla Visions Academy
 affiliation: Nessuna, per parecchio tempo
 powers: Tutto quello che ha Spider-Man, più l'invisibilità e una scarica che
