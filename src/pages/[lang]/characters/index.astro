@@ -100,8 +100,9 @@ people.sort((a, b) => collator.compare(a.name, b.name));
     </div>
 
     {/* Filtering by what somebody is, which the search box cannot do because
-        the classification is not a word on the page. Rendered as links so it
-        works with no JavaScript: each one is the same list, pre-filtered. */}
+        the classification is not a word on the page. Buttons, like the
+        timeline's controls: with no JavaScript they do nothing and the whole
+        list stays readable, which is the state every page has to work in. */}
     <fieldset class="control">
       <legend class="label">{t('characters.alignment')}</legend>
       <div class="switch">
