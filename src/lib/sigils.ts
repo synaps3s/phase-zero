@@ -114,6 +114,66 @@ export const SIGILS: Record<string, string> = {
   colossus: `<rect x="13" y="13" width="22" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M13 24 L35 24 M24 13 L24 35" stroke="currentColor" stroke-width="1.2" opacity="0.55"/><circle cx="17" cy="17" r="1.3" fill="currentColor"/><circle cx="31" cy="17" r="1.3" fill="currentColor"/><circle cx="17" cy="31" r="1.3" fill="currentColor"/><circle cx="31" cy="31" r="1.3" fill="currentColor"/>`,
   sabretooth: `<path d="M10 14 C18 22, 22 30, 20 40 M18 12 C26 20, 30 28, 28 38 M26 12 C34 20, 37 27, 36 36" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>`,
 
+  /* The people who used to fall back to the generated mark. Each one is drawn
+     from the trait its source page gives: the power, the weapon, the thing
+     they are known for. Read on 2026-09-11 from the pages their fact files
+     cite. */
+
+  /* Havok: plasma rings, fanning out from a point on the chest. */
+  'alex-summers': `<circle cx="24" cy="37" r="2.2" fill="currentColor"/><path d="M16 37 A8 8 0 0 1 32 37" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 37 A14 14 0 0 1 38 37" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.75"/><path d="M5 37 A19 19 0 0 1 43 37" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>`,
+  /* Angel Salvadore: insect wings, and the acid she spits. */
+  'angel-salvadore': `<line x1="24" y1="12" x2="24" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><ellipse cx="16" cy="18" rx="9" ry="3" fill="none" stroke="currentColor" stroke-width="1.4" transform="rotate(-30 16 18)"/><ellipse cx="32" cy="18" rx="9" ry="3" fill="none" stroke="currentColor" stroke-width="1.4" transform="rotate(30 32 18)"/><ellipse cx="17" cy="27" rx="7" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.4" transform="rotate(30 17 27)"/><ellipse cx="31" cy="27" rx="7" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.4" transform="rotate(-30 31 27)"/><path d="M24 35 C22 38, 22 40, 24 41 C26 40, 26 38, 24 35 Z" fill="currentColor"/>`,
+  /* Darwin: a body that adapts, one shape becoming another. */
+  'armando-munoz': `<path d="M24 10 A14 14 0 0 0 24 38 L36 38 L36 10 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="24" cy="24" r="3" fill="currentColor"/>`,
+  /* Psylocke: a blade made of psychic energy, point up. */
+  'betsy-braddock': `<polygon points="24,5 28,30 20,30" fill="currentColor" opacity="0.85"/><line x1="15" y1="31" x2="33" y2="31" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="24" y1="31" x2="24" y2="41" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>`,
+  /* Juggernaut: the helmet, a dome with two slits and nothing else. */
+  'cain-marko': `<path d="M10 36 L10 24 C10 12, 38 12, 38 24 L38 36 Z" fill="currentColor"/><rect x="15" y="26" width="7" height="3" rx="1" fill="var(--void)"/><rect x="26" y="26" width="7" height="3" rx="1" fill="var(--void)"/>`,
+  /* Cassandra Nova: Xavier's twin, the same disc split into its two halves. */
+  'cassandra-nova': `<path d="M9 24 A15 15 0 0 1 39 24 Z" fill="currentColor"/><path d="M9 24 A15 15 0 0 0 39 24 Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="24" cy="31" r="1.8" fill="var(--void)"/><circle cx="24" cy="31" r="1.8" fill="none" stroke="currentColor" stroke-width="1.2"/>`,
+  /* Blink: two portals, and the step between them. */
+  'clarice-ferguson': `<polygon points="17,8 25,24 17,40 9,24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><polygon points="34,15 39,24 34,33 29,24" fill="currentColor"/><line x1="17" y1="24" x2="29" y2="24" stroke="currentColor" stroke-width="1.3" stroke-dasharray="2 2"/>`,
+  /* Mirage: a thing, and the illusion of it beside it. */
+  'dani-moonstar': `<circle cx="18" cy="27" r="7" fill="currentColor"/><circle cx="29" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5 2"/>`,
+  /* Emma Frost: a cut diamond, table and pavilion. */
+  'emma-frost': `<polygon points="13,19 19,11 29,11 35,19 24,38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="13" y1="19" x2="35" y2="19" stroke="currentColor" stroke-width="1.2"/><path d="M19 11 L22 19 L24 38 M29 11 L26 19 L24 38" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>`,
+  /* Blob: a mass that does not move, and the floor it stands on. */
+  'fred-dukes': `<ellipse cx="24" cy="25" rx="15" ry="11" fill="currentColor"/><line x1="8" y1="40" x2="40" y2="40" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+  /* Silver Samurai: a kabuto, the helmet with its crest. */
+  'ichiro-yashida': `<path d="M11 32 C11 20, 37 20, 37 32 Z" fill="currentColor"/><path d="M20 21 C18 15, 14 11, 10 8 M28 21 C30 15, 34 11, 38 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="15" y1="36" x2="33" y2="36" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+  /* Magik: the Soulsword, point down into a stepping disc. */
+  'illyana-rasputina': `<line x1="24" y1="5" x2="24" y2="10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><line x1="17" y1="12" x2="31" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><polygon points="21,13 27,13 24,33" fill="currentColor"/><ellipse cx="24" cy="36" rx="12" ry="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/>`,
+  /* Warpath: speed and strength, read as a trail of chevrons. */
+  'james-proudstar': `<path d="M13 37 L24 29 L35 37 M13 27 L24 19 L35 27 M13 17 L24 9 L35 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Pyro: the lighter he needs, because he cannot make the flame himself. */
+  'john-allerdyce': `<rect x="17" y="25" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="17" y1="29" x2="31" y2="29" stroke="currentColor" stroke-width="1.2"/><path d="M24 9 C29 14, 30 19, 24 24 C18 19, 20 14, 24 9 Z" fill="currentColor"/>`,
+  /* Shadowcat: a solid wall and something passing straight through it. */
+  'kitty-pryde': `<rect x="20" y="9" width="8" height="30" rx="1" fill="currentColor"/><line x1="7" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2.2" stroke-linecap="round"/><circle cx="41" cy="24" r="2.2" fill="currentColor"/>`,
+  /* Nightcrawler: the tail, ending in its point, and the puff of a jump. */
+  'kurt-wagner': `<path d="M12 12 C30 10, 8 30, 28 33" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polygon points="28,29 35,33 28,37 26,33" fill="currentColor"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.8 1.6"/>`,
+  /* X-23: two claws in each hand and one in each foot. */
+  laura: `<path d="M17 9 C18 21, 17 29, 15 34 M31 9 C30 21, 31 29, 33 34" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><line x1="24" y1="29" x2="24" y2="41" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>`,
+  /* Bishop: the gun he channels energy through, and the bolt leaving it. */
+  'lucas-bishop': `<rect x="7" y="21" width="21" height="6" rx="1.5" fill="currentColor"/><rect x="10" y="27" width="4.5" height="9" rx="1" fill="currentColor"/><path d="M30 24 L34 17 L36 27 L41 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Rogue: two fingertips about to meet, and what passes at the touch. */
+  'marie-dcanto': `<path d="M5 31 C11 31, 16 28, 21 25.5" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M43 17 C37 17, 32 20, 27 22.5" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M24 18 L24 21 M20 28 L22 26 M28 20 L26 22 M24 30 L24 27 M19 22 L21 23.5 M29 26 L27 24.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>`,
+  /* Negasonic Teenage Warhead: the cloud of the burst she is named for. */
+  'negasonic-teenage-warhead': `<circle cx="24" cy="16" r="10.5" fill="currentColor"/><rect x="20.5" y="24" width="7" height="12" fill="currentColor"/><ellipse cx="24" cy="38" rx="13" ry="3" fill="none" stroke="currentColor" stroke-width="1.5"/>`,
+  /* Wolfsbane: the wolf she turns into. */
+  'rahne-sinclair': `<polygon points="12,7 19,18 24,16 29,18 36,7 34,24 29,32 24,40 19,32 14,24" fill="currentColor"/><circle cx="19.5" cy="23" r="1.4" fill="var(--void)"/><circle cx="28.5" cy="23" r="1.4" fill="var(--void)"/><path d="M22 32 L24 34 L26 32 Z" fill="var(--void)"/>`,
+  /* Gambit: a card, charged and about to go off. */
+  'remy-lebeau': `<rect x="16" y="12" width="15" height="21" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(-14 23.5 22.5)"/><path d="M33 11 L36 6 M35 15 L40 14 M30 8 L31 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  /* Sunspot: the sun, with a corona of flame. */
+  'roberto-da-costa': `<circle cx="24" cy="24" r="7" fill="currentColor"/><polygon points="24,7 26.5,13 21.5,13" fill="currentColor"/><polygon points="24,41 26.5,35 21.5,35" fill="currentColor"/><polygon points="7,24 13,21.5 13,26.5" fill="currentColor"/><polygon points="41,24 35,21.5 35,26.5" fill="currentColor"/><polygon points="12,12 17.5,13.5 13.5,17.5" fill="currentColor"/><polygon points="36,12 34.5,17.5 30.5,13.5" fill="currentColor"/><polygon points="12,36 13.5,30.5 17.5,34.5" fill="currentColor"/><polygon points="36,36 30.5,34.5 34.5,30.5" fill="currentColor"/>`,
+  /* Cannonball: a shot going up, and the blast it rides on. */
+  'sam-guthrie': `<circle cx="31" cy="15" r="6.5" fill="currentColor"/><path d="M28 21 C22 25, 15 31, 7 41 C14 36, 20 31, 25 24 Z" fill="currentColor" opacity="0.75"/><path d="M26 23 C20 28, 14 33, 9 39" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.75"/>`,
+  /* Banshee: the scream, leaving a mouth in waves. */
+  'sean-cassidy': `<circle cx="13" cy="24" r="3.5" fill="currentColor"/><path d="M21 17 A9 9 0 0 1 21 31" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M27 12 A15 15 0 0 1 27 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.75"/><path d="M33 7 A21 21 0 0 1 33 41" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>`,
+  /* Sebastian Shaw: energy taken in on one side and sent back out the other. */
+  'sebastian-shaw': `<circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="1.7"/><line x1="4" y1="24" x2="13" y2="24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><polygon points="15,24 11,21.5 11,26.5" fill="currentColor"/><line x1="33" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><polygon points="45,24 40,20.5 40,27.5" fill="currentColor"/>`,
+  /* Lady Deathstrike: five claws, as long as fingers. */
+  'yuriko-oyama': `<path d="M24 39 L9 11 M24 39 L16 8 M24 39 L24 6 M24 39 L32 8 M24 39 L39 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+
   /* ---------------- SONY (Spider-verse) ---------------- */
   'peter-parker-raimi': `<ellipse cx="24" cy="21" rx="3" ry="4" fill="currentColor"/><ellipse cx="24" cy="28" rx="4" ry="5" fill="currentColor"/><path d="M21 19 L14 13 M27 19 L34 13 M20 22 L12 20 M28 22 L36 20 M20 29 L13 32 M28 29 L35 32 M24 33 L24 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
   'mary-jane-watson': `<circle cx="24" cy="22" r="4" fill="currentColor"/><path d="M24 18 C24 12, 30 12, 29 17 C33 14, 35 19, 30 21 M24 18 C24 12, 18 12, 19 17 C15 14, 13 19, 18 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="24" y1="26" x2="24" y2="38" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M24 31 C21 31, 19 33, 20 36 M24 31 C27 31, 29 33, 28 36" fill="none" stroke="currentColor" stroke-width="1.4"/>`,
