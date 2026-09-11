@@ -127,20 +127,20 @@ export const SIGILS: Record<string, string> = {
   'armando-munoz': `<path d="M24 10 A14 14 0 0 0 24 38 L36 38 L36 10 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="24" cy="24" r="3" fill="currentColor"/>`,
   /* Psylocke: a blade made of psychic energy, point up. */
   'betsy-braddock': `<polygon points="24,5 28,30 20,30" fill="currentColor" opacity="0.85"/><line x1="15" y1="31" x2="33" y2="31" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="24" y1="31" x2="24" y2="41" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>`,
-  /* Juggernaut: the helmet, a dome with two slits and nothing else. */
-  'cain-marko': `<path d="M10 36 L10 24 C10 12, 38 12, 38 24 L38 36 Z" fill="currentColor"/><rect x="15" y="26" width="7" height="3" rx="1" fill="var(--void)"/><rect x="26" y="26" width="7" height="3" rx="1" fill="var(--void)"/>`,
-  /* Cassandra Nova: Xavier's twin, the same disc split into its two halves. */
-  'cassandra-nova': `<path d="M9 24 A15 15 0 0 1 39 24 Z" fill="currentColor"/><path d="M9 24 A15 15 0 0 0 39 24 Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="24" cy="31" r="1.8" fill="var(--void)"/><circle cx="24" cy="31" r="1.8" fill="none" stroke="currentColor" stroke-width="1.2"/>`,
+  /* Juggernaut: the helmet from the front, open down to the chin, and the eyes inside it. */
+  'cain-marko': `<path d="M11 37 L11 24 A13 13 0 0 1 37 24 L37 37 L31 37 L31 29.5 A7 7 0 0 0 17 29.5 L17 37 Z" fill="currentColor"/><circle cx="20.8" cy="28.5" r="1.5" fill="currentColor"/><circle cx="27.2" cy="28.5" r="1.5" fill="currentColor"/>`,
+  /* Cassandra Nova: Xavier's own mark, in her colour. They are twins. */
+  'cassandra-nova': `<circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="16" y1="16" x2="32" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><line x1="32" y1="16" x2="16" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`,
   /* Blink: two portals, and the step between them. */
   'clarice-ferguson': `<polygon points="17,8 25,24 17,40 9,24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><polygon points="34,15 39,24 34,33 29,24" fill="currentColor"/><line x1="17" y1="24" x2="29" y2="24" stroke="currentColor" stroke-width="1.3" stroke-dasharray="2 2"/>`,
   /* Mirage: a thing, and the illusion of it beside it. */
   'dani-moonstar': `<circle cx="18" cy="27" r="7" fill="currentColor"/><circle cx="29" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5 2"/>`,
   /* Emma Frost: a cut diamond, table and pavilion. */
   'emma-frost': `<polygon points="13,19 19,11 29,11 35,19 24,38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="13" y1="19" x2="35" y2="19" stroke="currentColor" stroke-width="1.2"/><path d="M19 11 L22 19 L24 38 M29 11 L26 19 L24 38" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>`,
-  /* Blob: a mass that does not move, and the floor it stands on. */
-  'fred-dukes': `<ellipse cx="24" cy="25" rx="15" ry="11" fill="currentColor"/><line x1="8" y1="40" x2="40" y2="40" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
-  /* Silver Samurai: a kabuto, the helmet with its crest. */
-  'ichiro-yashida': `<path d="M11 32 C11 20, 37 20, 37 32 Z" fill="currentColor"/><path d="M20 21 C18 15, 14 11, 10 8 M28 21 C30 15, 34 11, 38 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="15" y1="36" x2="33" y2="36" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+  /* Blob: a dead weight, the kind nobody lifts. */
+  'fred-dukes': `<circle cx="24" cy="29" r="12" fill="currentColor"/><path d="M15 21 C15 8, 33 8, 33 21" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><line x1="12" y1="41.5" x2="36" y2="41.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+  /* Silver Samurai: a katana, guard and wrapped grip. */
+  'ichiro-yashida': `<path d="M19 29.5 C24 25, 30 18.5, 36 11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="17.8" cy="30.7" r="2.9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.8 32.8 L11 37.5" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M15 33.8 L13 35.8" stroke="var(--void)" stroke-width="0.9"/>`,
   /* Magik: the Soulsword, point down into a stepping disc. */
   'illyana-rasputina': `<line x1="24" y1="5" x2="24" y2="10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><line x1="17" y1="12" x2="31" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><polygon points="21,13 27,13 24,33" fill="currentColor"/><ellipse cx="24" cy="36" rx="12" ry="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/>`,
   /* Warpath: speed and strength, read as a trail of chevrons. */
@@ -173,6 +173,62 @@ export const SIGILS: Record<string, string> = {
   'sebastian-shaw': `<circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="1.7"/><line x1="4" y1="24" x2="13" y2="24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><polygon points="15,24 11,21.5 11,26.5" fill="currentColor"/><line x1="33" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><polygon points="45,24 40,20.5 40,27.5" fill="currentColor"/>`,
   /* Lady Deathstrike: five claws, as long as fingers. */
   'yuriko-oyama': `<path d="M24 39 L9 11 M24 39 L16 8 M24 39 L24 6 M24 39 L32 8 M24 39 L39 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+
+  /* ---------------- MARVEL TELEVISION ---------------- */
+  /* Read on 2026-09-11 from the pages each fact file cites: the S.H.I.E.L.D.
+     character list, the Runaways, Inhumans and Cloak & Dagger series pages,
+     and the two MCU character lists. */
+
+  /* Alex Wilder: the nerd who leads, a laptop open. */
+  'alex-wilder': `<rect x="12" y="13" width="24" height="16" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 34 L40 34" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="24" cy="21" r="1.6" fill="currentColor"/>`,
+  /* Mack: the mechanic who ended up running the place, a wrench. */
+  'alphonso-mackenzie': `<g transform="rotate(-45 24 24)"><line x1="24" y1="42" x2="24" y2="22" stroke="currentColor" stroke-width="4.4" stroke-linecap="round"/><path d="M18.5 9 A8 8 0 1 0 29.5 9" fill="none" stroke="currentColor" stroke-width="4.4"/></g>`,
+  /* Black Bolt: a mouth kept shut, and the bolt that leaves it when it is not. */
+  'black-bolt': `<line x1="17" y1="10" x2="31" y2="10" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><polygon points="27.5,13 16,29 23.5,29 20,43 32.5,24 25.5,24 30,13" fill="currentColor"/>`,
+  /* Bobbi Morse: the mockingbird she is named for in the comics. */
+  'bobbi-morse': `<circle cx="21" cy="26" r="8.5" fill="currentColor"/><circle cx="30" cy="17.5" r="4.8" fill="currentColor"/><polygon points="34,16.5 40,18 34,20" fill="currentColor"/><polygon points="13.5,28 5,36 9,25.5" fill="currentColor"/><path d="M18.5 34 L18.5 40 M24 34 L24 40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  /* Chase Stein: the Fistigons, a gauntlet closed into a fist. */
+  'chase-stein': `<rect x="13" y="15" width="22" height="18" rx="4.5" fill="currentColor"/><path d="M19 15 L19 27 M24.5 15 L24.5 27 M30 15 L30 27" stroke="var(--void)" stroke-width="1.3"/><rect x="16" y="34" width="16" height="5" rx="1.5" fill="currentColor"/>`,
+  /* Crystal: the elements, a flame beside water. */
+  crystal: `<path d="M15 12 C21 17, 22 23, 15 28 C8 23, 9 17, 15 12 Z" fill="currentColor"/><path d="M23 30 C26 27, 29 27, 32 30 C35 33, 38 33, 41 30 M23 36 C26 33, 29 33, 32 36 C35 39, 38 39, 41 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`,
+  /* Quake: the trace of an earthquake. */
+  'daisy-johnson': `<path d="M5 24 L15 24 L18.5 13 L22.5 35 L26.5 15 L30 31 L33 24 L43 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Deke Shaw: the Lighthouse he scavenged in, with its light on. */
+  'deke-shaw': `<polygon points="19,40 29,40 27,17 21,17" fill="currentColor"/><rect x="19.5" y="11" width="9" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M31 11 L39 7 M31 14 L41 14 M31 17 L39 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="40" x2="34" y2="40" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+  /* Yo-Yo: out at speed and back to where she started, in one heartbeat. */
+  'elena-rodriguez': `<path d="M9 30 L28 30 A6.5 6.5 0 0 0 28 17 L16 17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><polygon points="9,17 16,12.5 16,21.5" fill="currentColor"/><circle cx="9" cy="30" r="2.4" fill="currentColor"/>`,
+  /* Gert Yorkes: the dinosaur she is linked to, by its footprint. */
+  'gertrude-yorkes': `<ellipse cx="13" cy="19" rx="2.6" ry="9" fill="currentColor" transform="rotate(-32 13 19)"/><ellipse cx="24" cy="14.5" rx="2.6" ry="9.5" fill="currentColor"/><ellipse cx="35" cy="19" rx="2.6" ry="9" fill="currentColor" transform="rotate(32 35 19)"/><path d="M17 27 C20 25, 28 25, 31 27 L27 38 L21 38 Z" fill="currentColor"/>`,
+  /* Gorgon: a cloven hoof, the kind that shakes the ground. */
+  gorgon: `<path d="M21 12 C25 18, 25 32, 21 38 C14 36, 12 22, 15 13 Z" fill="currentColor"/><path d="M27 12 C23 18, 23 32, 27 38 C34 36, 36 22, 33 13 Z" fill="currentColor"/>`,
+  /* Grant Ward: one face shown and one kept, split along the seam. */
+  'grant-ward': `<path d="M13.4 13.4 A15 15 0 0 0 34.6 34.6 Z" fill="currentColor"/><path d="M13.4 13.4 A15 15 0 0 1 34.6 34.6" fill="none" stroke="currentColor" stroke-width="1.6"/>`,
+  /* Jemma Simmons: life sciences, a double helix. */
+  'jemma-simmons': `<path d="M16 7 C33 15, 33 33, 16 41 M32 7 C15 15, 15 33, 32 41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 13 L30 13 M17 18 L31 18 M17 30 L31 30 M18 35 L30 35" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>`,
+  /* Karnak: a stone, and the fault he sees in it. */
+  karnak: `<polygon points="24,8 38,16 38,32 24,40 10,32 10,16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M25 8 L21 17 L27 24 L22 32 L25 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Karolina Dean: light, thrown as a beam. */
+  'karolina-dean': `<polygon points="10,38 35,7 43,13 15,42" fill="currentColor" opacity="0.8"/><circle cx="10" cy="39" r="3.2" fill="currentColor"/><circle cx="38" cy="4.5" r="1.3" fill="currentColor"/><circle cx="44" cy="19" r="1.3" fill="currentColor"/>`,
+  /* Lance Hunter: SAS, then a hired blade, a combat knife. */
+  'lance-hunter': `<polygon points="6,24 29,18.5 29,29.5" fill="currentColor"/><rect x="29" y="16" width="3" height="16" rx="1" fill="currentColor"/><rect x="32" y="20.5" width="10" height="7" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/>`,
+  /* Leo Fitz: engineering, a gear. */
+  'leo-fitz': `<circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3.2"/><path d="M24 9 L24 14 M24 34 L24 39 M9 24 L14 24 M34 24 L39 24 M13.4 13.4 L17 17 M31 31 L34.6 34.6 M34.6 13.4 L31 17 M17 31 L13.4 34.6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`,
+  /* Maximus: the crown he wants, and the crack that runs through him. */
+  maximus: `<path d="M10 35 L10 17 L17 25 L24 12 L31 25 L38 17 L38 35 Z" fill="currentColor"/><path d="M22 35 L25.5 27 L22 20" fill="none" stroke="var(--void)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Medusa: hair that moves on its own. */
+  medusa: `<circle cx="24" cy="10" r="3.4" fill="currentColor"/><path d="M22 13 C13 18, 11 27, 7 39 M23 13 C19 21, 17 30, 15 41 M25 13 C29 21, 31 30, 33 41 M26 13 C35 18, 37 27, 41 39" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>`,
+  /* Melinda May: the pilot, the plane from above. */
+  'melinda-may': `<path d="M24 5 L27 17 L42 26 L42 30 L27 26 L26 36 L32 40 L32 42.5 L24 39.5 L16 42.5 L16 40 L22 36 L21 26 L6 30 L6 26 L21 17 Z" fill="currentColor"/>`,
+  /* Molly Hayes: strength, a barbell. */
+  'molly-hayes': `<line x1="9" y1="24" x2="39" y2="24" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><rect x="9" y="15" width="5" height="18" rx="1.5" fill="currentColor"/><rect x="34" y="15" width="5" height="18" rx="1.5" fill="currentColor"/><rect x="15" y="18" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="29.5" y="18" width="3.5" height="12" rx="1" fill="currentColor"/>`,
+  /* Nico Minoru: the Staff of One. */
+  'nico-minoru': `<line x1="24" y1="18" x2="24" y2="42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="11.5" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="24" cy="11.5" r="1.8" fill="currentColor"/>`,
+  /* Wonder Man: the actor, a clapperboard. */
+  'simon-williams': `<rect x="10" y="21" width="28" height="17" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 21 L12.5 12 L40.5 16.5 L38 21 Z" fill="currentColor"/><path d="M18 13 L16 20 M24.5 14 L22.5 21 M31 15 L29 21.5" stroke="var(--void)" stroke-width="1.5"/>`,
+  /* Dagger: a dagger made of light, thrown point down. */
+  'tandy-bowen': `<polygon points="24,42 20.5,21 27.5,21" fill="currentColor"/><line x1="17" y1="20" x2="31" y2="20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="24" y1="19" x2="24" y2="9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M14 36 L17 33 M34 36 L31 33 M24 6 L24 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>`,
+  /* Cloak: the cloak, and the dark inside its hood. */
+  'tyrone-johnson': `<path d="M24 6 C16 6, 12 15, 12 23 L8 42 L40 42 L36 23 C36 15, 32 6, 24 6 Z" fill="currentColor"/><ellipse cx="24" cy="17" rx="5" ry="6.2" fill="var(--void)"/>`,
 
   /* ---------------- SONY (Spider-verse) ---------------- */
   'peter-parker-raimi': `<ellipse cx="24" cy="21" rx="3" ry="4" fill="currentColor"/><ellipse cx="24" cy="28" rx="4" ry="5" fill="currentColor"/><path d="M21 19 L14 13 M27 19 L34 13 M20 22 L12 20 M28 22 L36 20 M20 29 L13 32 M28 29 L35 32 M24 33 L24 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
