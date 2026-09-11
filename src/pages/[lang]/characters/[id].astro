@@ -5,7 +5,7 @@ import FallbackNotice from '../../../components/FallbackNotice.astro';
 import Emblem from '../../../components/Emblem.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse, sourceSlugs } from '../../../lib/content';
-import { liveryStyle, franchiseName, universeOf, designationOf } from '../../../lib/livery';
+import { liveryStyle, franchiseName, universeOf } from '../../../lib/livery';
 
 export async function getStaticPaths() {
   // See the note on the title route: no prose, no page, and no broken build.
