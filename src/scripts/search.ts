@@ -16,7 +16,12 @@ if (input && list) {
   const tally = document.querySelector<HTMLElement>('[data-search-tally]');
   const empty = document.querySelector<HTMLElement>('[data-search-empty]');
   const clear = document.querySelector<HTMLButtonElement>('[data-search-clear]');
-  const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-alignment]')];
+  /* The element name is doing work here. Every row carries data-alignment
+     too, so that the filter can read it, and matching on the attribute alone
+     would wire every card as a filter button: clicking a character would
+     narrow the list to their kind on the way out, and the page would come
+     back from history already filtered, with no button pressed. */
+  const filters = [...document.querySelectorAll<HTMLButtonElement>('button[data-alignment]')];
 
   /* What somebody is cannot be typed into a search box, because the
      classification is not a word on the page. It is a second axis, and the
