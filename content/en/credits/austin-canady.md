@@ -24,6 +24,12 @@ the Hand, the Warriors Three, the Black Order, the Eternals, the Runaways,
 Cloak and Dagger, the New Mutants and the Inhuman Royal Family have entries of
 their own.
 
+The Earth numbers on the character index are his idea as well. He pointed out
+that somebody who meets Cyclops or the Green Goblin in a list with no mark on
+it will assume there is a version of them in the shared story, and asked for
+the universe to sit next to the name of everyone who is not from it. It does
+now.
+
 :::detail{title="The two he was most right about"}
 He asked why the Spider-Verse films were catalogued and none of their people
 were, and made the argument rather than just the request: Miguel O'Hara naming

@@ -2067,6 +2067,19 @@ a.plate:focus-visible {
   color: var(--livery);
 }
 
+/* The Earth number sits on the name's line, in the livery, the same object
+   as on the universes page. It wraps under the name when the card is narrow. */
+.person-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--s3);
+}
+
+.person-universe {
+  color: var(--livery);
+}
+
 /* The name they are known by, under the name they were given. */
 .person-alias {
   margin-top: 0.1em;

@@ -27,7 +27,7 @@ type Listed = {
   actors: string;
   franchise: string;
   saga: string;
-  universe: { designation: string };
+  designation: string | null;
   appearances: number;
   alignment: string;
   haystack: string;
@@ -38,6 +38,12 @@ for (const person of await getCollection('characters')) {
   const prose = await resolveProse('characterProse', language.code, person.data.id);
   if (!prose) continue;
   const actors = person.data.actors.map((actor) => actor.name).join(', ');
+  /* The Earth number, but only outside the shared story. Everyone in the
+     shared run would carry the same one, and a reader assumes it anyway; the
+     number earns its place next to a name when it says that this is not that
+     version of the character. The unbound set has no number to give. */
+  const universe = universeOf(person.data.universe);
+  const designation = universe.continuity === 'separate' ? universe.designation : null;
   people.push({
     id: person.data.id,
     sigil: person.data.sigil,
@@ -49,11 +55,11 @@ for (const person of await getCollection('characters')) {
     actors,
     franchise: person.data.franchise,
     saga: sagaOf.get(person.data.firstAppearance) ?? 'unbound',
-    universe: universeOf(person.data.universe),
+    designation,
     appearances: person.data.appearsIn.length,
     alignment: person.data.alignment,
     haystack: searchable(
-      `${prose.entry.data.title} ${prose.entry.data.tagline ?? ''} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)}`,
+      `${prose.entry.data.title} ${prose.entry.data.tagline ?? ''} ${person.data.realName ?? ''} ${actors} ${franchiseName(person.data.franchise)} ${designation ?? ''}`,
     ),
   });
 }
@@ -133,7 +139,12 @@ people.sort((a, b) => collator.compare(a.name, b.name));
             <div class="person-head">
               <Emblem id={person.id} sigil={person.sigil} saga={person.saga} franchise={person.franchise} size={64} />
               <div>
-                <h2 class="person-name">{person.name}</h2>
+                <div class="person-title">
+                  <h2 class="person-name">{person.name}</h2>
+                  {person.designation && (
+                    <p class="person-universe label figure">{person.designation}</p>
+                  )}
+                </div>
                 {person.alias && <p class="person-alias">{person.alias}</p>}
               </div>
             </div>

@@ -13,7 +13,15 @@
     "studio": "20th Century Fox",
     "continuity": "separate",
     "livery": "10005",
-    "order": 2
+    "order": 2,
+    "sources": [
+      {
+        "url": "https://marvel.fandom.com/wiki/Earth-10005",
+        "title": "Earth-10005, Marvel Database",
+        "accessed": "2026-09-11"
+      }
+    ],
+    "verified": "2026-09-11"
   },
   {
     "id": "earth-96283",
@@ -21,7 +29,15 @@
     "studio": "Sony Pictures",
     "continuity": "separate",
     "livery": "96283",
-    "order": 3
+    "order": 3,
+    "sources": [
+      {
+        "url": "https://marvel.fandom.com/wiki/Earth-96283",
+        "title": "Earth-96283, Marvel Database",
+        "accessed": "2026-09-11"
+      }
+    ],
+    "verified": "2026-09-11"
   },
   {
     "id": "earth-120703",
@@ -29,7 +45,15 @@
     "studio": "Sony Pictures",
     "continuity": "separate",
     "livery": "120703",
-    "order": 4
+    "order": 4,
+    "sources": [
+      {
+        "url": "https://marvel.fandom.com/wiki/Earth-120703",
+        "title": "Earth-120703, Marvel Database",
+        "accessed": "2026-09-11"
+      }
+    ],
+    "verified": "2026-09-11"
   },
   {
     "id": "earth-688",
@@ -37,7 +61,15 @@
     "studio": "Sony Pictures",
     "continuity": "separate",
     "livery": "688",
-    "order": 5
+    "order": 5,
+    "sources": [
+      {
+        "url": "https://marvel.fandom.com/wiki/Earth-688B",
+        "title": "Earth-688B, Sony's Spider-Man Universe, Marvel Database",
+        "accessed": "2026-09-11"
+      }
+    ],
+    "verified": "2026-09-11"
   },
   {
     "id": "earth-828",
@@ -45,7 +77,15 @@
     "studio": "Marvel Studios",
     "continuity": "separate",
     "livery": "828",
-    "order": 6
+    "order": 6,
+    "sources": [
+      {
+        "url": "https://marvel.fandom.com/wiki/Earth-828",
+        "title": "Earth-828, Marvel Database",
+        "accessed": "2026-09-11"
+      }
+    ],
+    "verified": "2026-09-11"
   },
   {
     "id": "unbound",

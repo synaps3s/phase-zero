@@ -33,18 +33,28 @@ function* factFiles(directory) {
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
     const path = join(directory, entry.name);
     if (entry.isDirectory()) yield* factFiles(path);
-    else if (entry.name.endsWith('.yml')) yield path;
+    else if (entry.name.endsWith('.yml') || entry.name.endsWith('.json')) yield path;
   }
+}
+
+/* The YAML files hold one entry each. The JSON files hold a list of them, and
+   the universes started citing sources for their designations, so both
+   shapes are read as a flat list of entries. */
+function entriesOf(path) {
+  const text = readFileSync(path, 'utf8');
+  const parsed = path.endsWith('.json') ? JSON.parse(text) : parse(text);
+  return Array.isArray(parsed) ? parsed : [parsed];
 }
 
 function collect() {
   const urls = new Map();
   for (const path of factFiles('data')) {
-    const entry = parse(readFileSync(path, 'utf8'));
-    for (const source of entry?.sources ?? []) {
-      if (!source?.url) continue;
-      if (!urls.has(source.url)) urls.set(source.url, []);
-      urls.get(source.url).push(path);
+    for (const entry of entriesOf(path)) {
+      for (const source of entry?.sources ?? []) {
+        if (!source?.url) continue;
+        if (!urls.has(source.url)) urls.set(source.url, []);
+        urls.get(source.url).push(path);
+      }
     }
   }
   return urls;

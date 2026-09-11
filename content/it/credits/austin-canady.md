@@ -23,6 +23,12 @@ gruppo che aveva nominato era un buco vero.
 che la Mano, i Tre Guerrieri, l'Ordine Nero, gli Eterni, i Runaways, Cloak &
 Dagger, i Nuovi Mutanti e la Famiglia Reale Inumana hanno una scheda propria.
 
+Anche i numeri di Terra nell'indice dei personaggi sono un'idea sua. Ha fatto
+notare che chi incontra Ciclope o Goblin in un elenco senza alcun segno darà
+per scontato che ne esista una versione nella storia condivisa, e ha chiesto
+che l'universo stia accanto al nome di chiunque non ne faccia parte. Adesso è
+così.
+
 :::detail{title="Le due cose su cui aveva più ragione"}
 Ha chiesto perché i film Spider-Verse fossero in catalogo e i loro personaggi
 no, e ha portato un argomento invece di una semplice richiesta: Miguel O'Hara

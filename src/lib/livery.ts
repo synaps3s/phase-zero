@@ -27,6 +27,10 @@ export interface Universe {
   continuity: Continuity;
   livery: string;
   order: number;
+  /* Where the designation was read from. The shared and unbound entries do
+     not carry one yet. */
+  sources?: { url: string; title: string; accessed: string }[];
+  verified?: string;
 }
 
 export interface Saga {
