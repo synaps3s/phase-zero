@@ -73,10 +73,10 @@ const ACCENTS = {
     benche: 'benché', nonche: 'nonché', percio: 'perciò', pero: 'però',
     puo: 'può', piu: 'più', gia: 'già', cosi: 'così',
     citta: 'città', qualita: 'qualità', quantita: 'quantità', realta: 'realtà',
-    liberta: 'libertà', verita: 'verità', novita: 'novità', meta: 'metà',
+    liberta: 'libertà', verita: 'verità', novita: 'novità',
     continuita: 'continuità', comicita: 'comicità', identita: 'identità',
     umilta: 'umiltà', possibilita: 'possibilità', responsabilita: 'responsabilità',
-    sara: 'sarà', fara: 'farà', avra: 'avrà', potra: 'potrà', dovra: 'dovrà',
+    fara: 'farà', avra: 'avrà', potra: 'potrà', dovra: 'dovrà',
     andra: 'andrà', verra: 'verrà',
     /* Added after "celebrita" shipped in a title entry and this list did not
        catch it. Every word here is one that does not exist in Italian without
@@ -84,8 +84,9 @@ const ACCENTS = {
 
        Deliberately absent, because each of them is a real word unaccented and
        would fail the build on correct prose: "unita", "capacita" and
-       "necessita" are verb forms or participles, "terra" is a noun, and "eta"
-       is how the Greek letter is spelled. */
+       "necessita" are verb forms or participles, "terra" is a noun, "eta"
+       is how the Greek letter is spelled, "meta" is a destination, and
+       "Sara" is a name. */
     celebrita: 'celebrità', societa: 'società', autorita: 'autorità',
     difficolta: 'difficoltà', comunita: 'comunità', curiosita: 'curiosità',
     velocita: 'velocità', attivita: 'attività', universita: 'università',
