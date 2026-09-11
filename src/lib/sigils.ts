@@ -97,6 +97,37 @@ export const SIGILS: Record<string, string> = {
   'frank-castle': `<path d="M15 16 C15 12, 33 12, 33 16 L33 24 L28 24 L28 34 L20 34 L20 24 L15 24 Z" fill="currentColor"/><rect x="18" y="18" width="3.5" height="3" rx="1" fill="var(--void)"/><rect x="26.5" y="18" width="3.5" height="3" rx="1" fill="var(--void)"/>`,
   'peggy-carter': `<path d="M10 20 C14 15, 34 15, 38 20 L34 22 C28 19, 20 19, 14 22 Z" fill="currentColor"/><circle cx="24" cy="17" r="2.4" fill="currentColor"/><polygon points="24,26 26,30 24,33 22,30" fill="currentColor"/>`,
 
+  /* ---------------- MCU, the Asgard court ---------------- */
+  /* Read on 2026-09-11 from the MCU character lists the fact files cite, and
+     from Jane Foster's own page. */
+
+  /* Fandral the Dashing: a rapier, with its swept guard. */
+  fandral: `<path d="M12 36 L36 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M11 29 C15 31, 17 33, 19 37" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 36 L7 41" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="37" cy="11" r="1.6" fill="currentColor"/>`,
+  /* Frigga: the queen's circlet. */
+  frigga: `<path d="M9 30 C13 20, 35 20, 39 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><polygon points="24,13 27,21 21,21" fill="currentColor"/><circle cx="15" cy="23.5" r="1.8" fill="currentColor"/><circle cx="33" cy="23.5" r="1.8" fill="currentColor"/>`,
+  /* The Grandmaster: the Contest of Champions, a trophy. */
+  grandmaster: `<path d="M15 10 L33 10 L32 22 C32 28, 27 31, 24 31 C21 31, 16 28, 16 22 Z" fill="currentColor"/><path d="M15 13 C9 13, 9 22, 16 23 M33 13 C39 13, 39 22, 32 23" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="21.5" y="31" width="5" height="5" fill="currentColor"/><rect x="16" y="36" width="16" height="3.5" rx="1" fill="currentColor"/>`,
+  /* Heimdall: the eye that sees across every world. */
+  heimdall: `<path d="M7 24 C13 15, 35 15, 41 24 C35 33, 13 33, 7 24 Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="24" cy="24" r="5" fill="currentColor"/><path d="M24 10 L24 13.5 M24 34.5 L24 38 M12 13 L14.5 16 M36 13 L33.5 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+  /* Hogun the Grim: a warrior, a mace. */
+  hogun: `<line x1="11" y1="41" x2="25" y2="23" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="29" cy="17.5" r="7.5" fill="currentColor"/><polygon points="29,5 31.5,10 26.5,10" fill="currentColor"/><polygon points="41.5,17.5 36.5,20 36.5,15" fill="currentColor"/><polygon points="38,8.5 37,14 32.5,9.5" fill="currentColor"/><polygon points="20,8.5 25.5,9.5 21,14" fill="currentColor"/><polygon points="16.5,17.5 21.5,15 21.5,20" fill="currentColor"/><polygon points="38,26.5 32.5,25.5 37,21" fill="currentColor"/>`,
+  /* Jane Foster: the hammer, in the pieces it came to her in. */
+  'jane-foster': `<rect x="12" y="10" width="24" height="13" rx="2" fill="currentColor"/><path d="M18 10 L21 14.5 L17.5 18.5 L20.5 23 M31 10 L27.5 14 L31.5 18 L28.5 23" fill="none" stroke="var(--void)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="24" y1="23" x2="24" y2="39" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`,
+  /* Korg: a Kronan, which is to say stones stacked into somebody. */
+  korg: `<ellipse cx="24" cy="36" rx="13" ry="5" fill="currentColor"/><ellipse cx="22" cy="26" rx="10" ry="5" fill="currentColor"/><ellipse cx="25" cy="17" rx="7.5" ry="4.5" fill="currentColor"/><circle cx="23" cy="9" r="3.6" fill="currentColor"/>`,
+  /* Malekith: the sun put out, a world submerged in darkness. */
+  malekith: `<circle cx="24" cy="24" r="13" fill="currentColor"/><circle cx="21.5" cy="24" r="11.5" fill="var(--void)"/><path d="M24 5 L24 9 M24 39 L24 43 M5 24 L9 24 M39 24 L43 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`,
+  /* Odin: the Allfather, the crown of Asgard. */
+  'odin-borson': `<path d="M9 36 L9 20 L16 27 L24 11 L32 27 L39 20 L39 36 Z" fill="currentColor"/><line x1="9" y1="31" x2="39" y2="31" stroke="var(--void)" stroke-width="1.6"/><circle cx="24" cy="26" r="1.8" fill="var(--void)"/>`,
+  /* Sif: the warrior, shield and sword. */
+  sif: `<polygon points="21,4 27,4 25.5,16 22.5,16" fill="currentColor"/><circle cx="24" cy="24" r="9.5" fill="currentColor"/><circle cx="24" cy="24" r="2.4" fill="var(--void)"/><line x1="15" y1="35" x2="33" y2="35" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><line x1="24" y1="35" x2="24" y2="44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>`,
+  /* Skurge: the two rifles he held the bridge with. */
+  skurge: `<path d="M9 9 L39 39 M39 9 L9 39" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M15 21 L18 24 M33 21 L30 24 M12.5 12.5 L9 16 M35.5 12.5 L39 16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`,
+  /* Surtur: the fire demon, a flame with horns. */
+  surtur: `<path d="M24 8 C31 15, 34 22, 30 30 C34 27, 34 24, 33 22 C38 30, 34 40, 24 41 C14 40, 10 30, 15 22 C14 24, 14 27, 18 30 C14 22, 17 15, 24 8 Z" fill="currentColor"/><path d="M15 22 C10 18, 8 13, 9 8 M33 22 C38 18, 40 13, 39 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`,
+  /* Volstagg: the warrior who loves to eat. */
+  volstagg: `<ellipse cx="27" cy="20" rx="12" ry="9" fill="currentColor" transform="rotate(-40 27 20)"/><line x1="19" y1="30" x2="10" y2="39" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="9" cy="40" r="2.6" fill="currentColor"/><circle cx="11.5" cy="36.5" r="2.2" fill="currentColor"/><circle cx="7" cy="37.5" r="2.2" fill="currentColor"/>`,
+
   /* ---------------- FOX (X-Men / Terra-10005) ---------------- */
   wolverine: `<path d="M14 12 C16 24, 15 32, 12 36" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="M24 10 C25 24, 24 34, 22 38" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="M34 12 C32 24, 33 32, 36 36" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>`,
   'professor-x': `<circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="16" y1="16" x2="32" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><line x1="32" y1="16" x2="16" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`,
