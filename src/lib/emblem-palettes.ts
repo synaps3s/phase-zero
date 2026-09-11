@@ -199,6 +199,7 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   nakia: ['#3ad48a', '#0e2a1a', '#ffd27a', 'rgba(58,212,138,0.45)'],
   mbaku: ['#d8d0c0', '#141a14', '#8fb0a0', 'rgba(216,208,192,0.4)'],
   'the-ancient-one': ['#ffca4a', '#2a1b4a', '#e6ebf2', 'rgba(255,202,74,0.45)'],
+  uatu: ['#9fd8ff', '#101a33', '#e6ebf2', 'rgba(159,216,255,0.45)'],
   'karl-mordo': ['#4fd18a', '#101a24', '#ffca4a', 'rgba(79,209,138,0.45)'],
   kaecilius: ['#a06bff', '#1a1030', '#ff4d4d', 'rgba(160,107,255,0.45)'],
   dormammu: ['#a06bff', '#2a0f4a', '#ff7a2f', 'rgba(160,107,255,0.55)'],

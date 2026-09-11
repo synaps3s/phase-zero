@@ -28,7 +28,9 @@ notare che chi incontra Ciclope o Goblin in un elenco senza alcun segno darà
 per scontato che ne esista una versione nella storia condivisa, e ha chiesto
 che l'universo stia accanto al nome di chiunque non ne faccia parte. Adesso è
 così. Poi ha mandato i numeri di Terra che il primo passaggio aveva mancato, da
-Aaron Davis a Spider-Man Noir, e ci sono anche quelli.
+Aaron Davis a Spider-Man Noir, e ci sono anche quelli. E c'è l'Osservatore, di
+cui ha notato che narrava tre stagioni di una serie in catalogo senza avere una
+scheda sua.
 
 :::detail{title="Le due cose su cui aveva più ragione"}
 Ha chiesto perché i film Spider-Verse fossero in catalogo e i loro personaggi

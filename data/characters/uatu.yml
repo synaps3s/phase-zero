@@ -1,0 +1,41 @@
+id: uatu
+universe: earth-616
+franchise: marvel-television
+realName: Uatu
+alignment: mentor
+sigil: null
+
+actors:
+  - name: Jeffrey Wright
+    note: voice
+
+firstAppearance: what-if-s1
+
+appearsIn:
+  - what-if-s1
+  - i-am-groot-s2
+  - what-if-s2
+  - what-if-s3
+  - eyes-of-wakanda
+  - marvel-zombies
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Watcher_(Marvel_Cinematic_Universe)"
+    title: "Watcher (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-11
+  - url: "https://en.wikipedia.org/wiki/What_If...%3F_(TV_series)#Cast_and_characters"
+    title: "What If...? (TV series), Wikipedia"
+    accessed: 2026-09-11
+  - url: "https://en.wikipedia.org/wiki/I_Am_Groot#Cast_and_characters"
+    title: "I Am Groot, Wikipedia"
+    accessed: 2026-09-11
+  - url: "https://en.wikipedia.org/wiki/Eyes_of_Wakanda#Cast_and_characters"
+    title: "Eyes of Wakanda, Wikipedia"
+    accessed: 2026-09-11
+  - url: "https://en.wikipedia.org/wiki/Marvel_Zombies_(TV_series)#Cast_and_characters"
+    title: "Marvel Zombies (TV series), Wikipedia"
+    accessed: 2026-09-11
+  - url: "https://en.wikipedia.org/wiki/X-Men_%2797_season_1#Cast_and_characters"
+    title: "X-Men '97 season 1, Wikipedia"
+    accessed: 2026-09-11
+verified: 2026-09-11

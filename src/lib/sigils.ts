@@ -97,6 +97,10 @@ export const SIGILS: Record<string, string> = {
   'frank-castle': `<g transform="translate(-8 -7.333) scale(1.333)"><path d="M15 16 C15 12, 33 12, 33 16 L33 24 L28 24 L28 34 L20 34 L20 24 L15 24 Z" fill="currentColor"/><rect x="18" y="18" width="3.5" height="3" rx="1" fill="var(--void)"/><rect x="26.5" y="18" width="3.5" height="3" rx="1" fill="var(--void)"/></g>`,
   'peggy-carter': `<path d="M10 20 C14 15, 34 15, 38 20 L34 22 C28 19, 20 19, 14 22 Z" fill="currentColor"/><circle cx="24" cy="17" r="2.4" fill="currentColor"/><polygon points="24,26 26,30 24,33 22,30" fill="currentColor"/>`,
 
+  /* The Watcher: the eye, and the branching timelines under it. Read on
+     2026-09-11 from the character's own Wikipedia page. */
+  uatu: `<g transform="translate(7.116 7.116) scale(0.7035)"><path d="M5 24 C11 13, 37 13, 43 24 C37 35, 11 35, 5 24 Z" fill="none" stroke="currentColor" stroke-width="2.56"/><circle cx="24" cy="24" r="7.5" fill="none" stroke="currentColor" stroke-width="2.56"/><circle cx="24" cy="24" r="2.6" fill="currentColor"/><path d="M24 16.5 L24 12 M24 12 L20.5 8 M24 12 L27.5 8" fill="none" stroke="currentColor" stroke-width="2.13" stroke-linecap="round"/><path d="M24 31.5 L24 36 M24 36 L20.5 40 M24 36 L27.5 40" fill="none" stroke="currentColor" stroke-width="2.13" stroke-linecap="round"/></g>`,
+
   /* ---------------- MCU, the Asgard court ---------------- */
   /* Read on 2026-09-11 from the MCU character lists the fact files cite, and
      from Jane Foster's own page. */

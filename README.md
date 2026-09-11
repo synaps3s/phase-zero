@@ -23,14 +23,14 @@
 
 ## What is in it
 
-Counted on 10 September 2026. The site's colophon counts the same things live,
+Counted on 11 September 2026. The site's colophon counts the same things live,
 so if these disagree, the colophon is right and this table is stale.
 
 | | | | |
 |---|---|---|---|
-| **161** titles | **257** characters | **48** glossary terms | **22** organisations |
+| **161** titles | **258** characters | **48** glossary terms | **22** organisations |
 | **9** collections, 90 pieces | **9** watch paths | **24** questions answered | **5** guides |
-| **778** citations across **459** sources | **2** languages, both complete | **894** static pages | **0** third-party scripts |
+| **784** citations across **465** sources | **2** languages, both complete | **896** static pages | **0** third-party scripts |
 
 ---
 

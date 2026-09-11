@@ -29,7 +29,9 @@ that somebody who meets Cyclops or the Green Goblin in a list with no mark on
 it will assume there is a version of them in the shared story, and asked for
 the universe to sit next to the name of everyone who is not from it. It does
 now. Then he sent the Earth numbers the first pass had missed, from Aaron
-Davis to Spider-Man Noir, and those are in as well.
+Davis to Spider-Man Noir, and those are in as well. So is the Watcher, whom
+he noticed was narrating three seasons of a series in this catalogue without
+an entry of his own.
 
 :::detail{title="The two he was most right about"}
 He asked why the Spider-Verse films were catalogued and none of their people
