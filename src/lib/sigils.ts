@@ -185,6 +185,119 @@ export const SIGILS: Record<string, string> = {
   /* The Collector: cases, with something kept in each. */
   'taneleer-tivan': `<rect x="8" y="9" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="26" y="9" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="8" y="26" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="26" y="26" width="14" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="15.5" r="2.4" fill="currentColor"/><polygon points="33,12 36.5,19 29.5,19" fill="currentColor"/><rect x="12" y="30" width="6" height="5" fill="currentColor"/><circle cx="33" cy="32.5" r="1.4" fill="currentColor"/><circle cx="33" cy="32.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1"/>`,
 
+  /* ---------------- MCU, everyone else who fell into the generator ---------------- */
+  /* Read on 2026-09-11 from the MCU character lists, the film cast sections
+     and the character pages the fact files cite. */
+
+  /* Iron Man */
+  /* Obadiah Stane: the reactor, taken and put into something cruder. */
+  'obadiah-stane': `<rect x="9" y="9" width="30" height="30" rx="5" fill="currentColor"/><circle cx="24" cy="24" r="7.5" fill="var(--void)"/><circle cx="24" cy="24" r="3" fill="currentColor"/><circle cx="14" cy="14" r="1.5" fill="var(--void)"/><circle cx="34" cy="14" r="1.5" fill="var(--void)"/><circle cx="14" cy="34" r="1.5" fill="var(--void)"/><circle cx="34" cy="34" r="1.5" fill="var(--void)"/>`,
+  /* Whiplash: two electric whips out of one reactor. */
+  'ivan-vanko': `<circle cx="24" cy="24" r="3.4" fill="currentColor"/><path d="M21 22 C12 16, 8 20, 6 10 M27 22 C36 16, 40 20, 42 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 10 L4 6 M6 10 L9 7 M42 10 L44 6 M42 10 L39 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M22 27 C18 34, 12 36, 10 42 M26 27 C30 34, 36 36, 38 42" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>`,
+  /* Captain America */
+  /* Crossbones: the name, drawn plainly. */
+  'brock-rumlow': `<path d="M11 11 L37 37 M37 11 L11 37" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="10" cy="10" r="2.6" fill="currentColor"/><circle cx="38" cy="10" r="2.6" fill="currentColor"/><circle cx="10" cy="38" r="2.6" fill="currentColor"/><circle cx="38" cy="38" r="2.6" fill="currentColor"/>`,
+  /* Batroc: the kickboxer, mid kick. */
+  'georges-batroc': `<path d="M13 7 L15 22 L30 27" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 22 L39 24 L40 31 L31 32 Z" fill="currentColor"/><path d="M36 15 L41 12 M42 20 L45 19 M35 38 L39 41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>`,
+  /* Red Skull: the skull. */
+  'johann-schmidt': `<path d="M24 7 C14 7, 10 15, 10 22 C10 28, 13 31, 16 33 L16 39 L32 39 L32 33 C35 31, 38 28, 38 22 C38 15, 34 7, 24 7 Z" fill="currentColor"/><ellipse cx="18.5" cy="22" rx="3.6" ry="4" fill="var(--void)"/><ellipse cx="29.5" cy="22" rx="3.6" ry="4" fill="var(--void)"/><polygon points="24,26 26.5,31 21.5,31" fill="var(--void)"/><path d="M20 39 L20 35 M24 39 L24 35 M28 39 L28 35" stroke="var(--void)" stroke-width="1.3"/>`,
+  /* Sharon Carter: the Power Broker, with the case the deal is in. */
+  'sharon-carter': `<rect x="8" y="16" width="32" height="22" rx="2.5" fill="currentColor"/><path d="M18 16 L18 11 C18 9.5, 19.5 9, 20.5 9 L27.5 9 C28.5 9, 30 9.5, 30 11 L30 16" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="8" y1="25" x2="40" y2="25" stroke="var(--void)" stroke-width="1.3"/><rect x="21.5" y="23" width="5" height="4.5" rx="1" fill="var(--void)"/>`,
+  /* Hulk */
+  /* Abomination: the mass, and what grew out of its back. */
+  'emil-blonsky': `<path d="M8 40 C8 26, 14 18, 24 18 C34 18, 40 26, 40 40 Z" fill="currentColor"/><polygon points="12,25 14,15 18,22" fill="currentColor"/><polygon points="19,20 22,9 25.5,19" fill="currentColor"/><polygon points="27,20 31,11 32.5,21" fill="currentColor"/><polygon points="34,24 38,17 38,26" fill="currentColor"/>`,
+  /* Samuel Sterns: the mind that grew. */
+  'samuel-sterns': `<path d="M24 9 C15 9, 10 15, 10 22 C10 27, 13 30, 16 31 L16 38 L32 38 L32 31 C35 30, 38 27, 38 22 C38 15, 33 9, 24 9 Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M24 9 L24 31 M14 17 C18 15, 20 19, 23 17 M25 14 C29 12, 31 16, 34 14 M14 25 C18 23, 20 27, 23 25 M25 22 C29 20, 31 24, 34 22" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/>`,
+  /* Thaddeus Ross: the lieutenant general, three stars. */
+  'thaddeus-ross': `<polygon points="10,18 11.9,23 17,23.3 13,26.5 14.3,31.5 10,28.7 5.7,31.5 7,26.5 3,23.3 8.1,23" fill="currentColor"/><polygon points="24,18 25.9,23 31,23.3 27,26.5 28.3,31.5 24,28.7 19.7,31.5 21,26.5 17,23.3 22.1,23" fill="currentColor"/><polygon points="38,18 39.9,23 45,23.3 41,26.5 42.3,31.5 38,28.7 33.7,31.5 35,26.5 31,23.3 36.1,23" fill="currentColor"/>`,
+  /* Ant-Man */
+  /* Ghost: somebody not entirely there. */
+  'ava-starr': `<path d="M24 8 C15 8, 11 15, 11 23 L11 39 L16 35 L20 39 L24 35 L28 39 L32 35 L37 39 L37 23 C37 15, 33 8, 24 8 Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="3.5 2.5"/><circle cx="19.5" cy="21" r="1.8" fill="currentColor"/><circle cx="28.5" cy="21" r="1.8" fill="currentColor"/>`,
+  /* Cassie Lang: her father's mark, and the size she grows to. */
+  'cassie-lang': `<polygon points="24,25 30,35 18,35" fill="currentColor"/><polygon points="24,7 41,39 7,39" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="3.5 2.5"/>`,
+  /* Doctor Strange */
+  /* America Chavez: a doorway shaped like a star. */
+  'america-chavez': `<polygon points="24,5 28.5,17.5 41.5,18 31.5,26.5 35,39.5 24,32 13,39.5 16.5,26.5 6.5,18 19.5,17.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><polygon points="24,13 26.5,20 34,20.5 28,25 30,32.5 24,28 18,32.5 20,25 14,20.5 21.5,20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" opacity="0.7"/>`,
+  /* Dormammu: the dark, with a face of fire around it. */
+  dormammu: `<circle cx="24" cy="24" r="15" fill="currentColor"/><circle cx="24" cy="24" r="9" fill="var(--void)"/><polygon points="24,3 27.5,10 20.5,10" fill="currentColor"/><polygon points="24,45 27.5,38 20.5,38" fill="currentColor"/><polygon points="3,24 10,20.5 10,27.5" fill="currentColor"/><polygon points="45,24 38,20.5 38,27.5" fill="currentColor"/><polygon points="9,9 16,10.5 10.5,16" fill="currentColor"/><polygon points="39,9 37.5,16 32,10.5" fill="currentColor"/><polygon points="9,39 10.5,32 16,37.5" fill="currentColor"/><polygon points="39,39 32,37.5 37.5,32" fill="currentColor"/>`,
+  /* Kaecilius: the circle he broke out of. */
+  kaecilius: `<path d="M33 12 A13.5 13.5 0 1 0 36.5 27" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="40" cy="14" r="3.4" fill="currentColor"/>`,
+  /* Mordo: the staff he trains with. */
+  'karl-mordo': `<path d="M11 41 L33 15" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M33 15 C36 11, 40 11, 41 15 C41.5 18, 38 19, 36 17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="36" cy="17" r="2" fill="currentColor"/>`,
+  /* The Ancient One: the circle, whole. */
+  'the-ancient-one': `<circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5 2.5"/><circle cx="24" cy="24" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="24" cy="24" r="2.6" fill="currentColor"/>`,
+  /* Black Panther */
+  /* M'Baku: the gorilla the Jabari hold sacred. */
+  mbaku: `<circle cx="8.5" cy="23" r="3.6" fill="currentColor"/><circle cx="39.5" cy="23" r="3.6" fill="currentColor"/><path d="M24 5 C16 5, 10 12, 10 22 C10 31, 14 39, 24 42 C34 39, 38 31, 38 22 C38 12, 32 5, 24 5 Z" fill="currentColor"/><path d="M14 19 C18 15.5, 30 15.5, 34 19" fill="none" stroke="var(--void)" stroke-width="2.2"/><circle cx="18.5" cy="23" r="1.9" fill="var(--void)"/><circle cx="29.5" cy="23" r="1.9" fill="var(--void)"/><ellipse cx="24" cy="31" rx="7" ry="4.5" fill="var(--void)"/><circle cx="21.5" cy="30" r="1.3" fill="currentColor"/><circle cx="26.5" cy="30" r="1.3" fill="currentColor"/>`,
+  /* Nakia: a War Dog, sent around the world. */
+  nakia: `<circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/><ellipse cx="24" cy="24" rx="6" ry="14" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.8"/><path d="M10 24 L38 24" stroke="currentColor" stroke-width="1.2" opacity="0.8"/><circle cx="31" cy="17" r="2.8" fill="currentColor"/>`,
+  /* Ramonda: the Queen Mother, in her crown. */
+  ramonda: `<path d="M6 17 L42 17 L36 29 L12 29 Z" fill="currentColor"/><path d="M12 22 L36 22" stroke="var(--void)" stroke-width="1.2"/><ellipse cx="24" cy="35.5" rx="6" ry="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/>`,
+  /* Ulysses Klaue: the arm that is also a gun. */
+  'ulysses-klaue': `<path d="M6 24 L24 24" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><rect x="22" y="18.5" width="11" height="11" rx="2" fill="currentColor"/><path d="M36 17 A9 9 0 0 1 36 31 M40 12 A15 15 0 0 1 40 36" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
+  /* Captain Marvel */
+  /* Yon-Rogg: the blood he gave her, and the war it was for. */
+  'yon-rogg': `<path d="M24 6 C24 6, 11 22, 11 30 C11 37, 17 42, 24 42 C31 42, 37 37, 37 30 C37 22, 24 6, 24 6 Z" fill="currentColor"/><polygon points="24,22 26,27.5 32,28 27.5,31.5 29,37 24,34 19,37 20.5,31.5 16,28 22,27.5" fill="var(--void)"/>`,
+  /* Scarlet Witch */
+  /* Billy Maximoff: one of two, made the same night. */
+  'billy-maximoff': `<circle cx="18.5" cy="24" r="10" fill="currentColor"/><circle cx="29.5" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2.5"/>`,
+  /* Nick Fury */
+  /* Phil Coulson: Lola, the car. */
+  'phil-coulson': `<path d="M6 30 L9 22 L17 21 L21 15 L31 15 L36 21 L42 22 L43 30 Z" fill="currentColor"/><circle cx="14" cy="32" r="4.5" fill="currentColor"/><circle cx="14" cy="32" r="1.8" fill="var(--void)"/><circle cx="35" cy="32" r="4.5" fill="currentColor"/><circle cx="35" cy="32" r="1.8" fill="var(--void)"/><path d="M22 17 L22 21 L29 21 L29 17" fill="var(--void)"/>`,
+  /* Avengers, the Black Order and the Hood */
+  /* Corvus Glaive: the glaive. */
+  'corvus-glaive': `<line x1="12" y1="42" x2="30" y2="14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M30 14 C36 12, 41 6, 42 3 C37 6, 33 5, 28 8 Z" fill="currentColor"/><line x1="30" y1="14" x2="34" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`,
+  /* Cull Obsidian: the chain hammer. */
+  'cull-obsidian': `<rect x="27" y="5" width="15" height="11" rx="2" fill="currentColor" transform="rotate(30 34.5 10.5)"/><circle cx="26" cy="20" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="21" cy="25" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="30" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="13" y1="33" x2="7" y2="41" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>`,
+  /* Ebony Maw: out into space. */
+  'ebony-maw': `<path d="M6 20 L14 20 L14 28 L6 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="27" cy="24" r="3.4" fill="currentColor"/><path d="M27 27.5 L27 34 M27 34 L23 39 M27 34 L31 39 M27 29 L22 32 M27 29 L32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M34 14 L40 10 M36 24 L43 24 M34 34 L40 38" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/>`,
+  /* Proxima Midnight: a star, the nearest one, at midnight. */
+  'proxima-midnight': `<polygon points="24,4 27,21 44,24 27,27 24,44 21,27 4,24 21,21" fill="currentColor"/><circle cx="24" cy="24" r="3" fill="var(--void)"/>`,
+  /* Swordsman: a fencer's foil, with its bell. */
+  'jack-duquesne': `<line x1="24" y1="4" x2="24" y2="30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15 27 A9 9 0 0 0 33 27" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="24" y1="31" x2="24" y2="42" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>`,
+  /* The Hood: the cloak he found, hood up. */
+  'parker-robbins': `<path d="M29 6 C17 7, 10 18, 12 41 L36 41 C34 30, 41 16, 29 6 Z" fill="currentColor"/><ellipse cx="20" cy="25" rx="4.5" ry="6.5" fill="var(--void)"/>`,
+  /* Spider-Man */
+  /* Jackson Brice: the gauntlet, and the vibration it throws. */
+  'jackson-brice': `<rect x="5" y="19" width="16" height="10" rx="2" fill="currentColor"/><rect x="20" y="16.5" width="9" height="15" rx="2.5" fill="currentColor"/><path d="M33 16 A9 9 0 0 1 33 32 M38 11 A15 15 0 0 1 38 37" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
+  /* Herman Schultz: the same gauntlet, second hand, and the shock it gives. */
+  'herman-schultz': `<rect x="17.5" y="17.5" width="13" height="13" rx="3" fill="currentColor"/><path d="M24 4 L21.5 9 L26.5 11 L24 14 M24 44 L26.5 39 L21.5 37 L24 34 M4 24 L9 21.5 L11 26.5 L14 24 M44 24 L39 26.5 L37 21.5 L34 24 M10 10 L11.5 15.5 L15.5 11.5 L16 16 M38 38 L36.5 32.5 L32.5 36.5 L32 32 M38 10 L32.5 11.5 L36.5 15.5 L32 16 M10 38 L15.5 36.5 L11.5 32.5 L16 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Scorpion: the tail. */
+  'mac-gargan': `<path d="M8 36 C14 36, 20 34, 24 28 C28 22, 26 14, 30 10 C34 7, 40 10, 38 15" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><polygon points="38,15 34,19 41,20" fill="currentColor"/><circle cx="8" cy="36" r="3.4" fill="currentColor"/>`,
+  /* Fantastic Four */
+  /* Galactus: a world, with the bite taken out of it. */
+  galactus: `<circle cx="24" cy="26" r="14" fill="currentColor"/><circle cx="34" cy="14" r="9" fill="var(--void)"/><circle cx="41" cy="24" r="1.8" fill="currentColor"/><circle cx="37" cy="7" r="1.4" fill="currentColor"/>`,
+  /* Mole Man: the ground, and the way under it. */
+  'harvey-elder': `<path d="M4 34 L44 34" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M10 34 C10 22, 38 22, 38 34 Z" fill="currentColor"/><path d="M18 34 C18 27, 30 27, 30 34 Z" fill="var(--void)"/><circle cx="24" cy="31" r="1.6" fill="currentColor"/>`,
+  /* Silver Surfer: the board, and where it has been. */
+  'shalla-bal': `<path d="M10 38 C16 22, 30 10, 42 6 C38 18, 26 32, 10 38 Z" fill="currentColor"/><path d="M6 30 C10 26, 14 25, 18 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>`,
+  /* Sony's Spider-Man Universe */
+  /* Carlton Drake: the Life Foundation, a symbiote in a vial. */
+  'carlton-drake': `<path d="M19 6 L29 6 M21 6 L21 17 L14 34 C13 37, 15 40, 18 40 L30 40 C33 40, 35 37, 34 34 L27 17 L27 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 31 C20 27, 28 27, 31 31 L33 36 C33 37.5, 32 38.5, 30.5 38.5 L17.5 38.5 C16 38.5, 15 37.5, 15 36 Z" fill="currentColor"/>`,
+  /* Shriek: the scream, jagged. */
+  'frances-barrison': `<circle cx="11" cy="24" r="4" fill="currentColor"/><path d="M18 20 L21 14 L24 20 L27 14 L30 20 M18 28 L21 34 L24 28 L27 34 L30 28 M33 17 L36 11 L39 17 L42 11 M33 31 L36 37 L39 31 L42 37" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>`,
+  /* Knull: where the symbiotes come from, dripping. */
+  knull: `<rect x="8" y="9" width="32" height="7" rx="2" fill="currentColor"/><path d="M12 16 L12 27 L14.5 27 L14.5 16 Z M19 16 L19 36 L22 36 L22 16 Z M26.5 16 L26.5 30 L29.5 30 L29.5 16 Z M34 16 L34 40 L37 40 L37 16 Z" fill="currentColor"/><circle cx="13.25" cy="28" r="1.7" fill="currentColor"/><circle cx="20.5" cy="37" r="2" fill="currentColor"/><circle cx="28" cy="31" r="1.9" fill="currentColor"/><circle cx="35.5" cy="41" r="2" fill="currentColor"/>`,
+  /* Midnight Sons and Blade */
+  /* Elsa Bloodstone: the family's stone. */
+  'elsa-bloodstone': `<ellipse cx="24" cy="24" rx="11" ry="14" fill="currentColor"/><ellipse cx="24" cy="24" rx="14.5" ry="17.5" fill="none" stroke="currentColor" stroke-width="1.5"/><ellipse cx="20" cy="17" rx="2.5" ry="4" fill="var(--void)" opacity="0.6"/>`,
+  /* Werewolf by Night: the moon, and what it brings out. */
+  'jack-russell': `<circle cx="24" cy="24" r="15" fill="currentColor"/><path d="M14 13 L26 37 M20 10 L32 34 M27 10 L38 30" stroke="var(--void)" stroke-width="2.4" stroke-linecap="round"/>`,
+  /* Man-Thing: the swamp. */
+  'man-thing': `<path d="M5 34 C10 30, 14 30, 19 34 C24 38, 28 38, 33 34 C38 30, 41 30, 44 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 32 L14 14 M24 34 L24 10 M34 32 L34 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><ellipse cx="14" cy="13" rx="2.2" ry="4.5" fill="currentColor"/><ellipse cx="24" cy="9" rx="2.2" ry="4.5" fill="currentColor"/><ellipse cx="34" cy="15" rx="2.2" ry="4.5" fill="currentColor"/>`,
+  /* Blade: the blade. */
+  blade: `<polygon points="38,6 42,10 20,32 16,28" fill="currentColor"/><path d="M12 24 L24 36" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M15.5 28.5 L8 36" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M13 31 L11 33 M10.5 33.5 L8.5 35.5" stroke="var(--void)" stroke-width="0.9"/>`,
+  /* Eric Brooks: the daywalker, a stake in the sun. */
+  'eric-brooks': `<circle cx="24" cy="18" r="11" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M24 3 L24 5 M9 18 L7 18 M41 18 L39 18 M13.4 7.4 L14.8 8.8 M34.6 7.4 L33.2 8.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><polygon points="20,10 28,10 24,43" fill="currentColor"/>`,
+  /* Punisher */
+  /* Jigsaw: the piece his mind came back in. */
+  'billy-russo': `<path d="M12 14 L21 14 C20 10, 22 8, 24 8 C26 8, 28 10, 27 14 L36 14 L36 22 C40 21, 42 23, 42 25 C42 27, 40 29, 36 28 L36 36 L27 36 C28 40, 26 42, 24 42 C22 42, 20 40, 21 36 L12 36 Z" fill="currentColor"/>`,
+  /* Ghost Rider */
+  /* Johnny Blaze: the wheel he rides on, burning. */
+  'johnny-blaze': `<circle cx="24" cy="30" r="10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="30" r="2.5" fill="currentColor"/><path d="M14 20 C16 14, 18 11, 19 6 C21 10, 22 12, 24 14 C25 10, 27 8, 30 6 C30 11, 33 14, 34 20 Z" fill="currentColor"/>`,
+  /* Robbie Reyes: the Rider, a skull in fire. */
+  'robbie-reyes': `<path d="M24 18 C18 18, 15 22, 15 27 C15 30, 16.5 32, 18.5 33.5 L18.5 38 L29.5 38 L29.5 33.5 C31.5 32, 33 30, 33 27 C33 22, 30 18, 24 18 Z" fill="currentColor"/><ellipse cx="20.5" cy="27" rx="2.2" ry="2.6" fill="var(--void)"/><ellipse cx="27.5" cy="27" rx="2.2" ry="2.6" fill="var(--void)"/><path d="M12 22 C12 15, 15 10, 17 5 C19 9, 20 11, 22 13 C23 9, 26 6, 29 4 C29 9, 33 12, 36 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`,
+
   /* ---------------- FOX (X-Men / Terra-10005) ---------------- */
   wolverine: `<path d="M14 12 C16 24, 15 32, 12 36" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="M24 10 C25 24, 24 34, 22 38" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="M34 12 C32 24, 33 32, 36 36" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>`,
   'professor-x': `<circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="16" y1="16" x2="32" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><line x1="32" y1="16" x2="16" y2="32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`,
