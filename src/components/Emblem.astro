@@ -89,7 +89,7 @@ const at = (angle: number, radius: number) => ({
 /* Rays out of a core. */
 const rayCount = pick(5, 9);
 const rayInner = 6 + pick(0, 3);
-const rays = Array.from({ length: rayCount }, (unused, index) => {
+const rays = Array.from({ length: rayCount }, (_, index) => {
   const angle = (index / rayCount) * Math.PI * 2 + turn;
   const outer = rayInner + 5 + pick(0, 4);
   const from = at(angle, rayInner);
@@ -100,14 +100,14 @@ const rays = Array.from({ length: rayCount }, (unused, index) => {
 /* Orbits, with one body on the outermost. */
 const ringCount = pick(2, 3);
 const ringGap = pick(3, 5);
-const rings = Array.from({ length: ringCount }, (unused, index) => 6 + index * ringGap);
+const rings = Array.from({ length: ringCount }, (_, index) => 6 + index * ringGap);
 const bodyAngle = roll() * Math.PI * 2;
 const body = at(bodyAngle, rings[rings.length - 1]);
 
 /* A regular polygon, held at an angle, with a mark on one corner. */
 const sides = pick(3, 6);
 const polygonRadius = 11 + pick(0, 3);
-const corners = Array.from({ length: sides }, (unused, index) =>
+const corners = Array.from({ length: sides }, (_, index) =>
   at((index / sides) * Math.PI * 2 + turn - Math.PI / 2, polygonRadius),
 );
 const polygon = corners.map((corner) => `${corner.x.toFixed(2)},${corner.y.toFixed(2)}`).join(' ');
@@ -115,7 +115,7 @@ const polygon = corners.map((corner) => `${corner.x.toFixed(2)},${corner.y.toFix
 /* Stacked bars, read like a signal rather than a figure. */
 const barCount = pick(3, 5);
 const barStep = 5;
-const bars = Array.from({ length: barCount }, (unused, index) => {
+const bars = Array.from({ length: barCount }, (_, index) => {
   const width = pick(8, 19);
   return {
     x: CENTRE - width / 2,
@@ -127,7 +127,7 @@ const bars = Array.from({ length: barCount }, (unused, index) => {
 
 /* Chords crossing off centre, with a node at each end. */
 const chordCount = pick(2, 3);
-const chords = Array.from({ length: chordCount }, (unused, index) => {
+const chords = Array.from({ length: chordCount }, (_, index) => {
   const angle = turn + (index / chordCount) * Math.PI;
   const reach = 12 + pick(0, 3);
   const from = at(angle, reach);

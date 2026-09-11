@@ -70,7 +70,7 @@ function card(language, t, size = { width: WIDTH, height: HEIGHT }) {
      are the project's own vocabulary and need no translation. */
   const spines = t.sagas
     .map(
-      ({ saga, colour }, index) => `
+      ({ colour }, index) => `
       <li class="spine" style="--livery: ${colour}; --delay: ${index}">
         <span class="edge"></span>
         <span class="bar" style="width: ${[86, 64, 74, 52, 68, 40][index]}%"></span>
