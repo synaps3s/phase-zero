@@ -16,6 +16,7 @@ members:
   - james-proudstar
   - lucas-bishop
   - roberto-da-costa
+  - bobby-drake
 
 firstAppearance: x-men-days-of-future-past
 
@@ -23,4 +24,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Introduced_in_X-Men%3A_Days_of_Future_Past_%282014%29"
     title: "List of X-Men film series characters, Wikipedia"
     accessed: 2026-09-10
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Bobby_Drake_/_Iceman"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-14
 verified: 2026-09-10

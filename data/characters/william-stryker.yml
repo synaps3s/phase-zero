@@ -1,0 +1,28 @@
+id: william-stryker
+universe: earth-10005
+franchise: x-men
+realName: William Stryker
+alignment: villain
+sigil: null
+
+actors:
+  - name: Brian Cox
+    note: in X2
+  - name: Danny Huston
+    note: in X-Men Origins - Wolverine
+  - name: Josh Helman
+    note: in X-Men - Days of Future Past and X-Men - Apocalypse
+
+firstAppearance: x2
+
+appearsIn:
+  - x2
+  - x-men-origins-wolverine
+  - x-men-days-of-future-past
+  - x-men-apocalypse
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#William_Stryker"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

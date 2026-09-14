@@ -1,0 +1,23 @@
+id: mephisto
+universe: earth-616
+franchise: iron-man
+realName: Mephisto
+alignment: villain
+sigil: null
+
+actors:
+  - name: Sacha Baron Cohen
+
+firstAppearance: ironheart
+
+appearsIn:
+  - ironheart
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Mephisto"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Ironheart_(miniseries)#Cast_and_characters"
+    title: "Ironheart (miniseries), Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

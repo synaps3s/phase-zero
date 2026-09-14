@@ -1,0 +1,23 @@
+id: morgan-le-fay
+universe: earth-616
+franchise: marvel-television
+realName: Morgan le Fay
+alignment: villain
+sigil: null
+
+actors:
+  - name: Elizabeth Hurley
+
+firstAppearance: runaways
+
+appearsIn:
+  - runaways
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Morgan_le_Fay_(Marvel_Comics)#Television"
+    title: "Morgan le Fay (Marvel Comics), Wikipedia"
+    accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Runaways_(TV_series)#Recurring"
+    title: "Runaways (TV series), Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

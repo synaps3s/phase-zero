@@ -1,0 +1,26 @@
+id: maria-hill
+universe: earth-616
+franchise: nick-fury
+realName: Maria Hill
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Cobie Smulders
+
+firstAppearance: the-avengers
+
+appearsIn:
+  - the-avengers
+  - agents-of-shield
+  - captain-america-the-winter-soldier
+  - avengers-age-of-ultron
+  - avengers-infinity-war
+  - avengers-endgame
+  - secret-invasion
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Maria_Hill"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

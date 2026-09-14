@@ -1,0 +1,28 @@
+id: ned-leeds
+universe: earth-616
+franchise: spider-man
+realName: Ned Leeds
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Jacob Batalon
+
+firstAppearance: spider-man-homecoming
+
+appearsIn:
+  - spider-man-homecoming
+  - avengers-infinity-war
+  - avengers-endgame
+  - spider-man-far-from-home
+  - spider-man-no-way-home
+  - spider-man-brand-new-day
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Ned_Leeds"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day#Cast"
+    title: "Spider-Man: Brand New Day, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

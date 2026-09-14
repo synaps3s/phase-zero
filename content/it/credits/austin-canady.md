@@ -32,6 +32,13 @@ Aaron Davis a Spider-Man Noir, e ci sono anche quelli. E c'è l'Osservatore, di
 cui ha notato che narrava tre stagioni di una serie in catalogo senza avere una
 scheda sua.
 
+Poi una terza lista, di venticinque nomi, e di nuovo nessuno era una questione
+di gusti: Ned Leeds e MJ, Maria Hill, l'altro Quicksilver, zia May, l'uomo che
+recitava il Mandarino e l'uomo che lo aveva assunto, il colonnello Stryker,
+Iceman e Angelo, Rhino, Titania, Talos, Zeus. Persone che insieme portano una
+buona parte delle storie intorno ai protagonisti, e che non avevano una pagina
+dove trovarle.
+
 :::detail{title="Le due cose su cui aveva più ragione"}
 Ha chiesto perché i film Spider-Verse fossero in catalogo e i loro personaggi
 no, e ha portato un argomento invece di una semplice richiesta: Miguel O'Hara

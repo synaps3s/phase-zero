@@ -33,6 +33,12 @@ Davis to Spider-Man Noir, and those are in as well. So is the Watcher, whom
 he noticed was narrating three seasons of a series in this catalogue without
 an entry of his own.
 
+Then a third list, of twenty-five, and again not one of them was a matter of
+taste: Ned Leeds and MJ, Maria Hill, the other Quicksilver, Aunt May, the man
+who played the Mandarin and the man who hired him, Colonel Stryker, Iceman and
+Angel, the Rhino, Titania, Talos, Zeus. People who between them carry a good
+part of the stories around the leads, and who had no page to be found on.
+
 :::detail{title="The two he was most right about"}
 He asked why the Spider-Verse films were catalogued and none of their people
 were, and made the argument rather than just the request: Miguel O'Hara naming

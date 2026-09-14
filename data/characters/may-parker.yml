@@ -1,0 +1,28 @@
+id: may-parker
+universe: earth-616
+franchise: spider-man
+realName: May Parker
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Marisa Tomei
+
+firstAppearance: captain-america-civil-war
+
+appearsIn:
+  - captain-america-civil-war
+  - spider-man-homecoming
+  - avengers-endgame
+  - spider-man-far-from-home
+  - spider-man-no-way-home
+  - spider-man-brand-new-day
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#May_Parker"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day#Cast"
+    title: "Spider-Man: Brand New Day, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

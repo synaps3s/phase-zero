@@ -8,6 +8,9 @@ order: 3
 members:
   - bucky-barnes
   - wanda-maximoff
+  - alexander-pierce
+  - pietro-maximoff
+  - carl-creel
 
 firstAppearance: captain-america-the-first-avenger
 
@@ -15,4 +18,13 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Hydra_(comics)"
     title: "Hydra (comics), Wikipedia"
     accessed: 2026-09-08
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Alexander_Pierce"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Pietro_Maximoff"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/List_of_Agents_of_S.H.I.E.L.D._characters#Carl_Creel"
+    title: "List of Agents of S.H.I.E.L.D. characters, Wikipedia"
+    accessed: 2026-09-14
 verified: 2026-09-08

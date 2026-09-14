@@ -1,0 +1,26 @@
+id: michelle-jones
+universe: earth-616
+franchise: spider-man
+realName: Michelle Jones-Watson
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Zendaya
+
+firstAppearance: spider-man-homecoming
+
+appearsIn:
+  - spider-man-homecoming
+  - spider-man-far-from-home
+  - spider-man-no-way-home
+  - spider-man-brand-new-day
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/MJ_(Marvel_Cinematic_Universe)"
+    title: "MJ (Marvel Cinematic Universe), Wikipedia"
+    accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Brand_New_Day#Cast"
+    title: "Spider-Man: Brand New Day, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

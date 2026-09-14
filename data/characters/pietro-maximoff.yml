@@ -1,0 +1,26 @@
+id: pietro-maximoff
+universe: earth-616
+franchise: scarlet-witch
+realName: Pietro Maximoff
+alignment: hero
+sigil: null
+
+actors:
+  - name: Aaron Taylor-Johnson
+  - name: Gabriel Gurevich
+    note: as a child
+  - name: Evan Peters
+    note: as Ralph Bohner, impersonating him in WandaVision
+
+firstAppearance: captain-america-the-winter-soldier
+
+appearsIn:
+  - captain-america-the-winter-soldier
+  - avengers-age-of-ultron
+  - wandavision
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Pietro_Maximoff"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

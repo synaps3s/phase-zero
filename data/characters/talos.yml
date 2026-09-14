@@ -1,0 +1,22 @@
+id: talos
+universe: earth-616
+franchise: nick-fury
+realName: Talos
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Ben Mendelsohn
+
+firstAppearance: captain-marvel
+
+appearsIn:
+  - captain-marvel
+  - spider-man-far-from-home
+  - secret-invasion
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Talos"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

@@ -1,0 +1,20 @@
+id: carl-creel
+universe: earth-616
+franchise: marvel-television
+realName: Carl Creel
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Brian Patrick Wade
+
+firstAppearance: agents-of-shield
+
+appearsIn:
+  - agents-of-shield
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Agents_of_S.H.I.E.L.D._characters#Carl_Creel"
+    title: "List of Agents of S.H.I.E.L.D. characters, Wikipedia"
+    accessed: 2026-09-14
+verified: 2026-09-14

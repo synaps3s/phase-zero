@@ -306,6 +306,33 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'elena-rodriguez': ['#ffca2f', '#2a1010', '#ff4d5e', 'rgba(255,202,47,0.5)'],
   'deke-shaw': ['#4fd1c5', '#141a24', '#ffca4a', 'rgba(79,209,197,0.45)'],
 
+  /* --- The third list from the same reader -------------------------- */
+  'ned-leeds': ['#5fd0ff', '#16277a', '#ffca4a', 'rgba(95,208,255,0.45)'],
+  'michelle-jones': ['#c2d0e0', '#1a1030', '#ff5a7a', 'rgba(194,208,224,0.45)'],
+  'maria-hill': ['#8a97ad', '#141a24', '#5fd0ff', 'rgba(138,151,173,0.4)'],
+  'pietro-maximoff': ['#7fd4ff', '#1a2a3a', '#e6ebf2', 'rgba(127,212,255,0.5)'],
+  'aldrich-killian': ['#ff7a2f', '#3a1008', '#ffd27a', 'rgba(255,122,47,0.55)'],
+  'trevor-slattery': ['#e0b060', '#2a1010', '#ff4d4d', 'rgba(224,176,96,0.45)'],
+  'alexander-pierce': ['#8a97ad', '#1a1a1a', '#ff4d4d', 'rgba(138,151,173,0.4)'],
+  'william-stryker': ['#7f8fa0', '#141a14', '#ffca4a', 'rgba(127,143,160,0.4)'],
+  'katy-chen': ['#ffca4a', '#2a1b4a', '#4fd18a', 'rgba(255,202,74,0.45)'],
+  'xu-xialing': ['#ff4d5e', '#1a1030', '#ffd27a', 'rgba(255,77,94,0.5)'],
+  zeus: ['#ffd24a', '#3a2a10', '#e6ebf2', 'rgba(255,210,74,0.55)'],
+  'melina-vostokoff': ['#c2d0e0', '#3a0f18', '#ff4d5e', 'rgba(194,208,224,0.4)'],
+  mephisto: ['#ff3d3d', '#1a0a0a', '#ffb87a', 'rgba(255,61,61,0.55)'],
+  talos: ['#4fd18a', '#141a24', '#c9a0ff', 'rgba(79,209,138,0.45)'],
+  'warren-worthington': ['#e6ebf2', '#2a1b4a', '#5fd0ff', 'rgba(230,235,242,0.45)'],
+  'aleksei-sytsevich': ['#8290a8', '#2b3446', '#ff9a3c', 'rgba(130,144,168,0.45)'],
+  'may-parker': ['#ff9a9a', '#3a1d2a', '#ffd27a', 'rgba(255,154,154,0.45)'],
+  'darren-cross': ['#ffca2f', '#241a10', '#ff4d4d', 'rgba(255,202,47,0.5)'],
+  'joaquin-torres': ['#38b6ff', '#16277a', '#ff4d4d', 'rgba(56,182,255,0.45)'],
+  'morgan-le-fay': ['#a06bff', '#1a0a2a', '#4fd1c5', 'rgba(160,107,255,0.5)'],
+  'bobby-drake': ['#8fe0ff', '#0b4a86', '#e6ebf2', 'rgba(143,224,255,0.5)'],
+  'betty-ross': ['#4fd1c5', '#141a24', '#ffd27a', 'rgba(79,209,197,0.45)'],
+  'carl-creel': ['#c2d0e0', '#2a1810', '#8a97ad', 'rgba(194,208,224,0.4)'],
+  'mary-macpherran': ['#ff5a9a', '#2a1b4a', '#ffca4a', 'rgba(255,90,154,0.5)'],
+  'bill-foster': ['#e0a13c', '#141a14', '#5fd0ff', 'rgba(224,161,60,0.45)'],
+
   /* --- Not characters ------------------------------------------------ */
   'austin-canady': ['#ff4d4d', '#16277a', '#5fd0ff', 'rgba(255,77,77,0.5)'],
 };
