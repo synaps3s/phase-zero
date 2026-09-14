@@ -10,6 +10,9 @@ born: 10 agosto 2001, Forest Hills, Queens, New York
 powers: Forza, velocità, agilità e aderenza dopo il morso di un ragno
   radioattivo, e un senso di allarme che scatta prima che lui capisca perché.
 journey:
+  - title: iron-man-2
+    text: Un bambino con una maschera giocattolo di Iron Man, salvato da Stark
+      all'Expo, che un regista successivo ha deciso fosse stato Peter da sempre.
   - title: captain-america-civil-war
     text: Tony Stark gli si presenta in casa, gli dice che sa tutto, gli mette
       in mano una tuta migliore e se lo porta in Germania a combattere contro
@@ -64,6 +67,18 @@ riferimento e non lo mettono mai in scena.
 qualcun altro, ed è anche il motivo per cui la sua motivazione deve reggersi
 tutta sull'interpretazione invece che su una scena che il pubblico sapeva già a
 memoria.
+:::
+
+:::detail{title="Il cameo deciso dopo"}
+In *Iron Man 2* c'è una scena in cui un bambino con una maschera giocattolo
+di Iron Man viene preso di mira dai droni di Justin Hammer e salvato da Stark.
+Il bambino è interpretato da Max Favreau, il figlio del regista. Nel 2017 Jon
+Watts, il regista di *Homecoming*, ha raccontato di aver proposto a Kevin
+Feige di stabilire retroattivamente che quel bambino fosse un giovane Peter, e
+Tom Holland ha sostenuto l'idea. Wikipedia elenca il film fra le sue
+apparizioni su questa base, e così fa questo catalogo, con la stessa riserva
+della fonte: nessun film o serie lo ha ancora confermato. Sei anni prima di
+essere reclutato, quindi, e soltanto se si accetta il retcon.
 :::
 
 :::spoiler{level="major" from="spider-man-no-way-home"}

@@ -10,6 +10,9 @@ born: 10 August 2001, Forest Hills, Queens, New York
 powers: Strength, speed, agility and adhesion after a radioactive spider bite,
   and a warning sense that fires before he knows why.
 journey:
+  - title: iron-man-2
+    text: A small boy in a toy Iron Man mask, saved by Stark at the Expo, whom
+      a later director decided had been Peter all along.
   - title: captain-america-civil-war
     text: Tony Stark turns up in his apartment, tells him he knows, hands him
       a better suit, and flies him to Germany to fight Captain America.
@@ -61,6 +64,18 @@ That decision is why the character can be introduced in the middle of somebody
 else's film, and it is also why his motivation has to be carried entirely by
 performance rather than by a scene everyone in the audience already knew was
 coming.
+:::
+
+:::detail{title="The cameo that was decided afterwards"}
+*Iron Man 2* has a scene in which a boy in a child's Iron Man mask is targeted
+by Justin Hammer's drones and saved by Stark. The boy is played by Max
+Favreau, the director's son. In 2017 Jon Watts, who directed *Homecoming*,
+said he had suggested to Kevin Feige that the child be retroactively
+established as a young Peter, and Tom Holland supported the idea. Wikipedia
+lists the film among his appearances on that basis, and so does this
+catalogue, with the same caveat the source gives: no film or series has yet
+confirmed it. Six years before he was recruited, then, and only if you accept
+the retcon.
 :::
 
 :::spoiler{level="major" from="spider-man-no-way-home"}

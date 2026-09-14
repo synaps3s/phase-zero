@@ -7,10 +7,13 @@ sigil: spider-man
 
 actors:
   - name: Tom Holland
+  - name: Max Favreau
+    note: as the boy in Iron Man 2, retroactively
 
-firstAppearance: captain-america-civil-war
+firstAppearance: iron-man-2
 
 appearsIn:
+  - iron-man-2
   - captain-america-civil-war
   - spider-man-homecoming
   - avengers-infinity-war
