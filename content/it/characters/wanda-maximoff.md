@@ -28,6 +28,9 @@ journey:
     text: Riportata indietro dopo cinque anni che per lei non sono durati
       niente, rientra nell'ultima battaglia e per poco non chiude Thanos da
       sola.
+  - title: wandavision
+    text: In lutto per Visione, prende una cittadina del New Jersey e la
+      riscrive come una sitcom in cui lui è vivo, e alla fine scopre cosa è.
   - title: doctor-strange-in-the-multiverse-of-madness
     text: Corrotta da un libro di incantesimi più antico di qualsiasi magia di
       questi film, va a cercare nel multiverso una versione dei suoi figli che

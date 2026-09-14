@@ -24,6 +24,9 @@ journey:
   - title: avengers-endgame
     text: The voice on the other end of the line, and the person Rogers hands
       the shield to at the end of it.
+  - title: the-falcon-and-the-winter-soldier
+    text: Gives the shield to the government, watches what they do with it,
+      and takes the name back as Captain America.
   - title: captain-america-brave-new-world
     text: The shield, the title, and a government that would rather he had
       neither.

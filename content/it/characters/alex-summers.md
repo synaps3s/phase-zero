@@ -11,7 +11,7 @@ journey:
     text: Tirato fuori da una cella perché la CIA ha trovato qualcosa di
       peggio, e impara a puntare quella cosa lontano dalla sua squadra.
   - title: x-men-days-of-future-past
-    text: Mystica lo libera da Stryker, che sta raccogliendo soldati mutanti in
+    text: Mistica lo libera da Stryker, che sta raccogliendo soldati mutanti in
       Vietnam.
   - title: x-men-apocalypse
     text: Alla scuola, col fratello che conosce a malapena.

@@ -24,6 +24,9 @@ journey:
   - title: avengers-endgame
     text: La voce dall'altra parte della radio, e la persona a cui Rogers passa
       lo scudo alla fine.
+  - title: the-falcon-and-the-winter-soldier
+    text: Consegna lo scudo al governo, guarda cosa ne fanno, e si riprende il
+      nome come Capitan America.
   - title: captain-america-brave-new-world
     text: Lo scudo, il titolo, e un governo che avrebbe preferito non
       concedergli nessuno dei due.

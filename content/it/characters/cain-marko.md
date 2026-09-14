@@ -21,7 +21,7 @@ journey:
 
 Cain Marko è un mutante con forza e resistenza sovrumane che porta un elmo
 inconfondibile. In *Conflitto finale* Magneto lo libera da un trasporto
-carcerario insieme a Mystica e Multiple Man, e lo manda a trovare e uccidere
+carcerario insieme a Mistica e Multiple Man, e lo manda a trovare e uccidere
 Leech durante la battaglia di Alcatraz. Kitty Pryde lo rallenta e lo batte, ed
 è una delle poche idee ben costruite di quel film.
 

@@ -30,6 +30,9 @@ journey:
   - title: spider-man-no-way-home
     text: Smascherato davanti al mondo, chiede a Stephen Strange di annullare
       tutto, e finisce per incrinare il muro tra gli universi.
+  - title: spider-man-brand-new-day
+    text: Dimenticato da tutti, lavora in città da solo, scopre che i suoi
+      poteri stanno cambiando, e si imbatte in una mutante sola quanto lui.
 ---
 
 Peter Parker viene morso da un ragno radioattivo nel 2015 e comincia a fermare

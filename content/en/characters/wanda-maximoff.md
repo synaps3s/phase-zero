@@ -27,6 +27,9 @@ journey:
     text: Restored after five years that lasted no time at all for her, she
       comes back into the last battle and very nearly finishes Thanos on her
       own.
+  - title: wandavision
+    text: Grieving Vision, she takes a town in New Jersey and rewrites it into
+      a sitcom where he is alive, and learns at the end of it what she is.
   - title: doctor-strange-in-the-multiverse-of-madness
     text: Corrupted by a book of spells older than any of the magic in these
       films, she goes looking through the multiverse for a version of her

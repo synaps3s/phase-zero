@@ -28,6 +28,9 @@ journey:
   - title: spider-man-no-way-home
     text: Exposed to the world, he asks Stephen Strange to undo it, and cracks
       the wall between universes instead.
+  - title: spider-man-brand-new-day
+    text: Forgotten by everyone, he works the city alone, finds his powers
+      changing, and runs into a mutant who is as lonely as he is.
 ---
 
 Peter Parker is bitten by a radioactive spider in 2015 and starts stopping bike
