@@ -1,0 +1,20 @@
+id: angel-dust
+universe: earth-10005
+franchise: x-men
+realName: null
+alignment: villain
+sigil: null
+
+actors:
+  - name: Gina Carano
+
+firstAppearance: deadpool
+
+appearsIn:
+  - deadpool
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Angel_Dust"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

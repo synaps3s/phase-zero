@@ -339,6 +339,19 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'hannibal-king': ['#e0a13c', '#12060a', '#ff4d4d', 'rgba(224,161,60,0.45)'],
   dracula: ['#8a1f2f', '#0a0304', '#ffd27a', 'rgba(138,31,47,0.55)'],
 
+  'mortimer-toynbee': ['#7fc84a', '#1a2a10', '#ffd24a', 'rgba(127,200,74,0.45)'],
+  'john-wraith': ['#8a97ad', '#141a24', '#c9a0ff', 'rgba(138,151,173,0.4)'],
+  azazel: ['#ff4d4d', '#2a0808', '#ffd27a', 'rgba(255,77,77,0.55)'],
+  viper: ['#4fd18a', '#0f2a1a', '#e6ebf2', 'rgba(79,209,138,0.5)'],
+  'moira-mactaggert': ['#c2d0e0', '#1f2a3a', '#ffca4a', 'rgba(194,208,224,0.4)'],
+  caliban: ['#e6ebf2', '#2a2a30', '#ffd27a', 'rgba(230,235,242,0.45)'],
+  'donald-pierce': ['#8290a8', '#2b1e10', '#ffca2f', 'rgba(130,144,168,0.45)'],
+  'x-24': ['#c2d0e0', '#2a0a0a', '#ff4d4d', 'rgba(194,208,224,0.45)'],
+  'zander-rice': ['#4fd1c5', '#141a24', '#ff7a2f', 'rgba(79,209,197,0.45)'],
+  'francis-freeman': ['#7f93b5', '#1a1010', '#ff4d5e', 'rgba(127,147,181,0.45)'],
+  'angel-dust': ['#ff9a3c', '#2a1408', '#e6ebf2', 'rgba(255,154,60,0.5)'],
+  'cecilia-reyes': ['#a06bff', '#1a0a2a', '#ffd27a', 'rgba(160,107,255,0.45)'],
+
   /* --- Not characters ------------------------------------------------ */
   'austin-canady': ['#ff4d4d', '#16277a', '#5fd0ff', 'rgba(255,77,77,0.5)'],
 };

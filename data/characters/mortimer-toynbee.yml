@@ -1,0 +1,27 @@
+id: mortimer-toynbee
+universe: earth-10005
+franchise: x-men
+realName: Mortimer Toynbee
+alignment: villain
+sigil: null
+
+actors:
+  - name: Ray Park
+    note: in X-Men
+  - name: Evan Jonigkeit
+    note: in X-Men - Days of Future Past
+  - name: Daniel Medina Ramos
+    note: in Deadpool & Wolverine
+
+firstAppearance: x-men
+
+appearsIn:
+  - x-men
+  - x-men-days-of-future-past
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Mortimer_Toynbee_/_Toad"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

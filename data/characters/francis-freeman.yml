@@ -1,0 +1,20 @@
+id: francis-freeman
+universe: earth-10005
+franchise: x-men
+realName: Francis Freeman
+alignment: villain
+sigil: null
+
+actors:
+  - name: Ed Skrein
+
+firstAppearance: deadpool
+
+appearsIn:
+  - deadpool
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Francis_Freeman_/_Ajax"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

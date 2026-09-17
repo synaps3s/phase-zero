@@ -1,0 +1,24 @@
+id: caliban
+universe: earth-10005
+franchise: x-men
+realName: null
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Tómas Lemarquis
+    note: in X-Men - Apocalypse
+  - name: Stephen Merchant
+    note: in Logan
+
+firstAppearance: x-men-apocalypse
+
+appearsIn:
+  - x-men-apocalypse
+  - logan
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters#Caliban"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17
