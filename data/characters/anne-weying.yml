@@ -1,0 +1,24 @@
+id: anne-weying
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Anne Weying
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Michelle Williams
+
+firstAppearance: venom
+
+appearsIn:
+  - venom
+  - venom-let-there-be-carnage
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Venom_(2018_film)#Cast"
+    title: "Venom (2018 film), Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage#Cast"
+    title: "Venom: Let There Be Carnage, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

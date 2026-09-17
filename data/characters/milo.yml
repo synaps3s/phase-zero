@@ -1,0 +1,22 @@
+id: milo
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Lucien
+alignment: villain
+sigil: null
+
+actors:
+  - name: Matt Smith
+  - name: Joseph Esson
+    note: as a young Milo
+
+firstAppearance: morbius
+
+appearsIn:
+  - morbius
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Morbius_(film)#Cast"
+    title: "Morbius (film), Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

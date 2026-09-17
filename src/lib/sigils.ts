@@ -555,6 +555,19 @@ export const SIGILS: Record<string, string> = {
   /* Aleksei Sytsevich: the rhinoceros, head down and horn first. */
   'aleksei-sytsevich': `<g transform="translate(4.755 8.153) scale(0.739)"><path d="M8 36 L8 26 C8 18, 14 12, 24 12 C30 12, 34 15, 36 20 L40 32 L40 36 Z" fill="none" stroke="currentColor" stroke-width="2.436" stroke-linejoin="round"/><path d="M33 18 C36 12, 40 8, 45 6 C42 12, 40 17, 37 22 Z" fill="currentColor"/><circle cx="26" cy="22" r="1.8" fill="currentColor"/><path d="M14 36 L14 30 M22 36 L22 30" stroke="currentColor" stroke-width="2.166" stroke-linecap="round"/></g>`,
 
+
+  /* The fourth list from the same reader, 2026-09-17. Drawn from the pages each fact file cites. */
+  /* Anne Weying: the scales of justice, with the symbiote on one side. */
+  'anne-weying': `<g transform="translate(6.969 6.68) scale(0.722)"><path d="M24 8 L24 40 M14 40 L34 40 M10 16 L38 16" fill="none" stroke="currentColor" stroke-width="2.356" stroke-linecap="round"/><path d="M10 16 L5 27 L15 27 Z" fill="none" stroke="currentColor" stroke-width="2.217" stroke-linejoin="round"/><path d="M38 16 L33 27 L43 27 Z" fill="currentColor"/></g>`,
+  /* Patrick Mulligan: the badge, with a crack through it. */
+  'patrick-mulligan': `<g transform="translate(6.128 6.872) scale(0.745)"><path d="M24 6 L29 11 L36 10 L36 17 L42 22 L37 27 L38 34 L31 34 L27 40 L21 40 L17 34 L10 34 L11 27 L6 22 L12 17 L12 10 L19 11 Z" fill="none" stroke="currentColor" stroke-width="2.149" stroke-linejoin="round"/><path d="M22 12 L26 20 L21 26 L26 34" fill="none" stroke="currentColor" stroke-width="2.149" stroke-linecap="round" stroke-linejoin="round"/></g>`,
+  /* Milo: two circles, one drawn in full and one the copy of it. */
+  milo: `<g transform="translate(5.229 5.229) scale(0.782)"><circle cx="18" cy="24" r="11" fill="none" stroke="currentColor" stroke-width="2.301"/><circle cx="30" cy="24" r="11" fill="none" stroke="currentColor" stroke-width="2.301" stroke-dasharray="3 2.5"/><circle cx="24" cy="24" r="2.2" fill="currentColor"/></g>`,
+  /* Dmitri Kravinoff: a voice that is not his, three waves of it. */
+  'dmitri-kravinoff': `<g transform="translate(6.124 6.688) scale(0.753)"><path d="M8 12 C8 8, 14 8, 14 12 L14 30 C14 34, 8 34, 8 30 Z" fill="currentColor"/><path d="M11 34 L11 40 M6 40 L16 40" stroke="currentColor" stroke-width="2.259" stroke-linecap="round"/><path d="M20 16 C24 20, 24 26, 20 30 M27 11 C34 17, 34 29, 27 35 M34 6 C44 14, 44 32, 34 40" fill="none" stroke="currentColor" stroke-width="2.259" stroke-linecap="round"/></g>`,
+  /* Ezekiel Sims: a spider, upside down. */
+  'ezekiel-sims': `<g transform="translate(4.059 2.398) scale(0.831)"><circle cx="24" cy="22" r="5" fill="currentColor"/><circle cx="24" cy="31" r="3" fill="currentColor"/><path d="M20 20 L10 12 M28 20 L38 12 M19 23 L8 22 M29 23 L40 22 M20 26 L11 32 M28 26 L37 32 M22 27 L16 40 M26 27 L32 40" fill="none" stroke="currentColor" stroke-width="2.046" stroke-linecap="round"/></g>`,
+
   /* ---------------- SONY (Spider-Verse, the animated films) ---------------- */
   /* Read on 2026-09-11 from the voice cast sections of the two film pages
      the fact files cite. */

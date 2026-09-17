@@ -1,0 +1,22 @@
+id: dmitri-kravinoff
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Dmitri Kravinoff
+alignment: villain
+sigil: null
+
+actors:
+  - name: Fred Hechinger
+  - name: Billy Barratt
+    note: as a young Dmitri
+
+firstAppearance: kraven-the-hunter
+
+appearsIn:
+  - kraven-the-hunter
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Kraven_the_Hunter_(film)#Cast"
+    title: "Kraven the Hunter (film), Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

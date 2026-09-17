@@ -357,6 +357,12 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'carter-slade': ['#e0a13c', '#2a1e10', '#e6ebf2', 'rgba(224,161,60,0.45)'],
   'danny-ketch': ['#5fd0ff', '#0b2a4a', '#e6ebf2', 'rgba(95,208,255,0.5)'],
 
+  'anne-weying': ['#c2d0e0', '#141a24', '#7fd4ff', 'rgba(194,208,224,0.4)'],
+  'patrick-mulligan': ['#5a6b8a', '#0f1a10', '#4fd18a', 'rgba(90,107,138,0.45)'],
+  milo: ['#7f93b5', '#2a0a14', '#ff4d5e', 'rgba(127,147,181,0.45)'],
+  'dmitri-kravinoff': ['#8a97ad', '#1a1a2a', '#c9a0ff', 'rgba(138,151,173,0.4)'],
+  'ezekiel-sims': ['#ff4d4d', '#0a0a0a', '#c2d0e0', 'rgba(255,77,77,0.5)'],
+
   /* --- Not characters ------------------------------------------------ */
   'austin-canady': ['#ff4d4d', '#16277a', '#5fd0ff', 'rgba(255,77,77,0.5)'],
 };

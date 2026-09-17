@@ -1,0 +1,26 @@
+id: patrick-mulligan
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Patrick Mulligan
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Stephen Graham
+  - name: Sean Delaney
+    note: as a young Mulligan, in Venom - Let There Be Carnage
+
+firstAppearance: venom-let-there-be-carnage
+
+appearsIn:
+  - venom-let-there-be-carnage
+  - venom-the-last-dance
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage#Cast"
+    title: "Venom: Let There Be Carnage, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Venom:_The_Last_Dance#Cast"
+    title: "Venom: The Last Dance, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

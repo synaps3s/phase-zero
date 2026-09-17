@@ -1,0 +1,20 @@
+id: ezekiel-sims
+universe: earth-688
+franchise: sony-spider-man-universe
+realName: Ezekiel Sims
+alignment: villain
+sigil: null
+
+actors:
+  - name: Tahar Rahim
+
+firstAppearance: madame-web
+
+appearsIn:
+  - madame-web
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Madame_Web_(film)#Cast"
+    title: "Madame Web (film), Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17
