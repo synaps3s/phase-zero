@@ -1,0 +1,33 @@
+id: abraham-whistler
+universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-26320
+franchise: blade
+realName: Abraham Whistler
+alignment: mentor
+sigil: null
+
+actors:
+  - name: Kris Kristofferson
+
+firstAppearance: blade
+
+appearsIn:
+  - blade
+  - blade-ii
+  - blade-trinity
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Blade_(1998_film)#Cast"
+    title: "Blade (1998 film), Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Blade_II#Plot"
+    title: "Blade II, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Blade:_Trinity#Plot"
+    title: "Blade: Trinity, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://marvel.fandom.com/wiki/Abraham_Whistler_(Earth-26320)"
+    title: "Abraham Whistler (Earth-26320), Marvel Database"
+    accessed: 2026-09-17
+verified: 2026-09-17

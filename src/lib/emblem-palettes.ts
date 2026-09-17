@@ -333,6 +333,12 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'mary-macpherran': ['#ff5a9a', '#2a1b4a', '#ffca4a', 'rgba(255,90,154,0.5)'],
   'bill-foster': ['#e0a13c', '#141a14', '#5fd0ff', 'rgba(224,161,60,0.45)'],
 
+  /* --- The fourth list from the same reader ------------------------- */
+  'abraham-whistler': ['#c2d0e0', '#2a1810', '#ff4d4d', 'rgba(194,208,224,0.4)'],
+  'deacon-frost': ['#ff4d5e', '#1a0508', '#e6ebf2', 'rgba(255,77,94,0.5)'],
+  'hannibal-king': ['#e0a13c', '#12060a', '#ff4d4d', 'rgba(224,161,60,0.45)'],
+  dracula: ['#8a1f2f', '#0a0304', '#ffd27a', 'rgba(138,31,47,0.55)'],
+
   /* --- Not characters ------------------------------------------------ */
   'austin-canady': ['#ff4d4d', '#16277a', '#5fd0ff', 'rgba(255,77,77,0.5)'],
 };

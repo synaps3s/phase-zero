@@ -302,6 +302,16 @@ export const SIGILS: Record<string, string> = {
   /* Robbie Reyes: the Rider, a skull in fire. */
   'robbie-reyes': `<g transform="translate(5.229 7.575) scale(0.782)"><path d="M24 18 C18 18, 15 22, 15 27 C15 30, 16.5 32, 18.5 33.5 L18.5 38 L29.5 38 L29.5 33.5 C31.5 32, 33 30, 33 27 C33 22, 30 18, 24 18 Z" fill="currentColor"/><ellipse cx="20.5" cy="27" rx="2.2" ry="2.6" fill="var(--void)"/><ellipse cx="27.5" cy="27" rx="2.2" ry="2.6" fill="var(--void)"/><path d="M12 22 C12 15, 15 10, 17 5 C19 9, 20 11, 22 13 C23 9, 26 6, 29 4 C29 9, 33 12, 36 20" fill="none" stroke="currentColor" stroke-width="2.301" stroke-linecap="round" stroke-linejoin="round"/></g>`,
 
+  /* The fourth list from the same reader, 2026-09-17. Drawn from the pages each fact file cites. */
+  /* Abraham Whistler: the hammer, and the stake it made. */
+  'abraham-whistler': `<g transform="translate(2.028 -0.694) scale(0.972)"><path d="M14 34 L30 18" fill="none" stroke="currentColor" stroke-width="2.057" stroke-linecap="round"/><path d="M27 11 L37 21 L33 25 L23 15 Z" fill="currentColor"/><path d="M11 21 L19 29 M11 21 L9 39 L17 37 Z" fill="currentColor" stroke="currentColor" stroke-width="1.646" stroke-linejoin="round"/></g>`,
+  /* Deacon Frost: the crown he took, and the blood under it. */
+  'deacon-frost': `<g transform="translate(4.437 3.357) scale(0.815)"><path d="M11 24 L14 12 L20 19 L24 9 L28 19 L34 12 L37 24 Z" fill="none" stroke="currentColor" stroke-width="2.086" stroke-linejoin="round"/><path d="M24 29 C27 33, 29 35, 29 38 C29 41, 27 42.5, 24 42.5 C21 42.5, 19 41, 19 38 C19 35, 21 33, 24 29 Z" fill="currentColor"/></g>`,
+  /* Hannibal King: a mouth that never closes, with fangs in it. */
+  'hannibal-king': `<g transform="translate(5.176 4) scale(0.784)"><path d="M10 12 L38 12 C40 12, 41 13, 41 15 L41 29 C41 31, 40 32, 38 32 L20 32 L13 39 L14 32 L10 32 C8 32, 7 31, 7 29 L7 15 C7 13, 8 12, 10 12 Z" fill="none" stroke="currentColor" stroke-width="2.168" stroke-linejoin="round"/><polygon points="17,18 20,18 18.5,26" fill="currentColor"/><polygon points="28,18 31,18 29.5,26" fill="currentColor"/></g>`,
+  /* Dracula: the sun he can stand in, and the fangs under it. */
+  dracula: `<g transform="translate(3.543 5.61) scale(0.852)"><circle cx="24" cy="21" r="8" fill="none" stroke="currentColor" stroke-width="1.994"/><path d="M24 6 L24 9.5 M24 32.5 L24 36 M9 21 L12.5 21 M35.5 21 L39 21 M13.4 10.4 L15.9 12.9 M32.1 29.1 L34.6 31.6 M34.6 10.4 L32.1 12.9 M15.9 29.1 L13.4 31.6" stroke="currentColor" stroke-width="1.994" stroke-linecap="round"/><polygon points="19,29 22,29 20.5,38" fill="currentColor"/><polygon points="26,29 29,29 27.5,38" fill="currentColor"/></g>`,
+
   /* The third list from the same reader, 2026-09-14. Drawn from the pages each fact file cites. */
   /* Ned Leeds: the laptop, with one light on the screen. */
   'ned-leeds': `<g transform="translate(1.6 3.84) scale(0.933)"><rect x="13" y="12" width="22" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.714"/><path d="M9 32 L39 32 L36 27 L12 27 Z" fill="currentColor"/><circle cx="24" cy="19.5" r="2" fill="currentColor"/></g>`,

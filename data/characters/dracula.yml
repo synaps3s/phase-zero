@@ -1,0 +1,25 @@
+id: dracula
+universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-26320
+franchise: blade
+realName: null
+alignment: villain
+sigil: null
+
+actors:
+  - name: Dominic Purcell
+
+firstAppearance: blade-trinity
+
+appearsIn:
+  - blade-trinity
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Blade:_Trinity#Plot"
+    title: "Blade: Trinity, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://marvel.fandom.com/wiki/Dracula_(Earth-26320)"
+    title: "Dracula (Earth-26320), Marvel Database"
+    accessed: 2026-09-17
+verified: 2026-09-17
