@@ -18,7 +18,7 @@ is Robbie Reyes and Blaze is the one who came before, played briefly by the
 stuntman Tom McComas.
 
 He is the clearest illustration of how the Marvel Television era worked. A
-character with three feature films behind him at another studio arrives in a
+character with two feature films behind him at another studio arrives in a
 network series, does one scene that lands, and is not mentioned again for
 nearly a decade.
 

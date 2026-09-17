@@ -32,7 +32,7 @@ vecchia.
 |---|---|---|---|
 | **161** titoli | **340** personaggi | **48** voci di glossario | **22** organizzazioni |
 | **9** collezioni, 90 pezzi | **9** percorsi | **24** domande | **5** guide |
-| **928** citazioni su **570** fonti | **2** lingue, complete | **1060** pagine statiche | **0** script di terze parti |
+| **929** citazioni su **571** fonti | **2** lingue, complete | **1060** pagine statiche | **0** script di terze parti |
 
 ---
 

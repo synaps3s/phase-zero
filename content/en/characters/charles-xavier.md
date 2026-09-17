@@ -20,6 +20,9 @@ journey:
   - title: logan
     text: Ninety years old, in a water tower, with a mind that has been
       classified as a weapon of mass destruction.
+  - title: legion-s3
+    text: A third actor, Harry Lloyd, as a young Xavier in the television
+      series about his son.
   - title: doctor-strange-in-the-multiverse-of-madness
     text: Another universe, another chair, and a very brief and very famous
       appearance.
@@ -34,9 +37,14 @@ He edits memories, he keeps secrets from people who had a right to them, and in
 his last film the consequences of that are not abstract.
 
 :::detail{title="The count in the source is wrong"}
-The reference article says he appears in eleven live-action films, and then
-names thirteen in the same paragraph. The eleven is exactly the Fox run; the
-two Marvel Studios appearances are not counted.
+The reference article says he appears in eleven live-action films and one
+television series, and then names thirteen films in the same paragraph. The
+eleven is exactly the Fox run; the two Marvel Studios appearances are not
+counted. One of those two, *Avengers: Doomsday*, is not yet released, so it
+is not in the list here either.
 
-This catalogue follows the named list rather than the number.
+This catalogue follows the named list rather than the number. The
+television series is *Legion*, where Harry Lloyd plays him in the third
+season; Patrick Stewart and James McAvoy split the films, and both are in
+*Days of Future Past*.
 :::

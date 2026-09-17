@@ -20,6 +20,9 @@ journey:
   - title: logan
     text: Novant'anni, dentro una torre d'acqua, con una mente classificata
       come arma di distruzione di massa.
+  - title: legion-s3
+    text: Un terzo attore, Harry Lloyd, come giovane Xavier nella serie
+      televisiva su suo figlio.
   - title: doctor-strange-in-the-multiverse-of-madness
     text: Un altro universo, un'altra sedia, e un'apparizione brevissima e
       famosissima.
@@ -34,9 +37,14 @@ buono. Modifica ricordi, tiene segreti a persone che avevano il diritto di
 saperli, e nel suo ultimo film le conseguenze di questo non sono astratte.
 
 :::detail{title="Il conteggio nella fonte è sbagliato"}
-La voce di riferimento dice che compare in undici film dal vero, e poi nello
-stesso paragrafo ne nomina tredici. Gli undici sono esattamente il percorso Fox;
-le due apparizioni della Marvel Studios non sono contate.
+La voce di riferimento dice che compare in undici film dal vero e in una
+serie televisiva, e poi nello stesso paragrafo nomina tredici film. Gli undici
+sono esattamente il percorso Fox; le due apparizioni della Marvel Studios non
+sono contate. Una delle due, *Avengers: Doomsday*, non è ancora uscita, quindi
+non è nella lista nemmeno qui.
 
-Questo catalogo segue l'elenco nominato e non il numero.
+Questo catalogo segue l'elenco nominato e non il numero. La serie televisiva
+è *Legion*, dove Harry Lloyd lo interpreta nella terza stagione; Patrick
+Stewart e James McAvoy si dividono i film, ed entrambi sono in *Giorni di un
+futuro passato*.
 :::

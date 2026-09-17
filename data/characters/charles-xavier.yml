@@ -7,6 +7,12 @@ sigil: professor-x
 
 actors:
   - name: Patrick Stewart
+  - name: James McAvoy
+    note: as the younger Xavier, from X-Men - First Class
+  - name: Laurence Belcher
+    note: as a child, in X-Men - First Class
+  - name: Harry Lloyd
+    note: in Legion
 
 firstAppearance: x-men
 
@@ -22,10 +28,14 @@ appearsIn:
   - logan
   - deadpool-2
   - dark-phoenix
+  - legion-s3
   - doctor-strange-in-the-multiverse-of-madness
 
 sources:
   - url: "https://en.wikipedia.org/wiki/Charles_Xavier_(film_character)"
     title: "Charles Xavier (film character), Wikipedia"
-    accessed: 2026-09-07
-verified: 2026-09-07
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Legion_season_3#Cast_and_characters"
+    title: "Legion season 3, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17
