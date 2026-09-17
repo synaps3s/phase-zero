@@ -352,6 +352,11 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'angel-dust': ['#ff9a3c', '#2a1408', '#e6ebf2', 'rgba(255,154,60,0.5)'],
   'cecilia-reyes': ['#a06bff', '#1a0a2a', '#ffd27a', 'rgba(160,107,255,0.45)'],
 
+  'johnny-blaze-2007': ['#ff7a2f', '#1a0a06', '#ffd24a', 'rgba(255,122,47,0.55)'],
+  blackheart: ['#3a3f4a', '#05060a', '#ff4d4d', 'rgba(58,63,74,0.55)'],
+  'carter-slade': ['#e0a13c', '#2a1e10', '#e6ebf2', 'rgba(224,161,60,0.45)'],
+  'danny-ketch': ['#5fd0ff', '#0b2a4a', '#e6ebf2', 'rgba(95,208,255,0.5)'],
+
   /* --- Not characters ------------------------------------------------ */
   'austin-canady': ['#ff4d4d', '#16277a', '#5fd0ff', 'rgba(255,77,77,0.5)'],
 };

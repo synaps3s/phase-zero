@@ -1,0 +1,26 @@
+id: carter-slade
+universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-121347
+franchise: ghost-rider
+realName: Carter Slade
+alignment: mentor
+sigil: null
+
+actors:
+  - name: Sam Elliott
+    note: credited as Caretaker
+
+firstAppearance: ghost-rider
+
+appearsIn:
+  - ghost-rider
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Ghost_Rider_(2007_film)#Cast"
+    title: "Ghost Rider (2007 film), Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://marvel.fandom.com/wiki/Carter_Slade_(Earth-121347)"
+    title: "Carter Slade (Earth-121347), Marvel Database"
+    accessed: 2026-09-17
+verified: 2026-09-17

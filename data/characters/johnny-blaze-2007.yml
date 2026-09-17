@@ -1,0 +1,33 @@
+id: johnny-blaze-2007
+universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-121347
+franchise: ghost-rider
+realName: Johnathon Blaze
+alignment: antihero
+sigil: null
+
+actors:
+  - name: Nicolas Cage
+  - name: Matt Long
+    note: as a young Johnny, in Ghost Rider
+  - name: Ionut Cristian Lefter
+    note: as a young Johnny, in Ghost Rider - Spirit of Vengeance
+
+firstAppearance: ghost-rider
+
+appearsIn:
+  - ghost-rider
+  - ghost-rider-spirit-of-vengeance
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Ghost_Rider_(2007_film)#Cast"
+    title: "Ghost Rider (2007 film), Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Ghost_Rider:_Spirit_of_Vengeance#Cast"
+    title: "Ghost Rider: Spirit of Vengeance, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://marvel.fandom.com/wiki/Johnathon_Blaze_(Earth-121347)"
+    title: "Johnathon Blaze (Earth-121347), Marvel Database"
+    accessed: 2026-09-17
+verified: 2026-09-17

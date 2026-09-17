@@ -30,3 +30,9 @@ Wikipedia registra che Ryan Gosling ha preso il ruolo e che Blaze comparirà in
 datato 2028. Nessuno dei due è uscito, quindi nessuno dei due è elencato fra le
 sue apparizioni.
 :::
+
+:::detail{title="L'altro Johnny Blaze"}
+Quello interpretato da Nicolas Cage in due film di un altro studio è una
+continuità diversa, Terra-121347 sul Marvel Database, e ha una scheda sua in
+questo catalogo.
+:::

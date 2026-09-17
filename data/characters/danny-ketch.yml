@@ -1,0 +1,25 @@
+id: danny-ketch
+universe: unbound
+# The Earth this person is from, which the films name and the shared catalogue universe does not.
+designation: Earth-121347
+franchise: ghost-rider
+realName: Daniel Ketch
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Fergus Riordan
+
+firstAppearance: ghost-rider-spirit-of-vengeance
+
+appearsIn:
+  - ghost-rider-spirit-of-vengeance
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Ghost_Rider:_Spirit_of_Vengeance#Plot"
+    title: "Ghost Rider: Spirit of Vengeance, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://marvel.fandom.com/wiki/Daniel_Ketch_(Earth-121347)"
+    title: "Daniel Ketch (Earth-121347), Marvel Database"
+    accessed: 2026-09-17
+verified: 2026-09-17

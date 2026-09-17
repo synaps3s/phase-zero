@@ -28,3 +28,9 @@ appear in *Avengers: Secret Wars*, currently dated 2027, and in a *Ghost Rider*
 film dated 2028. Neither has been released, so neither is listed among his
 appearances here.
 :::
+
+:::detail{title="The other Johnny Blaze"}
+The one Nicolas Cage played in two films at another studio is a different
+continuity, Earth-121347 on the Marvel Database, and has an entry of his
+own in this catalogue.
+:::
