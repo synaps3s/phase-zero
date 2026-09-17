@@ -1,0 +1,42 @@
+id: foggy-nelson
+universe: earth-616
+franchise: defenders
+realName: Franklin Nelson
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Elden Henson
+
+firstAppearance: daredevil-s1
+
+appearsIn:
+  - daredevil-s1
+  - daredevil-s2
+  - the-defenders
+  - jessica-jones-s2
+  - luke-cage-s2
+  - daredevil-s3
+  - daredevil-born-again-s1
+  - daredevil-born-again-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Daredevil_(TV_series)_characters#Foggy_Nelson"
+    title: "List of Daredevil (TV series) characters, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)#Cast_and_characters"
+    title: "The Defenders (miniseries), Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Jessica_Jones_season_2#Cast_and_characters"
+    title: "Jessica Jones season 2, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Luke_Cage_season_2#Cast_and_characters"
+    title: "Luke Cage season 2, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Daredevil:_Born_Again_season_1#Cast_and_characters"
+    title: "Daredevil: Born Again season 1, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Daredevil:_Born_Again_season_2#Cast_and_characters"
+    title: "Daredevil: Born Again season 2, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

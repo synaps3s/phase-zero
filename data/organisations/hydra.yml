@@ -11,6 +11,7 @@ members:
   - alexander-pierce
   - pietro-maximoff
   - carl-creel
+  - arnim-zola
 
 firstAppearance: captain-america-the-first-avenger
 
@@ -27,4 +28,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/List_of_Agents_of_S.H.I.E.L.D._characters#Carl_Creel"
     title: "List of Agents of S.H.I.E.L.D. characters, Wikipedia"
     accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Arnim_Zola"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-17
 verified: 2026-09-08

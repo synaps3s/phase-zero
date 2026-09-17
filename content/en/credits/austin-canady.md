@@ -39,6 +39,15 @@ who played the Mandarin and the man who hired him, Colonel Stryker, Iceman and
 Angel, the Rhino, Titania, Talos, Zeus. People who between them carry a good
 part of the stories around the leads, and who had no page to be found on.
 
+Then a fourth, in five parts, and the longest yet: fifty-seven people once
+the two Jarvises were counted separately. The four around Blade, twelve from
+the Fox films, the four from the Nicolas Cage *Ghost Rider* films, five from
+Sony's Spider-Man universe, and thirty-two from the shared story, from Foggy
+Nelson and Karen Page to the coven in *Agatha All Along*. Again not one of
+them was a matter of taste, and again the list came with a few spellings the
+sources corrected and a few claims the entries record as his reading rather
+than as fact.
+
 :::detail{title="The two he was most right about"}
 He asked why the Spider-Verse films were catalogued and none of their people
 were, and made the argument rather than just the request: Miguel O'Hara naming

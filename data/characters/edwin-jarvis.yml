@@ -1,0 +1,24 @@
+id: edwin-jarvis
+universe: earth-616
+franchise: agent-carter
+realName: Edwin Jarvis
+alignment: supporting
+sigil: null
+
+actors:
+  - name: James D'Arcy
+
+firstAppearance: agent-carter
+
+appearsIn:
+  - agent-carter
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Agent_Carter_characters#Edwin_Jarvis"
+    title: "List of Agent Carter characters, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Avengers:_Endgame#Cast"
+    title: "Avengers: Endgame, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

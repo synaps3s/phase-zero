@@ -30,9 +30,9 @@ vecchia.
 
 | | | | |
 |---|---|---|---|
-| **161** titoli | **308** personaggi | **48** voci di glossario | **22** organizzazioni |
+| **161** titoli | **340** personaggi | **48** voci di glossario | **22** organizzazioni |
 | **9** collezioni, 90 pezzi | **9** percorsi | **24** domande | **5** guide |
-| **863** citazioni su **525** fonti | **2** lingue, complete | **996** pagine statiche | **0** script di terze parti |
+| **928** citazioni su **570** fonti | **2** lingue, complete | **1060** pagine statiche | **0** script di terze parti |
 
 ---
 

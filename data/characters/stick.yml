@@ -1,0 +1,25 @@
+id: stick
+universe: earth-616
+franchise: defenders
+realName: null
+alignment: mentor
+sigil: null
+
+actors:
+  - name: Scott Glenn
+
+firstAppearance: daredevil-s1
+
+appearsIn:
+  - daredevil-s1
+  - daredevil-s2
+  - the-defenders
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Daredevil_(TV_series)_characters#Stick"
+    title: "List of Daredevil (TV series) characters, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)#Cast_and_characters"
+    title: "The Defenders (miniseries), Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

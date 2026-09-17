@@ -39,6 +39,15 @@ Iceman e Angelo, Rhino, Titania, Talos, Zeus. Persone che insieme portano una
 buona parte delle storie intorno ai protagonisti, e che non avevano una pagina
 dove trovarle.
 
+Poi una quarta, in cinque parti, e la più lunga finora: cinquantasette persone
+contando separatamente i due Jarvis. I quattro intorno a Blade, dodici dai
+film Fox, i quattro dai *Ghost Rider* con Nicolas Cage, cinque dall'universo
+Spider-Man di Sony, e trentadue dalla storia condivisa, da Foggy Nelson e
+Karen Page alla congrega di *Agatha All Along*. Di nuovo nessuno era una
+questione di gusti, e di nuovo la lista è arrivata con qualche grafia che le
+fonti hanno corretto e qualche affermazione che le schede registrano come sua
+lettura e non come fatto.
+
 :::detail{title="Le due cose su cui aveva più ragione"}
 Ha chiesto perché i film Spider-Verse fossero in catalogo e i loro personaggi
 no, e ha portato un argomento invece di una semplice richiesta: Miguel O'Hara

@@ -9,6 +9,7 @@ members:
   - natasha-romanoff
   - yelena-belova
   - melina-vostokoff
+  - dreykov
 
 firstAppearance: black-widow
 
@@ -19,4 +20,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Melina_Vostokoff"
     title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
     accessed: 2026-09-14
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Dreykov"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-17
 verified: 2026-09-08

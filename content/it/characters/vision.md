@@ -19,6 +19,10 @@ journey:
   - title: avengers-infinity-war
     text: Nascosto a Edimburgo con Wanda Maximoff, con addosso l'unica cosa che
       a Thanos manca ancora.
+  - title: wandavision
+    text: Due volte. Il lutto di Wanda ne fa una versione dentro l'anomalia
+      di Westview, e lo S.W.O.R.D. riaccende il corpo vero, bianco e vuoto,
+      per farla finita con lei.
 ---
 
 Visione è messo insieme con tre cose che non volevano stare insieme: un corpo
@@ -45,4 +49,21 @@ quindi la stanza legge il gesto come un verdetto.
 Il bello è che Visione non sta facendo niente del genere. Sta passando a
 qualcuno il suo martello. È l'unico personaggio di questo materiale a superare
 quella prova senza sapere che fosse una prova.
+:::
+
+:::spoiler{title="Westview"}
+Thanos gli strappa la Gemma della Mente dalla testa e lui muore. Nel 2023 il
+corpo è in custodia dello S.W.O.R.D., e in *WandaVision* ce ne sono due. Quello
+a Westview è un costrutto che Wanda crea con il lutto e con la parte della
+gemma che vive in lei, che lavora alla Computational Services Inc., entra nella
+ronda di quartiere, e capisce piano piano che la città è sbagliata. L'altro è
+il suo corpo vero, riattivato dallo S.W.O.R.D. con i ricordi cancellati e il
+colore sparito, e mandato nell'anomalia per ucciderla. I due si scontrano nella
+biblioteca della città, si parlano attraverso il paradosso della nave di Teseo,
+e il costrutto restituisce all'originale i suoi ricordi. Lui capisce di essere
+un Avenger e vola via. Il costrutto saluta e svanisce quando l'anomalia cade.
+
+Quello bianco ha una scheda sua qui, come Visione Bianco, perché il lettore
+che lo ha chiesto lo pensa così e *VisionQuest* è costruito intorno a lui.
+Wikipedia tiene entrambi in questo stesso articolo.
 :::

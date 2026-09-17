@@ -1,0 +1,42 @@
+id: happy-hogan
+universe: earth-616
+franchise: iron-man
+realName: Harold Hogan
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Jon Favreau
+
+firstAppearance: iron-man
+
+appearsIn:
+  - iron-man
+  - iron-man-2
+  - iron-man-3
+  - spider-man-homecoming
+  - avengers-endgame
+  - spider-man-far-from-home
+  - spider-man-no-way-home
+  - deadpool-and-wolverine
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Happy_Hogan"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Iron_Man_2#Plot"
+    title: "Iron Man 2, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Iron_Man_3#Plot"
+    title: "Iron Man 3, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Spider-Man:_Homecoming#Cast"
+    title: "Spider-Man: Homecoming, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Avengers:_Endgame#Cast"
+    title: "Avengers: Endgame, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine#Plot"
+    title: "Deadpool & Wolverine, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

@@ -1,0 +1,25 @@
+id: friday
+universe: earth-616
+franchise: iron-man
+realName: null
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Kerry Condon
+    note: voice
+
+firstAppearance: avengers-age-of-ultron
+
+appearsIn:
+  - avengers-age-of-ultron
+  - captain-america-civil-war
+  - spider-man-homecoming
+  - avengers-infinity-war
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#F.R.I.D.A.Y."
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

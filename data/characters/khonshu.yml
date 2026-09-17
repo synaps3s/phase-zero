@@ -1,0 +1,23 @@
+id: khonshu
+universe: earth-616
+franchise: marvel-television
+realName: null
+alignment: supporting
+sigil: null
+
+actors:
+  - name: F. Murray Abraham
+    note: voice
+  - name: Karim El Hakim
+    note: motion capture
+
+firstAppearance: moon-knight
+
+appearsIn:
+  - moon-knight
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Khonshu"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

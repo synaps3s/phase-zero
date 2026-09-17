@@ -1,0 +1,25 @@
+id: miss-minutes
+universe: earth-616
+franchise: loki
+realName: null
+alignment: villain
+sigil: null
+
+actors:
+  - name: Tara Strong
+    note: voice
+
+firstAppearance: loki-s1
+
+appearsIn:
+  - loki-s1
+  - loki-s2
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Features_of_the_Marvel_Cinematic_Universe#Miss_Minutes"
+    title: "Features of the Marvel Cinematic Universe, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Kang_the_Conqueror"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

@@ -1,0 +1,22 @@
+id: cornell-stokes
+universe: earth-616
+franchise: defenders
+realName: Cornell Stokes
+alignment: villain
+sigil: null
+
+actors:
+  - name: Mahershala Ali
+  - name: Elijah Boothe
+    note: as a young Cornell
+
+firstAppearance: luke-cage-s1
+
+appearsIn:
+  - luke-cage-s1
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_Luke_Cage_characters#Cornell_%22Cottonmouth%22_Stokes"
+    title: "List of Luke Cage characters, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

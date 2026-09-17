@@ -1,0 +1,25 @@
+id: arnim-zola
+universe: earth-616
+franchise: captain-america
+realName: Arnim Zola
+alignment: villain
+sigil: null
+
+actors:
+  - name: Toby Jones
+
+firstAppearance: captain-america-the-first-avenger
+
+appearsIn:
+  - captain-america-the-first-avenger
+  - captain-america-the-winter-soldier
+  - agent-carter
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Arnim_Zola"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/List_of_Agent_Carter_characters"
+    title: "List of Agent Carter characters, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17

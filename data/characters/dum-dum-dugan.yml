@@ -1,0 +1,32 @@
+id: dum-dum-dugan
+universe: earth-616
+franchise: captain-america
+realName: Timothy Dugan
+alignment: supporting
+sigil: null
+
+actors:
+  - name: Neal McDonough
+
+firstAppearance: captain-america-the-first-avenger
+
+appearsIn:
+  - captain-america-the-first-avenger
+  - one-shot-agent-carter
+  - agents-of-shield
+  - agent-carter
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_A%E2%80%93L#Dum_Dum_Dugan"
+    title: "Characters of the Marvel Cinematic Universe: A-L, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger#Cast"
+    title: "Captain America: The First Avenger, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/List_of_Agents_of_S.H.I.E.L.D._characters"
+    title: "List of Agents of S.H.I.E.L.D. characters, Wikipedia"
+    accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/List_of_Agent_Carter_characters"
+    title: "List of Agent Carter characters, Wikipedia"
+    accessed: 2026-09-17
+verified: 2026-09-17
