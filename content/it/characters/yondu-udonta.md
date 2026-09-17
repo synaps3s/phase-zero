@@ -1,7 +1,8 @@
 ---
 title: Yondu Udonta
-oneLine: L'uomo pagato per consegnare un bambino a suo padre, che se lo è tenuto,
-  e che non ha mai detto al bambino che era una gentilezza.
+oneLine: L'uomo pagato per consegnare un bambino a suo padre, che invece se lo
+  è tenuto, e che non ha mai detto al bambino che tenerselo era stato un atto
+  di bontà.
 tagline: Ravager
 role: Capo di un clan Ravager
 affiliation: I Ravager
