@@ -5,6 +5,14 @@ order: 3
 tint: red
 firstAppearance: iron-man
 lastAppearance: iron-man
+model:
+  file: models/iron-man-armour/mark-iii.bin
+  name: "Iron Man"
+  author: "-LUCIFER-"
+  licence: "Royalty Free License (no AI)"
+  design: "Marvel Studios"
+  url: "https://www.cgtrader.com/free-3d-models/character/man/iron-man-0d09ff19-c384-4443-9eb5-d6712c9d2588"
+  accessed: 2026-10-03
 sources:
   - url: https://en.wikipedia.org/wiki/Iron_Man's_armor_(Marvel_Cinematic_Universe)
     title: "Iron Man's armor (Marvel Cinematic Universe), Wikipedia"

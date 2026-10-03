@@ -56,6 +56,23 @@ These are enforced by CI. A pull request that breaks them cannot be merged.
    the rule is about the films, and about anything that is somebody else's to
    licence.
 
+   There is one deliberate exception, decided by the maintainer: a 3D model
+   of a collection piece, such as an armour, may be shown on that piece's
+   entry. It is narrow, and every condition is required:
+
+   - The model's licence lets this project show it. Read the licence itself,
+     not the summary on the download page.
+   - The file is committed sealed with `scripts/encrypt-model.mjs`, never in
+     the form it was downloaded, and the key lives only in the production
+     environment's secrets. A clone or a fork gets noise and a page that
+     works without it.
+   - The author, the licence, the page it came from and the owner of the
+     design are recorded in the piece's `model` field, and shown with it.
+   - It is shown only when the reader asks. The page is complete without it.
+   - Nothing else follows from it. No posters, no stills, no logos, no
+     photographs, and no model of a person. If a rights holder or the model's
+     author asks for it to go, it goes, and the entry reads as it did before.
+
 ## Verifying a fact
 
 The workflow is the same whether you are a person or an agent:

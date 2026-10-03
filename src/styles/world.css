@@ -1748,6 +1748,118 @@ a.plate:focus-visible {
   color: var(--piece-colour);
 }
 
+/* A 3D model of the piece, shown on request.
+
+   The control is the share card's pattern in the piece's own colour rather
+   than amber: opening a model is not something the reader has done to the
+   catalogue. Once it is open, the turn, lights and take-apart controls are an
+   ordinary switch, which is where amber does belong, because a pressed
+   control is a where-you-are signal.
+
+   The stage is a set card's material: flat panel, hairline, a lit top edge in
+   the piece's colour, and that colour again as the light the model stands in.
+   The canvas is transparent, so there is no box drawn behind the armour and
+   nothing under its feet. */
+.piece-model {
+  margin-top: var(--s5);
+}
+
+.piece-model-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--hairline);
+  border-inline-start: 2px solid var(--piece-colour);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--face-data);
+  font-size: var(--size-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color var(--fast) var(--ease),
+    background-color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease);
+}
+
+.piece-model-toggle:hover,
+.piece-model-toggle:focus-visible,
+.piece-model-toggle[aria-expanded='true'] {
+  background: color-mix(in oklab, var(--piece-colour) 12%, transparent);
+  color: var(--piece-colour);
+  border-color: var(--hairline-strong);
+  border-inline-start-color: var(--piece-colour);
+}
+
+.piece-model-figure {
+  margin: var(--s4) 0 0;
+}
+
+.piece-model-stage {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  aspect-ratio: 4 / 5;
+  max-height: 80vh;
+  border: 1px solid var(--hairline);
+  border-top: 2px solid color-mix(in oklab, var(--piece-colour) 46%, transparent);
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 42%, color-mix(in oklab, var(--piece-colour) 14%, transparent), transparent 72%),
+    var(--panel);
+}
+
+.piece-model-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.piece-model-stage canvas:active {
+  cursor: grabbing;
+}
+
+.piece-model-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: var(--s5);
+  color: var(--ink-faint);
+  text-align: center;
+  pointer-events: none;
+}
+
+.piece-model-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3) var(--s4);
+  margin-top: var(--s3);
+}
+
+.piece-model-hint {
+  margin: 0;
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.piece-model-credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s2) var(--s3);
+  margin-top: var(--s3);
+  color: var(--ink-faint);
+  font-size: var(--size-data);
+}
+
+.piece-model-credit a {
+  color: var(--piece-colour);
+}
+
 @media (min-width: 56rem) {
   .set-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -80,6 +80,13 @@ forks it to inherit that risk.
 Everything you see is vector artwork generated from the data in this repository.
 This is also why the site looks like itself and not like every other Marvel site.
 
+The one exception is a licensed 3D model of a collection piece, shown on that
+piece's entry when the reader asks for it. It is committed sealed, the key is a
+deploy secret, and the people who made it are credited in the piece's data, so
+a fork inherits a file it cannot open rather than one it is not allowed to
+hold. The conditions are listed in `CLAUDE.md` under rule 5. Open an issue
+before proposing a new model.
+
 ## The sourcing rule
 
 Every file in `data/` ends with a block like this:

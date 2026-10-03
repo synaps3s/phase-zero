@@ -186,9 +186,11 @@ real second variant, not an inversion: the void becomes paper, the liveries
 become the same hues rendered dark enough to be read on paper, and every value
 was checked against its own ground rather than assumed to survive the flip. The
 whole identity is generated vector work and typography, because it has to be:
-there is no imagery of the films in this project and there never will be. The
-only mark from outside is the GitHub logo in the colophon, drawn here, pointing
-at the repository.
+there is no imagery of the films in this project. The only mark from outside is
+the GitHub logo in the colophon, drawn here, pointing at the repository. The one
+licensed object is a collection piece's 3D model, shown on request inside that
+piece's entry (see Piece Model below); it is content the reader opens, never
+part of the identity.
 
 **Key Characteristics:**
 
@@ -456,6 +458,22 @@ A collection entry. `--panel` background, hairline border with the top border at
 46 percent livery, `--s5` padding, name in livery at head size, line in
 `--ink-soft`, count in `--ink-faint`. Lifts 3px on hover with the top border
 warming to 60 percent.
+
+### Piece Model
+
+A licensed 3D model inside a collection piece, closed until asked for. The
+control is the share card's pattern in the piece's colour: label typography,
+hairline border, a 2px inline-start edge in `--piece-colour`, washing to 12
+percent piece colour on hover and while open. The stage takes the set card's
+material: flat `--panel`, hairline, a top border at 46 percent piece colour,
+and a radial 14 percent wash of that colour as the light the model stands in.
+The canvas is transparent: no floor, no backdrop, nothing drawn under the
+model. Its rim light is `--piece-colour` and anything that glows is
+`--tint-blue`, both read from the stylesheet and re-read when the theme
+changes. Turn, lights and take-apart are an ordinary Switch, amber when
+pressed. The credit sits below in the piece's source-line style: data size,
+`--ink-faint`, labels in the label role, the link in piece colour. It holds
+still under reduced motion and draws only while open and on screen.
 
 ### Search Field
 

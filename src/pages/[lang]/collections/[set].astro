@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import FallbackNotice from '../../../components/FallbackNotice.astro';
+import PieceModel from '../../../components/PieceModel.astro';
 import { languages, getLanguage, useTranslations, localePath } from '../../../lib/i18n';
 import { resolveProse } from '../../../lib/content';
 import { liveryStyle } from '../../../lib/livery';
@@ -109,6 +110,9 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
                 </>
               )}
             </p>
+            {piece.data.model && (
+              <PieceModel model={piece.data.model} title={piecePose.entry.data.title} t={t} />
+            )}
           </div>
         </li>
       ))}
@@ -124,4 +128,10 @@ const verified = new Intl.DateTimeFormat(language.code, { dateStyle: 'medium', t
       <p style="margin-top: var(--s3)">{t('common.verifiedOn', { date: verified })}</p>
     </section>
   </div>
+
+  {/* Tiny, and does nothing on a page with no model. The viewer and the 3D
+      library it opens are a separate chunk, fetched only when asked for. */}
+  <script>
+    import '../../../scripts/piece-model';
+  </script>
 </Base>

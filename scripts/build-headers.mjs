@@ -69,8 +69,10 @@ const policy = [
      anywhere and a policy of 'self' alone silently drops them. Checked with
      the browser: without data: here, two of the typefaces never arrive. */
   `font-src 'self' data:`,
-  // The site makes no requests of its own. Nothing to allow.
-  `connect-src 'none'`,
+  /* The one request the site makes of its own: a collection piece's 3D model,
+     fetched from this origin when a reader asks to see it. Nothing else is
+     fetched, and nothing is ever fetched from anywhere but here. */
+  `connect-src 'self'`,
   // There are no forms, so any form that appears is not ours.
   `form-action 'none'`,
   `frame-ancestors 'none'`,
