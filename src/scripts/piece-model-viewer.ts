@@ -12,6 +12,12 @@
  * The surfaces keep the colours the model was made with and gain only what a
  * flat colour cannot carry: metal, lacquer, glass.
  *
+ * What glows really lights: the reactor, the eyes and the palms each carry a
+ * small light of their own that falls on the armour around them, and a bloom
+ * pass lets the brightest of it spill into the air. The bloom keeps the
+ * canvas transparent, so the halo sits on the page rather than in a box.
+ * With the lights off, those parts go dark like unlit glass.
+ *
  * It draws only while it is open, on screen and in a visible tab, and it holds
  * still for a reader who has asked for reduced motion.
  */
@@ -19,6 +25,10 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 
 export type Control = 'rotate' | 'lights' | 'explode';
 
@@ -32,6 +42,11 @@ interface Part {
   home: THREE.Vector3;
   away: THREE.Vector3;
 }
+
+/** How bright what glows burns when the lights are on, before the bloom. */
+const GLOW_ON = 8;
+/** How strongly each glowing part lights the armour around it. */
+const LAMP = 0.03;
 
 function token(element: Element, name: string): THREE.Color | null {
   const value = getComputedStyle(element).getPropertyValue(name).trim();
@@ -54,7 +69,7 @@ function dress(source: THREE.MeshStandardMaterial, glow: THREE.Color): THREE.Mat
       break;
     case 'yellow':
       // The author's gold is a dark base meant for a renderer that adds its own light.
-      material = new THREE.MeshPhysicalMaterial({ color: colour.multiplyScalar(3), metalness: 1, roughness: 0.22, clearcoat: 0.5 });
+      material = new THREE.MeshPhysicalMaterial({ color: colour.multiplyScalar(3), metalness: 1, roughness: 0.3 });
       break;
     case 'white':
       material = new THREE.MeshStandardMaterial({ color: colour, metalness: 1, roughness: 0.3 });
@@ -64,7 +79,7 @@ function dress(source: THREE.MeshStandardMaterial, glow: THREE.Color): THREE.Mat
       break;
     default:
       if (source.name.startsWith('arc')) {
-        material = new THREE.MeshStandardMaterial({ color: glow.clone().lerp(new THREE.Color(1, 1, 1), 0.3), emissive: glow, emissiveIntensity: 1.6 });
+        material = new THREE.MeshStandardMaterial({ color: glow.clone(), emissive: glow, emissiveIntensity: GLOW_ON, roughness: 0.15, metalness: 0 });
         material.userData.glows = true;
       } else {
         material = source;
@@ -88,6 +103,28 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
   const camera = new THREE.PerspectiveCamera(30, 1, 0.05, 30);
+
+  /* Rendered into a floating point target so the bloom has light above white
+     to work with, and cleared to nothing so the page shows through. */
+  const composer = new EffectComposer(renderer);
+  const render = new RenderPass(scene, camera);
+  render.clearAlpha = 0;
+  /* The threshold sits above anything the studio light can make the metal
+     reflect, so only what is switched on blooms, not the shine on the gold. */
+  const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.9, 0.5, 3.5);
+  /* The bloom's blur writes full opacity everywhere, which would paint the
+     whole canvas black. Adding its light while leaving the canvas's own alpha
+     alone keeps the page visible behind the model, and because the canvas is
+     premultiplied the halo still adds its light on top of whatever is there. */
+  bloom.blendMaterial.blending = THREE.CustomBlending;
+  bloom.blendMaterial.blendEquation = THREE.AddEquation;
+  bloom.blendMaterial.blendSrc = THREE.OneFactor;
+  bloom.blendMaterial.blendDst = THREE.OneFactor;
+  bloom.blendMaterial.blendSrcAlpha = THREE.ZeroFactor;
+  bloom.blendMaterial.blendDstAlpha = THREE.OneFactor;
+  composer.addPass(render);
+  composer.addPass(bloom);
+  composer.addPass(new OutputPass());
   const controls = new OrbitControls(camera, canvas);
   controls.enableDamping = true;
   controls.enablePan = false;
@@ -112,10 +149,8 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
   const recolour = () => {
     glow = token(root, '--tint-blue') ?? glow;
     rim.color.copy(token(root, '--piece-colour') ?? rim.color);
-    for (const material of glowing) {
-      material.emissive.copy(glow);
-      material.color.copy(glow).lerp(new THREE.Color(1, 1, 1), 0.3);
-    }
+    for (const material of glowing) material.emissive.copy(glow);
+    for (const lamp of lamps) lamp.color.copy(glow);
   };
 
   const gltf = await new GLTFLoader().parseAsync(model, '');
@@ -125,6 +160,7 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
   figure.updateMatrixWorld(true);
 
   const glowing = new Set<THREE.MeshStandardMaterial>();
+  const lamps: THREE.PointLight[] = [];
   const dressed = new Map<THREE.Material, THREE.Material>();
   const parts: Part[] = [];
   const box = new THREE.Box3().setFromObject(figure);
@@ -136,7 +172,16 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
     const source = mesh.material as THREE.MeshStandardMaterial;
     if (!dressed.has(source)) dressed.set(source, dress(source, glow));
     const material = dressed.get(source)!;
-    if (material.userData.glows) glowing.add(material as THREE.MeshStandardMaterial);
+    if (material.userData.glows) {
+      glowing.add(material as THREE.MeshStandardMaterial);
+      /* A lamp at the middle of the glowing part, parented to it so it travels
+         with the part when the armour is taken apart. */
+      mesh.geometry.computeBoundingBox();
+      const lamp = new THREE.PointLight(glow, LAMP, 0.5, 2);
+      mesh.geometry.boundingBox!.getCenter(lamp.position);
+      mesh.add(lamp);
+      lamps.push(lamp);
+    }
     mesh.material = material;
 
     /* Each part moves away from the middle of the body along its own line,
@@ -160,6 +205,8 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
     const { clientWidth: width, clientHeight: tall } = canvas;
     if (!width || !tall) return;
     renderer.setSize(width, tall, false);
+    composer.setPixelRatio(renderer.getPixelRatio());
+    composer.setSize(width, tall);
     camera.aspect = width / tall;
     camera.updateProjectionMatrix();
   };
@@ -175,7 +222,8 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
   let open = true;
   let onScreen = true;
   let explodeT = 0;
-  let glowLevel = 1.6;
+  let glowLevel = 1;
+  const dark = new THREE.Color();
   const clock = new THREE.Clock();
 
   new IntersectionObserver(([entry]) => {
@@ -186,9 +234,16 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
 
   function frame() {
     const t = clock.getElapsedTime();
-    const target = state.lights ? (reduced.matches ? 1.6 : 1.5 + Math.sin(t * 2.2) * 0.35) : 0.05;
+    /* glowLevel runs from 0, dark, to about 1, lit, with a slow breath on top
+       when motion is allowed. Off, the glass keeps a trace of its colour. */
+    const target = state.lights ? (reduced.matches ? 1 : 0.92 + Math.sin(t * 2.2) * 0.08) : 0;
     glowLevel += (target - glowLevel) * (reduced.matches ? 1 : 0.15);
-    for (const material of glowing) material.emissiveIntensity = glowLevel;
+    dark.copy(glow).multiplyScalar(0.06);
+    for (const material of glowing) {
+      material.emissiveIntensity = GLOW_ON * glowLevel;
+      material.color.copy(dark).lerp(glow, glowLevel);
+    }
+    for (const lamp of lamps) lamp.intensity = LAMP * glowLevel;
 
     const goal = state.explode ? 1 : 0;
     explodeT += (goal - explodeT) * (reduced.matches ? 1 : 0.07);
@@ -196,7 +251,7 @@ export async function createViewer(canvas: HTMLCanvasElement, model: ArrayBuffer
 
     controls.autoRotate = state.rotate;
     controls.update();
-    renderer.render(scene, camera);
+    composer.render();
   }
 
   function tick() {
