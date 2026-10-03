@@ -1,0 +1,79 @@
+---
+/*
+ * A licensed 3D model of a piece, shown on request.
+ *
+ * The page is complete without it. Nothing is downloaded until the reader
+ * asks: the button is hidden until the script has checked that the browser
+ * can open the model at all, and the model and the 3D library arrive only on
+ * the first press.
+ *
+ * The model file is sealed, and the key is given to the build as
+ * PHASE_ZERO_MODEL_KEY. A build without the key, which is every clone and
+ * every fork, renders nothing here, and the piece reads exactly as it did
+ * before there was a model. See scripts/encrypt-model.mjs.
+ */
+interface Props {
+  model: {
+    file: string;
+    name: string;
+    author: string;
+    licence: string;
+    design: string;
+    url: string;
+  };
+  title: string;
+  t: (key: string, values?: Record<string, string | number>) => string;
+}
+
+const { model, title, t } = Astro.props;
+const key = import.meta.env.PHASE_ZERO_MODEL_KEY as string | undefined;
+const file = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${model.file}`;
+---
+
+{key && (
+  <div
+    class="piece-model"
+    data-piece-model
+    data-file={file}
+    data-key={key}
+    data-loading={t('piece.model.loading')}
+    data-error={t('piece.model.error')}
+  >
+    <button
+      type="button"
+      class="piece-model-toggle"
+      data-piece-model-toggle
+      data-show={t('piece.model.show')}
+      data-hide={t('piece.model.hide')}
+      aria-expanded="false"
+      hidden
+    >
+      {t('piece.model.show')}
+    </button>
+
+    <figure class="piece-model-figure" data-piece-model-figure hidden>
+      <div class="piece-model-stage">
+        <canvas role="img" aria-label={t('piece.model.label', { name: title })}></canvas>
+        <p class="piece-model-status label" data-piece-model-status aria-live="polite"></p>
+      </div>
+
+      <div class="piece-model-controls">
+        <div class="switch">
+          <button type="button" data-control="rotate" aria-pressed="true">{t('piece.model.rotate')}</button>
+          <button type="button" data-control="lights" aria-pressed="true">{t('piece.model.lights')}</button>
+          <button type="button" data-control="explode" aria-pressed="false">{t('piece.model.explode')}</button>
+        </div>
+        <p class="piece-model-hint">{t('piece.model.hint')}</p>
+      </div>
+
+      <figcaption class="piece-model-credit">
+        <span class="label">{t('piece.model.credit')}</span>
+        <a href={model.url}>
+          {t('piece.model.creditLine', { name: model.name, author: model.author, licence: model.licence })}
+        </a>
+        <span class="label">{t('piece.model.design')}</span>
+        <span>{model.design}</span>
+      </figcaption>
+    </figure>
+  </div>
+)}

@@ -42,10 +42,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # The key that opens the sealed 3D models (scripts/encrypt-model.mjs).
+      # It reaches the build only here, so CI and every fork build the site
+      # without it, and their pages simply carry no model. Like the Cloudflare
+      # credentials it lives in the production environment, and a missing key
+      # is not an error: the site publishes without the models.
       - name: Validate before shipping
+        env:
+          PHASE_ZERO_MODEL_KEY: ${{ secrets.PHASE_ZERO_MODEL_KEY }}
         run: npm run validate
 
       - name: Build the site
+        env:
+          PHASE_ZERO_MODEL_KEY: ${{ secrets.PHASE_ZERO_MODEL_KEY }}
         run: npm run build
 
       # Whether the credentials are there has to be worked out in a step, not

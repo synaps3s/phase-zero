@@ -160,6 +160,24 @@ const setPieces = defineCollection({
     firstAppearance: z.string(),
     /* The title where it is last seen, when the material establishes one. */
     lastAppearance: z.string().nullable().default(null),
+    /* A licensed 3D model of the piece, shown on request. The file is sealed
+       (see scripts/encrypt-model.mjs), and the people who made it are named
+       here rather than in prose so that the credit travels with the fact. */
+    model: z
+      .object({
+        /** Path under public/, without a leading slash. */
+        file: z.string(),
+        /** The name of the model on the page it was downloaded from. */
+        name: z.string(),
+        author: z.string(),
+        licence: z.string(),
+        /** Who owns the design the model depicts. */
+        design: z.string(),
+        url: z.url(),
+        accessed: z.coerce.date(),
+      })
+      .nullable()
+      .default(null),
     ...attribution,
   }),
 });
