@@ -1,0 +1,26 @@
+id: bolivar-trask
+universe: earth-10005
+franchise: x-men
+realName: Bolivar Trask
+alignment: villain
+sigil: null
+
+actors:
+  - name: Peter Dinklage
+
+firstAppearance: x-men-days-of-future-past
+
+appearsIn:
+  - x-men-days-of-future-past
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/List_of_X-Men_film_series_characters"
+    title: "List of X-Men film series characters, Wikipedia"
+    accessed: 2026-10-03
+  - url: "https://en.wikipedia.org/wiki/X-Men:_Days_of_Future_Past"
+    title: "X-Men: Days of Future Past, Wikipedia"
+    accessed: 2026-10-03
+  - url: "https://en.wikipedia.org/wiki/X-Men:_The_Last_Stand#Cast"
+    title: "X-Men: The Last Stand, Wikipedia"
+    accessed: 2026-10-03
+verified: 2026-10-03

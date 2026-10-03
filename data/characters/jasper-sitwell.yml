@@ -1,0 +1,31 @@
+id: jasper-sitwell
+universe: earth-616
+franchise: nick-fury
+realName: Jasper Sitwell
+alignment: villain
+sigil: null
+
+actors:
+  - name: Maximiliano Hernández
+  - name: Adam Faison
+    note: as a young Sitwell, in Agents of S.H.I.E.L.D.
+
+firstAppearance: thor
+
+appearsIn:
+  - thor
+  - one-shot-the-consultant
+  - the-avengers
+  - one-shot-item-47
+  - agents-of-shield
+  - captain-america-the-winter-soldier
+  - avengers-endgame
+
+sources:
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Jasper_Sitwell"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-10-03
+  - url: "https://en.wikipedia.org/wiki/Jasper_Sitwell#Marvel_Cinematic_Universe"
+    title: "Jasper Sitwell, Wikipedia"
+    accessed: 2026-10-03
+verified: 2026-10-03

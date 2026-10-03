@@ -12,6 +12,7 @@ members:
   - pietro-maximoff
   - carl-creel
   - arnim-zola
+  - jasper-sitwell
 
 firstAppearance: captain-america-the-first-avenger
 
@@ -31,4 +32,7 @@ sources:
   - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Arnim_Zola"
     title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
     accessed: 2026-09-17
+  - url: "https://en.wikipedia.org/wiki/Characters_of_the_Marvel_Cinematic_Universe:_M%E2%80%93Z#Jasper_Sitwell"
+    title: "Characters of the Marvel Cinematic Universe: M-Z, Wikipedia"
+    accessed: 2026-10-03
 verified: 2026-09-08

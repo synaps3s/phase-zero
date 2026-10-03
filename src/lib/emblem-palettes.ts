@@ -396,6 +396,9 @@ export const EMBLEM_PALETTES: Record<string, Palette> = {
   'ruth-bat-seraph': ['#c2d0e0', '#16277a', '#ff4d4d', 'rgba(194,208,224,0.45)'],
   'seth-voelker': ['#4fd18a', '#1a1a1a', '#ffca4a', 'rgba(79,209,138,0.45)'],
 
+  'bolivar-trask': ['#c9a0ff', '#1a1030', '#ff4d4d', 'rgba(201,160,255,0.45)'],
+  'jasper-sitwell': ['#8a97ad', '#0a1a10', '#4fd18a', 'rgba(138,151,173,0.4)'],
+
   /* --- Not characters ------------------------------------------------ */
   'austin-canady': ['#ff4d4d', '#16277a', '#5fd0ff', 'rgba(255,77,77,0.5)'],
 };

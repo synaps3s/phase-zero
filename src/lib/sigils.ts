@@ -675,6 +675,11 @@ export const SIGILS: Record<string, string> = {
   /* Spider-Man Noir: the 1930s, a fedora. */
   'spider-man-noir': `<g transform="translate(1.151 1.15) scale(0.952)"><g transform="translate(5.639 5.783) scale(0.765)"><path d="M14 30 L15.5 17 C20 13.5, 28 13.5, 32.5 17 L34 30 Z" fill="currentColor"/><path d="M7 31 C14 34, 34 34, 41 31" fill="none" stroke="currentColor" stroke-width="3.57" stroke-linecap="round"/><path d="M15 26 L33 26" stroke="var(--void)" stroke-width="2.196"/></g></g>`,
 
+  /* Bolivar Trask: a machine's head, with one slot to see through. */
+  'bolivar-trask': `<g transform="translate(4.059 4.059) scale(0.831)"><path d="M14 8 L34 8 L40 18 L40 32 L32 40 L16 40 L8 32 L8 18 Z" fill="none" stroke="currentColor" stroke-width="2.046" stroke-linejoin="round"/><rect x="13" y="20" width="22" height="5" rx="1" fill="currentColor"/><path d="M18 32 L30 32" stroke="currentColor" stroke-width="2.046" stroke-linecap="round"/></g>`,
+  /* Jasper Sitwell: an agency badge, and the other badge behind it. */
+  'jasper-sitwell': `<g transform="translate(4.059 4.059) scale(0.831)"><rect x="16" y="6" width="22" height="30" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.805" stroke-dasharray="3 2.5"/><rect x="10" y="12" width="22" height="30" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.046"/><circle cx="21" cy="23" r="4" fill="currentColor"/><path d="M15 33 L27 33 M15 37 L23 37" stroke="currentColor" stroke-width="1.805" stroke-linecap="round"/></g>`,
+
   /* ---------------- Not a character ----------------
      The credits page draws the people on it with the same component that
      draws a character, so somebody who is not in the story can still have a

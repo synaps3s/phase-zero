@@ -48,6 +48,10 @@ questione di gusti, e di nuovo la lista è arrivata con qualche grafia che le
 fonti hanno corretto e qualche affermazione che le schede registrano come sua
 lettura e non come fatto.
 
+Poi due che aveva dimenticato, mandati il giorno dopo: Bolivar Trask, l'uomo
+dietro le Sentinelle, e l'agente Sitwell, l'uomo dell'Hydra dentro lo
+S.H.I.E.L.D. Nessuno dei due aveva una scheda, e adesso ce l'hanno entrambi.
+
 :::detail{title="Le due cose su cui aveva più ragione"}
 Ha chiesto perché i film Spider-Verse fossero in catalogo e i loro personaggi
 no, e ha portato un argomento invece di una semplice richiesta: Miguel O'Hara

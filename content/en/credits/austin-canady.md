@@ -48,6 +48,10 @@ them was a matter of taste, and again the list came with a few spellings the
 sources corrected and a few claims the entries record as his reading rather
 than as fact.
 
+Then two he had forgotten, sent the next day: Bolivar Trask, the man behind the
+Sentinels, and Agent Sitwell, the Hydra man inside S.H.I.E.L.D. Neither had an
+entry, and both do now.
+
 :::detail{title="The two he was most right about"}
 He asked why the Spider-Verse films were catalogued and none of their people
 were, and made the argument rather than just the request: Miguel O'Hara naming

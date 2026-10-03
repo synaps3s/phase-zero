@@ -24,15 +24,15 @@
 
 ## Cosa c'è dentro
 
-Contato il 17 settembre 2026. Il colophon del sito conta le stesse cose dal
+Contato il 3 ottobre 2026. Il colophon del sito conta le stesse cose dal
 vivo, quindi se i due non concordano ha ragione il colophon e questa tabella è
 vecchia.
 
 | | | | |
 |---|---|---|---|
-| **161** titoli | **340** personaggi | **48** voci di glossario | **22** organizzazioni |
+| **161** titoli | **342** personaggi | **48** voci di glossario | **22** organizzazioni |
 | **9** collezioni, 90 pezzi | **9** percorsi | **24** domande | **5** guide |
-| **929** citazioni su **571** fonti | **2** lingue, complete | **1060** pagine statiche | **0** script di terze parti |
+| **935** citazioni su **575** fonti | **2** lingue, complete | **1064** pagine statiche | **0** script di terze parti |
 
 ---
 
