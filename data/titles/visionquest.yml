@@ -11,7 +11,7 @@ release:
   approximate: null
   runtime: null
   episodes: 8
-  finale: null
+  finale: 2026-11-25
   status: in-production
 
 chronology:
@@ -31,8 +31,8 @@ alternateUniverse: false
 sources:
   - url: "https://en.wikipedia.org/wiki/VisionQuest"
     title: "VisionQuest, Wikipedia"
-    accessed: 2026-09-07
+    accessed: 2026-10-03
   - url: "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe:_Phase_Six"
     title: "Marvel Cinematic Universe: Phase Six, Wikipedia"
     accessed: 2026-09-07
-verified: 2026-09-07
+verified: 2026-10-03

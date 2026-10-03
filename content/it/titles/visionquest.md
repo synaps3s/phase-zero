@@ -5,7 +5,8 @@ tagline: "Annunciata, e girata"
 ---
 
 Dovrebbe uscire su Disney+ il 14 ottobre 2026 e sarà di otto episodi, come parte
-della Fase Sei. Le riprese si sono chiuse a fine luglio 2025 e sono state
+della Fase Sei: i primi due il giorno del debutto, poi uno a settimana, con il
+finale il 25 novembre. Le riprese si sono chiuse a fine luglio 2025 e sono state
 completate ad agosto.
 
 Il personaggio da cui prende il nome è morto in *Avengers: Infinity War* ed è
